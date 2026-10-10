@@ -13,7 +13,6 @@ integrantes:
   - "Maria del Mar Espinel (Maestría)"
   - "Paola Giraldo (Maestría)"
   - "Jorge Mario Murillo (Especialización)"
-  - "Maricela Valencia (Especialización)"
 documento_tipo: "Documento Ancla y Control de Tareas (Single Source of Truth)"
 ultima_actualizacion: "2026-10-09"
 ---
@@ -59,7 +58,7 @@ Este documento actúa como el **eje rector y bitácora de control central** para
 | **T-02** | **Envío de Correo de Expectativa Previo (Líder a Empleados)** | El líder de la empresa debe enviar un correo a todo el personal/área *antes* de que llegue el formulario para evitar que sea tratado como spam o llegue en frío `[121:45 - 123:08]`. | Paola Giraldo / Jose Bolaños | Comunicado redactado y enviado por Anamaria Cortés a los colaboradores de Delirio anunciando el diagnóstico. | **En progreso** |
 | **T-03** | **Obtención de Estructura Demográfica (Áreas y Jerarquías)** | Solicitar organigrama y categorización de áreas y cargos para perfilamiento matricial `[50:33 - 51:40]`. | Maria del Mar Espinel / Kathe Castro | Lista formal de áreas (ej. Producción artística, Comercial, Logística, Administrativa) y niveles jerárquicos (Dirección, Mandos Medios, Operación). | **En progreso** |
 | **T-04** | **Construcción del Megamodelo Homologado (Maciada)** | Homologar con IA los 10–15 modelos de referencia de `Herramientas/Markdown` y Miro en una taxonomía simétrica propia `[31:39 - 37:20, 126:43 - 128:20]`. | Equipo Completo (Asistido por Claude) | Documento con matriz taxonómica: Pilares, Factores, Indicadores/Preguntas y justificación conceptual. | **En progreso** |
-| **T-05** | **Definición de Escala de Medición Ácida** | Seleccionar escala sin neutralidad complaciente (ej. Likert 6 puntos o -2 a +2 con ponderaciones argumentadas) `[41:14 - 43:00]`. | Jorge Mario Murillo / Maricela Valencia | Rúbrica de calificación formalmente descrita y validada en el modelo. | **Pendiente** |
+| **T-05** | **Definición de Escala de Medición Ácida** | Seleccionar escala sin neutralidad complaciente (ej. Likert 6 puntos o -2 a +2 con ponderaciones argumentadas) `[41:14 - 43:00]`. | Jorge Mario Murillo | Rúbrica de calificación formalmente descrita y validada en el modelo. | **Pendiente** |
 | **T-06** | **Redacción Quirúrgica de Preguntas (Anti-Preguntas Dobles)** | Cada pregunta debe evaluar un solo hecho o comportamiento observable, integrando variables de IA y herramientas colaborativas `[93:53 - 94:53, 132:26 - 132:46]`. | Kathe Castro / Jose Bolaños | Batería final de preguntas revisada con cero preguntas compuestas y variables de fluidez digital/IA incluidas. | **Pendiente** |
 | **T-07** | **Montaje del Instrumento Digital** | Crear el formulario en Google Forms, Typeform o SurveyMonkey listo para distribución `[125:00 - 125:09]`. | Maria del Mar Espinel / Paola Giraldo | Enlace funcional del formulario digital listo para pruebas de campo. | **Pendiente** |
 | **T-08** | **Check-in de Avance con el Profesor (Lunes/Martes)** | Escribir al profesor Naranjo reportando avances de la empresa, el borrador del modelo y dudas `[125:21 - 125:35, 133:24 - 133:40]`. | Jose Bolaños (Vocero) | Correo / mensaje enviado al profesor con resumen ejecutivo del estado del Grupo 4. | **Pendiente** |

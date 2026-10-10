@@ -2,7 +2,7 @@
 ## Módulo: "Haciéndolo Posible" — Diagnóstico del Sistema de Innovación
 **Programa:** Maestría en Gestión de la Innovación (MGinn) — Universidad Icesi  
 **Profesor Líder:** Andrés Felipe Naranjo Cadena (*Orange*) — iNNLab  
-**Equipo Consultor (Grupo 4):** Jose Bolaños, Katherine Castro, Maria del Mar Espinel, Paola Giraldo, Jorge Mario Murillo, Maricela Valencia  
+**Equipo Consultor (Grupo 4):** Jose Bolaños, Katherine Castro, Maria del Mar Espinel, Paola Giraldo, Jorge Mario Murillo  
 **Empresa Cliente:** Fundación Delirio (Cali, Colombia)  
 
 ---

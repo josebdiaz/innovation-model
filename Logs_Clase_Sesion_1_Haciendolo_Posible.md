@@ -6,7 +6,7 @@ institucion: "Universidad Icesi — iNNLab"
 profesor: "Andrés Felipe Naranjo Cadena ('Orange')"
 fecha_sesion: "2026-09-24"
 video_grabacion: "https://www.youtube.com/live/v-j7xeznE00"
-grupo: "Grupo 4 — Fundación Delirio (Jose Bolaños, Katherine Castro, Maria del Mar Espinel, Paola Giraldo, Jorge Mario Murillo, Maricela Valencia)"
+grupo: "Grupo 4 — Fundación Delirio (Jose Bolaños, Katherine Castro, Maria del Mar Espinel, Paola Giraldo, Jorge Mario Murillo)"
 documento_tipo: "Context Log para Proyecto Claude"
 ---
 
