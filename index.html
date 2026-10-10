@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Modelo CLAVE · Delirio</title>
+<meta name="description" content="Modelo CLAVE: diagnóstico del sistema y la cultura de innovación de Fundación Delirio. Grupo 4, MGinn Universidad Icesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Kaushan+Script&display=swap">
+<style>
+:root{--paper:#FFF8E1;--ink:#1E0A3C;--lav:#6E5F8F;--night:#3F1F6E;--yellow:#F7F000;--rose:#DE4D74;--jade:#5BB68A;--magenta:#C8085D;--paper-sh:0 10px 26px rgba(28,10,56,.28);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--lav);color:var(--paper);font:600 17px/1.55 "Nunito","Segoe UI",system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:960px;margin:0 auto}
+header{padding:56px 0 28px;position:relative}
+.k{font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+h1{font-weight:900;font-size:clamp(3.4rem,13vw,7rem);line-height:.9;margin:.4rem 0 .6rem;color:var(--yellow);letter-spacing:-.01em;text-shadow:0 .08em 0 rgba(28,10,56,.3)}
+h1 span{font-family:"Kaushan Script",cursive;font-weight:400;font-size:.42em;color:var(--paper);display:inline-block;transform:rotate(-4deg);margin-left:.2em;text-shadow:none}
+header p{max-width:56ch;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
+a.card{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:24px;text-decoration:none;color:var(--ink);box-shadow:var(--paper-sh);transition:transform .2s;min-height:190px}
+a.card:hover{transform:translateY(-4px) rotate(-.5deg)}
+a.card:focus-visible{outline:3px solid var(--ink);outline-offset:2px;box-shadow:0 0 0 6px var(--yellow)}
+a.card b{font-weight:900;font-size:1.45rem;line-height:1.1}
+a.card small{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem}
+a.card span{font-weight:700}
+.y{background:var(--yellow)}.r{background:var(--rose)}.j{background:var(--jade)}.p{background:var(--paper)}
+a.card.n{background:var(--night);color:var(--paper)}a.card.n small{color:var(--yellow)}
+h2{font-weight:900;font-size:1.3rem;margin:40px 0 10px;color:var(--yellow)}
+ul{margin:0;padding-left:1.2rem}
+li{margin:.3rem 0}
+li a{color:var(--paper);font-weight:800}
+footer{margin-top:48px;font-size:.88rem}
+@media (prefers-reduced-motion:reduce){a.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="k">Diagnóstico de innovación · Fundación Delirio</span>
+  <h1>CLAVE <span>en clave 3-2</span></h1>
+  <p>Modelo propio para medir el sistema y la cultura de innovación de Fundación Delirio: 5 pilares, 15 factores y 45 preguntas, en una escala de 6 puntos sin punto medio.</p>
+</header>
+
+<div class="grid">
+  <a class="card n" href="Modelo/V0/modelo-clave-v0.html"><small>Presentación · 25 láminas</small><b>Deck animado</b><span>La metáfora, los pilares, la escala, cómo se leen los resultados y el taller. Flechas para avanzar, N para notas, S para el sonido de la clave.</span></a>
+  <a class="card y" href="Modelo/V0/onepager-racional.html"><small>Para la junta</small><b>Racional en una página</b><span>Por qué medimos lo que medimos, cómo lo medimos y qué sigue.</span></a>
+  <a class="card r" href="Modelo/V0/ficha-tecnica.html"><small>Documento metodológico</small><b>Ficha técnica</b><span>Constructo, modelo de medición, puntuación, agregación, validación, sesgos, ética y referencias.</span></a>
+  <a class="card j" href="Modelo/V0/plan-backend-dashboard.html"><small>Plan de construcción</small><b>Backend y dashboard</b><span>Arquitectura, consola interna frente a dashboard vivo, cronograma y riesgos.</span></a>
+</div>
+
+<h2>Elementos del modelo</h2>
+<ul>
+  <li><a href="Modelo/V0/elementos/modelo-clave.json">modelo-clave.json</a> · el modelo completo, legible por máquina</li>
+  <li><a href="Modelo/V0/elementos/04-items/items.csv">items.csv</a> · las 45 afirmaciones</li>
+  <li><a href="Modelo/V0/elementos/02-taxonomia/factores.csv">factores.csv</a> · 15 factores y su homologación</li>
+  <li><a href="Modelo/V0/elementos/06-puntuacion/puntuar_clave.py">puntuar_clave.py</a> · script de puntuación</li>
+  <li><a href="https://github.com/josebdiaz/innovation-model/tree/main/Modelo/V0/elementos">Todos los elementos en GitHub</a></li>
+</ul>
+
+<footer>Grupo 4 · Maestría en Gestión de la Innovación, Universidad Icesi · Jose Bolaños, Katherine Castro, Maria del Mar Espinel, Paola Giraldo, Jorge Mario Murillo, Maricela Valencia · Versión V0.7, octubre de 2026.</footer>
+</div>
+</body>
+</html>

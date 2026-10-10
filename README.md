@@ -12,6 +12,10 @@ Documentación de la construcción de un modelo de innovación
 | `Logs_Clase_Sesion_1_Haciendolo_Posible.md` | Logs de la Sesión 1 |
 | `Claude_Project_Prompt_Instrucciones.md` | Prompt maestro del proyecto |
 
+## Sitio publicado
+
+https://josebdiaz.github.io/innovation-model/ (GitHub Pages, rama `main`, carpeta raíz).
+
 ## Versión vigente del modelo
 
 **Modelo CLAVE V0 (baseline)** — ver [`Modelo/V0/README.md`](Modelo/V0/README.md). Presentación: `Modelo/V0/modelo-clave-v0.html`.
