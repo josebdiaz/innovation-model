@@ -16,6 +16,11 @@ Megamodelo propio para diagnosticar el sistema y la cultura de innovación de Fu
 Archivos de esta versión:
 
 - `modelo-clave-v0.html`: deck animado de 21 láminas para la junta (flechas o deslizar para avanzar; tecla N para notas).
+- `onepager-racional.html`: racional del modelo en una página.
+- `ficha-tecnica.html`: descripción técnica y académica (constructo, puntuación, agregación, validación, ética, referencias).
+- `plan-backend-dashboard.html`: plan de backend, consola interna y dashboard vivo.
+- `auditoria-wcag.md`: auditoría de accesibilidad del deck.
+- `clave.wav`: golpe de clave usado por el deck.
 - `bateria-v0.csv`: batería en tabla, lista para montar en Google Forms (T-07).
 
 ---

@@ -1,5 +1,12 @@
 # Changelog — Modelo CLAVE
 
+## V0.7 — 2026-10-10 · versión congelada
+
+- Deck: cierre con anillos en clave, etiquetas de la clave legibles, lámina 5 alineada en espejo, ritmo vertical fijo en las láminas de pilar, árbol 5 × 3 × 3 (columna = pilar, fila = factor, punto = pregunta) y diseño de la sesión de 120′ del taller.
+- Auditoría WCAG 2.2 AA general (texto y gráficos) en `auditoria-wcag.md`.
+- Nuevos documentos: `ficha-tecnica.html` (descripción técnica y académica del modelo) y `plan-backend-dashboard.html` (arquitectura, consola interna vs. dashboard vivo, cronograma).
+- Versión de referencia: tag `v0.7-congelado`.
+
 ## V0.6 — 2026-10-10
 
 - Sonido real de clave (`clave.wav`, mono 48 kHz, 320 ms, pico −1 dBFS).

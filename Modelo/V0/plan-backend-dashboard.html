@@ -1,0 +1,217 @@
+<meta charset="utf-8">
+<title>Plan backend y dashboard CLAVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Kaushan+Script&display=swap">
+<style>
+/* Layout: documento de decisión de una columna (~880px) sobre papel claro; diagrama de arquitectura en SVG; matriz de decisión y cronograma como tablas. Paleta "Los Sabanales". Un solo look deliberado. */
+:root{
+  --paper:#FFFDF6; --ink:#1E0A3C; --muted:#4B3F63; --night:#3F1F6E; --lav:#6E5F8F; --yellow:#F7F000; --rose:#DE4D74; --magenta:#C8085D; --jade:#5BB68A; --line:#E6DCC4; --soft:#F7F1E1;
+  --sans:"Nunito", "Segoe UI", system-ui, sans-serif; --script:"Kaushan Script", cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:500 16.5px/1.6 var(--sans);padding-inline:16px;padding-block:0 80px}
+.wrap{max-width:880px;margin:0 auto}
+h1,h2,h3{font-weight:900;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:1.5rem;margin:2.4rem 0 .6rem;padding-top:1.4rem;border-top:2px solid var(--line)}
+h3{font-size:1.05rem;margin:1.2rem 0 .35rem}
+p{margin:.5rem 0;max-width:70ch}
+.head{background:var(--night);color:var(--paper);margin:0 -16px 1.6rem;padding:44px 16px 34px}
+.head .k{font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow)}
+.head h1{font-size:clamp(2rem,6vw,3rem);margin:.7rem 0 .4rem;color:var(--yellow)}
+.head h1 .script{font-family:var(--script);font-weight:400;color:var(--paper)}
+.head p{font-weight:600;max-width:60ch}
+.verdict{background:var(--yellow);border-radius:20px;padding:20px 22px;box-shadow:0 10px 26px rgba(30,10,60,.12)}
+.verdict h2{border:0;margin:0 0 .4rem;padding:0;font-size:1.25rem}
+.verdict p{margin:.35rem 0}
+.tbl{overflow-x:auto;margin:.8rem 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:.9rem;line-height:1.45}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:800;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;text-align:center;font-weight:800}
+tr.win td{background:#FDF6C4}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:.8rem 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+.card h3{margin:0 0 .3rem}
+.card.int{border-top:6px solid var(--lav)}
+.card.viv{border-top:6px solid var(--magenta)}
+.card ul{margin:.3rem 0 0}
+ul,ol{padding-left:1.25rem;margin:.4rem 0}
+li{margin:.25rem 0;max-width:70ch}
+.arch{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin:.8rem 0;overflow-x:auto}
+.arch svg{display:block;min-width:720px;width:100%;height:auto}
+code{font:700 .85em ui-monospace,Menlo,Consolas,monospace;background:var(--soft);padding:1px 5px;border-radius:5px}
+.tag{display:inline-block;font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.tag.p{background:#FBE0E8;color:#7A0B3A}
+.box{border-radius:14px;padding:14px 18px;margin:.8rem 0}
+.box.warn{background:#FBE0E8}
+.note{font-size:.88rem;color:var(--muted)}
+</style>
+
+<header class="head">
+  <div class="wrap">
+    <span class="k">Plan de construcción · T-09 a T-11</span>
+    <h1>Backend y dashboard <span class="script">CLAVE</span></h1>
+    <p>Cómo pasar de las respuestas del formulario a los índices, y qué tablero construir: uno interno de ejecución, uno general vivo para Delirio, o ambos.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="verdict">
+  <h2>Recomendación</h2>
+  <p><b>Un solo backend con dos vistas, pero con inversión desigual.</b> La consola interna se resuelve dentro de Google Sheets en pocas horas, porque se necesita ya, durante la recolección. El esfuerzo de diseño va al <b>dashboard general vivo</b>: es el entregable que pide el profesor, el que se vende en el pitch y el único que le deja valor a Delirio después del curso.</p>
+  <p>El dashboard vivo se publica como página con los <b>agregados anonimizados incrustados</b> y se republica en cada onda de medición (trimestral). Así se comparte por enlace sin cuentas, no expone respuestas individuales y no depende de servidores que el equipo deba mantener.</p>
+</div>
+
+<h2>1. Interno o general: qué resuelve cada uno</h2>
+<div class="cards">
+  <div class="card int">
+    <h3>Consola interna de ejecución</h3>
+    <p class="note">Para el Grupo 4 · semanas 2 y 3</p>
+    <ul>
+      <li>Tasa de respuesta por celda área × nivel frente a la meta</li>
+      <li>Celdas con menos de 5 respuestas (riesgo de anonimato)</li>
+      <li>Calidad: fallos del control de atención, respuestas en línea recta, tiempos extremos</li>
+      <li>Distribución por ítem: efectos techo y piso, datos faltantes</li>
+      <li>Fiabilidad α y ω de C y L, acuerdo r<sub>wg</sub></li>
+    </ul>
+    <p><b>Valor:</b> operativo. Sin ella la muestra puede quedar sesgada sin que nadie lo note. <b>Audiencia:</b> 6 personas. <b>Vida útil:</b> el trabajo de campo.</p>
+  </div>
+  <div class="card viv">
+    <h3>Dashboard general vivo</h3>
+    <p class="note">Para la Dirección de Delirio · semana 4 en adelante</p>
+    <ul>
+      <li>Índice CLAVE, banda de madurez y Desfase</li>
+      <li>Los 5 pilares y 15 factores con % de evidencia</li>
+      <li>Toda la orquesta: mapa área × pilar y Desafine por pilar</li>
+      <li>Tendencia por onda: la foto que se vuelve video</li>
+      <li>Seguimiento de la micro-intervención (C1 antes y después) y del plan de acción</li>
+    </ul>
+    <p><b>Valor:</b> estratégico y comercial. Es la "cámara de seguridad" del mandato del módulo. <b>Audiencia:</b> junta, Dirección, profesor y evaluadores. <b>Vida útil:</b> indefinida.</p>
+  </div>
+</div>
+
+<h3>Matriz de decisión</h3>
+<div class="tbl"><table>
+  <thead><tr><th>Criterio</th><th>Peso</th><th>A · Solo interno</th><th>B · Solo general vivo</th><th>C · Backend común + consola ligera + dashboard vivo</th></tr></thead>
+  <tbody>
+    <tr><td>Cumple el mandato del módulo (dashboard simulado a un año)</td><td class="n">25 %</td><td class="n">2</td><td class="n">5</td><td class="n">5</td></tr>
+    <tr><td>Valor para Delirio después del curso</td><td class="n">25 %</td><td class="n">1</td><td class="n">4</td><td class="n">5</td></tr>
+    <tr><td>Esfuerzo viable en 3 semanas</td><td class="n">20 %</td><td class="n">5</td><td class="n">2</td><td class="n">3</td></tr>
+    <tr><td>Protección de la privacidad</td><td class="n">15 %</td><td class="n">5</td><td class="n">3</td><td class="n">4</td></tr>
+    <tr><td>Mantenible sin el equipo consultor</td><td class="n">15 %</td><td class="n">3</td><td class="n">3</td><td class="n">4</td></tr>
+    <tr class="win"><td><b>Puntaje ponderado (1–5)</b></td><td></td><td class="n">2,95</td><td class="n">3,55</td><td class="n">4,30</td></tr>
+  </tbody>
+</table></div>
+<p class="note">B puntúa menos que C en privacidad y mantenimiento porque, sin la capa de control interno, los problemas de cobertura y calidad llegan sin filtro al tablero del cliente. Los puntajes son juicio del equipo; conviene recalcularlos con el grupo.</p>
+
+<h2>2. Arquitectura</h2>
+<div class="arch" role="img" aria-label="Flujo: Google Forms alimenta la hoja Crudo; Apps Script valida y calcula puntajes; la hoja Agregados alimenta el dashboard vivo; la consola interna lee Crudo y Calidad">
+  <svg viewBox="0 0 860 250" xmlns="http://www.w3.org/2000/svg" font-family="Nunito, sans-serif">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1E0A3C"/></marker></defs>
+    <g stroke="#1E0A3C" stroke-width="2" fill="none" marker-end="url(#ar)">
+      <path d="M150 70H200"/><path d="M350 70H400"/><path d="M550 70H600"/><path d="M475 105V150"/><path d="M675 105V150"/>
+    </g>
+    <g font-weight="800" font-size="13" text-anchor="middle">
+      <rect x="20" y="35" width="130" height="70" rx="14" fill="#EFE8FF"/><text x="85" y="66" fill="#1E0A3C">Google Forms</text><text x="85" y="84" font-size="11" font-weight="600" fill="#4B3F63">sin correo · anónimo</text>
+      <rect x="200" y="35" width="150" height="70" rx="14" fill="#FBE0E8"/><text x="275" y="62" fill="#1E0A3C">Hoja «Crudo»</text><text x="275" y="80" font-size="11" font-weight="600" fill="#4B3F63">acceso: solo equipo</text><text x="275" y="95" font-size="11" font-weight="600" fill="#4B3F63">respuesta por fila</text>
+      <rect x="400" y="35" width="150" height="70" rx="14" fill="#F7F1E1" stroke="#1E0A3C" stroke-width="2"/><text x="475" y="62" fill="#1E0A3C">Apps Script</text><text x="475" y="80" font-size="11" font-weight="600" fill="#4B3F63">valida · puntúa</text><text x="475" y="95" font-size="11" font-weight="600" fill="#4B3F63">agrega · suprime n &lt; 5</text>
+      <rect x="600" y="35" width="150" height="70" rx="14" fill="#D9F0E3"/><text x="675" y="62" fill="#1E0A3C">Hoja «Agregados»</text><text x="675" y="80" font-size="11" font-weight="600" fill="#4B3F63">solo cifras publicables</text><text x="675" y="95" font-size="11" font-weight="600" fill="#4B3F63">por onda</text>
+      <rect x="390" y="150" width="170" height="78" rx="14" fill="#6E5F8F"/><text x="475" y="180" fill="#FFF8E1">Consola interna</text><text x="475" y="198" font-size="11" font-weight="600" fill="#FFF8E1">pestañas en Sheets</text><text x="475" y="213" font-size="11" font-weight="600" fill="#FFF8E1">cobertura · calidad · fiabilidad</text>
+      <rect x="590" y="150" width="170" height="78" rx="14" fill="#C8085D"/><text x="675" y="180" fill="#F7F000">Dashboard vivo</text><text x="675" y="198" font-size="11" font-weight="600" fill="#FFF8E1">página publicada</text><text x="675" y="213" font-size="11" font-weight="600" fill="#FFF8E1">se republica por onda</text>
+      <text x="200" y="190" font-size="11" font-weight="700" fill="#4B3F63" text-anchor="start">Psicometría fuera de línea:</text><text x="200" y="207" font-size="11" font-weight="600" fill="#4B3F63" text-anchor="start">α, ω, r<tspan baseline-shift="sub" font-size="9">wg</tspan>, bootstrap (Python)</text>
+    </g>
+  </svg>
+</div>
+
+<h3>Modelo de datos</h3>
+<div class="tbl"><table>
+  <thead><tr><th>Tabla</th><th>Campos</th><th>Acceso</th></tr></thead>
+  <tbody>
+    <tr><td><code>items</code></td><td>codigo, pilar, factor, texto, tipo (base / IA / digital), version</td><td>Público</td></tr>
+    <tr><td><code>ondas</code></td><td>onda_id, fecha_inicio, fecha_cierre, etiqueta (T0 oct-2026, T1…), poblacion_objetivo</td><td>Público</td></tr>
+    <tr><td><code>respondentes</code></td><td>resp_id (aleatorio), onda_id, area, nivel, antiguedad, vinculacion, control_ok, duracion_seg, codigo_pareo (opcional, autogenerado)</td><td><span class="tag p">Solo equipo</span></td></tr>
+    <tr><td><code>respuestas</code></td><td>resp_id, codigo_item, valor (1–6) · formato largo</td><td><span class="tag p">Solo equipo</span></td></tr>
+    <tr><td><code>abiertas</code></td><td>resp_id, pregunta (Q1/Q2), texto, tema (codificado)</td><td><span class="tag p">Solo equipo</span></td></tr>
+    <tr><td><code>agregados</code></td><td>onda_id, nivel_agregacion (org / area / nivel / area×nivel), grupo, indicador (item / factor / pilar / indice / desfase / desafine), valor, evidencia_pct, n, ic_inf, ic_sup, suprimido</td><td>Publicable</td></tr>
+    <tr><td><code>acciones</code></td><td>accion_id, pilar, factor, descripcion, responsable, estado, fecha, indicador_pre, indicador_post</td><td>Publicable</td></tr>
+  </tbody>
+</table></div>
+
+<h3>Lógica del backend (Apps Script)</h3>
+<ol>
+  <li><b>Al enviar el formulario:</b> se asigna <code>resp_id</code> aleatorio y la onda vigente; se pasa a formato largo; se marca <code>control_ok</code> (Q0) y la duración.</li>
+  <li><b>Calidad:</b> se marcan para revisión, sin borrar, los casos con control fallido, respuesta en línea recta en 45 ítems o duración menor a un tercio de la mediana.</li>
+  <li><b>Puntuación:</b> ítem = 20 × (respuesta − 1); factor con al menos 2 de 3 ítems; pilar con al menos 2 de 3 factores; índice = media de los 5 pilares.</li>
+  <li><b>Agregación:</b> medias por organización, área, nivel y área × nivel; Desfase, Desafine y brecha horizontal; % de evidencia.</li>
+  <li><b>Supresión:</b> todo grupo con n &lt; 5 se marca <code>suprimido = true</code> y su valor no se exporta.</li>
+  <li><b>Exportación:</b> la hoja «Agregados» y un JSON por onda, que es lo único que llega al dashboard vivo.</li>
+</ol>
+<p class="note">Los cálculos psicométricos (α, ω, r<sub>wg</sub>, intervalos bootstrap) se corren fuera de línea en Python sobre una copia anonimizada, siguiendo la ficha técnica, y sus resultados se escriben en «Agregados».</p>
+
+<h2>3. Especificación de las dos vistas</h2>
+<h3>Consola interna: 3 pestañas en Sheets</h3>
+<div class="tbl"><table>
+  <thead><tr><th>Pestaña</th><th>Contenido</th><th>Alerta</th></tr></thead>
+  <tbody>
+    <tr><td>Cobertura</td><td>Respuestas y tasa por área × nivel frente a la población; avance diario</td><td>Celda con n &lt; 5 o tasa &lt; 50 % → recordatorio focalizado vía Anamaria Cortés</td></tr>
+    <tr><td>Calidad</td><td>Control fallido, línea recta, duración, faltantes por ítem</td><td>Más del 10 % de casos marcados → revisar distribución</td></tr>
+    <tr><td>Fiabilidad</td><td>α y ω de C y L, correlación ítem-resto, r<sub>wg</sub> por área</td><td>α &lt; 0,70 o ítem-resto &lt; 0,30 → revisar ítem</td></tr>
+  </tbody>
+</table></div>
+
+<h3>Dashboard vivo: 6 vistas</h3>
+<div class="tbl"><table>
+  <thead><tr><th>Vista</th><th>Pregunta que responde</th><th>Visual</th></tr></thead>
+  <tbody>
+    <tr><td>1. Hoy</td><td>¿Qué tan alto suena y qué tan junto?</td><td>Índice CLAVE, banda de madurez, Desfase, n y cobertura</td></tr>
+    <tr><td>2. La clave</td><td>¿Qué golpe se cruza?</td><td>5 pilares sobre la clave 3-2 con su puntaje; el más bajo resaltado</td></tr>
+    <tr><td>3. Factores</td><td>¿Dónde está exactamente la brecha?</td><td>15 factores con puntaje y % de evidencia; detalle de los 45 ítems</td></tr>
+    <tr><td>4. Toda la orquesta</td><td>¿La cabeza y la base oyen lo mismo? ¿Hay silos?</td><td>Mapa de calor área × pilar (celdas suprimidas en gris) y Desafine por pilar</td></tr>
+    <tr><td>5. El video</td><td>¿Mejoramos?</td><td>Tendencia por onda; T1 a T4 marcadas como proyección hasta que existan</td></tr>
+    <tr><td>6. Acciones</td><td>¿Qué hicimos y qué cambió?</td><td>Micro-intervención C1 antes y después; roadmap de quick wins con estado</td></tr>
+  </tbody>
+</table></div>
+<p>Para el pitch, la vista 5 muestra la onda real T0 más tres ondas simuladas, rotuladas como <b>proyección</b>, para mostrar lo que el Gerente de Innovación vería en un año. Cuando lleguen datos reales, la simulación desaparece.</p>
+
+<h3>Opciones de tecnología para el dashboard vivo</h3>
+<div class="tbl"><table>
+  <thead><tr><th>Opción</th><th>Ventajas</th><th>Limitaciones</th><th>Uso recomendado</th></tr></thead>
+  <tbody>
+    <tr class="win"><td><b>Página publicada con agregados incrustados</b> (mismo lenguaje visual del deck)</td><td>Diseño a la medida, narrativa de la clave, enlace compartible sin cuentas, sin servidores</td><td>Se actualiza republicando en cada onda (trimestral)</td><td>Entregable principal</td></tr>
+    <tr><td>Looker Studio sobre la hoja «Agregados»</td><td>Gratis, Delirio puede administrarlo, se actualiza solo</td><td>Diseño limitado, poca animación, cuesta contar la historia de la clave</td><td>Respaldo de autoservicio para Delirio al cierre</td></tr>
+    <tr><td>Página conectada en vivo a Drive</td><td>Datos al instante</td><td>Cada lector necesita cuenta y conector autorizado, y no se puede compartir públicamente: no sirve para la junta de Delirio</td><td>Descartada</td></tr>
+    <tr><td>Aplicación a medida (base de datos + web)</td><td>Máxima flexibilidad</td><td>Sobredimensionada para 3 semanas y sin quién la mantenga</td><td>Descartada</td></tr>
+  </tbody>
+</table></div>
+
+<h2>4. Cronograma</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Semana</th><th>Entregable</th><th>Tareas</th><th>Esfuerzo</th><th>Responsables sugeridos</th></tr></thead>
+  <tbody>
+    <tr><td>2 · recolección</td><td>Formulario y backend</td><td>Montar Forms sin recolección de correo y con consentimiento; hoja «Crudo»; Apps Script de validación, puntuación y supresión; consola interna (3 pestañas)</td><td class="n">10–12 h</td><td>Maria del Mar, Paola (T-07) · Jose (script)</td></tr>
+    <tr><td>2 → 3</td><td>Monitoreo</td><td>Revisión diaria de cobertura y recordatorios por celda</td><td class="n">3 h</td><td>Kathe, Jorge Mario</td></tr>
+    <tr><td>3 · análisis</td><td>Agregados T0 + psicometría</td><td>Cierre de la muestra, limpieza, α/ω/r<sub>wg</sub>, codificación de abiertas, exportación JSON</td><td class="n">8–10 h</td><td>Equipo analítico (T-10)</td></tr>
+    <tr><td>4 · dashboard</td><td>Dashboard vivo v1</td><td>Vistas 1–4 y 6 con datos T0; vista 5 con proyección rotulada; medición pre y post del taller</td><td class="n">12–16 h</td><td>Jose (T-11) · Maricela (contenido)</td></tr>
+    <tr><td>5 · pitch</td><td>Pulido y traspaso</td><td>Pruebas de accesibilidad, traspaso de la hoja a una cuenta de Delirio, plantilla de Looker Studio de respaldo, guion del pitch</td><td class="n">6 h</td><td>Todo el equipo (T-13 a T-15)</td></tr>
+  </tbody>
+</table></div>
+
+<h2>5. Riesgos</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Riesgo</th><th>Mitigación</th></tr></thead>
+  <tbody>
+    <tr><td>Baja tasa de respuesta en el elenco</td><td>Correo de expectativa de la Directora, formulario apto para celular, recordatorios por celda desde la consola</td></tr>
+    <tr><td>Reidentificación en áreas pequeñas</td><td>Formulario sin correo, categorías amplias, supresión n &lt; 5 aplicada en el backend antes de exportar</td></tr>
+    <tr><td>Muestra demasiado pequeña para conclusiones finas</td><td>Reportar magnitudes con intervalos y agrupar áreas (Escena / Oficina) en lugar de forzar cruces</td></tr>
+    <tr><td>Datos simulados confundidos con reales</td><td>Rotular cada valor simulado como "proyección" en el visual y en la leyenda; nunca mezclarlos en el índice T0</td></tr>
+    <tr><td>Dependencia del equipo tras el curso</td><td>Traspaso de la hoja a Delirio, guía de una página para republicar cada onda y Looker Studio como respaldo</td></tr>
+  </tbody>
+</table></div>
+
+<div class="box warn"><b>Decisión pendiente del equipo:</b> si se pide un código de pareo autogenerado (por ejemplo, iniciales de la madre + día de nacimiento) para comparar antes y después de forma pareada. Mejora el análisis de la micro-intervención, pero añade fricción y riesgo de reidentificación. Sin él, la comparación pre y post se hace por proporciones.</div>
+
+</div>

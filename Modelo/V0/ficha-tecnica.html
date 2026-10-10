@@ -1,0 +1,211 @@
+<meta charset="utf-8">
+<title>Ficha técnica CLAVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: informe técnico de una columna (~820px), cuerpo en serif para lectura académica, títulos en Nunito, acentos de la paleta "Los Sabanales". Un solo look deliberado (papel claro). */
+:root{
+  --paper:#FFFDF6; --ink:#1E0A3C; --muted:#4B3F63; --night:#3F1F6E; --lav:#6E5F8F; --yellow:#F7F000; --rose:#DE4D74; --magenta:#C8085D; --jade:#5BB68A; --line:#E6DCC4; --soft:#F7F1E1;
+  --sans:"Nunito", "Segoe UI", system-ui, sans-serif; --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--serif);padding-inline:16px;padding-block:0 80px}
+.wrap{max-width:820px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--sans);font-weight:900;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:1.45rem;margin:2.4rem 0 .6rem;padding-top:1.4rem;border-top:2px solid var(--line)}
+h3{font-size:1.06rem;margin:1.4rem 0 .4rem}
+p{margin:.55rem 0;max-width:70ch}
+.head{background:var(--night);color:var(--paper);margin:0 -16px 2rem;padding:44px 16px 34px}
+.head .k{font:800 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--yellow)}
+.head h1{font-size:clamp(2rem,6vw,3rem);margin:.7rem 0 .5rem;color:var(--yellow)}
+.head p{font-family:var(--sans);font-weight:600;max-width:60ch}
+.head .meta{font:600 .85rem/1.5 var(--sans);color:#E9E0FF;margin-top:.8rem}
+.abstract{background:var(--soft);border-left:5px solid var(--magenta);border-radius:0 14px 14px 0;padding:16px 20px;margin:0 0 1rem}
+.abstract b{font-family:var(--sans)}
+.kw{font:700 .88rem/1.5 var(--sans);color:var(--muted)}
+.tbl{overflow-x:auto;margin:.8rem 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{border-collapse:collapse;width:100%;font:500 .9rem/1.45 var(--sans)}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:800;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.c{font-weight:900;white-space:nowrap}
+.eq{font:600 .95rem/1.9 var(--serif);background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:.8rem 0;overflow-x:auto}
+.eq .n{display:inline-block;min-width:2.2em;font:800 .78rem/1 var(--sans);color:var(--magenta)}
+.eq i{font-style:italic}
+.box{border-radius:14px;padding:14px 18px;margin:.8rem 0;font-family:var(--sans);font-size:.95rem}
+.box.dec{background:#EFE8FF}
+.box.warn{background:#FBE0E8}
+.box b{font-weight:900}
+ol,ul{padding-left:1.25rem;margin:.4rem 0}
+li{margin:.25rem 0;max-width:70ch}
+.refs li{font-size:.92rem;margin:.45rem 0;padding-left:.2rem}
+.refs{list-style:none;padding-left:0}
+.refs li{padding-left:2em;text-indent:-2em}
+sup{font-size:.7em}
+code{font:600 .85em ui-monospace,Menlo,Consolas,monospace;background:var(--soft);padding:1px 5px;border-radius:5px}
+.toc{font:700 .9rem/1.8 var(--sans);columns:2;column-gap:2rem;margin:.6rem 0 0}
+.toc a{color:var(--night);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+@media (max-width:600px){.toc{columns:1}}
+</style>
+
+<header class="head">
+  <div class="wrap">
+    <span class="k">Ficha técnica · documento metodológico</span>
+    <h1>Modelo CLAVE: instrumento de diagnóstico del sistema y la cultura de innovación</h1>
+    <p>Especificación del constructo, modelo de medición, algoritmo de puntuación, reglas de agregación, plan de validación y consideraciones éticas.</p>
+    <div class="meta">Versión V0 · octubre de 2026 · Grupo 4, Maestría en Gestión de la Innovación, Universidad Icesi · Caso de aplicación: Fundación Delirio (Cali, Colombia)</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="abstract">
+  <p><b>Resumen.</b> CLAVE es un instrumento de autoinforme de 45 ítems para estimar la madurez del sistema y la cultura de innovación de una organización. Se construyó por síntesis de diez marcos de referencia y se organiza en una taxonomía simétrica de cinco dimensiones (Conducción, Lazos, Activos, Vía y Efecto), quince subdimensiones y tres indicadores por subdimensión. Usa una escala ordinal de seis categorías sin punto medio. Los puntajes individuales se agregan al nivel organizacional bajo un modelo de composición de cambio de referente, condicionado a evidencia de acuerdo intragrupo. Se reportan un índice global, un índice de dispersión entre dimensiones (Desfase) y diferencias entre niveles jerárquicos (Desafine) y áreas. El documento explicita los supuestos y los límites de inferencia que impone una población pequeña.</p>
+  <p class="kw">Palabras clave: capacidad de innovación · cultura organizacional · diagnóstico organizacional · medición por autoinforme · agregación multinivel.</p>
+</div>
+
+<nav class="toc" aria-label="Contenido">
+  <a href="#c1">1. Objeto de medición</a><br><a href="#c2">2. Construcción del instrumento</a><br><a href="#c3">3. Estructura y modelo de medición</a><br><a href="#c4">4. Escala y codificación</a><br><a href="#c5">5. Algoritmo de puntuación</a><br><a href="#c6">6. Agregación organizacional</a><br><a href="#c7">7. Evidencias de validez y fiabilidad</a><br><a href="#c8">8. Análisis comparativo</a><br><a href="#c9">9. Control de sesgos</a><br><a href="#c10">10. Ética y protección de datos</a><br><a href="#c11">11. Limitaciones</a><br><a href="#c12">12. Referencias</a>
+</nav>
+
+<h2 id="c1">1. Objeto de medición</h2>
+<p><b>Constructo.</b> Se define la <i>capacidad organizacional de innovación</i> como el conjunto de condiciones (dirección estratégica, clima social y recursos) y de prácticas (procesos de ideación, experimentación y escalamiento) que hacen probable que una organización genere y lleve a valor propuestas nuevas, junto con la evidencia percibida de ese valor. La definición integra la perspectiva de sistema (estructuras y procesos) y la de cultura (valores y comportamientos observables), siguiendo la distinción operativa de Rao y Weintraub (2013) y la de Jakopec y Sušanj (2012) entre estrategia, ideas, procesos y clima.</p>
+<p><b>Unidad de análisis.</b> La organización y sus subunidades (áreas, niveles jerárquicos). <b>Fuente de datos:</b> percepción de los miembros sobre hechos y conductas observables en la organización.</p>
+<p><b>Uso previsto.</b> Diagnóstico formativo para orientar intervenciones y seguimiento longitudinal (mediciones trimestrales). No está diseñado para evaluar el desempeño de personas ni para comparaciones entre organizaciones sin un estudio previo de invarianza.</p>
+
+<h2 id="c2">2. Construcción del instrumento</h2>
+<ol>
+  <li><b>Revisión de marcos.</b> Se analizaron diez modelos: Rao y Weintraub (MIT Sloan), Jakopec y Sušanj, Carpenter (HYPE, 25 comportamientos), The Learning Accelerator (rúbrica de madurez), McKinsey (8 esenciales), Creus (Pentagrowth), IBM (diagnóstico de innovación), Woods (HYPE Canvas), Hwang y Horowitt (Rainforest Scorecard) y Satell (HBR).</li>
+  <li><b>Descomposición.</b> Cada marco se desagregó en sus unidades mínimas (dimensión, subdimensión, ítem).</li>
+  <li><b>Homologación.</b> Se agruparon los conceptos equivalentes en una matriz de correspondencias, independientemente del bloque donde cada autor los ubica (por ejemplo, la experimentación aparece como proceso en Rao y Weintraub y como agenda de aprendizaje en TLA).</li>
+  <li><b>Síntesis.</b> Se retuvieron las subdimensiones con respaldo en al menos dos marcos o un mandato explícito del curso (adopción de inteligencia artificial y trabajo digital). El bloque <i>Valores</i> de Rao y Weintraub se operacionaliza a través de conductas (dimensión Lazos) para evitar ítems actitudinales abstractos.</li>
+  <li><b>Redacción.</b> Se aplicaron tres criterios a cada ítem: un solo hecho por enunciado (sin ítems de doble cañón), referencia a conductas o hechos verificables y referente explícito ("Delirio" para hechos organizacionales, "mi equipo" para conductas de la subunidad).</li>
+</ol>
+
+<h2 id="c3">3. Estructura y modelo de medición</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Dimensión</th><th>Subdimensiones (3 ítems c/u)</th><th>Naturaleza de los indicadores</th></tr></thead>
+  <tbody>
+    <tr><td class="c">C · Conducción</td><td>Propósito · Patrocinio · Comunicación</td><td>Mayormente reflectiva (percepción compartida del rumbo)</td></tr>
+    <tr><td class="c">L · Lazos</td><td>Seguridad · Colaboración · Reconocimiento</td><td>Reflectiva (clima); L1 se apoya en el constructo de seguridad psicológica (Edmondson, 1999)</td></tr>
+    <tr><td class="c">A · Activos</td><td>Talento · Inversión · Tecnología</td><td>Formativa: los recursos componen la dimensión; no se espera que covaríen</td></tr>
+    <tr><td class="c">V · Vía</td><td>Ideación · Experimentación · Escalamiento</td><td>Mixta: etapas secuenciales de un proceso</td></tr>
+    <tr><td class="c">E · Efecto</td><td>Público · Sostenibilidad · Medición</td><td>Formativa: resultados distintos que suman valor</td></tr>
+  </tbody>
+</table></div>
+<p>La distinción entre indicadores reflectivos y formativos tiene consecuencias para la evaluación psicométrica (Jarvis et al., 2003). En las dimensiones reflectivas, la consistencia interna es un criterio pertinente. En las formativas, una baja correlación entre indicadores no indica un problema de medición, y la calidad se juzga por la cobertura del dominio y por la validez de contenido. Por ello, el índice global se trata como un <i>índice compuesto</i>, no como una escala unidimensional.</p>
+<p>La simetría 5 × 3 × 3 es una decisión de diseño. Garantiza que ninguna dimensión gane peso implícito por tener más ítems y permite comparar subdimensiones con la misma precisión nominal.</p>
+
+<h2 id="c4">4. Escala y codificación</h2>
+<p>Escala ordinal de seis categorías: 1 totalmente en desacuerdo, 2 en desacuerdo, 3 ligeramente en desacuerdo, 4 ligeramente de acuerdo, 5 de acuerdo, 6 totalmente de acuerdo.</p>
+<ul>
+  <li><b>Sin punto medio.</b> Reduce la respuesta de satisfacción mínima (<i>satisficing</i>) y el uso del punto medio como refugio ante la ambigüedad (Krosnick, 1991; Garland, 1991). El costo es que se fuerza la elección en quien tiene una postura genuinamente neutral; se asume a cambio de mayor discriminación.</li>
+  <li><b>Seis categorías.</b> Están dentro del rango asociado a buena fiabilidad y discriminación (Preston y Colman, 2000) y se leen bien en dispositivos móviles.</li>
+  <li><b>Sin opción "No sé".</b> La instrucción establece que no haber observado una práctica es información válida. Supuesto: la ausencia de evidencia percibida es un dato diagnóstico, en particular para las prácticas de comunicación.</li>
+  <li><b>Tratamiento métrico.</b> Para el cálculo de índices se asigna a las categorías una métrica de intervalo (ver §5). Es una práctica habitual cuando se promedian varios ítems (Carifio y Perla, 2007), pero las comparaciones inferenciales a nivel de ítem se hacen con métodos ordinales (§8).</li>
+</ul>
+
+<h2 id="c5">5. Algoritmo de puntuación</h2>
+<p>Sea <i>x<sub>rijk</sub></i> ∈ {1,…,6} la respuesta del encuestado <i>r</i> al ítem <i>k</i> de la subdimensión <i>j</i> de la dimensión <i>i</i>.</p>
+<div class="eq">
+  <span class="n">(1)</span> Ítem: <i>s<sub>rijk</sub></i> = 20 · (<i>x<sub>rijk</sub></i> − 1) &nbsp;∈ [0, 100]<br>
+  <span class="n">(2)</span> Subdimensión: <i>F<sub>rij</sub></i> = media de los <i>s<sub>rijk</sub></i> válidos, si hay al menos 2 de 3; si no, valor perdido<br>
+  <span class="n">(3)</span> Dimensión: <i>P<sub>ri</sub></i> = media de los <i>F<sub>rij</sub></i> válidos, si hay al menos 2 de 3<br>
+  <span class="n">(4)</span> Índice CLAVE individual: <i>I<sub>r</sub></i> = Σ<sub>i</sub> <i>w<sub>i</sub></i> · <i>P<sub>ri</sub></i>, con <i>w<sub>i</sub></i> = 0,20<br>
+  <span class="n">(5)</span> Agregado organizacional de cualquier puntaje: media de los encuestados válidos, reportada con su desviación estándar e intervalo de confianza al 95 % (bootstrap, 2.000 remuestreos)<br>
+  <span class="n">(6)</span> Desfase: <i>D</i> = máx<sub>i</sub> <i>P̄<sub>i</sub></i> − mín<sub>i</sub> <i>P̄<sub>i</sub></i> &nbsp;(umbral de alerta inicial: 20)<br>
+  <span class="n">(7)</span> Desafine por dimensión: Δ<sub>i</sub> = <i>P̄<sub>i</sub></i><sup>Dirección</sup> − <i>P̄<sub>i</sub></i><sup>Operación</sup> &nbsp;(umbral inicial: 15)<br>
+  <span class="n">(8)</span> Brecha horizontal: <i>H<sub>i</sub></i> = máx<sub>a</sub> <i>P̄<sub>ia</sub></i> − mín<sub>a</sub> <i>P̄<sub>ia</sub></i> entre áreas <i>a</i> con <i>n</i> ≥ 5 (umbral inicial: 15)<br>
+  <span class="n">(9)</span> Evidencia por ítem: <i>E<sub>k</sub></i> = proporción de respuestas ≥ 5
+</div>
+<p><b>Ponderación.</b> Los pesos iguales son una decisión <i>a priori</i>, justificada por la ausencia de datos previos y por el supuesto de complementariedad de factores de Jakopec y Sušanj (2012). Tras la primera medición pueden estimarse pesos empíricos, por ejemplo por regresión de las dimensiones de condición y proceso sobre Efecto, siempre que el tamaño muestral lo permita.</p>
+<p><b>Bandas de madurez</b> (adaptadas de la rúbrica de The Learning Accelerator): Entrando 0–49 · Emergiendo 50–69 · Adaptando 70–84 · Transformando 85–100. Las bandas son convenciones interpretativas, no puntos de corte validados.</p>
+<p><b>Umbrales.</b> Los valores de 20 y 15 puntos son heurísticos: equivalen a una y a tres cuartos de categoría de respuesta, respectivamente. Deben recalibrarse con la distribución observada, por ejemplo usando la diferencia mínima detectable dado el error estándar.</p>
+
+<h2 id="c6">6. Agregación al nivel organizacional</h2>
+<p>Los ítems usan referentes colectivos ("Delirio", "mi equipo"), lo que corresponde a un <b>modelo de composición de cambio de referente</b> (<i>referent-shift consensus</i>; Chan, 1998). Agregar las respuestas individuales a puntajes de área u organización exige evidencia de acuerdo intragrupo:</p>
+<ul>
+  <li><i>r</i><sub>wg(j)</sub> (James et al., 1984), con distribución nula uniforme de 6 categorías; criterio convencional ≥ 0,70.</li>
+  <li>ICC(1) y ICC(2) entre áreas, cuando haya al menos 3 áreas con <i>n</i> ≥ 5.</li>
+</ul>
+<p>Si el acuerdo es bajo, el promedio no se interpreta como clima compartido y la dispersión se reporta como hallazgo (modelo de dispersión; Chan, 1998). Esto es especialmente relevante para el Desafine: una diferencia grande entre niveles es a la vez un resultado y una señal de que no existe una percepción común.</p>
+
+<h2 id="c7">7. Evidencias de validez y fiabilidad</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Fuente de evidencia</th><th>Procedimiento</th><th>Criterio</th><th>Estado</th></tr></thead>
+  <tbody>
+    <tr><td>Contenido</td><td>Juicio de 5–7 expertos (docentes del iNNLab, equipo de Delirio) sobre pertinencia y claridad de cada ítem</td><td>V de Aiken ≥ 0,70 (Aiken, 1985) o CVR de Lawshe (1975) según el número de jueces</td><td>Pendiente</td></tr>
+    <tr><td>Procesos de respuesta</td><td>Entrevistas cognitivas con 3–5 miembros de Delirio (pensamiento en voz alta y sondeo verbal)</td><td>Comprensión unívoca de cada ítem (Willis, 2005)</td><td>Pendiente</td></tr>
+    <tr><td>Consistencia interna</td><td>α de Cronbach (1951) y ω de McDonald (1999) por dimensión reflectiva (C, L)</td><td>≥ 0,70 (Nunnally y Bernstein, 1994); correlación ítem-resto ≥ 0,30</td><td>Tras la recolección</td></tr>
+    <tr><td>Estructura interna</td><td>Análisis factorial confirmatorio con estimador WLSMV para datos ordinales</td><td>CFI y TLI ≥ 0,95; RMSEA ≤ 0,06; SRMR ≤ 0,08 (Hu y Bentler, 1999)</td><td>Solo si <i>n</i> ≥ 200 (agregando organizaciones u ondas)</td></tr>
+    <tr><td>Relación con otras variables</td><td>Correlación de las dimensiones de condición y proceso con Efecto y con indicadores objetivos de Delirio (estrenos, nuevas fuentes de ingreso)</td><td>Asociaciones positivas y en el sentido teórico</td><td>Con 2 o más ondas</td></tr>
+  </tbody>
+</table></div>
+<div class="box warn"><b>Restricción de tamaño muestral.</b> Con una población organizacional probablemente inferior a 100 personas, el análisis factorial y las pruebas de invarianza entre grupos no son estimables con precisión. La evidencia de la primera medición se apoya en validez de contenido, procesos de respuesta y fiabilidad de las dimensiones reflectivas; la validación estructural requiere acumular datos.</div>
+
+<h2 id="c8">8. Análisis comparativo</h2>
+<ul>
+  <li><b>Comparaciones entre niveles o áreas:</b> pruebas no paramétricas (Mann-Whitney, Kruskal-Wallis) y tamaño del efecto <i>δ</i> de Cliff (1993). Con <i>n</i> pequeños se prioriza la magnitud del efecto y su intervalo sobre el valor <i>p</i>.</li>
+  <li><b>Pre y post de la micro-intervención:</b> si la medición es pareada (mismo código anónimo autogenerado), prueba de Wilcoxon de rangos con signo y diferencia en el porcentaje de evidencia de C1.1 y C1.2; si no es pareada, comparación de proporciones con intervalo de Wilson. El diseño es pre-experimental de un grupo: no permite atribución causal fuerte.</li>
+  <li><b>Supresión:</b> ninguna celda con <i>n</i> &lt; 5 se publica; las áreas pequeñas se agrupan (Escena u Oficina, por ejemplo).</li>
+  <li><b>Preguntas abiertas:</b> análisis temático (codificación inductiva por dos codificadores, acuerdo con κ de Cohen ≥ 0,70) para identificar causas raíz de las brechas.</li>
+</ul>
+
+<h2 id="c9">9. Control de sesgos</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Sesgo</th><th>Riesgo</th><th>Remedio en CLAVE</th></tr></thead>
+  <tbody>
+    <tr><td>Varianza de método común</td><td>Fuente única y momento único inflan las correlaciones (Podsakoff et al., 2003)</td><td>Remedios procedimentales: anonimato, redacción neutra, bloques separados por dimensión, ítems de hechos verificables; triangulación con indicadores objetivos en ondas siguientes</td></tr>
+    <tr><td>Deseabilidad social</td><td>Respuestas complacientes con la Dirección</td><td>Formulario sin datos identificatorios; supresión de celdas pequeñas; comunicación previa de la Dirección que legitima la franqueza</td></tr>
+    <tr><td>Aquiescencia</td><td>Tendencia a estar de acuerdo</td><td>Escala sin punto medio y ítems de hechos concretos. Limitación: no hay ítems invertidos; se monitorea la respuesta en línea recta</td></tr>
+    <tr><td>Respuesta descuidada</td><td>Datos de baja calidad</td><td>Ítem de control de atención (Q0); exclusión de quienes lo fallan y de tiempos de respuesta extremadamente bajos</td></tr>
+    <tr><td>No respuesta</td><td>Sobrerrepresentación de los más comprometidos</td><td>Seguimiento de la tasa de respuesta por celda área × nivel; recordatorios focalizados; reporte de la cobertura junto a los resultados</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="c10">10. Ética y protección de datos</h2>
+<ul>
+  <li>Participación voluntaria con consentimiento informado al inicio del formulario: propósito, uso agregado, anonimato y derecho a no responder.</li>
+  <li>Tratamiento de datos conforme a la Ley 1581 de 2012 (Colombia) de protección de datos personales: no se recolectan nombres, correos ni identificadores directos; las variables de perfil se definen con categorías amplias para impedir la reidentificación.</li>
+  <li>Los datos crudos se almacenan con acceso restringido al equipo consultor. La organización recibe solo agregados que cumplen la regla de <i>n</i> ≥ 5.</li>
+  <li>Los resultados no se usan para evaluar el desempeño de personas.</li>
+</ul>
+
+<h2 id="c11">11. Limitaciones</h2>
+<ol>
+  <li>El instrumento mide percepción declarada; no sustituye la verificación documental de prácticas y resultados.</li>
+  <li>Validez estructural no demostrada en la versión V0, por las restricciones de tamaño muestral (§7).</li>
+  <li>Pesos, bandas y umbrales son convenciones <i>a priori</i> sujetas a recalibración.</li>
+  <li>Las dimensiones formativas (Activos, Efecto) son sensibles a la selección de indicadores: omitir un recurso o resultado relevante cambia el constructo.</li>
+  <li>El diseño pre-post de la micro-intervención carece de grupo de control; los cambios pueden reflejar efectos de prueba o de expectativa.</li>
+  <li>La adaptación al contexto (una fundación de espectáculo en Cali) limita la generalización a otras organizaciones sin estudios de invarianza.</li>
+</ol>
+
+<h2 id="c12">12. Referencias</h2>
+<ul class="refs">
+  <li>Aiken, L. R. (1985). Three coefficients for analyzing the reliability and validity of ratings. <i>Educational and Psychological Measurement, 45</i>(1), 131–142.</li>
+  <li>Carifio, J., y Perla, R. J. (2007). Ten common misunderstandings, misconceptions, persistent myths and urban legends about Likert scales and Likert response formats and their antidotes. <i>Journal of Social Sciences, 3</i>(3), 106–116.</li>
+  <li>Chan, D. (1998). Functional relations among constructs in the same content domain at different levels of analysis: A typology of composition models. <i>Journal of Applied Psychology, 83</i>(2), 234–246.</li>
+  <li>Cliff, N. (1993). Dominance statistics: Ordinal analyses to answer ordinal questions. <i>Psychological Bulletin, 114</i>(3), 494–509.</li>
+  <li>Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. <i>Psychometrika, 16</i>(3), 297–334.</li>
+  <li>Edmondson, A. (1999). Psychological safety and learning behavior in work teams. <i>Administrative Science Quarterly, 44</i>(2), 350–383.</li>
+  <li>Garland, R. (1991). The mid-point on a rating scale: Is it desirable? <i>Marketing Bulletin, 2</i>, 66–70.</li>
+  <li>Hu, L., y Bentler, P. M. (1999). Cutoff criteria for fit indexes in covariance structure analysis: Conventional criteria versus new alternatives. <i>Structural Equation Modeling, 6</i>(1), 1–55.</li>
+  <li>Jakopec, A., y Sušanj, Z. (2012). <i>Organizational innovation diagnosis: A case study.</i> Universidad de Rijeka.</li>
+  <li>James, L. R., Demaree, R. G., y Wolf, G. (1984). Estimating within-group interrater reliability with and without response bias. <i>Journal of Applied Psychology, 69</i>(1), 85–98.</li>
+  <li>Jarvis, C. B., MacKenzie, S. B., y Podsakoff, P. M. (2003). A critical review of construct indicators and measurement model misspecification in marketing and consumer research. <i>Journal of Consumer Research, 30</i>(2), 199–218.</li>
+  <li>Krosnick, J. A. (1991). Response strategies for coping with the cognitive demands of attitude measures in surveys. <i>Applied Cognitive Psychology, 5</i>(3), 213–236.</li>
+  <li>Lawshe, C. H. (1975). A quantitative approach to content validity. <i>Personnel Psychology, 28</i>(4), 563–575.</li>
+  <li>McDonald, R. P. (1999). <i>Test theory: A unified treatment.</i> Lawrence Erlbaum.</li>
+  <li>Nunnally, J. C., y Bernstein, I. H. (1994). <i>Psychometric theory</i> (3.ª ed.). McGraw-Hill.</li>
+  <li>Podsakoff, P. M., MacKenzie, S. B., Lee, J.-Y., y Podsakoff, N. P. (2003). Common method biases in behavioral research: A critical review of the literature and recommended remedies. <i>Journal of Applied Psychology, 88</i>(5), 879–903.</li>
+  <li>Preston, C. C., y Colman, A. M. (2000). Optimal number of response categories in rating scales: Reliability, validity, discriminating power, and respondent preferences. <i>Acta Psychologica, 104</i>(1), 1–15.</li>
+  <li>Rao, J., y Weintraub, J. (2013). How innovative is your company's culture? <i>MIT Sloan Management Review, 54</i>(3), 29–37.</li>
+  <li>Willis, G. B. (2005). <i>Cognitive interviewing: A tool for improving questionnaire design.</i> Sage.</li>
+  <li>Marcos complementarios del corpus del curso: Carpenter (HYPE Innovation), The Learning Accelerator, McKinsey &amp; Company (<i>The eight essentials of innovation performance</i>), Creus (<i>Pentagrowth</i>), IBM (<i>Innovation diagnostic</i>), Woods (<i>HYPE Innovation Canvas</i>), Hwang y Horowitt (<i>Rainforest Scorecard</i>), Satell (<i>Harvard Business Review</i>).</li>
+</ul>
+
+</div>
