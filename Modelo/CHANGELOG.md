@@ -1,5 +1,11 @@
 # Changelog — Modelo CLAVE
 
+## V0.8 — 2026-10-11
+
+- El fondo lavanda (#6E5F8F) se reemplaza por azul rey (#1F4FA8) en el deck, el índice y los documentos de V0: más contraste con el amarillo (6,35:1) y el crema (7,21:1). Decisión del Sync 1.
+- Lilas pálidos de apoyo pasan a azul pálido (#E4ECFA, #DCE6F7) o crema.
+- Maricela Valencia sale de los documentos: ya no hace parte del Grupo 4.
+
 ## V0.7 — 2026-10-10 · versión congelada
 
 - Deck: cierre con anillos en clave, etiquetas de la clave legibles, lámina 5 alineada en espejo, ritmo vertical fijo en las láminas de pilar, árbol 5 × 3 × 3 (columna = pilar, fila = factor, punto = pregunta) y diseño de la sesión de 120′ del taller.
