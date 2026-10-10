@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guía de Conexión CLAVE</title>
+<meta name="description" content="Paso a paso para que cada integrante del Grupo 4 conecte su IA al repositorio del Modelo CLAVE y publique sus hallazgos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Kaushan+Script&display=swap">
+<style>
+/* Layout: guía de una columna (~920px): tres pasos grandes, un selector de herramienta y una sección por IA. Paleta CLAVE V0.9. */
+:root{
+  --rey:#1F4FA8; --noche:#2E1466; --tinta:#170A33; --papel:#FFF8E6;
+  --sol:#FFE42A; --rosa:#FAAED4; --menta:#47D59B; --mango:#FA9331; --lila:#A5A0F6;
+  --bg:#FFFDF6; --fg:var(--tinta); --muted:#4B3F63; --sheet:#FFFFFF; --soft:#F7F1E1; --line:#E6DCC4;
+  --ok-bg:#D6F7E8; --ok-fg:#0A7751; --warn-bg:#FFEADB; --warn-fg:#A84B00; --risk-bg:#FFE7F2; --risk-fg:#B02A6B; --info-bg:#E4ECFA;
+  --sans:"Nunito","Segoe UI",system-ui,sans-serif; --script:"Kaushan Script","Brush Script MT",cursive; --mono:ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#120827; --fg:#FFF8E6; --muted:#CFC6E8; --sheet:#1D0F3D; --soft:#251450; --line:#3A2A66;
+  --ok-bg:#0E3326; --ok-fg:#7BE6B8; --warn-bg:#3A2410; --warn-fg:#FFB877; --risk-bg:#3B1630; --risk-fg:#FFB3D6; --info-bg:#16295A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#120827; --fg:#FFF8E6; --muted:#CFC6E8; --sheet:#1D0F3D; --soft:#251450; --line:#3A2A66;
+  --ok-bg:#0E3326; --ok-fg:#7BE6B8; --warn-bg:#3A2410; --warn-fg:#FFB877; --risk-bg:#3B1630; --risk-fg:#FFB3D6; --info-bg:#16295A; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:600 16.5px/1.6 var(--sans);padding-inline:16px;padding-block:0 72px}
+.wrap{max-width:920px;margin:0 auto;display:grid}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:1.55rem}
+h3{font-size:1.08rem}
+p{margin:0;max-width:66ch}
+a{color:inherit;text-underline-offset:3px;font-weight:800}
+.btn-name{font-weight:900;background:var(--soft);padding:1px 8px;border-radius:6px;white-space:nowrap;box-shadow:inset 0 0 0 1.5px var(--line)}
+code{font:700 .86em var(--mono);background:var(--soft);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--fg);outline-offset:2px;box-shadow:0 0 0 6px var(--sol);border-radius:8px}
+.k{font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+
+.head{background:var(--rey);color:var(--papel);margin:0 -16px;padding:44px 16px 34px}
+.head .in{max-width:920px;margin:0 auto;display:grid;gap:12px}
+.head .k{color:var(--sol)}
+.head h1{font-size:clamp(2.2rem,7vw,3.6rem);color:var(--sol)}
+.head h1 .script{font-family:var(--script);font-weight:400;color:var(--papel);font-size:.58em;margin-left:.15em;display:inline-block;transform:rotate(-3deg)}
+.head p{font-size:1.08rem;max-width:62ch}
+.goal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:6px}
+.goal div{background:var(--noche);border-radius:14px;padding:12px 14px;font-weight:700;font-size:.92rem;min-width:0}
+.goal b{display:block;color:var(--sol);font-weight:900;font-size:1rem}
+
+section{display:grid;gap:14px;padding-block:34px 4px}
+section+section{border-top:2px dashed var(--line);margin-top:28px}
+.lede{color:var(--muted)}
+
+/* Glosario */
+.gloss{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.term{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:4px;align-content:start;min-width:0}
+.term b{font-weight:900;font-size:1.1rem}
+.term span{font-size:.94rem}
+
+/* Ruta en tres pasos */
+.route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.route li{display:flex;gap:12px;align-items:flex-start;background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-width:0}
+.route li a{text-decoration:none}
+.n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;font:900 1.1rem/1 var(--sans);color:var(--tinta);box-shadow:inset 0 0 0 2.5px var(--tinta)}
+.n.s1{background:var(--sol)}.n.s2{background:var(--rosa)}.n.s3{background:var(--menta)}
+.route b{display:block;font-weight:900}
+.route small{display:block;font-weight:700;color:var(--muted);font-size:.86rem}
+
+/* Pasos numerados */
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--fg);color:var(--bg);font:900 .9rem/1 var(--sans)}
+.steps li > div{min-width:0;padding-top:4px}
+.steps li small{display:block;color:var(--muted);font-weight:700;font-size:.88rem;margin-top:2px}
+
+.box{border-radius:16px;padding:14px 18px;display:grid;gap:4px}
+.box b{font-weight:900}
+.box.ok{background:var(--ok-bg)}.box.ok b{color:var(--ok-fg)}
+.box.plan{background:var(--warn-bg)}.box.plan b{color:var(--warn-fg)}
+.box.risk{background:var(--risk-bg)}.box.risk b{color:var(--risk-fg)}
+.box.info{background:var(--info-bg)}
+
+/* Selector de herramienta */
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--sheet);box-shadow:inset 0 0 0 2px var(--line);text-decoration:none;font-weight:900;min-height:44px}
+.pick a:hover{box-shadow:inset 0 0 0 2px var(--fg)}
+.pick i{width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--tinta)}
+.tool{background:var(--sheet);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;scroll-margin-top:16px}
+.tool > header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 18px;color:var(--tinta)}
+.tool > header h3{font-size:1.25rem}
+.tool > header span{font-weight:800;font-size:.84rem}
+.tool .body{padding:16px 18px 18px;display:grid;gap:14px}
+.t-claude > header{background:var(--sol)}.t-gpt > header{background:var(--menta)}.t-gem > header{background:var(--lila)}.t-spark > header{background:var(--mango)}
+.chip{font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--tinta);color:var(--papel)}
+
+/* Bloques para copiar */
+.copy{background:var(--noche);color:var(--papel);border-radius:16px;padding:14px;display:grid;gap:10px}
+.copy pre{margin:0;white-space:pre-wrap;font:700 .95rem/1.55 var(--sans);background:rgba(255,248,230,.08);border-radius:10px;padding:12px 14px}
+.copy button{justify-self:start;font:900 .92rem var(--sans);padding:10px 18px;border-radius:999px;border:0;background:var(--sol);color:var(--tinta);cursor:pointer;min-height:44px}
+.copy .st{font-size:.85rem;font-weight:700;min-height:1.2em}
+
+.folders{display:flex;flex-wrap:wrap;gap:8px}
+.folders code{font-size:.9rem;padding:6px 10px}
+.decis{display:flex;flex-wrap:wrap;gap:8px}
+.decis span{font-weight:800;font-size:.85rem;padding:5px 12px;border-radius:999px}
+.d-int{background:var(--ok-bg);color:var(--ok-fg)}.d-par{background:var(--info-bg)}.d-esp{background:var(--warn-bg);color:var(--warn-fg)}.d-des{background:var(--risk-bg);color:var(--risk-fg)}
+.checks{margin:0;padding-left:1.2rem;display:grid;gap:4px}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.45;min-width:520px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--soft);font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tbody th{font-weight:800;width:40%}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.foot{margin-top:28px;font-size:.85rem;color:var(--muted)}
+
+@media (max-width:720px){.gloss,.route,.goal{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="in">
+    <span class="k">Grupo 4 · Modelo CLAVE · Para todo el equipo</span>
+    <h1>Guía de conexión <span class="script">al repo</span></h1>
+    <p>Todo el proyecto vive en un solo lugar. Con esta guía conectas tu IA a ese lugar para que trabaje con el mismo contexto que el resto del equipo, y aprendes a enviar tus hallazgos para que alimenten el modelo. No necesitas saber programar.</p>
+    <div class="goal">
+      <div><b>Leer todo</b>Documento Ancla, modelo, preguntas y notas de clase.</div>
+      <div><b>Publicar lo tuyo</b>Cada quien tiene su carpeta de hallazgos.</div>
+      <div><b>Integrar con revisión</b>Jose revisa cada envío antes de que entre al modelo.</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section aria-labelledby="s-gloss">
+  <h2 id="s-gloss">Tres palabras y listo</h2>
+  <div class="gloss">
+    <div class="term"><b>GitHub</b><span>La página web donde guardamos el proyecto. Es como una carpeta compartida que recuerda cada cambio.</span></div>
+    <div class="term"><b>Repositorio</b><span>Nuestra carpeta en GitHub: <code>josebdiaz/innovation-model</code>. La IA lee de aquí.</span></div>
+    <div class="term"><b>Pull request</b><span>Un envío para revisión. Así mandas un hallazgo: Jose lo revisa y lo aprueba.</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="s-ruta">
+  <h2 id="s-ruta">La ruta completa</h2>
+  <ol class="route">
+    <li><span class="n s1">1</span><a href="#paso-1"><b>Acepta la invitación</b><small>5 minutos · una sola vez</small></a></li>
+    <li><span class="n s2">2</span><a href="#paso-2"><b>Conecta tu IA</b><small>10 minutos · solo tu herramienta</small></a></li>
+    <li><span class="n s3">3</span><a href="#paso-3"><b>Publica hallazgos</b><small>Cada vez que tengas uno</small></a></li>
+  </ol>
+</section>
+
+<section id="paso-1" aria-labelledby="s-p1">
+  <h2 id="s-p1"><span class="n s1" style="display:inline-grid;width:34px;height:34px;font-size:.95rem;vertical-align:4px;margin-right:8px">1</span>Acepta la invitación</h2>
+  <ol class="steps">
+    <li><div>Si no tienes cuenta en GitHub, créala gratis en <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a> y mándale tu nombre de usuario a Jose por WhatsApp.</div></li>
+    <li><div>Busca en tu correo el mensaje de GitHub que dice que Jose te invitó a <b>innovation-model</b>.<small>Si no aparece, revisa la carpeta de spam o promociones.</small></div></li>
+    <li><div>Abre el mensaje y pulsa <span class="btn-name">View invitation</span>, luego <span class="btn-name">Accept invitation</span>.</div></li>
+    <li><div>Listo: ya puedes ver el proyecto en <a href="https://github.com/josebdiaz/innovation-model" target="_blank" rel="noopener">github.com/josebdiaz/innovation-model</a>.</div></li>
+  </ol>
+  <div class="box ok"><b>No puedes dañar nada.</b><p>La versión principal del proyecto está protegida: ningún cambio entra sin que Jose lo revise.</p></div>
+  <div class="box plan"><b>Si la invitación venció o no llegó</b><p>Escríbele a Jose por WhatsApp con tu usuario de GitHub y te la reenvía.</p></div>
+</section>
+
+<section id="paso-2" aria-labelledby="s-p2">
+  <h2 id="s-p2"><span class="n s2" style="display:inline-grid;width:34px;height:34px;font-size:.95rem;vertical-align:4px;margin-right:8px">2</span>Conecta tu IA</h2>
+  <p class="lede">Sigue solo la sección de la herramienta que usas. Las demás puedes saltarlas.</p>
+  <nav class="pick" aria-label="Elige tu herramienta">
+    <a href="#claude"><i style="background:var(--sol)"></i>Claude</a>
+    <a href="#chatgpt"><i style="background:var(--menta)"></i>ChatGPT</a>
+    <a href="#gemini"><i style="background:var(--lila)"></i>Gemini</a>
+    <a href="#spark"><i style="background:var(--mango)"></i>Gemini Spark</a>
+  </nav>
+
+  <article class="tool t-claude" id="claude">
+    <header><h3>Claude</h3><span class="chip">Conexión directa</span><span>Se actualiza con un clic</span></header>
+    <div class="body">
+      <ol class="steps">
+        <li><div>En claude.ai, abre <span class="btn-name">Proyectos</span> y crea uno nuevo llamado <b>Modelo CLAVE</b>.</div></li>
+        <li><div>En la parte del conocimiento del proyecto, pulsa <span class="btn-name">+</span> y elige <span class="btn-name">GitHub</span>.</div></li>
+        <li><div>Autoriza el acceso con tu cuenta de GitHub cuando te lo pida.</div></li>
+        <li><div>Busca y elige <code>josebdiaz/innovation-model</code>. Claude guarda una copia del proyecto.</div></li>
+        <li><div>Cuando Jose avise de cambios, abre el proyecto y pulsa el botón de sincronizar del repositorio.<small>La copia no se actualiza sola.</small></div></li>
+      </ol>
+      <div class="box plan"><b>Plan B</b><p>Si no ves la opción de GitHub, sigue el camino del ZIP de la sección de ChatGPT y sube los archivos al conocimiento del proyecto.</p></div>
+    </div>
+  </article>
+
+  <article class="tool t-gpt" id="chatgpt">
+    <header><h3>ChatGPT</h3><span class="chip">Archivos en un proyecto</span><span>Funciona en cualquier plan</span></header>
+    <div class="body">
+      <ol class="steps">
+        <li><div>Abre <a href="https://github.com/josebdiaz/innovation-model" target="_blank" rel="noopener">el repositorio</a>, pulsa el botón verde <span class="btn-name">Code</span> y elige <span class="btn-name">Download ZIP</span>.</div></li>
+        <li><div>Abre el ZIP en tu computador para descomprimirlo.</div></li>
+        <li><div>En ChatGPT, crea un proyecto llamado <b>Modelo CLAVE</b>.</div></li>
+        <li><div>Sube al proyecto estos archivos de la carpeta descomprimida:
+          <ul class="checks"><li><code>Documento_Ancla_Tareas_y_Seguimiento.md</code></li><li><code>README.md</code></li><li><code>Modelo/CHANGELOG.md</code> y <code>Modelo/V0/README.md</code></li><li><code>Modelo/V0/elementos/modelo-clave.json</code></li><li><code>Modelo/V0/bateria-v0.csv</code></li><li><code>Logs_Clase_Sesion_1_Haciendolo_Posible.md</code></li></ul></div></li>
+        <li><div>Cuando Jose avise de cambios, baja el ZIP otra vez y reemplaza los archivos que cambiaron.</div></li>
+      </ol>
+      <div class="box info"><b>Opcional: conexión directa</b><p>En Ajustes puedes instalar la app de GitHub. Solo lee, se autoriza con tu propia cuenta de GitHub y, según tu plan, a veces solo funciona en investigación profunda o en modo agente. Si no te muestra el repositorio, quédate con los archivos.</p></div>
+    </div>
+  </article>
+
+  <article class="tool t-gem" id="gemini">
+    <header><h3>Gemini</h3><span class="chip">Importar en el chat</span><span>Solo desde el computador</span></header>
+    <div class="body">
+      <ol class="steps">
+        <li><div>Abre gemini.google.com en el computador y empieza un chat nuevo.</div></li>
+        <li><div>Pulsa <span class="btn-name">+</span> y elige <span class="btn-name">Importar código</span>.</div></li>
+        <li><div>Pega esta dirección: <code>https://github.com/josebdiaz/innovation-model</code>.<small>El repositorio es público, así que no tienes que vincular tu cuenta de GitHub.</small></div></li>
+        <li><div>Haz tus preguntas en ese mismo chat. En un chat nuevo hay que importarlo otra vez.</div></li>
+      </ol>
+      <div class="box info"><b>Límites</b><p>Un repositorio por chat, hasta 5.000 archivos y 100 MB. Nuestro proyecto cabe sin problema.</p></div>
+    </div>
+  </article>
+
+  <article class="tool t-spark" id="spark">
+    <header><h3>Gemini Spark</h3><span class="chip">Carpeta de Drive</span><span>Se actualiza a mano</span></header>
+    <div class="body">
+      <p>Spark no se conecta con GitHub por ahora, pero sí lee Google Drive. Jose comparte una carpeta con copias de los archivos clave.</p>
+      <ol class="steps">
+        <li><div>Acepta la carpeta compartida <b>CLAVE · Contexto del repo</b> en tu Google Drive.</div></li>
+        <li><div>Pídele a Spark que trabaje con los archivos de esa carpeta.</div></li>
+        <li><div>Cuando Jose avise de cambios, la carpeta ya tendrá las copias nuevas.</div></li>
+      </ol>
+      <div class="box risk"><b>Cuidado con imitaciones</b><p>En GitHub circulan programas de escritorio que dicen ser "Gemini Spark" y no son de Google. Piden control total del computador. No instales ninguno.</p></div>
+    </div>
+  </article>
+
+  <h3 style="margin-top:8px">Prueba que quedó conectada</h3>
+  <p>Copia esta pregunta en tu IA. Si responde con tareas reales de la matriz (códigos como T-02 o T-07), quedó bien. Si inventa tareas o dice que no tiene acceso, revisa los pasos de tu herramienta.</p>
+  <div class="copy">
+    <pre id="q-prueba">¿Qué tareas del Documento Ancla siguen pendientes? Dime el código, la tarea y quién la tiene asignada.</pre>
+    <button type="button" data-copy="q-prueba">Copiar pregunta</button>
+    <span class="st" role="status"></span>
+  </div>
+</section>
+
+<section id="paso-3" aria-labelledby="s-p3">
+  <h2 id="s-p3"><span class="n s3" style="display:inline-grid;width:34px;height:34px;font-size:.95rem;vertical-align:4px;margin-right:8px">3</span>Publica tus hallazgos</h2>
+  <p class="lede">Un hallazgo es algo que aprendiste y que puede mejorar el modelo: un referente, una pregunta mal planteada, un dato de Delirio. Va un archivo por hallazgo, en tu carpeta.</p>
+  <div class="folders" aria-label="Carpetas por integrante">
+    <code>Hallazgos/jose/</code><code>Hallazgos/kate/</code><code>Hallazgos/mar/</code><code>Hallazgos/paola/</code><code>Hallazgos/jorge-mario/</code>
+  </div>
+
+  <h3>Pídele a tu IA que lo redacte</h3>
+  <div class="copy">
+    <pre id="q-hallazgo">Redacta un hallazgo para el Modelo CLAVE con la plantilla de la carpeta Hallazgos. Mi hallazgo es: [escribe aquí lo que encontraste y de dónde viene]. Antes de entregarlo, revisa que cumpla las reglas del profesor: una sola idea por pregunta, que respete la simetría 5 pilares × 3 factores × 3 preguntas, que hable de hechos observables y que no sesgue el modelo hacia una sola industria.</pre>
+    <button type="button" data-copy="q-hallazgo">Copiar mensaje</button>
+    <span class="st" role="status"></span>
+  </div>
+
+  <h3>Súbelo desde el navegador</h3>
+  <ol class="steps">
+    <li><div>En el repositorio, entra a <code>Hallazgos</code> y luego a tu carpeta.</div></li>
+    <li><div>Pulsa <span class="btn-name">Add file</span> y elige <span class="btn-name">Create new file</span>. Ponle un nombre corto, por ejemplo <code>indice-andi.md</code>, y pega el texto que redactó tu IA.</div></li>
+    <li><div>Pulsa <span class="btn-name">Commit changes…</span>. En la ventana que se abre, deja marcada la opción de crear una rama nueva y empezar un pull request.<small>GitHub crea la rama solo. No tienes que hacer nada más con ella.</small></div></li>
+    <li><div>Pulsa <span class="btn-name">Propose changes</span> y luego <span class="btn-name">Create pull request</span>.</div></li>
+    <li><div>Avisa en el WhatsApp del equipo que subiste un hallazgo.</div></li>
+  </ol>
+
+  <div class="box ok"><b>Qué pasa después</b><p>Jose lo revisa en máximo 48 horas. Cada hallazgo recibe un código y una de estas decisiones, siempre con la razón:</p>
+    <div class="decis" style="margin-top:6px"><span class="d-int">Integrado</span><span class="d-par">Parcial</span><span class="d-esp">En espera</span><span class="d-des">Descartado</span></div>
+    <p style="margin-top:6px">Cuando un hallazgo cambia el modelo, el historial de versiones lo cita. Así queda claro qué aportó cada integrante.</p>
+  </div>
+  <div class="box plan"><b>Plan B</b><p>Si GitHub se te enreda, mándale el texto del hallazgo a Jose por WhatsApp y él lo sube por ti.</p></div>
+</section>
+
+<section aria-labelledby="s-fallas">
+  <h2 id="s-fallas">Si algo no funciona</h2>
+  <div class="tbl"><table>
+    <thead><tr><th scope="col">Lo que pasa</th><th scope="col">Qué hacer</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">No me llegó la invitación</th><td>Revisa spam. Si no está, mándale tu usuario de GitHub a Jose.</td></tr>
+      <tr><th scope="row">Mi IA no encuentra el repositorio</th><td>Confirma que aceptaste la invitación. Si sigue igual, usa el camino del ZIP.</td></tr>
+      <tr><th scope="row">La IA responde con información vieja</th><td>Sincroniza el proyecto (Claude), vuelve a bajar el ZIP (ChatGPT) o importa el repositorio en un chat nuevo (Gemini).</td></tr>
+      <tr><th scope="row">Los botones no se llaman igual</th><td>Las herramientas cambian sus menús seguido. Busca la opción más parecida o escríbele a Jose.</td></tr>
+      <tr><th scope="row">No sé si mi hallazgo vale la pena</th><td>Súbelo igual. La revisión decide, y un hallazgo descartado también deja aprendizaje.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<p class="foot">Los nombres de botones de Claude, ChatGPT, Gemini y GitHub pueden cambiar sin aviso; esta guía se revisa en cada Sync. Dudas: Jose Bolaños por el WhatsApp del equipo. Grupo 4 · MGinn Universidad Icesi: Jose Bolaños, Katherine Castro, María del Mar Espinel, Paola Giraldo y Jorge Mario Murillo.</p>
+</main>
+
+<script>
+(function(){
+  [].forEach.call(document.querySelectorAll('[data-copy]'),function(btn){
+    var pre=document.getElementById(btn.getAttribute('data-copy')), st=btn.nextElementSibling;
+    function sel(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);st.textContent='Texto seleccionado: cópialo con Ctrl o Cmd + C.';}
+    btn.addEventListener('click',function(){
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(pre.textContent).then(function(){st.textContent='Copiado.';},sel);
+      }else{sel();}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
