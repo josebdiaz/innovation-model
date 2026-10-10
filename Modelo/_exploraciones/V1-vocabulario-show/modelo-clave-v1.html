@@ -1,0 +1,576 @@
+<meta charset="utf-8">
+<title>Modelo CLAVE · Delirio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: lenguaje Sintonía DS 3.0 (radio de baquelita): cabecera con firma de dial, una columna de 880px, tarjetas r24, cuadrante para la escala. Modo Claro por defecto; Oscuro solo con data-theme="dark". */
+:root{
+  --color-bg-canvas:#faf9f6; --color-bg-surface:#ffffff; --color-bg-surface-muted:#efede7;
+  --color-bg-brand:#1f4b7a; --color-bg-inverse:#1f2226; --color-bg-accent-soft:#fbefd2; --color-bg-brand-soft:#dce6f2;
+  --color-text-primary:#1f2226; --color-text-secondary:#47494d; --color-text-brand:#1f4b7a;
+  --color-text-accent-strong:#654404; --color-text-danger:#7a2d3a; --color-text-inverse:#ffffff; --color-text-on-brand:#ffffff;
+  --color-border-default:#e6e3dc; --color-border-strong:#827d73; --color-border-focus:#1f4b7a;
+  --color-radio-chrome:#dad6cc; --color-data-track:#ece9e1; --color-signal-live:#2f639b;
+  --color-shadow-soft:rgba(31,33,38,.08);
+  --font-family-display:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-family-sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-family-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --radius-2xs:4px; --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:24px; --radius-full:9999px;
+}
+:root[data-theme="dark"]{
+  --color-bg-canvas:#15171a; --color-bg-surface:#1e2125; --color-bg-surface-muted:#2a2d31;
+  --color-bg-brand:#8fb4de; --color-bg-inverse:#f2f0ea; --color-bg-accent-soft:#3b3017; --color-bg-brand-soft:#1d2b3c;
+  --color-text-primary:#f2f0ea; --color-text-secondary:#bdb9b0; --color-text-brand:#9dbfe6;
+  --color-text-accent-strong:#e6b85a; --color-text-danger:#eb97a4; --color-text-inverse:#1f2226; --color-text-on-brand:#14212f;
+  --color-border-default:#33363b; --color-border-strong:#8d897f; --color-border-focus:#9dbfe6;
+  --color-radio-chrome:#43464b; --color-data-track:#2c2f33; --color-signal-live:#7fa9d8;
+  --color-shadow-soft:rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--color-bg-canvas);color:var(--color-text-primary);font-family:var(--font-family-sans);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:0 72px}
+.wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3,h4{font-family:var(--font-family-display);font-weight:700;margin:0;text-wrap:balance;line-height:1.2}
+h1{font-size:clamp(2.2rem,6vw,3.25rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,1.9rem)}
+h3{font-size:1.15rem;line-height:1.4}
+p{margin:0;max-width:68ch}
+.sec{font-size:.875rem;color:var(--color-text-secondary)}
+.meter{font-family:var(--font-family-mono);font-weight:700;font-size:12px;line-height:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-accent-strong)}
+:focus-visible{outline:2px solid var(--color-border-focus);outline-offset:3px;border-radius:var(--radius-md)}
+
+.cabecera{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--color-bg-surface);margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--color-border-default)}
+.barra{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:12px;padding-block:12px 6px}
+.marca{width:36px;height:36px;border-radius:var(--radius-xl);background:var(--color-bg-surface-muted);display:grid;place-items:center;font-family:var(--font-family-display);font-weight:800;color:var(--color-text-brand);flex:none}
+.titulo{flex:1;min-width:0}
+.titulo b{display:block;font-family:var(--font-family-display);font-size:16px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.titulo span{display:block;font-size:13px;color:var(--color-text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip-ver{border:1px solid var(--color-border-strong);border-radius:var(--radius-md);padding:6px 10px;font:600 13px/15px var(--font-family-sans);display:flex;gap:6px;align-items:center;flex:none}
+.luz{width:8px;height:8px;border-radius:50%;background:var(--color-signal-live);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-signal-live) 22%,transparent);flex:none}
+.luz.mostaza{background:var(--color-text-accent-strong);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-text-accent-strong) 22%,transparent)}
+.dial{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:8px;padding-block:2px 6px}
+.escala{flex:1;height:8px;min-width:0;
+  background:
+    repeating-linear-gradient(to right,var(--color-radio-chrome) 0 1px,transparent 1px 60px) bottom/100% 8px no-repeat,
+    repeating-linear-gradient(to right,var(--color-radio-chrome) 0 1px,transparent 1px 12px) bottom/100% 4px no-repeat}
+.lectura{display:flex;align-items:center;gap:6px;font:600 14px/1.45 var(--font-family-sans);white-space:nowrap}
+.aguja{width:2px;height:14px;border-radius:2px;background:var(--color-bg-brand)}
+.nav{max-width:880px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding-block:0 8px;scrollbar-width:none}
+.nav a{font:600 13px/1 var(--font-family-sans);color:var(--color-text-secondary);text-decoration:none;padding:9px 12px;border-radius:var(--radius-full);white-space:nowrap}
+.nav a:hover{background:var(--color-bg-surface-muted);color:var(--color-text-primary)}
+
+.card{background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:var(--radius-xl);padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.sombra{box-shadow:0 2px 8px var(--color-shadow-soft)}
+.card.acento{background:var(--color-bg-accent-soft);border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+section{display:flex;flex-direction:column;gap:16px;scroll-margin-top:140px}
+.divisor{display:flex;align-items:center;gap:8px}
+.divisor .lectura{font:700 12px/16px var(--font-family-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-accent-strong)}
+
+.heroe{padding-top:36px;display:flex;flex-direction:column;gap:14px}
+.heroe .lede{font-size:1.125rem;color:var(--color-text-secondary)}
+.datos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dato{background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:var(--radius-lg);padding:14px 16px;min-width:0}
+.dato small{display:block;font-size:13px;color:var(--color-text-secondary)}
+.dato b{display:block;font-family:var(--font-family-mono);font-size:22px;line-height:1.3;font-variant-numeric:tabular-nums}
+
+.cambios{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.cambios li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid color-mix(in srgb,var(--color-text-accent-strong) 18%,transparent)}
+.cambios li:first-child{border-top:0}
+.cambios .n{flex:none;width:28px;height:28px;border-radius:var(--radius-md);background:var(--color-text-accent-strong);color:var(--color-text-inverse);display:grid;place-items:center;font:700 14px/1 var(--font-family-mono)}
+.cambios b{display:block}
+.cambios span.sec{display:block}
+
+.clave{overflow-x:auto;padding:8px 4px}
+.clave svg{display:block;min-width:620px;width:100%;height:auto}
+.burbuja{background:var(--color-bg-surface-muted);border-radius:var(--radius-md) var(--radius-md) var(--radius-md) var(--radius-2xs);padding:12px 16px;display:flex;flex-direction:column;gap:4px;max-width:720px}
+.burbuja .autor{font:600 14px/1.45 var(--font-family-sans);color:var(--color-text-brand)}
+.burbuja p{font-size:17px;line-height:24px}
+.burbuja .meta{font-size:13px;color:var(--color-text-secondary)}
+
+.badge{display:inline-flex;align-items:center;font:700 12px/16px var(--font-family-mono);letter-spacing:.08em;padding:2px 5px;border-radius:var(--radius-2xs);vertical-align:2px;white-space:nowrap}
+.badge.ia{background:var(--color-bg-inverse);color:var(--color-text-inverse)}
+.badge.dg{background:var(--color-bg-accent-soft);color:var(--color-text-accent-strong)}
+.badge.esc{background:var(--color-bg-brand-soft);color:var(--color-text-brand)}
+.badge.prov{background:var(--color-bg-surface-muted);color:var(--color-text-secondary)}
+.badge.nuevo{background:transparent;color:var(--color-text-accent-strong);border:1px solid var(--color-text-accent-strong)}
+
+.tabla{background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:var(--radius-xl);overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.45}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--color-border-default);vertical-align:top}
+th{font:600 13px/15px var(--font-family-sans);color:var(--color-text-secondary);background:var(--color-bg-surface-muted)}
+tr:last-child td{border-bottom:0}
+td.code{font-family:var(--font-family-mono);font-weight:700;color:var(--color-text-accent-strong);white-space:nowrap}
+tr.pilar td{background:var(--color-bg-accent-soft);font-weight:600}
+tr.pilar.l2 td{background:var(--color-bg-brand-soft)}
+td.term{font-family:var(--font-family-display);font-weight:700;white-space:nowrap}
+
+.cuadrante{background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:var(--radius-xl);padding:20px 16px 16px;display:flex;flex-direction:column;gap:14px}
+.riel{position:relative;height:30px;margin-inline:4px}
+.riel .marcas{position:absolute;inset:0 0 auto 0;height:4px;background:repeating-linear-gradient(to right,var(--color-radio-chrome) 0 2px,transparent 2px 14px)}
+.riel .pista{position:absolute;left:0;right:0;top:12px;height:6px;border-radius:var(--radius-full);background:var(--color-data-track);border:1px solid var(--color-text-secondary)}
+.riel .recorrido{position:absolute;left:0;top:12px;height:6px;border-radius:var(--radius-full);background:var(--color-text-accent-strong);width:var(--pos,75%);transition:width .25s}
+.riel .perilla{position:absolute;top:6px;left:var(--pos,75%);width:6px;height:18px;transform:translateX(-50%);border-radius:var(--radius-full);background:var(--color-bg-surface);border:2px solid var(--color-text-accent-strong);box-shadow:0 2px 8px var(--color-shadow-soft);transition:left .25s}
+.riel .muesca{position:absolute;left:50%;top:-2px;bottom:-2px;width:2px;transform:translateX(-50%);background:var(--color-text-danger);opacity:.7}
+.estaciones{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.estacion{appearance:none;border:0;background:transparent;font:inherit;color:inherit;cursor:pointer;border-radius:var(--radius-md);padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-height:44px;min-width:0}
+.estacion .num{width:28px;height:28px;border-radius:var(--radius-md);border:1.5px solid var(--color-border-strong);display:grid;place-items:center;font:700 16px/22px var(--font-family-mono);color:var(--color-text-secondary)}
+.estacion .lbl{font-size:12px;line-height:1.3;color:var(--color-text-secondary)}
+.estacion[aria-pressed="true"]{background:var(--color-bg-accent-soft)}
+.estacion[aria-pressed="true"] .num{background:var(--color-text-accent-strong);border-color:var(--color-text-accent-strong);color:var(--color-text-inverse)}
+.estacion[aria-pressed="true"] .lbl{color:var(--color-text-primary);font-weight:600}
+.lectura-escala{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:1px solid var(--color-border-default);padding-top:12px;font-size:14px}
+.lectura-escala b{font-family:var(--font-family-mono);color:var(--color-text-accent-strong);font-variant-numeric:tabular-nums}
+.bordes{display:flex;justify-content:space-between;font-size:13px;color:var(--color-text-secondary)}
+.bordes .medio{color:var(--color-text-danger);font-weight:600}
+
+.bandas{display:grid;grid-template-columns:50fr 20fr 15fr 15fr;gap:4px}
+.banda{padding:10px 10px 12px;border-radius:var(--radius-md);background:var(--color-bg-surface);border:1px solid var(--color-border-default);min-width:0;display:flex;flex-direction:column;gap:4px}
+.banda .tira{height:6px;border-radius:var(--radius-full)}
+.banda:nth-child(1) .tira{background:var(--color-text-danger)}
+.banda:nth-child(2) .tira{background:var(--color-text-accent-strong);opacity:.75}
+.banda:nth-child(3) .tira{background:var(--color-signal-live)}
+.banda:nth-child(4) .tira{background:var(--color-bg-brand)}
+.banda b{font-size:14px;line-height:1.3;overflow-wrap:anywhere}
+.banda span{font:500 12px/16px var(--font-family-mono);color:var(--color-text-secondary)}
+.formula{font:500 13px/20px var(--font-family-mono);background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:var(--radius-lg);padding:14px 16px;overflow-x:auto;white-space:pre}
+
+.pilar-card{background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:var(--radius-xl);overflow:hidden}
+.pilar-head{display:flex;align-items:center;gap:12px;padding:16px 16px 12px;border-bottom:1px solid var(--color-border-default)}
+.letra{width:44px;height:44px;border-radius:var(--radius-md);display:grid;place-items:center;font:800 24px/1 var(--font-family-display);flex:none;background:var(--color-bg-accent-soft);color:var(--color-text-accent-strong)}
+.l2 .letra{background:var(--color-bg-brand-soft);color:var(--color-text-brand)}
+.pilar-head div{flex:1;min-width:0}
+.pilar-head small{display:block;font-size:13px;color:var(--color-text-secondary)}
+.factor h4{font:700 12px/16px var(--font-family-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-accent-strong);padding:14px 16px 4px}
+.l2 .factor h4{color:var(--color-text-brand)}
+ol.items{list-style:none;margin:0;padding:0}
+ol.items li{display:flex;gap:12px;align-items:flex-start;padding:10px 16px;min-height:52px}
+ol.items li + li{border-top:1px dashed var(--color-border-default)}
+.cod{flex:none;min-width:48px;height:28px;padding-inline:6px;border-radius:var(--radius-md);border:1.5px solid var(--color-border-strong);display:grid;place-items:center;font:700 13px/1 var(--font-family-mono);color:var(--color-text-secondary)}
+.q{flex:1;min-width:0;padding-top:2px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{appearance:none;border:0;cursor:pointer;background:var(--color-bg-brand);color:var(--color-text-on-brand);font:700 16px/1.25 var(--font-family-sans);height:48px;padding:12px 22px;border-radius:var(--radius-full)}
+.btn:hover{filter:brightness(1.08)}
+.estado-copia{font-size:14px;color:var(--color-text-secondary)}
+ul.check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.check li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--color-border-default)}
+ul.check li:first-child{border-top:0}
+ul.check li::before{content:"✓";font:700 14px/22px var(--font-family-mono);color:var(--color-text-brand);flex:none}
+ul.check.preg li::before{content:"?";color:var(--color-text-accent-strong)}
+.principio{border-top:1px solid var(--color-border-default);padding-top:20px;font-family:var(--font-family-display);font-weight:700;font-size:1.1rem}
+
+@media (max-width:640px){
+  .datos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .estacion .lbl{font-size:11px}
+  .bandas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .chip-ver{display:none}
+}
+@media (prefers-reduced-motion:reduce){.riel .recorrido,.riel .perilla{transition:none}}
+</style>
+
+<header class="cabecera">
+  <div class="barra">
+    <div class="marca" aria-hidden="true">C</div>
+    <div class="titulo"><b>Modelo CLAVE</b><span>Fundación Delirio · Grupo 4 MGinn Icesi</span></div>
+    <div class="chip-ver"><span class="luz mostaza" aria-hidden="true"></span>V1 borrador · 9 oct 2026</div>
+  </div>
+  <div class="dial" aria-live="polite">
+    <div class="escala" aria-hidden="true"></div>
+    <div class="lectura"><span class="aguja" aria-hidden="true"></span><span class="luz mostaza" aria-hidden="true"></span>En ensayo · V1 por validar</div>
+    <div class="escala" aria-hidden="true"></div>
+  </div>
+  <nav class="nav" aria-label="Secciones">
+    <a href="#metafora">Metáfora</a><a href="#taxonomia">Taxonomía</a><a href="#escala">Escala</a><a href="#demografia">Perfil</a><a href="#bateria">Batería</a><a href="#glosario">Glosario</a><a href="#control">Control</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+<div class="heroe">
+  <span class="meter">Modo /modelo · Sesión de refinamiento · V0 → V1</span>
+  <h1>Modelo CLAVE</h1>
+  <p class="lede">Megamodelo propio para diagnosticar el sistema y la cultura de innovación de Fundación Delirio. La V1 habla el idioma del show y se puede responder desde la oficina o desde la tarima.</p>
+  <div class="datos">
+    <div class="dato"><small>Pilares</small><b>5</b></div>
+    <div class="dato"><small>Factores</small><b>15</b></div>
+    <div class="dato"><small>Indicadores</small><b>45</b></div>
+    <div class="dato"><small>Escala</small><b>1–6</b></div>
+  </div>
+  <div class="card acento">
+    <h3>Qué cambió de V0 a V1</h3>
+    <ol class="cambios">
+      <li><span class="n">1</span><div><b>Vocabulario de Delirio</b><span class="sec">Los ítems hablan de temporada, ensayo, función, estreno y tarima. El constructo no cambia; el glosario documenta cada traducción.</span></div></li>
+      <li><span class="n">2</span><div><b>Efecto con los tres aplausos</b><span class="sec">El pilar de resultados mide Escena, Público y Comunidad, los tres frentes de valor de una fundación que vive de un show.</span></div></li>
+      <li><span class="n">3</span><div><b>Visible desde cualquier puesto</b><span class="sec">Se reescribieron los ítems que solo podía juzgar la oficina (plan estratégico, presupuesto, evaluación de desempeño). Así la brecha Dirección–Equipo es real y no un artefacto.</span></div></li>
+      <li><span class="n">4</span><div><b>Tecnología de escena</b><span class="sec">El factor Tecnología incluye video mapping, luces y sonido, y la IA aparece también en la creación artística.</span></div></li>
+      <li><span class="n">5</span><div><b>Factores reubicados</b><span class="sec">Medición pasa a Conducción (Jakopec S, IBM). Comunicación y Reconocimiento se funden en Visibilidad (Hutch, Awareness). La Vía se lee Ideación → Ensayo → Estreno.</span></div></li>
+    </ol>
+  </div>
+</div>
+
+<!-- 1 METÁFORA -->
+<section id="metafora">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">1/7 · Metáfora</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>La innovación de Delirio tiene clave</h2>
+  <p>La clave es el patrón de cinco golpes que ordena a toda la orquesta. Casi nadie la oye, pero si un músico se cruza, la orquesta se descuadra aunque cada uno toque bien. El modelo usa la clave 2-3: primero el lado que se siente (cultura), después el lado que se ejecuta (sistema). Dentro de cada golpe, los factores se nombran como se nombra el trabajo en el show.</p>
+  <div class="card sombra">
+    <div class="clave" role="img" aria-label="Clave 2-3. Lado 2, Cultura: Conducción y Lazos. Lado 3, Sistema: Activos, Vía y Efecto.">
+      <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" letter-spacing="1">
+          <text x="200" y="22" text-anchor="middle" fill="var(--color-text-brand)">LADO 2 · CULTURA</text>
+          <text x="520" y="22" text-anchor="middle" fill="var(--color-text-accent-strong)">LADO 3 · SISTEMA</text>
+        </g>
+        <g font-family="Inter, sans-serif" font-size="12" fill="var(--color-text-secondary)" text-anchor="middle">
+          <text x="200" y="40">lo que se siente</text><text x="520" y="40">lo que se ejecuta</text>
+        </g>
+        <g fill="var(--color-radio-chrome)">
+          <rect x="59" y="62" width="2" height="10"/><rect x="99" y="66" width="2" height="6"/><rect x="139" y="66" width="2" height="6"/><rect x="179" y="66" width="2" height="6"/>
+          <rect x="219" y="62" width="2" height="10"/><rect x="259" y="66" width="2" height="6"/><rect x="299" y="66" width="2" height="6"/><rect x="339" y="66" width="2" height="6"/>
+          <rect x="379" y="62" width="2" height="10"/><rect x="419" y="66" width="2" height="6"/><rect x="459" y="66" width="2" height="6"/><rect x="499" y="66" width="2" height="6"/>
+          <rect x="539" y="62" width="2" height="10"/><rect x="579" y="66" width="2" height="6"/><rect x="619" y="66" width="2" height="6"/><rect x="659" y="66" width="2" height="6"/>
+        </g>
+        <rect x="40" y="96" width="640" height="8" rx="4" fill="var(--color-data-track)" stroke="var(--color-text-secondary)" stroke-width="1"/>
+        <line x1="360" y1="80" x2="360" y2="122" stroke="var(--color-border-strong)" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <circle cx="140" cy="100" r="26" fill="var(--color-bg-brand)"/><text x="140" y="109" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" fill="var(--color-text-on-brand)">C</text>
+        <circle cx="220" cy="100" r="26" fill="var(--color-bg-brand)"/><text x="220" y="109" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" fill="var(--color-text-on-brand)">L</text>
+        <circle cx="380" cy="100" r="26" fill="var(--color-text-accent-strong)"/><text x="380" y="109" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" fill="var(--color-bg-surface)">A</text>
+        <circle cx="500" cy="100" r="26" fill="var(--color-text-accent-strong)"/><text x="500" y="109" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" fill="var(--color-bg-surface)">V</text>
+        <circle cx="620" cy="100" r="26" fill="var(--color-text-accent-strong)"/><text x="620" y="109" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" fill="var(--color-bg-surface)">E</text>
+        <g font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="var(--color-text-primary)" text-anchor="middle">
+          <text x="140" y="154">Conducción</text><text x="220" y="154">Lazos</text><text x="380" y="154">Activos</text><text x="500" y="154">Vía</text><text x="620" y="154">Efecto</text>
+        </g>
+        <g font-family="Inter, sans-serif" font-size="11" fill="var(--color-text-secondary)" text-anchor="middle">
+          <text x="140" y="172">rumbo</text><text x="220" y="172">confianza</text><text x="380" y="172">talento · tecnología</text><text x="500" y="172">ensayo → estreno</text><text x="620" y="172">los tres aplausos</text>
+        </g>
+        <g font-family="Inter, sans-serif" font-size="10.5" fill="var(--color-text-secondary)" text-anchor="middle">
+          <text x="140" y="188">propósito · patrocinio · medición</text>
+          <text x="500" y="188">ideación · ensayo · estreno</text>
+          <text x="620" y="204">escena · público · comunidad</text>
+        </g>
+        <text x="360" y="236" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" fill="var(--color-text-secondary)">compás 1  │  compás 2 · son clave 2-3</text>
+      </svg>
+    </div>
+  </div>
+  <div class="burbuja">
+    <div class="autor">Guion para la junta · 90 s</div>
+    <p>"En Delirio nadie sale a la tarima sin ensayar, y nadie ensaya sin saber para qué número. La innovación funciona igual. Tiene cinco golpes, como la clave: una <b>Conducción</b> que marca el rumbo de la temporada, unos <b>Lazos</b> de confianza que dejan proponer sin miedo, unos <b>Activos</b> que ponen talento, tiempo y tecnología, una <b>Vía</b> que lleva cada idea del ensayo al estreno, y un <b>Efecto</b> que se oye en tres aplausos: el de la escena, el del público y el de la comunidad. Este diagnóstico escucha a toda la orquesta, de la oficina a la tarima, y nos dice qué golpe se está cruzando."</p>
+    <span class="meta">Grupo 4 · consultoría</span>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>Clave cruzada</h3><p class="sec">Ocurre cuando el pilar más alto le saca más de 20 puntos al más bajo. Jakopec y Sušanj (2012) documentan el patrón típico: se avanza por la "línea de menor resistencia" (ideas y clima) y se descuidan estrategia y proceso.</p></div>
+    <div class="card"><h3>Los tres aplausos</h3><p class="sec">Escena: el show se renueva. Público: llegan audiencias e ingresos nuevos. Comunidad: la Fundación multiplica su impacto. Una innovación que solo se aplaude en uno de los tres está incompleta.</p></div>
+    <div class="card"><h3>Foto y video</h3><p class="sec">El diagnóstico es la foto: la clave en un instante. El dashboard será el video: la misma clave sonando temporada a temporada, con los 15 factores como signos vitales.</p></div>
+  </div>
+</section>
+
+<!-- 2 TAXONOMÍA -->
+<section id="taxonomia">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">2/7 · Taxonomía</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>5 pilares × 3 factores × 3 indicadores</h2>
+  <p>Simetría intacta y una palabra por factor. <span class="badge nuevo">V1</span> marca los factores nuevos o reubicados.</p>
+  <div class="tabla">
+  <table>
+    <thead><tr><th>Código</th><th>Factor</th><th>Qué mide</th><th>Homologado de</th></tr></thead>
+    <tbody>
+      <tr class="pilar l2"><td class="code">C</td><td colspan="3">Conducción · El rumbo · Lado 2</td></tr>
+      <tr><td class="code">C1</td><td>Propósito</td><td>Definición compartida de innovación y foco de cada temporada</td><td>Jakopec (S) · TLA: Visión, Propósito · Hutch: Tipos de innovación · McKinsey: Aspire, Choose · IBM: alineación de definiciones</td></tr>
+      <tr><td class="code">C2</td><td>Patrocinio</td><td>Presencia de los líderes en lo nuevo</td><td>Rao &amp; Weintraub: Energizar · Hutch: Patrocinio ejecutivo, Propiedad · TLA: Champion</td></tr>
+      <tr><td class="code">C3</td><td>Medición <span class="badge nuevo">V1</span></td><td>Indicadores y balance de lo que funcionó</td><td>IBM: métricas · Jakopec (S): métricas de innovación · TLA: Medir el progreso</td></tr>
+      <tr class="pilar l2"><td class="code">L</td><td colspan="3">Lazos · La confianza · Lado 2</td></tr>
+      <tr><td class="code">L1</td><td>Seguridad</td><td>Proponer y equivocarse sin castigo</td><td>Rao: Seguridad · Satell (HBR): seguridad psicológica · TLA: Permiso · Hutch: ideas que fallan</td></tr>
+      <tr><td class="code">L2</td><td>Colaboración</td><td>Escena y oficina trabajando juntas; aliados externos</td><td>Rao: Colaboración · Rainforest: confianza, diversidad · Satell: brokers · Pentagrowth: Conectar</td></tr>
+      <tr><td class="code">L3</td><td>Visibilidad <span class="badge nuevo">V1</span></td><td>Se cuenta lo que avanza y se reconoce a quien propone</td><td>Hutch Awareness: comunicaciones, reconocimiento, historias de éxito · TLA: Transparencia, Frecuencia · Jakopec (C): recompensas</td></tr>
+      <tr class="pilar"><td class="code">A</td><td colspan="3">Activos · Talento, tiempo y tecnología · Lado 3</td></tr>
+      <tr><td class="code">A1</td><td>Talento</td><td>Formación en innovación, fluidez digital, alfabetización en IA</td><td>Rao: Personas · TLA Capacidad · mandato Naranjo</td></tr>
+      <tr><td class="code">A2</td><td>Inversión</td><td>Tiempo de ensayo y recursos para probar</td><td>TLA: Tiempo, Dinero · Rao: Proyectos · Hutch: Tiempo para participar</td></tr>
+      <tr><td class="code">A3</td><td>Tecnología <span class="badge nuevo">V1</span></td><td>IA, plataformas colaborativas y tecnología escénica</td><td>Rao: Sistemas · Pentagrowth: Instrumentar · mandato Naranjo · experiencia de mapping en Delirio</td></tr>
+      <tr class="pilar"><td class="code">V</td><td colspan="3">Vía · Del ensayo al estreno · Lado 3</td></tr>
+      <tr><td class="code">V1</td><td>Ideación</td><td>Canales, registro y fuentes de ideas</td><td>Jakopec (I, P) · Rao: Idear · Woods (HYPE Canvas) · McKinsey: Discover</td></tr>
+      <tr><td class="code">V2</td><td>Ensayo <span class="badge nuevo">V1</span></td><td>Pruebas en pequeño y prototipos, incluida la IA creativa</td><td>Rao: Dar forma · TLA: Hipótesis comprobables · McKinsey: Evolve</td></tr>
+      <tr><td class="code">V3</td><td>Estreno <span class="badge nuevo">V1</span></td><td>Criterios, respuesta y llegada al público</td><td>Rao: Capturar · Hutch Gobernanza: selección, seguimiento · Jakopec (P): decisor · McKinsey: Accelerate, Scale</td></tr>
+      <tr class="pilar"><td class="code">E</td><td colspan="3">Efecto · Los tres aplausos · Lado 3</td></tr>
+      <tr><td class="code">E1</td><td>Escena <span class="badge nuevo">V1</span></td><td>El show se renueva y se diferencia</td><td>Rao: Éxito externo · Jakopec (I): mejora continua de la oferta · Hutch: innovación de producto</td></tr>
+      <tr><td class="code">E2</td><td>Público</td><td>Audiencias, experiencia e ingresos nuevos</td><td>Rao: Éxito externo y empresarial · Jakopec (I): necesidades del cliente</td></tr>
+      <tr><td class="code">E3</td><td>Comunidad <span class="badge nuevo">V1</span></td><td>Impacto social y oportunidades para artistas</td><td>Rainforest: capital social del ecosistema · Pentagrowth: Compartir · misión de la Fundación</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 3 ESCALA -->
+<section id="escala">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">3/7 · Escala</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>Likert de 6 puntos, sin punto medio</h2>
+  <p>La escala funciona como un dial sin posición de reposo: la aguja no puede quedarse en el centro. Toca una estación para ver su lectura.</p>
+  <div class="cuadrante">
+    <div class="riel" id="riel" style="--pos:58.33%" aria-hidden="true">
+      <div class="marcas"></div><div class="pista"></div><div class="recorrido"></div><div class="muesca"></div><div class="perilla"></div>
+    </div>
+    <div class="estaciones" role="group" aria-label="Estaciones de la escala">
+      <button class="estacion" type="button" id="st1" data-v="1" aria-pressed="false"><span class="num">1</span><span class="lbl">Totalmente en desacuerdo</span></button>
+      <button class="estacion" type="button" id="st2" data-v="2" aria-pressed="false"><span class="num">2</span><span class="lbl">En desacuerdo</span></button>
+      <button class="estacion" type="button" id="st3" data-v="3" aria-pressed="false"><span class="num">3</span><span class="lbl">Ligeramente en desacuerdo</span></button>
+      <button class="estacion" type="button" id="st4" data-v="4" aria-pressed="true"><span class="num">4</span><span class="lbl">Ligeramente de acuerdo</span></button>
+      <button class="estacion" type="button" id="st5" data-v="5" aria-pressed="false"><span class="num">5</span><span class="lbl">De acuerdo</span></button>
+      <button class="estacion" type="button" id="st6" data-v="6" aria-pressed="false"><span class="num">6</span><span class="lbl">Totalmente de acuerdo</span></button>
+    </div>
+    <div class="bordes"><span>← barrera</span><span class="medio">sin punto medio</span><span>facilitador →</span></div>
+    <div class="lectura-escala" aria-live="polite" id="lecturaEscala"><span>Estación 4 · Ligeramente de acuerdo</span><span>Puntaje <b>60</b> · cuenta como inclinación, no como evidencia</span></div>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>Por qué 6 puntos</h3><p class="sec">Un número par elimina el "ni fu ni fa". Seis puntos conservan varianza para los cruces matriciales y se leen bien en el celular, que es donde va a responder el elenco.</p></div>
+    <div class="card"><h3>Sin "No sé"</h3><p class="sec">"Si nunca lo has visto, eso ya es una respuesta." En V1 esta regla es justa porque todos los ítems se pueden observar desde cualquier puesto.</p></div>
+    <div class="card"><h3>Doble lectura</h3><p class="sec">Cada indicador reporta su puntaje 0–100 y su % de evidencia (respuestas 5 y 6). Un 4 cuenta como inclinación.</p></div>
+  </div>
+  <h3>Bandas de madurez, adaptadas de TLA</h3>
+  <div class="bandas" aria-label="Bandas de madurez sobre 0 a 100">
+    <div class="banda"><div class="tira"></div><b>Entrando</b><span>0–49 · media &lt; 3,5</span></div>
+    <div class="banda"><div class="tira"></div><b>Emergiendo</b><span>50–69 · 3,5–4,4</span></div>
+    <div class="banda"><div class="tira"></div><b>Adaptando</b><span>70–84 · 4,5–5,2</span></div>
+    <div class="banda"><div class="tira"></div><b>Transformando</b><span>85–100 · ≥ 5,25</span></div>
+  </div>
+  <p class="sec">El ancho de cada banda es proporcional a su rango. Un promedio de "ligeramente de acuerdo" (60 pts) queda en Emergiendo.</p>
+  <h3>Cálculo y ponderación</h3>
+<div class="formula">Ítem              = (respuesta − 1) × 20         → 0 a 100
+Factor            = promedio de sus 3 ítems
+Pilar             = promedio de sus 3 factores
+Índice CLAVE      = promedio de los 5 pilares     → 20 % cada uno
+Cuadre            = pilar máx − pilar mín          → &gt; 20 = clave cruzada
+Brecha vertical   = Dirección − Equipo             → &gt; 15 = alerta
+Brecha horizontal = Escena − Oficina (por pilar)   → &gt; 15 = silo</div>
+  <p><b>Pesos iguales, argumentados.</b> Jakopec y Sušanj suponen que todos los factores son igual de necesarios; sin datos previos de Delirio, ponderar sería arbitrario. El desbalance se mide con el Cuadre. Tras la primera medición se recalibra contra los tres aplausos.</p>
+</section>
+
+<!-- 4 DEMOGRAFÍA -->
+<section id="demografia">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">4/7 · Perfil</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>Variables matriciales</h2>
+  <p>D1 agrupa áreas en dos mundos (Escena y Oficina) para el cruce horizontal y conserva el detalle por área cuando la muestra lo permite.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Código</th><th>Pregunta</th><th>Opciones</th></tr></thead>
+    <tbody>
+      <tr><td class="code">D1</td><td>¿En qué área trabajas principalmente?</td><td><b>Escena:</b> Dirección artística y coreografía · Elenco (baile, circo) · Orquesta · Producción técnica (luces, sonido, video, mapping)<br><b>Oficina:</b> Dirección General · Producción y logística · Mercadeo y comercial · Administrativa y financiera · Fundación (formación y proyectos sociales) <span class="badge prov">POR VALIDAR</span></td></tr>
+      <tr><td class="code">D2</td><td>¿Cuál es tu nivel de responsabilidad?</td><td>Dirección · Coordinación (incluye directores artísticos y coreógrafos) · Equipo (elenco, músicos, técnicos, staff)</td></tr>
+      <tr><td class="code">D3</td><td>¿Cuánto tiempo llevas en Delirio?</td><td>Menos de 1 año · 1 a 3 años · 3 a 5 años · Más de 5 años</td></tr>
+      <tr><td class="code">D4</td><td>¿Cuál es tu tipo de vinculación?</td><td>Contrato laboral · Prestación de servicios · Otro</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec">Ningún cruce se reporta con menos de 5 respuestas por celda; si un área no llega, se reporta solo en su mundo (Escena u Oficina).</p>
+</section>
+
+<!-- 5 BATERÍA -->
+<section id="bateria">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">5/7 · Batería</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>45 preguntas, un hecho por pregunta</h2>
+  <p>Enunciado común: <i>"Indica qué tan de acuerdo estás con cada afirmación, según lo que has visto en Delirio."</i></p>
+  <p class="sec"><span class="badge ia">IA</span> Inteligencia Artificial · <span class="badge dg">DIGITAL</span> plataformas y fluidez digital · <span class="badge esc">ESCENA</span> tecnología escénica · 6 ítems contemporáneos</p>
+
+  <article class="pilar-card l2">
+    <div class="pilar-head"><span class="letra">C</span><div><h3>Conducción</h3><small>Lado 2 · Cultura · el rumbo</small></div></div>
+    <div class="factor"><h4>C1 · Propósito</h4><ol class="items">
+      <li><span class="cod">C1.1</span><span class="q">Delirio ha compartido con todo el equipo una definición de qué significa innovar.</span></li>
+      <li><span class="cod">C1.2</span><span class="q">En mi equipo, las personas saben explicar qué tipo de innovación busca Delirio.</span></li>
+      <li><span class="cod">C1.3</span><span class="q">Al iniciar cada temporada, Delirio le cuenta al equipo qué quiere renovar.</span></li>
+    </ol></div>
+    <div class="factor"><h4>C2 · Patrocinio</h4><ol class="items">
+      <li><span class="cod">C2.1</span><span class="q">La Dirección General asiste a los espacios donde el equipo presenta ideas nuevas.</span></li>
+      <li><span class="cod">C2.2</span><span class="q">Mi jefe directo le pide al equipo propuestas de mejora.</span></li>
+      <li><span class="cod">C2.3</span><span class="q">Cada proyecto nuevo de Delirio tiene un líder visible que responde por él.</span></li>
+    </ol></div>
+    <div class="factor"><h4>C3 · Medición</h4><ol class="items">
+      <li><span class="cod">C3.1</span><span class="q">Delirio define indicadores para saber si un proyecto nuevo funcionó.</span></li>
+      <li><span class="cod">C3.2</span><span class="q">Al cerrar cada temporada, Delirio hace un balance de lo que funcionó.</span></li>
+      <li><span class="cod">C3.3</span><span class="q">Delirio mide la reacción del público a cada cambio del show.</span></li>
+    </ol></div>
+  </article>
+
+  <article class="pilar-card l2">
+    <div class="pilar-head"><span class="letra">L</span><div><h3>Lazos</h3><small>Lado 2 · Cultura · la confianza</small></div></div>
+    <div class="factor"><h4>L1 · Seguridad</h4><ol class="items">
+      <li><span class="cod">L1.1</span><span class="q">En Delirio, una persona puede cuestionar la forma habitual de hacer las cosas sin sufrir represalias.</span></li>
+      <li><span class="cod">L1.2</span><span class="q">Cuando algo nuevo no funciona en una función, el equipo conversa sobre lo aprendido.</span></li>
+      <li><span class="cod">L1.3</span><span class="q">En las reuniones, las personas de menor cargo expresan desacuerdos con sus superiores.</span></li>
+    </ol></div>
+    <div class="factor"><h4>L2 · Colaboración</h4><ol class="items">
+      <li><span class="cod">L2.1</span><span class="q">Personas de la escena trabajan en un mismo equipo con personas de la oficina en proyectos nuevos.</span></li>
+      <li><span class="cod">L2.2</span><span class="q">Las áreas comparten información entre sí sin necesidad de una solicitud formal.</span></li>
+      <li><span class="cod">L2.3</span><span class="q">Delirio desarrolla proyectos nuevos junto con aliados externos (ej. escuelas de salsa, universidades, marcas).</span></li>
+    </ol></div>
+    <div class="factor"><h4>L3 · Visibilidad</h4><ol class="items">
+      <li><span class="cod">L3.1</span><span class="q">Delirio le cuenta a todo el equipo los avances de sus proyectos nuevos al menos una vez por temporada.</span></li>
+      <li><span class="cod">L3.2</span><span class="q">Delirio reconoce públicamente a quienes proponen ideas que llegan a la tarima.</span></li>
+      <li><span class="cod">L3.3</span><span class="q">Participar en proyectos nuevos abre oportunidades de crecimiento dentro de Delirio.</span></li>
+    </ol></div>
+  </article>
+
+  <article class="pilar-card">
+    <div class="pilar-head"><span class="letra">A</span><div><h3>Activos</h3><small>Lado 3 · Sistema · talento, tiempo y tecnología</small></div></div>
+    <div class="factor"><h4>A1 · Talento</h4><ol class="items">
+      <li><span class="cod">A1.1</span><span class="q">Delirio ofrece formación en métodos de innovación (ej. design thinking, prototipado).</span></li>
+      <li><span class="cod">A1.2</span><span class="q">Las personas de mi equipo resuelven sus tareas con herramientas digitales sin necesitar ayuda técnica. <span class="badge dg">DIGITAL</span></span></li>
+      <li><span class="cod">A1.3</span><span class="q">Delirio ha capacitado a su equipo en el uso de herramientas de Inteligencia Artificial. <span class="badge ia">IA</span></span></li>
+    </ol></div>
+    <div class="factor"><h4>A2 · Inversión</h4><ol class="items">
+      <li><span class="cod">A2.1</span><span class="q">Cuando alguien propone probar algo nuevo en el show, Delirio asigna tiempo de ensayo para probarlo.</span></li>
+      <li><span class="cod">A2.2</span><span class="q">Delirio invierte en materiales para probar ideas nuevas (ej. vestuario, utilería, visuales).</span></li>
+      <li><span class="cod">A2.3</span><span class="q">Delirio gestiona financiación externa (ej. convocatorias, becas, patrocinios) para proyectos nuevos.</span></li>
+    </ol></div>
+    <div class="factor"><h4>A3 · Tecnología</h4><ol class="items">
+      <li><span class="cod">A3.1</span><span class="q">Delirio paga licencias de herramientas de Inteligencia Artificial para uso del equipo. <span class="badge ia">IA</span></span></li>
+      <li><span class="cod">A3.2</span><span class="q">Los equipos coordinan su trabajo en plataformas digitales colaborativas (ej. Google Drive, Notion, Miro). <span class="badge dg">DIGITAL</span></span></li>
+      <li><span class="cod">A3.3</span><span class="q">Delirio incorpora tecnología escénica nueva en sus montajes (ej. video mapping, iluminación, sonido). <span class="badge esc">ESCENA</span></span></li>
+    </ol></div>
+  </article>
+
+  <article class="pilar-card">
+    <div class="pilar-head"><span class="letra">V</span><div><h3>Vía</h3><small>Lado 3 · Sistema · del ensayo al estreno</small></div></div>
+    <div class="factor"><h4>V1 · Ideación</h4><ol class="items">
+      <li><span class="cod">V1.1</span><span class="q">Delirio tiene un canal formal para que cualquier persona proponga ideas.</span></li>
+      <li><span class="cod">V1.2</span><span class="q">Las ideas propuestas quedan registradas en un lugar que todo el equipo puede consultar.</span></li>
+      <li><span class="cod">V1.3</span><span class="q">Delirio usa los comentarios del público como insumo para crear propuestas nuevas.</span></li>
+    </ol></div>
+    <div class="factor"><h4>V2 · Ensayo</h4><ol class="items">
+      <li><span class="cod">V2.1</span><span class="q">Antes de llevar una idea al show completo, Delirio la prueba en pequeño (ej. un ensayo abierto, una función, un evento).</span></li>
+      <li><span class="cod">V2.2</span><span class="q">Los equipos construyen prototipos de bajo costo para validar ideas (ej. maquetas, bocetos, demos).</span></li>
+      <li><span class="cod">V2.3</span><span class="q">Los equipos usan Inteligencia Artificial para crear propuestas artísticas (ej. visuales, música, coreografías). <span class="badge ia">IA</span></span></li>
+    </ol></div>
+    <div class="factor"><h4>V3 · Estreno</h4><ol class="items">
+      <li><span class="cod">V3.1</span><span class="q">El equipo conoce los criterios con los que Delirio decide qué ideas llegan a la tarima.</span></li>
+      <li><span class="cod">V3.2</span><span class="q">Quien propone una idea recibe una respuesta sobre la decisión tomada.</span></li>
+      <li><span class="cod">V3.3</span><span class="q">Las ideas aprobadas llegan al público dentro de un plazo definido.</span></li>
+    </ol></div>
+  </article>
+
+  <article class="pilar-card">
+    <div class="pilar-head"><span class="letra">E</span><div><h3>Efecto</h3><small>Lado 3 · Sistema · los tres aplausos</small></div></div>
+    <div class="factor"><h4>E1 · Escena</h4><ol class="items">
+      <li><span class="cod">E1.1</span><span class="q">En la última temporada, el show estrenó al menos un número nuevo.</span></li>
+      <li><span class="cod">E1.2</span><span class="q">En el último año, Delirio llevó al show ideas propuestas por el elenco.</span></li>
+      <li><span class="cod">E1.3</span><span class="q">La propuesta artística de Delirio se diferencia de otros espectáculos de salsa de la ciudad.</span></li>
+    </ol></div>
+    <div class="factor"><h4>E2 · Público</h4><ol class="items">
+      <li><span class="cod">E2.1</span><span class="q">En los últimos 12 meses, Delirio atrajo públicos que antes no asistían.</span></li>
+      <li><span class="cod">E2.2</span><span class="q">Las innovaciones de Delirio han generado nuevas fuentes de ingreso (ej. eventos, giras, formatos digitales).</span></li>
+      <li><span class="cod">E2.3</span><span class="q">Los cambios introducidos en el último año han mejorado la experiencia del público.</span></li>
+    </ol></div>
+    <div class="factor"><h4>E3 · Comunidad</h4><ol class="items">
+      <li><span class="cod">E3.1</span><span class="q">La innovación ha ampliado el impacto social de la Fundación en sus comunidades.</span></li>
+      <li><span class="cod">E3.2</span><span class="q">En el último año, los programas de formación de la Fundación incorporaron metodologías nuevas.</span></li>
+      <li><span class="cod">E3.3</span><span class="q">Delirio ha creado nuevas oportunidades de trabajo para artistas de la ciudad.</span></li>
+    </ol></div>
+  </article>
+
+  <div class="card">
+    <h3>Cierre del formulario</h3>
+    <ol class="items" style="margin-inline:-16px">
+      <li><span class="cod">Q0</span><span class="q">Control de atención, después del pilar A: "Para confirmar que estás leyendo, selecciona <i>En desacuerdo</i>." Se descartan las respuestas que fallen.</span></li>
+      <li><span class="cod">Q1</span><span class="q">Abierta: En una frase, ¿qué significa innovar en Delirio?</span></li>
+      <li><span class="cod">Q2</span><span class="q">Abierta: ¿Cuál es el principal obstáculo que hoy frena las ideas nuevas en Delirio?</span></li>
+      <li><span class="cod">Q3</span><span class="q">Abierta: Cuenta una idea que hayas propuesto en Delirio y qué pasó con ella. <span class="badge nuevo">V1</span></span></li>
+    </ol>
+    <p class="sec">Q3 usa la técnica de incidente crítico: da evidencia concreta para el informe y para el pitch. Duración estimada: 13 a 15 minutos, pensada para responder en el celular.</p>
+  </div>
+  <div class="acciones">
+    <button class="btn" id="copyBtn" type="button">Copiar batería para Google Forms</button>
+    <span class="estado-copia" id="copyMsg" aria-live="polite"></span>
+  </div>
+</section>
+
+<!-- 6 GLOSARIO -->
+<section id="glosario">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">6/7 · Glosario</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>Del idioma académico al idioma del show</h2>
+  <p>Cada término de Delirio traduce un constructo de los modelos base. Si un término no se usa así en Delirio hoy, se cambia aquí y en los ítems que lo usan.</p>
+  <div class="tabla"><table>
+    <thead><tr><th>Término Delirio</th><th>Constructo</th><th>Ítems</th></tr></thead>
+    <tbody>
+      <tr><td class="term">Temporada</td><td>Ciclo de planeación y balance</td><td class="code">C1.3 · C3.2 · L3.1 · E1.1</td></tr>
+      <tr><td class="term">Ensayo</td><td>Experimentación, prueba controlada</td><td class="code">A2.1 · V2.1</td></tr>
+      <tr><td class="term">Función</td><td>Operación ante público</td><td class="code">L1.2 · V2.1</td></tr>
+      <tr><td class="term">Estreno · llegar a la tarima</td><td>Implementación, escalamiento</td><td class="code">L3.2 · V3.1</td></tr>
+      <tr><td class="term">Número</td><td>Nueva oferta (innovación de producto)</td><td class="code">E1.1</td></tr>
+      <tr><td class="term">Montaje</td><td>Producto escénico completo</td><td class="code">A3.3</td></tr>
+      <tr><td class="term">Escena · Oficina</td><td>Áreas misionales y áreas de apoyo</td><td class="code">L2.1 · D1</td></tr>
+      <tr><td class="term">Elenco</td><td>Base operativa artística</td><td class="code">E1.2 · D2</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 CONTROL -->
+<section id="control">
+  <div class="divisor"><div class="escala" aria-hidden="true"></div><span class="lectura">7/7 · Control</span><div class="escala" aria-hidden="true"></div></div>
+  <h2>Prueba anti-preguntas dobles</h2>
+  <div class="grid">
+    <div class="card"><h3>Conector</h3><p class="sec">Ningún enunciado une dos hechos con "y", "o", "ni" ni "además". Los listados solo aparecen como ejemplos entre paréntesis.</p></div>
+    <div class="card"><h3>Observable</h3><p class="sec">Cada ítem describe algo que se puede ver desde la oficina o desde la tarima: una reunión, un ensayo, un estreno, una licencia.</p></div>
+    <div class="card"><h3>Respuesta única</h3><p class="sec">"Mejorar el show o la forma de trabajar" se partió: C2.2 ahora pregunta solo por propuestas de mejora.</p></div>
+  </div>
+  <div class="card">
+    <h3>Checklist del profesor Naranjo</h3>
+    <ul class="check">
+      <li>Simetría 5 × 3 × 3, con una palabra por factor.</li>
+      <li>Escala par de 6 puntos, justificada, sin opción neutral ni "No sé".</li>
+      <li>Pesos iguales argumentados más un índice de desbalance (Cuadre).</li>
+      <li>Cero preguntas compuestas.</li>
+      <li>6 variables contemporáneas: formación, licencias e IA creativa; fluidez digital; plataformas colaborativas; tecnología escénica.</li>
+      <li>Cruce matricial área × jerarquía (Escena–Oficina, Dirección–Equipo) con umbral de anonimato.</li>
+      <li>Metáfora explicable en menos de 2 minutos.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Por validar con Jose (experiencia en Delirio hasta 2020)</h3>
+    <ul class="check preg">
+      <li>Áreas y cargos reales para D1 y D2. ¿Existía Producción técnica como área propia o dependía de Producción?</li>
+      <li>¿El equipo dice "número", "función", "temporada"? ¿Qué palabra usaban para la oficina y para los artistas?</li>
+      <li>¿Las escuelas de salsa son aliadas externas o parte de la Fundación? Afecta L2.3 y E3.</li>
+      <li>¿Qué tecnología escénica nueva se usaba además del mapping? Afecta los ejemplos de A3.3.</li>
+      <li>¿Por dónde llegaría mejor la encuesta al elenco: correo, WhatsApp o en persona antes de un ensayo?</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Siguiente paso</h3>
+    <p class="sec">Mango bajito: un taller de 2 horas para cocrear la definición de innovación de Delirio, medido antes y después con C1.1, C1.2 y Q1. Antes del envío: piloto cognitivo con 3 a 5 personas (al menos 2 de la escena). Tras la recolección: alfa de Cronbach ≥ 0,70 por pilar.</p>
+  </div>
+  <p class="principio">«Antes de medir la innovación, sintonizamos la clave.»</p>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var riel=document.getElementById('riel'), out=document.getElementById('lecturaEscala');
+  var btns=[].slice.call(document.querySelectorAll('.estacion'));
+  var nota={1:'barrera',2:'barrera',3:'barrera',4:'cuenta como inclinación, no como evidencia',5:'cuenta como evidencia',6:'cuenta como evidencia'};
+  function set(v){
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.v==v));});
+    riel.style.setProperty('--pos',((v-0.5)/6*100).toFixed(2)+'%');
+    var lbl=btns[v-1].querySelector('.lbl').textContent;
+    out.innerHTML='<span>Estación '+v+' · '+lbl+'</span><span>Puntaje <b>'+((v-1)*20)+'</b> · '+nota[v]+'</span>';
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(+b.dataset.v);});});
+
+  var btn=document.getElementById('copyBtn'), msg=document.getElementById('copyMsg');
+  function clean(el){var c=el.cloneNode(true);c.querySelectorAll('.badge').forEach(function(t){t.remove();});return c.textContent.replace(/\s+/g,' ').trim();}
+  function build(){
+    var o=['MODELO CLAVE V1 · Fundación Delirio','Escala: 1 Totalmente en desacuerdo · 2 En desacuerdo · 3 Ligeramente en desacuerdo · 4 Ligeramente de acuerdo · 5 De acuerdo · 6 Totalmente de acuerdo',''];
+    document.querySelectorAll('#bateria .pilar-card').forEach(function(p){
+      o.push(p.querySelector('h3').textContent.toUpperCase());
+      p.querySelectorAll('.factor').forEach(function(f){
+        o.push('  '+f.querySelector('h4').textContent);
+        f.querySelectorAll('li').forEach(function(li){o.push('    '+li.querySelector('.cod').textContent+'  '+clean(li.querySelector('.q')));});
+      });
+      o.push('');
+    });
+    return o.join('\n');
+  }
+  btn.addEventListener('click',function(){
+    var text=build();
+    function fallback(){
+      var old=document.getElementById('copyFallback');if(old)old.remove();
+      var ta=document.createElement('textarea');ta.id='copyFallback';ta.value=text;ta.readOnly=true;ta.style.cssText='width:100%;min-height:200px;border-radius:12px;padding:12px;font:13px/1.5 var(--font-family-mono)';
+      btn.parentNode.insertAdjacentElement('afterend',ta);ta.select();msg.textContent='Selecciona el texto y cópialo con tu teclado.';
+    }
+    try{navigator.clipboard.writeText(text).then(function(){msg.textContent='Batería copiada.';},fallback);}catch(e){fallback();}
+  });
+})();
+</script>

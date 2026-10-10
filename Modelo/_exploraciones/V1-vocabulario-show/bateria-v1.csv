@@ -1,0 +1,50 @@
+codigo,pilar,factor,item,tipo
+C1.1,Conducción,Propósito,Delirio ha compartido con todo el equipo una definición de qué significa innovar.,base
+C1.2,Conducción,Propósito,"En mi equipo, las personas saben explicar qué tipo de innovación busca Delirio.",base
+C1.3,Conducción,Propósito,"Al iniciar cada temporada, Delirio le cuenta al equipo qué quiere renovar.",base
+C2.1,Conducción,Patrocinio,La Dirección General asiste a los espacios donde el equipo presenta ideas nuevas.,base
+C2.2,Conducción,Patrocinio,Mi jefe directo le pide al equipo propuestas de mejora.,base
+C2.3,Conducción,Patrocinio,Cada proyecto nuevo de Delirio tiene un líder visible que responde por él.,base
+C3.1,Conducción,Medición,Delirio define indicadores para saber si un proyecto nuevo funcionó.,base
+C3.2,Conducción,Medición,"Al cerrar cada temporada, Delirio hace un balance de lo que funcionó.",base
+C3.3,Conducción,Medición,Delirio mide la reacción del público a cada cambio del show.,base
+L1.1,Lazos,Seguridad,"En Delirio, una persona puede cuestionar la forma habitual de hacer las cosas sin sufrir represalias.",base
+L1.2,Lazos,Seguridad,"Cuando algo nuevo no funciona en una función, el equipo conversa sobre lo aprendido.",base
+L1.3,Lazos,Seguridad,"En las reuniones, las personas de menor cargo expresan desacuerdos con sus superiores.",base
+L2.1,Lazos,Colaboración,Personas de la escena trabajan en un mismo equipo con personas de la oficina en proyectos nuevos.,base
+L2.2,Lazos,Colaboración,Las áreas comparten información entre sí sin necesidad de una solicitud formal.,base
+L2.3,Lazos,Colaboración,"Delirio desarrolla proyectos nuevos junto con aliados externos (ej. escuelas de salsa, universidades, marcas).",base
+L3.1,Lazos,Visibilidad,Delirio le cuenta a todo el equipo los avances de sus proyectos nuevos al menos una vez por temporada.,base
+L3.2,Lazos,Visibilidad,Delirio reconoce públicamente a quienes proponen ideas que llegan a la tarima.,base
+L3.3,Lazos,Visibilidad,Participar en proyectos nuevos abre oportunidades de crecimiento dentro de Delirio.,base
+A1.1,Activos,Talento,"Delirio ofrece formación en métodos de innovación (ej. design thinking, prototipado).",base
+A1.2,Activos,Talento,Las personas de mi equipo resuelven sus tareas con herramientas digitales sin necesitar ayuda técnica.,Digital
+A1.3,Activos,Talento,Delirio ha capacitado a su equipo en el uso de herramientas de Inteligencia Artificial.,IA
+A2.1,Activos,Inversión,"Cuando alguien propone probar algo nuevo en el show, Delirio asigna tiempo de ensayo para probarlo.",base
+A2.2,Activos,Inversión,"Delirio invierte en materiales para probar ideas nuevas (ej. vestuario, utilería, visuales).",base
+A2.3,Activos,Inversión,"Delirio gestiona financiación externa (ej. convocatorias, becas, patrocinios) para proyectos nuevos.",base
+A3.1,Activos,Tecnología,Delirio paga licencias de herramientas de Inteligencia Artificial para uso del equipo.,IA
+A3.2,Activos,Tecnología,"Los equipos coordinan su trabajo en plataformas digitales colaborativas (ej. Google Drive, Notion, Miro).",Digital
+A3.3,Activos,Tecnología,"Delirio incorpora tecnología escénica nueva en sus montajes (ej. video mapping, iluminación, sonido).",Escena
+V1.1,Vía,Ideación,Delirio tiene un canal formal para que cualquier persona proponga ideas.,base
+V1.2,Vía,Ideación,Las ideas propuestas quedan registradas en un lugar que todo el equipo puede consultar.,base
+V1.3,Vía,Ideación,Delirio usa los comentarios del público como insumo para crear propuestas nuevas.,base
+V2.1,Vía,Ensayo,"Antes de llevar una idea al show completo, Delirio la prueba en pequeño (ej. un ensayo abierto, una función, un evento).",base
+V2.2,Vía,Ensayo,"Los equipos construyen prototipos de bajo costo para validar ideas (ej. maquetas, bocetos, demos).",base
+V2.3,Vía,Ensayo,"Los equipos usan Inteligencia Artificial para crear propuestas artísticas (ej. visuales, música, coreografías).",IA
+V3.1,Vía,Estreno,El equipo conoce los criterios con los que Delirio decide qué ideas llegan a la tarima.,base
+V3.2,Vía,Estreno,Quien propone una idea recibe una respuesta sobre la decisión tomada.,base
+V3.3,Vía,Estreno,Las ideas aprobadas llegan al público dentro de un plazo definido.,base
+E1.1,Efecto,Escena,"En la última temporada, el show estrenó al menos un número nuevo.",base
+E1.2,Efecto,Escena,"En el último año, Delirio llevó al show ideas propuestas por el elenco.",base
+E1.3,Efecto,Escena,La propuesta artística de Delirio se diferencia de otros espectáculos de salsa de la ciudad.,base
+E2.1,Efecto,Público,"En los últimos 12 meses, Delirio atrajo públicos que antes no asistían.",base
+E2.2,Efecto,Público,"Las innovaciones de Delirio han generado nuevas fuentes de ingreso (ej. eventos, giras, formatos digitales).",base
+E2.3,Efecto,Público,Los cambios introducidos en el último año han mejorado la experiencia del público.,base
+E3.1,Efecto,Comunidad,La innovación ha ampliado el impacto social de la Fundación en sus comunidades.,base
+E3.2,Efecto,Comunidad,"En el último año, los programas de formación de la Fundación incorporaron metodologías nuevas.",base
+E3.3,Efecto,Comunidad,Delirio ha creado nuevas oportunidades de trabajo para artistas de la ciudad.,base
+Q0,Control,Atención,"Para confirmar que estás leyendo, selecciona En desacuerdo.",control
+Q1,Abierta,Propósito,"En una frase, ¿qué significa innovar en Delirio?",abierta
+Q2,Abierta,Obstáculos,¿Cuál es el principal obstáculo que hoy frena las ideas nuevas en Delirio?,abierta
+Q3,Abierta,Incidente crítico,Cuenta una idea que hayas propuesto en Delirio y qué pasó con ella.,abierta
