@@ -21,6 +21,7 @@ Archivos de esta versión:
 - `plan-backend-dashboard.html`: plan de backend, consola interna y dashboard vivo.
 - `auditoria-wcag.md`: auditoría de accesibilidad del deck.
 - `clave.wav`: golpe de clave usado por el deck.
+- `elementos/`: cada elemento del modelo en un archivo aparte (metáfora, taxonomía, escala, ítems, perfil, puntuación con script, formulario, calidad, taller, dashboard, referencias y `modelo-clave.json`).
 - `bateria-v0.csv`: batería en tabla, lista para montar en Google Forms (T-07).
 
 ---

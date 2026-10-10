@@ -1,0 +1,5 @@
+indicador,definicion,umbral,lectura
+desfase,Pilar más alto − pilar más bajo,20,Clave cruzada
+desafine,"Dirección − Operación, por pilar",15,Alerta: la cabeza y la base no oyen lo mismo
+brecha_horizontal,"Área más alta − área más baja, por pilar (áreas con n ≥ 5)",15,Silo
+n_minimo,Respuestas mínimas para publicar un grupo,5,Supresión

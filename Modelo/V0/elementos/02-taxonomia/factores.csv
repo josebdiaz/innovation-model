@@ -1,0 +1,16 @@
+codigo,pilar,factor,que_mide,homologado_de
+C1,C,Propósito,Definición compartida de innovación y metas explícitas,"Jakopec (Estrategia); TLA Visión y Propósito; Hutch Tipos de innovación; McKinsey Aspire, Choose; IBM"
+C2,C,Patrocinio,Tiempo y responsabilidad que asumen los líderes,"Rao & Weintraub Energizar; Hutch Patrocinio ejecutivo, Propiedad; TLA Champion"
+C3,C,Comunicación,"Información sobre la innovación, incluida la postura frente a IA",TLA Comunicación; Hutch Awareness; Rao Involucrar
+L1,L,Seguridad,Proponer y equivocarse sin castigo,Rao Seguridad; Satell (HBR); TLA Permiso; Hutch ideas que fallan
+L2,L,Colaboración,Trabajo entre áreas y con aliados externos,Rao Colaboración; Rainforest; Satell brokers; Pentagrowth Conectar
+L3,L,Reconocimiento,Incentivos y crecimiento por innovar,Jakopec (Clima); Hutch Reconocimiento; TLA Incentivos alineados; Rao Éxito individual
+A1,A,Talento,"Formación en innovación, fluidez digital, alfabetización en IA",Rao Personas; TLA Capacidad; mandato Naranjo
+A2,A,Inversión,Tiempo y dinero protegidos para probar,TLA Tiempo y Dinero; Rao Proyectos; Hutch Tiempo para participar
+A3,A,Tecnología,"Licencias de IA, plataformas colaborativas y uso real",Rao Sistemas; Pentagrowth Instrumentar; mandato Naranjo
+V1,V,Ideación,"Canales, registro y fuentes de ideas","Jakopec (Ideas, Procesos); Rao Idear; HYPE Canvas; McKinsey Discover"
+V2,V,Experimentación,Pruebas a pequeña escala y prototipos,Rao Dar forma; TLA Hipótesis comprobables; McKinsey Evolve
+V3,V,Escalamiento,"Criterios, decisión e implementación","Rao Capturar; Hutch Gobernanza; Jakopec decisor; McKinsey Accelerate, Scale"
+E1,E,Público,Experiencias y audiencias nuevas,Rao Éxito externo; Jakopec (Ideas)
+E2,E,Sostenibilidad,"Ingresos, eficiencia e impacto social de la Fundación",Rao Éxito empresa; Pentagrowth; misión de la Fundación
+E3,E,Medición,Indicadores de innovación y su revisión,IBM métricas; Jakopec (Estrategia); TLA Medir el progreso

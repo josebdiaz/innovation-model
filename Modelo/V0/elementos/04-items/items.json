@@ -1,0 +1,317 @@
+[
+  {
+    "codigo": "C1.1",
+    "pilar": "Conducción",
+    "factor": "Propósito",
+    "item": "En Delirio existe una definición escrita de qué significa innovar para la organización.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C1.2",
+    "pilar": "Conducción",
+    "factor": "Propósito",
+    "item": "En mi equipo, las personas saben explicar qué tipo de innovación busca Delirio.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C1.3",
+    "pilar": "Conducción",
+    "factor": "Propósito",
+    "item": "El plan estratégico de Delirio incluye metas de innovación con fecha de cumplimiento.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C2.1",
+    "pilar": "Conducción",
+    "factor": "Patrocinio",
+    "item": "La Dirección General dedica tiempo de su agenda a revisar iniciativas de innovación.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C2.2",
+    "pilar": "Conducción",
+    "factor": "Patrocinio",
+    "item": "Mi jefe directo le pide al equipo propuestas para mejorar la forma de trabajar.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C2.3",
+    "pilar": "Conducción",
+    "factor": "Patrocinio",
+    "item": "Cada iniciativa de innovación tiene un directivo que responde por sus resultados.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C3.1",
+    "pilar": "Conducción",
+    "factor": "Comunicación",
+    "item": "Delirio informa a todo el personal los avances de sus proyectos de innovación al menos una vez por trimestre.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C3.2",
+    "pilar": "Conducción",
+    "factor": "Comunicación",
+    "item": "Los directivos conversan directamente con el personal operativo sobre ideas nuevas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "C3.3",
+    "pilar": "Conducción",
+    "factor": "Comunicación",
+    "item": "Delirio ha comunicado a sus equipos una política oficial sobre el uso de Inteligencia Artificial en el trabajo.",
+    "tipo": "IA"
+  },
+  {
+    "codigo": "L1.1",
+    "pilar": "Lazos",
+    "factor": "Seguridad",
+    "item": "En Delirio, una persona puede cuestionar la forma habitual de hacer las cosas sin sufrir represalias.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L1.2",
+    "pilar": "Lazos",
+    "factor": "Seguridad",
+    "item": "Cuando una iniciativa nueva no funciona, el equipo se reúne a identificar aprendizajes.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L1.3",
+    "pilar": "Lazos",
+    "factor": "Seguridad",
+    "item": "En las reuniones, las personas de menor cargo expresan desacuerdos con sus superiores.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L2.1",
+    "pilar": "Lazos",
+    "factor": "Colaboración",
+    "item": "Personas de distintas áreas trabajan en un mismo equipo para desarrollar proyectos nuevos.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L2.2",
+    "pilar": "Lazos",
+    "factor": "Colaboración",
+    "item": "Las áreas comparten información entre sí sin necesidad de una solicitud formal.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L2.3",
+    "pilar": "Lazos",
+    "factor": "Colaboración",
+    "item": "Delirio desarrolla proyectos nuevos junto con aliados externos (ej. universidades, marcas, colectivos culturales).",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L3.1",
+    "pilar": "Lazos",
+    "factor": "Reconocimiento",
+    "item": "Delirio reconoce públicamente a quienes proponen ideas que llegan a implementarse.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L3.2",
+    "pilar": "Lazos",
+    "factor": "Reconocimiento",
+    "item": "La evaluación de desempeño de Delirio incluye la contribución a la innovación.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "L3.3",
+    "pilar": "Lazos",
+    "factor": "Reconocimiento",
+    "item": "Participar en proyectos de innovación abre oportunidades de crecimiento dentro de Delirio.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "A1.1",
+    "pilar": "Activos",
+    "factor": "Talento",
+    "item": "Delirio ofrece formación en métodos de innovación (ej. design thinking, prototipado).",
+    "tipo": "base"
+  },
+  {
+    "codigo": "A1.2",
+    "pilar": "Activos",
+    "factor": "Talento",
+    "item": "Las personas de mi equipo resuelven sus tareas con herramientas digitales sin necesitar ayuda técnica.",
+    "tipo": "Digital"
+  },
+  {
+    "codigo": "A1.3",
+    "pilar": "Activos",
+    "factor": "Talento",
+    "item": "Delirio ha capacitado a su personal en el uso de herramientas de Inteligencia Artificial.",
+    "tipo": "IA"
+  },
+  {
+    "codigo": "A2.1",
+    "pilar": "Activos",
+    "factor": "Inversión",
+    "item": "Delirio cuenta con un presupuesto exclusivo para probar ideas nuevas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "A2.2",
+    "pilar": "Activos",
+    "factor": "Inversión",
+    "item": "Las personas disponen de tiempo dentro de su jornada para trabajar en ideas nuevas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "A2.3",
+    "pilar": "Activos",
+    "factor": "Inversión",
+    "item": "Delirio gestiona financiación externa (ej. convocatorias, becas, patrocinios) para proyectos de innovación.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "A3.1",
+    "pilar": "Activos",
+    "factor": "Tecnología",
+    "item": "Delirio paga licencias de herramientas de Inteligencia Artificial para uso del personal.",
+    "tipo": "IA"
+  },
+  {
+    "codigo": "A3.2",
+    "pilar": "Activos",
+    "factor": "Tecnología",
+    "item": "Los equipos coordinan sus proyectos en plataformas digitales colaborativas (ej. Miro, Notion, Google Workspace).",
+    "tipo": "Digital"
+  },
+  {
+    "codigo": "A3.3",
+    "pilar": "Activos",
+    "factor": "Tecnología",
+    "item": "En mi equipo se usa Inteligencia Artificial al menos una vez por semana para tareas laborales.",
+    "tipo": "IA"
+  },
+  {
+    "codigo": "V1.1",
+    "pilar": "Vía",
+    "factor": "Ideación",
+    "item": "Delirio tiene un canal formal para que cualquier persona proponga ideas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V1.2",
+    "pilar": "Vía",
+    "factor": "Ideación",
+    "item": "Las ideas propuestas quedan registradas en un repositorio central.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V1.3",
+    "pilar": "Vía",
+    "factor": "Ideación",
+    "item": "Delirio usa la retroalimentación del público como insumo para crear propuestas nuevas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V2.1",
+    "pilar": "Vía",
+    "factor": "Experimentación",
+    "item": "Antes de lanzar una propuesta nueva, Delirio la prueba a pequeña escala.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V2.2",
+    "pilar": "Vía",
+    "factor": "Experimentación",
+    "item": "Los equipos construyen prototipos de bajo costo para validar ideas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V2.3",
+    "pilar": "Vía",
+    "factor": "Experimentación",
+    "item": "Los equipos usan Inteligencia Artificial en la etapa de generación de ideas.",
+    "tipo": "IA"
+  },
+  {
+    "codigo": "V3.1",
+    "pilar": "Vía",
+    "factor": "Escalamiento",
+    "item": "El personal conoce los criterios con los que Delirio selecciona qué ideas desarrollar.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V3.2",
+    "pilar": "Vía",
+    "factor": "Escalamiento",
+    "item": "Quien propone una idea recibe una respuesta formal sobre la decisión tomada.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "V3.3",
+    "pilar": "Vía",
+    "factor": "Escalamiento",
+    "item": "Las ideas aprobadas se implementan dentro de un plazo definido.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E1.1",
+    "pilar": "Efecto",
+    "factor": "Público",
+    "item": "En los últimos 12 meses, Delirio lanzó al menos una experiencia nueva para su público.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E1.2",
+    "pilar": "Efecto",
+    "factor": "Público",
+    "item": "En los últimos 12 meses, Delirio atrajo segmentos de público que antes no asistían.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E1.3",
+    "pilar": "Efecto",
+    "factor": "Público",
+    "item": "Los cambios introducidos en el último año han mejorado la experiencia del público.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E2.1",
+    "pilar": "Efecto",
+    "factor": "Sostenibilidad",
+    "item": "Las innovaciones de Delirio han generado nuevas fuentes de ingreso.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E2.2",
+    "pilar": "Efecto",
+    "factor": "Sostenibilidad",
+    "item": "Las mejoras en procesos internos han reducido los tiempos de operación.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E2.3",
+    "pilar": "Efecto",
+    "factor": "Sostenibilidad",
+    "item": "La innovación ha ampliado el impacto social de la Fundación en sus comunidades.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E3.1",
+    "pilar": "Efecto",
+    "factor": "Medición",
+    "item": "Delirio mide los resultados de sus iniciativas de innovación con indicadores definidos.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E3.2",
+    "pilar": "Efecto",
+    "factor": "Medición",
+    "item": "La Dirección revisa los indicadores de innovación en sus reuniones periódicas.",
+    "tipo": "base"
+  },
+  {
+    "codigo": "E3.3",
+    "pilar": "Efecto",
+    "factor": "Medición",
+    "item": "Delirio mide la satisfacción del público con cada propuesta nueva.",
+    "tipo": "base"
+  }
+]

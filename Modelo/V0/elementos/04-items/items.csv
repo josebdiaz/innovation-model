@@ -1,0 +1,46 @@
+codigo,pilar,factor,item,tipo,referente
+C1.1,Conducción,Propósito,En Delirio existe una definición escrita de qué significa innovar para la organización.,base,Delirio
+C1.2,Conducción,Propósito,"En mi equipo, las personas saben explicar qué tipo de innovación busca Delirio.",base,mi equipo
+C1.3,Conducción,Propósito,El plan estratégico de Delirio incluye metas de innovación con fecha de cumplimiento.,base,Delirio
+C2.1,Conducción,Patrocinio,La Dirección General dedica tiempo de su agenda a revisar iniciativas de innovación.,base,Delirio
+C2.2,Conducción,Patrocinio,Mi jefe directo le pide al equipo propuestas para mejorar la forma de trabajar.,base,mi equipo
+C2.3,Conducción,Patrocinio,Cada iniciativa de innovación tiene un directivo que responde por sus resultados.,base,Delirio
+C3.1,Conducción,Comunicación,Delirio informa a todo el personal los avances de sus proyectos de innovación al menos una vez por trimestre.,base,Delirio
+C3.2,Conducción,Comunicación,Los directivos conversan directamente con el personal operativo sobre ideas nuevas.,base,Delirio
+C3.3,Conducción,Comunicación,Delirio ha comunicado a sus equipos una política oficial sobre el uso de Inteligencia Artificial en el trabajo.,IA,Delirio
+L1.1,Lazos,Seguridad,"En Delirio, una persona puede cuestionar la forma habitual de hacer las cosas sin sufrir represalias.",base,Delirio
+L1.2,Lazos,Seguridad,"Cuando una iniciativa nueva no funciona, el equipo se reúne a identificar aprendizajes.",base,Delirio
+L1.3,Lazos,Seguridad,"En las reuniones, las personas de menor cargo expresan desacuerdos con sus superiores.",base,Delirio
+L2.1,Lazos,Colaboración,Personas de distintas áreas trabajan en un mismo equipo para desarrollar proyectos nuevos.,base,Delirio
+L2.2,Lazos,Colaboración,Las áreas comparten información entre sí sin necesidad de una solicitud formal.,base,Delirio
+L2.3,Lazos,Colaboración,"Delirio desarrolla proyectos nuevos junto con aliados externos (ej. universidades, marcas, colectivos culturales).",base,Delirio
+L3.1,Lazos,Reconocimiento,Delirio reconoce públicamente a quienes proponen ideas que llegan a implementarse.,base,Delirio
+L3.2,Lazos,Reconocimiento,La evaluación de desempeño de Delirio incluye la contribución a la innovación.,base,Delirio
+L3.3,Lazos,Reconocimiento,Participar en proyectos de innovación abre oportunidades de crecimiento dentro de Delirio.,base,Delirio
+A1.1,Activos,Talento,"Delirio ofrece formación en métodos de innovación (ej. design thinking, prototipado).",base,Delirio
+A1.2,Activos,Talento,Las personas de mi equipo resuelven sus tareas con herramientas digitales sin necesitar ayuda técnica.,Digital,mi equipo
+A1.3,Activos,Talento,Delirio ha capacitado a su personal en el uso de herramientas de Inteligencia Artificial.,IA,Delirio
+A2.1,Activos,Inversión,Delirio cuenta con un presupuesto exclusivo para probar ideas nuevas.,base,Delirio
+A2.2,Activos,Inversión,Las personas disponen de tiempo dentro de su jornada para trabajar en ideas nuevas.,base,Delirio
+A2.3,Activos,Inversión,"Delirio gestiona financiación externa (ej. convocatorias, becas, patrocinios) para proyectos de innovación.",base,Delirio
+A3.1,Activos,Tecnología,Delirio paga licencias de herramientas de Inteligencia Artificial para uso del personal.,IA,Delirio
+A3.2,Activos,Tecnología,"Los equipos coordinan sus proyectos en plataformas digitales colaborativas (ej. Miro, Notion, Google Workspace).",Digital,Delirio
+A3.3,Activos,Tecnología,En mi equipo se usa Inteligencia Artificial al menos una vez por semana para tareas laborales.,IA,mi equipo
+V1.1,Vía,Ideación,Delirio tiene un canal formal para que cualquier persona proponga ideas.,base,Delirio
+V1.2,Vía,Ideación,Las ideas propuestas quedan registradas en un repositorio central.,base,Delirio
+V1.3,Vía,Ideación,Delirio usa la retroalimentación del público como insumo para crear propuestas nuevas.,base,Delirio
+V2.1,Vía,Experimentación,"Antes de lanzar una propuesta nueva, Delirio la prueba a pequeña escala.",base,Delirio
+V2.2,Vía,Experimentación,Los equipos construyen prototipos de bajo costo para validar ideas.,base,Delirio
+V2.3,Vía,Experimentación,Los equipos usan Inteligencia Artificial en la etapa de generación de ideas.,IA,Delirio
+V3.1,Vía,Escalamiento,El personal conoce los criterios con los que Delirio selecciona qué ideas desarrollar.,base,Delirio
+V3.2,Vía,Escalamiento,Quien propone una idea recibe una respuesta formal sobre la decisión tomada.,base,Delirio
+V3.3,Vía,Escalamiento,Las ideas aprobadas se implementan dentro de un plazo definido.,base,Delirio
+E1.1,Efecto,Público,"En los últimos 12 meses, Delirio lanzó al menos una experiencia nueva para su público.",base,Delirio
+E1.2,Efecto,Público,"En los últimos 12 meses, Delirio atrajo segmentos de público que antes no asistían.",base,Delirio
+E1.3,Efecto,Público,Los cambios introducidos en el último año han mejorado la experiencia del público.,base,Delirio
+E2.1,Efecto,Sostenibilidad,Las innovaciones de Delirio han generado nuevas fuentes de ingreso.,base,Delirio
+E2.2,Efecto,Sostenibilidad,Las mejoras en procesos internos han reducido los tiempos de operación.,base,Delirio
+E2.3,Efecto,Sostenibilidad,La innovación ha ampliado el impacto social de la Fundación en sus comunidades.,base,Delirio
+E3.1,Efecto,Medición,Delirio mide los resultados de sus iniciativas de innovación con indicadores definidos.,base,Delirio
+E3.2,Efecto,Medición,La Dirección revisa los indicadores de innovación en sus reuniones periódicas.,base,Delirio
+E3.3,Efecto,Medición,Delirio mide la satisfacción del público con cada propuesta nueva.,base,Delirio

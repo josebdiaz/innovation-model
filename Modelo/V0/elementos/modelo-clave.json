@@ -1,0 +1,550 @@
+{
+  "nombre": "Modelo CLAVE",
+  "version": "V0.7",
+  "cliente": "Fundación Delirio",
+  "equipo": "Grupo 4 · MGinn Universidad Icesi",
+  "metafora": {
+    "patron": "son clave 3-2",
+    "corcheas_golpe": [
+      1,
+      4,
+      7,
+      11,
+      13
+    ],
+    "bpm_referencia": 107,
+    "tension": [
+      "C",
+      "L",
+      "A"
+    ],
+    "resolucion": [
+      "V",
+      "E"
+    ]
+  },
+  "escala": [
+    {
+      "valor": 1,
+      "etiqueta": "Totalmente en desacuerdo",
+      "puntaje": 0,
+      "lectura": "Barrera"
+    },
+    {
+      "valor": 2,
+      "etiqueta": "En desacuerdo",
+      "puntaje": 20,
+      "lectura": "Barrera"
+    },
+    {
+      "valor": 3,
+      "etiqueta": "Ligeramente en desacuerdo",
+      "puntaje": 40,
+      "lectura": "Barrera"
+    },
+    {
+      "valor": 4,
+      "etiqueta": "Ligeramente de acuerdo",
+      "puntaje": 60,
+      "lectura": "Inclinación"
+    },
+    {
+      "valor": 5,
+      "etiqueta": "De acuerdo",
+      "puntaje": 80,
+      "lectura": "Evidencia"
+    },
+    {
+      "valor": 6,
+      "etiqueta": "Totalmente de acuerdo",
+      "puntaje": 100,
+      "lectura": "Evidencia"
+    }
+  ],
+  "pilares": [
+    {
+      "codigo": "C",
+      "nombre": "Conducción",
+      "compas": "Tensión",
+      "descripcion": "Estrategia y liderazgo: el rumbo",
+      "naturaleza": "Mayormente reflectiva",
+      "peso": 0.2,
+      "factores": [
+        {
+          "codigo": "C1",
+          "nombre": "Propósito",
+          "que_mide": "Definición compartida de innovación y metas explícitas",
+          "homologado_de": "Jakopec (Estrategia); TLA Visión y Propósito; Hutch Tipos de innovación; McKinsey Aspire, Choose; IBM",
+          "items": [
+            {
+              "codigo": "C1.1",
+              "texto": "En Delirio existe una definición escrita de qué significa innovar para la organización.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "C1.2",
+              "texto": "En mi equipo, las personas saben explicar qué tipo de innovación busca Delirio.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "C1.3",
+              "texto": "El plan estratégico de Delirio incluye metas de innovación con fecha de cumplimiento.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "C2",
+          "nombre": "Patrocinio",
+          "que_mide": "Tiempo y responsabilidad que asumen los líderes",
+          "homologado_de": "Rao & Weintraub Energizar; Hutch Patrocinio ejecutivo, Propiedad; TLA Champion",
+          "items": [
+            {
+              "codigo": "C2.1",
+              "texto": "La Dirección General dedica tiempo de su agenda a revisar iniciativas de innovación.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "C2.2",
+              "texto": "Mi jefe directo le pide al equipo propuestas para mejorar la forma de trabajar.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "C2.3",
+              "texto": "Cada iniciativa de innovación tiene un directivo que responde por sus resultados.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "C3",
+          "nombre": "Comunicación",
+          "que_mide": "Información sobre la innovación, incluida la postura frente a IA",
+          "homologado_de": "TLA Comunicación; Hutch Awareness; Rao Involucrar",
+          "items": [
+            {
+              "codigo": "C3.1",
+              "texto": "Delirio informa a todo el personal los avances de sus proyectos de innovación al menos una vez por trimestre.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "C3.2",
+              "texto": "Los directivos conversan directamente con el personal operativo sobre ideas nuevas.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "C3.3",
+              "texto": "Delirio ha comunicado a sus equipos una política oficial sobre el uso de Inteligencia Artificial en el trabajo.",
+              "tipo": "IA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "L",
+      "nombre": "Lazos",
+      "compas": "Tensión",
+      "descripcion": "Clima, valores y confianza",
+      "naturaleza": "Reflectiva",
+      "peso": 0.2,
+      "factores": [
+        {
+          "codigo": "L1",
+          "nombre": "Seguridad",
+          "que_mide": "Proponer y equivocarse sin castigo",
+          "homologado_de": "Rao Seguridad; Satell (HBR); TLA Permiso; Hutch ideas que fallan",
+          "items": [
+            {
+              "codigo": "L1.1",
+              "texto": "En Delirio, una persona puede cuestionar la forma habitual de hacer las cosas sin sufrir represalias.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "L1.2",
+              "texto": "Cuando una iniciativa nueva no funciona, el equipo se reúne a identificar aprendizajes.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "L1.3",
+              "texto": "En las reuniones, las personas de menor cargo expresan desacuerdos con sus superiores.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "L2",
+          "nombre": "Colaboración",
+          "que_mide": "Trabajo entre áreas y con aliados externos",
+          "homologado_de": "Rao Colaboración; Rainforest; Satell brokers; Pentagrowth Conectar",
+          "items": [
+            {
+              "codigo": "L2.1",
+              "texto": "Personas de distintas áreas trabajan en un mismo equipo para desarrollar proyectos nuevos.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "L2.2",
+              "texto": "Las áreas comparten información entre sí sin necesidad de una solicitud formal.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "L2.3",
+              "texto": "Delirio desarrolla proyectos nuevos junto con aliados externos (ej. universidades, marcas, colectivos culturales).",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "L3",
+          "nombre": "Reconocimiento",
+          "que_mide": "Incentivos y crecimiento por innovar",
+          "homologado_de": "Jakopec (Clima); Hutch Reconocimiento; TLA Incentivos alineados; Rao Éxito individual",
+          "items": [
+            {
+              "codigo": "L3.1",
+              "texto": "Delirio reconoce públicamente a quienes proponen ideas que llegan a implementarse.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "L3.2",
+              "texto": "La evaluación de desempeño de Delirio incluye la contribución a la innovación.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "L3.3",
+              "texto": "Participar en proyectos de innovación abre oportunidades de crecimiento dentro de Delirio.",
+              "tipo": "base"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "A",
+      "nombre": "Activos",
+      "compas": "Tensión",
+      "descripcion": "Recursos, capacidades y tecnología",
+      "naturaleza": "Formativa",
+      "peso": 0.2,
+      "factores": [
+        {
+          "codigo": "A1",
+          "nombre": "Talento",
+          "que_mide": "Formación en innovación, fluidez digital, alfabetización en IA",
+          "homologado_de": "Rao Personas; TLA Capacidad; mandato Naranjo",
+          "items": [
+            {
+              "codigo": "A1.1",
+              "texto": "Delirio ofrece formación en métodos de innovación (ej. design thinking, prototipado).",
+              "tipo": "base"
+            },
+            {
+              "codigo": "A1.2",
+              "texto": "Las personas de mi equipo resuelven sus tareas con herramientas digitales sin necesitar ayuda técnica.",
+              "tipo": "Digital"
+            },
+            {
+              "codigo": "A1.3",
+              "texto": "Delirio ha capacitado a su personal en el uso de herramientas de Inteligencia Artificial.",
+              "tipo": "IA"
+            }
+          ]
+        },
+        {
+          "codigo": "A2",
+          "nombre": "Inversión",
+          "que_mide": "Tiempo y dinero protegidos para probar",
+          "homologado_de": "TLA Tiempo y Dinero; Rao Proyectos; Hutch Tiempo para participar",
+          "items": [
+            {
+              "codigo": "A2.1",
+              "texto": "Delirio cuenta con un presupuesto exclusivo para probar ideas nuevas.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "A2.2",
+              "texto": "Las personas disponen de tiempo dentro de su jornada para trabajar en ideas nuevas.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "A2.3",
+              "texto": "Delirio gestiona financiación externa (ej. convocatorias, becas, patrocinios) para proyectos de innovación.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "A3",
+          "nombre": "Tecnología",
+          "que_mide": "Licencias de IA, plataformas colaborativas y uso real",
+          "homologado_de": "Rao Sistemas; Pentagrowth Instrumentar; mandato Naranjo",
+          "items": [
+            {
+              "codigo": "A3.1",
+              "texto": "Delirio paga licencias de herramientas de Inteligencia Artificial para uso del personal.",
+              "tipo": "IA"
+            },
+            {
+              "codigo": "A3.2",
+              "texto": "Los equipos coordinan sus proyectos en plataformas digitales colaborativas (ej. Miro, Notion, Google Workspace).",
+              "tipo": "Digital"
+            },
+            {
+              "codigo": "A3.3",
+              "texto": "En mi equipo se usa Inteligencia Artificial al menos una vez por semana para tareas laborales.",
+              "tipo": "IA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "V",
+      "nombre": "Vía",
+      "compas": "Resolución",
+      "descripcion": "Proceso que recorre una idea hasta la escena",
+      "naturaleza": "Mixta (etapas de proceso)",
+      "peso": 0.2,
+      "factores": [
+        {
+          "codigo": "V1",
+          "nombre": "Ideación",
+          "que_mide": "Canales, registro y fuentes de ideas",
+          "homologado_de": "Jakopec (Ideas, Procesos); Rao Idear; HYPE Canvas; McKinsey Discover",
+          "items": [
+            {
+              "codigo": "V1.1",
+              "texto": "Delirio tiene un canal formal para que cualquier persona proponga ideas.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "V1.2",
+              "texto": "Las ideas propuestas quedan registradas en un repositorio central.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "V1.3",
+              "texto": "Delirio usa la retroalimentación del público como insumo para crear propuestas nuevas.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "V2",
+          "nombre": "Experimentación",
+          "que_mide": "Pruebas a pequeña escala y prototipos",
+          "homologado_de": "Rao Dar forma; TLA Hipótesis comprobables; McKinsey Evolve",
+          "items": [
+            {
+              "codigo": "V2.1",
+              "texto": "Antes de lanzar una propuesta nueva, Delirio la prueba a pequeña escala.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "V2.2",
+              "texto": "Los equipos construyen prototipos de bajo costo para validar ideas.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "V2.3",
+              "texto": "Los equipos usan Inteligencia Artificial en la etapa de generación de ideas.",
+              "tipo": "IA"
+            }
+          ]
+        },
+        {
+          "codigo": "V3",
+          "nombre": "Escalamiento",
+          "que_mide": "Criterios, decisión e implementación",
+          "homologado_de": "Rao Capturar; Hutch Gobernanza; Jakopec decisor; McKinsey Accelerate, Scale",
+          "items": [
+            {
+              "codigo": "V3.1",
+              "texto": "El personal conoce los criterios con los que Delirio selecciona qué ideas desarrollar.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "V3.2",
+              "texto": "Quien propone una idea recibe una respuesta formal sobre la decisión tomada.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "V3.3",
+              "texto": "Las ideas aprobadas se implementan dentro de un plazo definido.",
+              "tipo": "base"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Efecto",
+      "compas": "Resolución",
+      "descripcion": "Resultados de valor",
+      "naturaleza": "Formativa",
+      "peso": 0.2,
+      "factores": [
+        {
+          "codigo": "E1",
+          "nombre": "Público",
+          "que_mide": "Experiencias y audiencias nuevas",
+          "homologado_de": "Rao Éxito externo; Jakopec (Ideas)",
+          "items": [
+            {
+              "codigo": "E1.1",
+              "texto": "En los últimos 12 meses, Delirio lanzó al menos una experiencia nueva para su público.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "E1.2",
+              "texto": "En los últimos 12 meses, Delirio atrajo segmentos de público que antes no asistían.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "E1.3",
+              "texto": "Los cambios introducidos en el último año han mejorado la experiencia del público.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "E2",
+          "nombre": "Sostenibilidad",
+          "que_mide": "Ingresos, eficiencia e impacto social de la Fundación",
+          "homologado_de": "Rao Éxito empresa; Pentagrowth; misión de la Fundación",
+          "items": [
+            {
+              "codigo": "E2.1",
+              "texto": "Las innovaciones de Delirio han generado nuevas fuentes de ingreso.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "E2.2",
+              "texto": "Las mejoras en procesos internos han reducido los tiempos de operación.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "E2.3",
+              "texto": "La innovación ha ampliado el impacto social de la Fundación en sus comunidades.",
+              "tipo": "base"
+            }
+          ]
+        },
+        {
+          "codigo": "E3",
+          "nombre": "Medición",
+          "que_mide": "Indicadores de innovación y su revisión",
+          "homologado_de": "IBM métricas; Jakopec (Estrategia); TLA Medir el progreso",
+          "items": [
+            {
+              "codigo": "E3.1",
+              "texto": "Delirio mide los resultados de sus iniciativas de innovación con indicadores definidos.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "E3.2",
+              "texto": "La Dirección revisa los indicadores de innovación en sus reuniones periódicas.",
+              "tipo": "base"
+            },
+            {
+              "codigo": "E3.3",
+              "texto": "Delirio mide la satisfacción del público con cada propuesta nueva.",
+              "tipo": "base"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "perfil": [
+    {
+      "codigo": "D1",
+      "pregunta": "¿En qué área trabajas principalmente?",
+      "opciones": [
+        "Dirección General",
+        "Producción artística",
+        "Producción técnica y logística",
+        "Comercial y mercadeo",
+        "Administrativa y financiera",
+        "Proyectos sociales y formación"
+      ],
+      "nota": "Provisional hasta recibir el organigrama (T-03)"
+    },
+    {
+      "codigo": "D2",
+      "pregunta": "¿Cuál es tu nivel de responsabilidad?",
+      "opciones": [
+        "Dirección",
+        "Mandos medios (coordinación, jefatura)",
+        "Operación (artistas, técnicos, staff)"
+      ],
+      "nota": ""
+    },
+    {
+      "codigo": "D3",
+      "pregunta": "¿Cuánto tiempo llevas en Delirio?",
+      "opciones": [
+        "Menos de 1 año",
+        "1 a 3 años",
+        "3 a 5 años",
+        "Más de 5 años"
+      ],
+      "nota": ""
+    },
+    {
+      "codigo": "D4",
+      "pregunta": "¿Cuál es tu tipo de vinculación?",
+      "opciones": [
+        "Contrato laboral",
+        "Prestación de servicios",
+        "Otro"
+      ],
+      "nota": ""
+    }
+  ],
+  "cierre": [
+    {
+      "codigo": "Q0",
+      "tipo": "control",
+      "respuesta_correcta": 2
+    },
+    {
+      "codigo": "Q1",
+      "tipo": "abierta"
+    },
+    {
+      "codigo": "Q2",
+      "tipo": "abierta"
+    }
+  ],
+  "bandas": [
+    {
+      "banda": "Entrando",
+      "min": 0,
+      "max": 49.99
+    },
+    {
+      "banda": "Emergiendo",
+      "min": 50,
+      "max": 69.99
+    },
+    {
+      "banda": "Adaptando",
+      "min": 70,
+      "max": 84.99
+    },
+    {
+      "banda": "Transformando",
+      "min": 85,
+      "max": 100
+    }
+  ],
+  "umbrales": {
+    "desfase": 20,
+    "desafine": 15,
+    "brecha_horizontal": 15,
+    "n_minimo": 5
+  }
+}

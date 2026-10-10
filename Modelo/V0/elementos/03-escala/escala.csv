@@ -1,0 +1,7 @@
+valor,etiqueta,puntaje_0_100,lectura
+1,Totalmente en desacuerdo,0,Barrera
+2,En desacuerdo,20,Barrera
+3,Ligeramente en desacuerdo,40,Barrera
+4,Ligeramente de acuerdo,60,Inclinación
+5,De acuerdo,80,Evidencia
+6,Totalmente de acuerdo,100,Evidencia
