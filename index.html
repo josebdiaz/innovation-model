@@ -11,7 +11,7 @@
 <style>
 /* Layout: tablero índice de una columna ancha (1080px): cabecera azul rey con cifras, franja de avance T-01…T-15, buscador y grupos de documentos en tarjetas. Paleta "Los Sabanales"; un solo look deliberado (papel claro). */
 :root{
-  --paper:#FFFDF6; --cream:#FFF8E1; --ink:#1E0A3C; --muted:#4B3F63; --lav:#1F4FA8; --night:#3F1F6E; --yellow:#F7F000; --rose:#DE4D74; --jade:#5BB68A; --magenta:#C8085D; --line:#E6DCC4; --soft:#F7F1E1;
+  --paper:#FFFDF6; --cream:#FFF8E6; --ink:#170A33; --muted:#4B3F63; --lav:#1F4FA8; --night:#2E1466; --yellow:#FFE42A; --rose:#FAAED4; --jade:#47D59B; --magenta:#B02A6B; --line:#E6DCC4; --soft:#F7F1E1;
   --sh:0 8px 22px rgba(28,10,56,.12);
   --sans:"Nunito", "Segoe UI", system-ui, sans-serif; --script:"Kaushan Script", cursive;
   color-scheme:light;
@@ -57,10 +57,10 @@ a.doc b{font-weight:900;font-size:1.05rem;line-height:1.2}
 a.doc span.d{font-size:.88rem;color:var(--muted);font-weight:600}
 a.doc .where{font-size:.75rem;font-weight:800;color:var(--muted)}
 a.doc.hero{background:var(--night);color:var(--cream);border-color:transparent}
-a.doc.hero span.d,a.doc.hero .where{color:#FFF8E1}
+a.doc.hero span.d,a.doc.hero .where{color:#FFF8E6}
 .type.site{background:var(--yellow);color:var(--ink)}
 .type.gh{background:var(--soft);color:var(--ink)}
-.type.ext{background:#FBE0E8;color:#7A0B3A}
+.type.ext{background:#FFE7F2;color:#B02A6B}
 .empty{display:none;padding:20px;border-radius:16px;background:var(--soft);font-weight:700}
 .note{font-size:.85rem;color:var(--muted);margin-top:8px;max-width:80ch}
 @media (max-width:820px){.tasks{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -82,7 +82,7 @@ a.doc.hero span.d,a.doc.hero .where{color:#FFF8E1}
   <div class="wrap">
     <span class="k">Haciéndolo Posible · Grupo 4 · MGinn Universidad Icesi</span>
     <h1>Proyecto CLAVE <span>índice</span></h1>
-    <p>Entregables del diagnóstico de innovación de Fundación Delirio · Modelo CLAVE V0.7.</p>
+    <p>Entregables del diagnóstico de innovación de Fundación Delirio · Modelo CLAVE V0.9.</p>
   </div>
 </header>
 
@@ -122,6 +122,7 @@ a.doc.hero span.d,a.doc.hero .where{color:#FFF8E1}
       {t:'Racional en una página',d:'Por qué medimos lo que medimos, cómo se lee el resultado, supuestos y límites.',u:'Modelo/V0/onepager-racional.html',k:'site'},
       {t:'Ficha técnica',d:'Documento metodológico: constructo, modelo de medición, puntuación, agregación, validación, ética y referencias APA.',u:'Modelo/V0/ficha-tecnica.html',k:'site'},
       {t:'Plan de backend y dashboard',d:'Arquitectura Forms → Sheets → Apps Script, consola interna vs. dashboard vivo, cronograma y riesgos.',u:'Modelo/V0/plan-backend-dashboard.html',k:'site'},
+      {t:'Paleta y QA visual',d:'Tokens de color V0.9, roles, contraste WCAG 2.2 y distinguibilidad bajo daltonismo (ΔE00), con el QA del deck y los documentos.',u:'Modelo/V0/paleta-clave.html',k:'site'},
       {t:'Auditoría WCAG 2.2 AA',d:'Contraste de textos y gráficos, controles, movimiento y semántica del deck.',u:gh('Modelo/V0/auditoria-wcag.md'),k:'gh'},
       {t:'Elementos del modelo',d:'Cada elemento por separado: taxonomía, escala, 45 ítems, puntuación, formulario, taller y modelo-clave.json.',u:GHT+'Modelo/V0/elementos',k:'gh'}
     ]},
@@ -146,7 +147,7 @@ a.doc.hero span.d,a.doc.hero .where{color:#FFF8E1}
       {t:'Logs de la Sesión 1',d:'Principios, metáforas y entregables del módulo.',u:gh('Logs_Clase_Sesion_1_Haciendolo_Posible.md'),k:'gh'},
       {t:'Prompt maestro del proyecto',d:'Instrucciones del proyecto de Claude.',u:gh('Claude_Project_Prompt_Instrucciones.md'),k:'gh'},
       {t:'README del Modelo V0',d:'Documentación de la versión vigente.',u:gh('Modelo/V0/README.md'),k:'gh'},
-      {t:'CHANGELOG',d:'Historial de versiones V0 → V0.7.',u:gh('Modelo/CHANGELOG.md'),k:'gh'},
+      {t:'CHANGELOG',d:'Historial de versiones V0 → V0.9.',u:gh('Modelo/CHANGELOG.md'),k:'gh'},
       {t:'Contexto del consultor',d:'Experiencia previa en Delirio, riesgos y regla de uso.',u:gh('Contexto/Contexto_Consultor_Experiencia_Delirio.md'),k:'gh'},
       {t:'Exploración V1 (descartada)',d:'Vocabulario del show; se volvió a la V0 por ser menos sesgada.',u:GHT+'Modelo/_exploraciones/V1-vocabulario-show',k:'gh'},
       {t:'Repositorio completo',d:'josebdiaz/innovation-model en GitHub.',u:'https://github.com/josebdiaz/innovation-model',k:'gh'}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paleta CLAVE V0.9</title>
+<meta name="description" content="Paleta refinada del Modelo CLAVE: tokens, roles y validación técnica de contraste WCAG 2.2 y distinguibilidad bajo daltonismo (ΔE00).">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Kaushan+Script&display=swap">
+</head>
+<body>
+<style>
+:root{
+  --tinta:#170A33;
+  --noche:#2E1466;
+  --rey:#1F4FA8;
+  --papel:#FFF8E6;
+  --sol:#FFE42A;
+  --rosa:#FAAED4;
+  --menta:#47D59B;
+  --mango:#FA9331;
+  --lila:#A5A0F6;
+  --sol-d:#7D6400;
+  --rosa-d:#B02A6B;
+  --menta-d:#0A7751;
+  --mango-d:#A84B00;
+  --lila-d:#5A4FC4;
+  --sol-t:#FFF6C7;
+  --rosa-t:#FFE7F2;
+  --menta-t:#D6F7E8;
+  --mango-t:#FFEADB;
+  --lila-t:#ECEBFD;
+}
+:root{--line:#E6DCC4;--soft:#F7F1E1;--muted:#4B3F63;color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;background:#FFFDF6;color:var(--tinta);font:600 16px/1.55 "Nunito",system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:1040px;margin:0 auto}
+.head{background:var(--rey);color:var(--papel);margin:0 -16px 28px;padding:44px 16px 34px}
+.head .in{max-width:1040px;margin:0 auto}
+.k{font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sol)}
+h1{font-weight:900;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1;margin:.6rem 0 .5rem;color:var(--sol)}
+h1 span{font-family:"Kaushan Script",cursive;font-weight:400;font-size:.55em;color:var(--papel);margin-left:.2em}
+.head p{max-width:68ch;margin:.4rem 0 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:20px}
+.kpi{background:var(--noche);border-radius:16px;padding:14px 16px}
+.kpi b{display:block;font-weight:900;font-size:1.7rem;color:var(--sol);line-height:1.1}
+.kpi small{font-weight:700;font-size:.82rem}
+h2{font-weight:900;font-size:1.45rem;margin:40px 0 6px}
+h2 small{display:block;font-weight:700;font-size:.9rem;color:var(--muted);margin-top:2px}
+h3{font-weight:900;font-size:1rem;margin:22px 0 8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.sw{border-radius:16px;padding:14px;min-height:110px;display:flex;flex-direction:column;gap:2px;box-shadow:inset 0 0 0 1.5px rgba(23,10,51,.12)}
+.sw b{font-weight:900;font-size:1.1rem}.sw code{font:700 .85rem/1.2 ui-monospace,Menlo,monospace}.sw span{font-size:.82rem;font-weight:700;margin-top:auto}
+.tbl{overflow-x:auto;margin:8px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:560px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--soft);font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tbody th{font-weight:800;white-space:nowrap}
+td.n{font-variant-numeric:tabular-nums;font-weight:800;white-space:nowrap}
+td.ok::before{content:"✓ ";color:var(--menta-d)}td.ko{color:var(--rosa-d)}td.ko::before{content:"✕ "}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:6px;box-shadow:inset 0 0 0 1.5px rgba(23,10,51,.35)}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--papel);border-radius:18px;padding:16px 18px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.card p{margin:.3rem 0 0;font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chips span{display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 6px;border-radius:999px;font-weight:800;font-size:.85rem;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.chips i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font-style:normal;font-weight:900;color:var(--tinta);box-shadow:inset 0 0 0 2px var(--tinta)}
+.ramp{display:grid;grid-template-columns:50fr 20fr 15fr 15fr;gap:4px;border-radius:999px;overflow:hidden;margin-top:10px;height:40px}
+.ramp div{display:grid;place-items:center;font-weight:800;font-size:.72rem;color:var(--tinta);white-space:nowrap;overflow:hidden}
+.stage{background:var(--rey);border-radius:20px;padding:18px;color:var(--papel)}
+.stage .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.stage .pill{padding:8px 14px;border-radius:999px;font-weight:900;color:var(--tinta)}
+.sims{display:grid;gap:10px}
+.sim{display:grid;grid-template-columns:120px 1fr 1fr;gap:10px;align-items:center;font-weight:800;font-size:.85rem}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);height:44px;border-radius:12px;overflow:hidden;background:var(--rey);gap:3px;padding:3px}
+.strip i{border-radius:9px;display:grid;place-items:center}.strip i b{font-weight:900;color:var(--tinta)}
+.sim.h{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.sev{display:inline-block;font-weight:800;font-size:.72rem;padding:2px 8px;border-radius:999px;color:var(--tinta)}
+.sev.alta{background:var(--rosa-t);box-shadow:inset 0 0 0 1.5px var(--rosa-d)}.sev.media{background:var(--sol-t);box-shadow:inset 0 0 0 1.5px var(--sol-d)}.sev.baja{background:var(--menta-t);box-shadow:inset 0 0 0 1.5px var(--menta-d)}
+pre{background:var(--noche);color:var(--papel);border-radius:16px;padding:16px 18px;overflow-x:auto;font:700 .85rem/1.6 ui-monospace,Menlo,monospace}
+.note{font-size:.88rem;color:var(--muted)}
+a{color:var(--rey);font-weight:800}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--line:#3A2A66;--soft:#221247;--muted:#CFC6E8}:root:not([data-theme="light"]) body{background:var(--tinta);color:var(--papel)}:root:not([data-theme="light"]) .card{background:var(--noche);box-shadow:none}:root:not([data-theme="light"]) .chips span{background:var(--tinta);color:var(--papel)}:root:not([data-theme="light"]) td.ok::before{color:var(--menta)}:root:not([data-theme="light"]) td.ko{color:var(--rosa)}:root:not([data-theme="light"]) a{color:var(--sol)}}
+:root[data-theme="dark"]{--line:#3A2A66;--soft:#221247;--muted:#CFC6E8}:root[data-theme="dark"] body{background:var(--tinta);color:var(--papel)}:root[data-theme="dark"] .card{background:var(--noche);box-shadow:none}:root[data-theme="dark"] .chips span{background:var(--tinta);color:var(--papel)}
+@media (max-width:600px){.sim{grid-template-columns:1fr}.sim.h{display:none}}
+</style>
+<header class="head"><div class="in">
+  <span class="k">Modelo CLAVE · Sistema de color V0.9</span>
+  <h1>Paleta CLAVE <span>validada</span></h1>
+  <p>Conserva el espíritu de "Los Sabanales" (azul rey plano y papeles de colores vivos) con un criterio técnico: cada color tiene un solo rol, todo texto cumple WCAG 2.2 AA y los cinco pilares se distinguen con cualquier tipo de daltonismo.</p>
+  <div class="kpis">
+    <div class="kpi"><b>12,2</b><small>ΔE00 mínimo entre pilares, con cualquier visión. Antes: 1,3</small></div>
+    <div class="kpi"><b>3,27:1</b><small>Contraste mínimo de un vivo sobre rey. Antes: 1,33:1</small></div>
+    <div class="kpi"><b>5,26:1</b><small>Contraste mínimo de un tono profundo sobre papel</small></div>
+    <div class="kpi"><b>0</b><small>Colores fuera de la paleta en el deck. Antes: 11</small></div>
+  </div>
+</div></header>
+<main class="wrap">
+
+<h2>1. Tokens<small>Cuatro neutros, cinco vivos (uno por pilar) y dos derivados de cada vivo.</small></h2>
+<h3>Neutros</h3><div class="grid"><div class="sw" style="background:#170A33;color:#FFF8E6"><b>tinta</b><code>#170A33</code><span>Texto y cromo</span></div><div class="sw" style="background:#2E1466;color:#FFF8E6"><b>noche</b><code>#2E1466</code><span>Tarjetas y láminas de acento</span></div><div class="sw" style="background:#1F4FA8;color:#FFF8E6"><b>rey</b><code>#1F4FA8</code><span>Fondo base (decisión Sync 1)</span></div><div class="sw" style="background:#FFF8E6;color:#170A33"><b>papel</b><code>#FFF8E6</code><span>Fondo de documentos y tarjetas</span></div></div>
+<h3>Vivos · rellenos sobre rey y noche, con texto tinta</h3><div class="grid"><div class="sw" style="background:#FFE42A;color:#170A33"><b>sol</b><code>#FFE42A</code><span>C · Conducción</span></div><div class="sw" style="background:#FAAED4;color:#170A33"><b>rosa</b><code>#FAAED4</code><span>L · Lazos</span></div><div class="sw" style="background:#47D59B;color:#170A33"><b>menta</b><code>#47D59B</code><span>A · Activos</span></div><div class="sw" style="background:#FA9331;color:#170A33"><b>mango</b><code>#FA9331</code><span>V · Vía</span></div><div class="sw" style="background:#A5A0F6;color:#170A33"><b>lila</b><code>#A5A0F6</code><span>E · Efecto</span></div></div>
+<h3>Profundos (-d) · texto y bordes sobre papel</h3><div class="grid"><div class="sw" style="background:#7D6400;color:#FFF8E6"><b>sol-d</b><code>#7D6400</code><span>Texto sobre papel</span></div><div class="sw" style="background:#B02A6B;color:#FFF8E6"><b>rosa-d</b><code>#B02A6B</code><span>Texto sobre papel</span></div><div class="sw" style="background:#0A7751;color:#FFF8E6"><b>menta-d</b><code>#0A7751</code><span>Texto sobre papel</span></div><div class="sw" style="background:#A84B00;color:#FFF8E6"><b>mango-d</b><code>#A84B00</code><span>Texto sobre papel</span></div><div class="sw" style="background:#5A4FC4;color:#FFF8E6"><b>lila-d</b><code>#5A4FC4</code><span>Texto sobre papel</span></div></div>
+<h3>Tintes (-t) · cajas, filas y etiquetas en documentos</h3><div class="grid"><div class="sw" style="background:#FFF6C7;color:#170A33"><b>sol-t</b><code>#FFF6C7</code><span>Cajas y filas</span></div><div class="sw" style="background:#FFE7F2;color:#170A33"><b>rosa-t</b><code>#FFE7F2</code><span>Cajas y filas</span></div><div class="sw" style="background:#D6F7E8;color:#170A33"><b>menta-t</b><code>#D6F7E8</code><span>Cajas y filas</span></div><div class="sw" style="background:#FFEADB;color:#170A33"><b>mango-t</b><code>#FFEADB</code><span>Cajas y filas</span></div><div class="sw" style="background:#ECEBFD;color:#170A33"><b>lila-t</b><code>#ECEBFD</code><span>Cajas y filas</span></div></div>
+
+<h2>2. Roles<small>Un color, un significado, el mismo en el deck, los documentos y el dashboard.</small></h2>
+<div class="roles">
+  <div class="card"><b>Código de pilar</b><p>Cada pilar tiene su color y su lámina usa ese color de fondo. La letra siempre acompaña al color, porque el color nunca es la única pista.</p>
+    <div class="chips"><span><i style="background:#FFE42A">C</i>Conducción</span><span><i style="background:#FAAED4">L</i>Lazos</span><span><i style="background:#47D59B">A</i>Activos</span><span><i style="background:#FA9331">V</i>Vía</span><span><i style="background:#A5A0F6">E</i>Efecto</span></div></div>
+  <div class="card"><b>Tensión y resolución</b><p>Los tres golpes que tensan van en rosa y los dos que resuelven en sol, igual que en las mitades de la lámina 5 y los golpes de la clave.</p>
+    <div class="chips"><span><i style="background:var(--rosa)">3</i>Tensión</span><span><i style="background:var(--sol)">2</i>Resolución</span></div></div>
+  <div class="card"><b>Rampa de madurez</b><p>Va de cálido a frío: rosa (Entrando), mango (Emergiendo), sol (Adaptando) y menta (Transformando).</p>
+    <div class="ramp"><div style="background:var(--rosa)">Entrando</div><div style="background:var(--mango)">Emergiendo</div><div style="background:var(--sol)">Adaptando</div><div style="background:var(--menta)">Transformando</div></div></div>
+  <div class="card"><b>Escenario</b><p>Rey es el fondo base. Noche se usa para tarjetas y láminas de acento. Papel es el fondo de lectura de los documentos. Tinta es el único color de texto sobre colores vivos.</p>
+    <div class="stage" style="margin-top:10px"><div class="row"><span class="pill" style="background:#FFE42A">C</span><span class="pill" style="background:#FAAED4">L</span><span class="pill" style="background:#47D59B">A</span><span class="pill" style="background:#FA9331">V</span><span class="pill" style="background:#A5A0F6">E</span><span style="font-weight:800">sobre rey</span></div></div></div>
+</div>
+
+<h2>3. Contraste WCAG 2.2<small>Mínimos: 3:1 para gráficos y texto grande (1.4.11, 1.4.3) y 4.5:1 para texto normal.</small></h2>
+<div class="tbl"><table><thead><tr><th>Color</th><th>Vivo / rey</th><th>Vivo / noche</th><th>Tinta / vivo</th><th>-d / papel</th><th>-d / tinte</th><th>Tinta / tinte</th></tr></thead><tbody><tr><th scope="row"><i class="dot" style="background:#FFE42A"></i>sol</th><td class="n ok">5,97</td><td class="n ok">11,63</td><td class="n ok">14,53</td><td class="n ok">5,36</td><td class="n ok">5,21</td><td class="n ok">17,08</td></tr><tr><th scope="row"><i class="dot" style="background:#FAAED4"></i>rosa</th><td class="n ok">4,40</td><td class="n ok">8,57</td><td class="n ok">10,70</td><td class="n ok">5,85</td><td class="n ok">5,30</td><td class="n ok">15,93</td></tr><tr><th scope="row"><i class="dot" style="background:#47D59B"></i>menta</th><td class="n ok">4,11</td><td class="n ok">8,00</td><td class="n ok">9,98</td><td class="n ok">5,26</td><td class="n ok">4,86</td><td class="n ok">16,25</td></tr><tr><th scope="row"><i class="dot" style="background:#FA9331"></i>mango</th><td class="n ok">3,39</td><td class="n ok">6,59</td><td class="n ok">8,23</td><td class="n ok">5,40</td><td class="n ok">4,91</td><td class="n ok">16,00</td></tr><tr><th scope="row"><i class="dot" style="background:#A5A0F6"></i>lila</th><td class="n ok">3,27</td><td class="n ok">6,36</td><td class="n ok">7,94</td><td class="n ok">5,92</td><td class="n ok">5,33</td><td class="n ok">15,85</td></tr></tbody></table></div>
+<div class="roles" style="margin-top:10px">
+  <div class="tbl"><table style="min-width:0"><thead><tr><th>Neutros</th><th>Ratio</th></tr></thead><tbody><tr><td>papel sobre rey</td><td class="n ok">7,23</td></tr><tr><td>papel sobre noche</td><td class="n ok">14,08</td></tr><tr><td>papel sobre tinta</td><td class="n ok">17,58</td></tr><tr><td>tinta sobre papel</td><td class="n ok">17,58</td></tr></tbody></table></div>
+  <div class="tbl"><table style="min-width:0"><thead><tr><th>Paleta V0.8 (antes)</th><th>Sobre rey</th></tr></thead><tbody><tr><th scope="row"><i class="dot" style="background:#F7F000"></i>amarillo</th><td class="n ok">6,35</td></tr><tr><th scope="row"><i class="dot" style="background:#DE4D74"></i>coral</th><td class="n ko">1,98</td></tr><tr><th scope="row"><i class="dot" style="background:#5BB68A"></i>jade</th><td class="n ok">3,10</td></tr><tr><th scope="row"><i class="dot" style="background:#C2381C"></i>bermellón</th><td class="n ko">1,41</td></tr><tr><th scope="row"><i class="dot" style="background:#C8085D"></i>magenta</th><td class="n ko">1,33</td></tr></tbody></table></div>
+</div>
+
+<h2>4. Distinguibilidad bajo daltonismo<small>ΔE00 (CIEDE2000) entre cada par de vivos, simulando deuteranopía, protanopía y tritanopía (Machado, Oliveira y Fernandes, 2009; severidad 1,0). Meta: ΔE00 ≥ 12.</small></h2>
+<div class="tbl"><table><thead><tr><th>Par</th><th>Visión típica</th><th>Deuteranopía</th><th>Protanopía</th><th>Tritanopía</th></tr></thead><tbody><tr><th scope="row"><i class="dot" style="background:#FFE42A"></i><i class="dot" style="background:#FAAED4"></i>sol–rosa</th><td class="n ok">55,9</td><td class="n ok">34,9</td><td class="n ok">43,0</td><td class="n ok">14,5</td></tr><tr><th scope="row"><i class="dot" style="background:#FFE42A"></i><i class="dot" style="background:#47D59B"></i>sol–menta</th><td class="n ok">34,0</td><td class="n ok">24,1</td><td class="n ok">18,8</td><td class="n ok">41,0</td></tr><tr><th scope="row"><i class="dot" style="background:#FFE42A"></i><i class="dot" style="background:#FA9331"></i>sol–mango</th><td class="n ok">29,0</td><td class="n ok">12,2</td><td class="n ok">17,7</td><td class="n ok">21,4</td></tr><tr><th scope="row"><i class="dot" style="background:#FFE42A"></i><i class="dot" style="background:#A5A0F6"></i>sol–lila</th><td class="n ok">64,0</td><td class="n ok">59,4</td><td class="n ok">59,0</td><td class="n ok">33,2</td></tr><tr><th scope="row"><i class="dot" style="background:#FAAED4"></i><i class="dot" style="background:#47D59B"></i>rosa–menta</th><td class="n ok">62,7</td><td class="n ok">16,2</td><td class="n ok">28,2</td><td class="n ok">55,9</td></tr><tr><th scope="row"><i class="dot" style="background:#FAAED4"></i><i class="dot" style="background:#FA9331"></i>rosa–mango</th><td class="n ok">38,6</td><td class="n ok">32,6</td><td class="n ok">39,7</td><td class="n ok">13,0</td></tr><tr><th scope="row"><i class="dot" style="background:#FAAED4"></i><i class="dot" style="background:#A5A0F6"></i>rosa–lila</th><td class="n ok">22,6</td><td class="n ok">20,1</td><td class="n ok">13,5</td><td class="n ok">36,0</td></tr><tr><th scope="row"><i class="dot" style="background:#47D59B"></i><i class="dot" style="background:#FA9331"></i>menta–mango</th><td class="n ok">50,3</td><td class="n ok">18,7</td><td class="n ok">16,9</td><td class="n ok">63,0</td></tr><tr><th scope="row"><i class="dot" style="background:#47D59B"></i><i class="dot" style="background:#A5A0F6"></i>menta–lila</th><td class="n ok">43,6</td><td class="n ok">35,4</td><td class="n ok">42,1</td><td class="n ok">21,2</td></tr><tr><th scope="row"><i class="dot" style="background:#FA9331"></i><i class="dot" style="background:#A5A0F6"></i>mango–lila</th><td class="n ok">48,4</td><td class="n ok">54,8</td><td class="n ok">53,8</td><td class="n ok">40,1</td></tr></tbody></table></div>
+<p class="note">Par más cercano de la paleta nueva: sol–mango en deuteranopía (ΔE00 12,2). Par más cercano de la paleta V0.8: bermellón–magenta en tritanopía (ΔE00 1,3). Por debajo de 2, dos colores son prácticamente indistinguibles.</p>
+<h3>Simulación sobre rey</h3>
+<div class="sims">
+  <div class="sim h"><span></span><span>Paleta V0.9 · C L A V E</span><span>Paleta V0.8</span></div>
+  <div class="sim"><span>Visión típica</span><div class="strip"><i style="background:#FFE42A"><b>C</b></i><i style="background:#FAAED4"><b>L</b></i><i style="background:#47D59B"><b>A</b></i><i style="background:#FA9331"><b>V</b></i><i style="background:#A5A0F6"><b>E</b></i></div><div class="strip old"><i style="background:#F7F000"></i><i style="background:#DE4D74"></i><i style="background:#5BB68A"></i><i style="background:#C2381C"></i><i style="background:#C8085D"></i></div></div><div class="sim"><span>Deuteranopía</span><div class="strip"><i style="background:#FFE73B"><b>C</b></i><i style="background:#C6C9D2"><b>L</b></i><i style="background:#BFB89F"><b>A</b></i><i style="background:#CBB631"><b>V</b></i><i style="background:#84A7F4"><b>E</b></i></div><div class="strip old"><i style="background:#FFED2D"></i><i style="background:#938C71"></i><i style="background:#A6A18D"></i><i style="background:#847513"></i><i style="background:#787259"></i></div></div><div class="sim"><span>Protanopía</span><div class="strip"><i style="background:#FBDE00"><b>C</b></i><i style="background:#B4BDD5"><b>L</b></i><i style="background:#D2C698"><b>A</b></i><i style="background:#B29E20"><b>V</b></i><i style="background:#86ACF9"><b>E</b></i></div><div class="strip old"><i style="background:#FFE600"></i><i style="background:#6D6F75"></i><i style="background:#B4AB88"></i><i style="background:#625616"></i><i style="background:#4A4F5E"></i></div></div><div class="sim"><span>Tritanopía</span><div class="strip"><i style="background:#FFD2C3"><b>C</b></i><i style="background:#FFADBB"><b>L</b></i><i style="background:#00D5C5"><b>A</b></i><i style="background:#FF7C80"><b>V</b></i><i style="background:#90B0C0"><b>E</b></i></div><div class="strip old"><i style="background:#FFDFCC"></i><i style="background:#F1375C"></i><i style="background:#3FB5AA"></i><i style="background:#D60033"></i><i style="background:#DB0037"></i></div></div>
+</div>
+
+<h2>5. QA visual de páginas y artefactos<small>Hallazgos de la revisión de color y lo que cambió en cada uno.</small></h2>
+<div class="tbl"><table><thead><tr><th>Severidad</th><th>Dónde</th><th>Hallazgo</th><th>Corrección V0.9</th></tr></thead><tbody><tr><td><span class="sev alta">Alta</span></td><td>Deck</td><td>Tres rojos (coral, magenta y bermellón) competían entre sí. Bermellón y magenta quedan a ΔE00 1,3 en tritanopía: son el mismo color.</td><td>Un solo rosa. V pasa a mango y E a lila: cinco tonos separados en el círculo cromático.</td></tr><tr><td><span class="sev alta">Alta</span></td><td>Deck</td><td>Coral (1,98:1), bermellón (1,41:1) y magenta (1,33:1) no llegaban a 3:1 sobre el azul rey. En V0.8 lo compensamos con anillos crema.</td><td>Los cinco vivos superan 3,27:1 sobre rey y 6,36:1 sobre noche. Los anillos se quedan como refuerzo.</td></tr><tr><td><span class="sev alta">Alta</span></td><td>Deck</td><td>Los fondos de las láminas de pilar no coincidían con el color de su ficha: C en índigo, A en amarillo con ficha jade, V en jade con ficha bermellón.</td><td>Cada lámina de pilar usa su color: C sol, L rosa, A menta, V mango, E lila. Fichas, barras y árbol usan el mismo código.</td></tr><tr><td><span class="sev media">Media</span></td><td>Deck</td><td>Los nombres de los tokens contradecían su color: --pink era bermellón, --ice era crema, --neon era jade y --lav era azul.</td><td>Tokens con nombre de rol (--sol, --rosa, --rey, --papel…). Los nombres viejos quedan como alias para no tocar la estructura.</td></tr><tr><td><span class="sev media">Media</span></td><td>Deck</td><td>Quedaban literales de la etapa VHS: cian #9FF3FF, #7FDDF5 y #9FE8FF, violeta neón #8B3DFF, verde #109C3C y rosa #FFC2CC.</td><td>Ningún color fuera de la paleta. Las transparencias se derivan de tinta, papel, sol, rosa o lila.</td></tr><tr><td><span class="sev media">Media</span></td><td>Deck</td><td>En la lámina magenta el texto era lima. Las chispas solo cambiaban a tinta sobre amarillo, así que quedaban amarillas sobre fondos claros.</td><td>Todo fondo claro lleva texto y chispas tinta. Las chispas sol aparecen solo sobre rey y noche.</td></tr><tr><td><span class="sev media">Media</span></td><td>Deck</td><td>Las bandas de madurez no seguían una lógica de color: coral, bermellón, crema y amarillo.</td><td>Rampa cálida a fría (rosa → mango → sol → menta), la misma en el deck y en el one-pager.</td></tr><tr><td><span class="sev media">Media</span></td><td>Docs</td><td>Los encabezados de los documentos estaban en índigo, mientras el deck y el índice están en azul rey.</td><td>Todos los encabezados van en rey, con título sol (5,97:1) y texto papel (7,23:1).</td></tr><tr><td><span class="sev media">Media</span></td><td>Docs</td><td>Los pasteles de apoyo (#FBE0E8, #D9F0E3, #FDF6C4, #DCE6F7) no se derivaban de ningún vivo.</td><td>Cada vivo tiene un tinte (-t) y un tono profundo (-d). Tinta sobre cualquier tinte da ≥ 15,8:1.</td></tr><tr><td><span class="sev baja">Baja</span></td><td>One-pager</td><td>En pantallas angostas, el blob del encabezado tapaba el subtítulo.</td><td>El blob es más pequeño bajo 1100 px y el texto queda por encima.</td></tr><tr><td><span class="sev baja">Baja</span></td><td>Deck</td><td>La barra A (menta) del ejemplo "Dos números" se perdía sobre la lámina menta.</td><td>Las barras sobre menta llevan contorno tinta (WCAG 1.4.11).</td></tr><tr><td><span class="sev baja">Baja</span></td><td>Deck</td><td>Rey contra noche da solo 1,95:1.</td><td>Noche se usa para tarjetas y láminas de acento, nunca para transmitir información frente a rey.</td></tr></tbody></table></div>
+<p class="note">En el deck solo cambiaron colores: valores de los tokens, literales heredados, la clase de fondo de las láminas de pilar y el color de texto sobre fondos claros. No se tocó ninguna lámina, texto, orden ni animación.</p>
+
+<h2>6. Tokens para copiar<small>Los mismos valores están en <code>Modelo/V0/elementos/12-paleta/paleta-clave.json</code>.</small></h2>
+<pre>:root{
+  --tinta:#170A33;
+  --noche:#2E1466;
+  --rey:#1F4FA8;
+  --papel:#FFF8E6;
+  --sol:#FFE42A;
+  --rosa:#FAAED4;
+  --menta:#47D59B;
+  --mango:#FA9331;
+  --lila:#A5A0F6;
+  --sol-d:#7D6400;
+  --rosa-d:#B02A6B;
+  --menta-d:#0A7751;
+  --mango-d:#A84B00;
+  --lila-d:#5A4FC4;
+  --sol-t:#FFF6C7;
+  --rosa-t:#FFE7F2;
+  --menta-t:#D6F7E8;
+  --mango-t:#FFEADB;
+  --lila-t:#ECEBFD;
+}</pre>
+<p class="note">Método: los vivos se buscaron en OKLCH con una muestra aleatoria restringida (vivo ≥ 3,1:1 sobre rey, tinta ≥ 7:1 sobre el vivo) y se eligió la combinación de mayor croma con ΔE00 ≥ 12 en las cuatro visiones. Los profundos bajan la luminosidad OKLCH hasta ≥ 5,2:1 sobre papel. Grupo 4 · MGinn Universidad Icesi · octubre de 2026.</p>
+</main>
+
+</body>
+</html>

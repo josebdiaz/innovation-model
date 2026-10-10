@@ -10,8 +10,13 @@
 <style>
 /* Layout: escenario 16:9 (container-type:size) ajustado a la ventana; medidas en cqw/cqh. Estética tomada del video "Los Sabanales" (mapping de Delirio): azul rey plano, índigo, amarillo eléctrico, jade, rosa, magenta y bermellón; tipografía redondeada + script de pincel; chispas amarillas que titilan; papel recortado con sombra suave; transiciones con blobs orgánicos; palabras que entran con desenfoque de movimiento. Reloj de clave 3-2 a 107 BPM. En celular vertical el escenario ocupa la pantalla. */
 :root{
-  --night:#1B0B33; --ink:#1E0A3C; --ice:#FFF8E1; --lav:#1F4FA8; --purple:#3F1F6E; --coral:#DE4D74; --magenta:#C8085D; --lime:#F7F000; --neon:#5BB68A; --pink:#C2381C;
-  --paper:0 1cqh 2.6cqh rgba(28,10,56,.38); --script:"Kaushan Script", "Brush Script MT", cursive;
+  /* Paleta V0.9 validada (contraste WCAG 2.2 + ΔE00 bajo daltonismo). Neutros: tinta, noche, rey, papel. Vivos para rellenos sobre rey/noche; -d para texto sobre papel. */
+  --tinta:#170A33; --noche:#2E1466; --rey:#1F4FA8; --papel:#FFF8E6;
+  --sol:#FFE42A; --rosa:#FAAED4; --menta:#47D59B; --mango:#FA9331; --lila:#A5A0F6;
+  --sol-d:#7D6400; --rosa-d:#B02A6B; --menta-d:#0A7751; --mango-d:#A84B00; --lila-d:#5A4FC4;
+  /* alias heredados: el nombre viejo apunta al rol nuevo */
+  --night:var(--tinta); --ink:var(--tinta); --ice:var(--papel); --lav:var(--rey); --purple:var(--noche); --coral:var(--rosa); --magenta:var(--lila); --lime:var(--sol); --neon:var(--menta); --pink:var(--mango);
+  --paper:0 1cqh 2.6cqh rgba(23,10,51,.38); --script:"Kaushan Script", "Brush Script MT", cursive;
   --display:"Nunito", "Arial Rounded MT Bold", "Segoe UI", sans-serif;
   --body:"Nunito", "Segoe UI", system-ui, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
@@ -38,12 +43,12 @@ button{font:inherit;color:inherit}
 .slide.prev{transform:scale(.98)}
 .slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .55s ease, transform .75s var(--ease)}
 .slide > *{position:relative;z-index:2}
-.bg-ink{background:radial-gradient(90% 70% at 70% 20%,#2A0D52,var(--ink) 70%);color:var(--ice)}
+.bg-ink{background:radial-gradient(90% 70% at 70% 20%,#2E1466,var(--ink) 70%);color:var(--ice)}
 .bg-purple{background:var(--purple);color:var(--ice)}
 .bg-lime{background:linear-gradient(180deg,var(--lime),var(--neon));color:var(--ink)}
 .bg-coral{background:linear-gradient(180deg,var(--coral),var(--magenta));color:var(--ink)}
-.bg-pink{background:linear-gradient(180deg,#C92A9E,#5E1FC4);color:var(--ice)}
-.bg-ice{background:linear-gradient(180deg,var(--ice),#9FE8FF);color:var(--ink)}
+.bg-pink{background:var(--lila);color:var(--ice)}
+.bg-ice{background:var(--menta);color:var(--ink)}
 
 .on [data-a]{animation:var(--k,up) .9s var(--ease) both;animation-delay:calc(var(--d,0) * 110ms + 180ms)}
 [data-a="up"]{--k:up}[data-a="pop"]{--k:pop}[data-a="left"]{--k:left}[data-a="right"]{--k:right}[data-a="drop"]{--k:drop}[data-a="fade"]{--k:fade}[data-a="glitch"]{--k:blurIn}
@@ -75,9 +80,9 @@ button{font:inherit;color:inherit}
 /* Piso de cuadrícula en perspectiva */
 .floor{position:absolute;z-index:0;left:-40%;right:-40%;bottom:-4%;height:78%;transform:perspective(42cqh) rotateX(58deg);transform-origin:50% 100%;pointer-events:none;
   background:
-    repeating-linear-gradient(90deg,rgba(139,61,255,.9) 0 3px,transparent 3px 6cqw),
-    repeating-linear-gradient(0deg,rgba(139,61,255,.9) 0 3px,transparent 3px 6cqw),
-    linear-gradient(0deg,var(--neon),var(--lime) 60%,rgba(184,255,60,.0));
+    repeating-linear-gradient(90deg,rgba(46,20,102,.9) 0 3px,transparent 3px 6cqw),
+    repeating-linear-gradient(0deg,rgba(46,20,102,.9) 0 3px,transparent 3px 6cqw),
+    linear-gradient(0deg,var(--neon),var(--lime) 60%,rgba(255,228,42,.0));
   -webkit-mask-image:linear-gradient(0deg,#000 55%,transparent);mask-image:linear-gradient(0deg,#000 55%,transparent);
   animation:floor .56s linear infinite}
 @keyframes floor{to{background-position:0 0,0 6cqw,0 0}}
@@ -119,7 +124,7 @@ button{font:inherit;color:inherit}
 aside.notes{display:none}
 
 /* Idea clave */
-.tk{position:absolute!important;z-index:15!important;left:3.5cqw;bottom:2.6cqh;max-width:min(62cqw,calc(100% - 38cqw));display:flex;gap:1cqw;align-items:flex-start;font:700 max(13px,min(1.2cqw,2.6cqh))/1.35 var(--body);padding:1.6cqh 1.4cqw;border-radius:16px;background:var(--ink);color:var(--ice);box-shadow:0 8px 24px rgba(5,3,7,.25)}
+.tk{position:absolute!important;z-index:15!important;left:3.5cqw;bottom:2.6cqh;max-width:min(62cqw,calc(100% - 38cqw));display:flex;gap:1cqw;align-items:flex-start;font:700 max(13px,min(1.2cqw,2.6cqh))/1.35 var(--body);padding:1.6cqh 1.4cqw;border-radius:16px;background:var(--ink);color:var(--ice);box-shadow:0 8px 24px rgba(23,10,51,.25)}
 .tk b{flex:none;font:700 .72em/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
 .bg-ink .tk,.bg-purple .tk,.bg-pink .tk{background:var(--ice);color:var(--ink)}
 .bg-ink .tk b,.bg-purple .tk b,.bg-pink .tk b{color:var(--purple)}
@@ -134,11 +139,11 @@ aside.notes{display:none}
 .cr .slot::after{content:"";width:min(.6cqw,1.1cqh);aspect-ratio:1;border-radius:50%;background:currentColor;opacity:.45}
 .cr .slot.h::after{display:none}
 .cr .beat{width:var(--b);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:400 calc(var(--b) * .5)/1 var(--display);color:var(--ink);transition:transform .12s ease, box-shadow .2s, opacity .3s;position:relative;z-index:2}
-.cr .beat.t{background:var(--coral);box-shadow:0 0 2.4cqh rgba(255,92,116,.5)}
-.cr .beat.r{background:var(--lime);box-shadow:0 0 2.4cqh rgba(184,255,60,.5)}
+.cr .beat.t{background:var(--coral);box-shadow:0 0 2.4cqh rgba(250,174,212,.5)}
+.cr .beat.r{background:var(--lime);box-shadow:0 0 2.4cqh rgba(255,228,42,.5)}
 .cr .beat.dim{opacity:.28;box-shadow:none}
 .cr .beat.lit{outline:min(.5cqw,1cqh) solid var(--ice);outline-offset:3px}
-.cr .beat.hit{transform:scale(1.32);box-shadow:0 0 0 min(1cqw,1.8cqh) rgba(214,247,255,.22),0 0 5cqh rgba(214,247,255,.7)}
+.cr .beat.hit{transform:scale(1.32);box-shadow:0 0 0 min(1cqw,1.8cqh) rgba(255,248,230,.22),0 0 5cqh rgba(255,248,230,.7)}
 .cr .beat small{position:absolute;top:calc(100% + 1.4cqh);font:800 var(--fs-xs)/1.1 var(--body);color:currentColor;white-space:nowrap;letter-spacing:0;text-align:center}
 .cr .ph{position:absolute;top:0;bottom:0;width:3px;background:var(--ice);box-shadow:0 0 12px var(--ice);border-radius:3px;left:3.125%;z-index:1;transition:left .08s linear}
 .cr.mini{--h:8cqh;--b:min(3cqw,5.4cqh)}
@@ -148,13 +153,13 @@ aside.notes{display:none}
 .marker{position:absolute;bottom:calc(100% + .4cqh);transform:translateX(-50%);font:800 var(--fs-xs)/1.2 var(--body);background:var(--ink);color:var(--lime);padding:.8cqh 1cqw;border-radius:10px;white-space:nowrap;z-index:3}
 .marker::after{content:"";position:absolute;left:50%;top:100%;border:7px solid transparent;border-top-color:var(--ink);transform:translateX(-50%)}
 .on .marker{animation:pop .7s 1s var(--ease) both}
-.playbtn{appearance:none;border:0;cursor:pointer;background:var(--lime);color:var(--ink);font:800 var(--fs-s)/1 var(--body);height:max(48px,7cqh);padding:0 2cqw;border-radius:999px;display:inline-flex;align-items:center;gap:.8cqw;width:max-content;transition:transform .2s;box-shadow:0 0 3cqh rgba(184,255,60,.45)}
+.playbtn{appearance:none;border:0;cursor:pointer;background:var(--lime);color:var(--ink);font:800 var(--fs-s)/1 var(--body);height:max(48px,7cqh);padding:0 2cqw;border-radius:999px;display:inline-flex;align-items:center;gap:.8cqw;width:max-content;transition:transform .2s;box-shadow:0 0 3cqh rgba(255,228,42,.45)}
 .playbtn:hover{transform:scale(1.05)}
 
 /* Portada y cierre */
 .clave-word{display:flex;gap:.03em;flex-wrap:nowrap}
 .clave-word span{display:inline-block;transition:transform .14s ease}
-.clave-word span:nth-child(1){color:var(--ice)}.clave-word span:nth-child(2){color:var(--lime)}.clave-word span:nth-child(3){color:#FFC2CC}.clave-word span:nth-child(4){color:#9FF3FF}.clave-word span:nth-child(5){color:var(--lime)}
+.clave-word span:nth-child(1){color:var(--ice)}.clave-word span:nth-child(2){color:var(--lime)}.clave-word span:nth-child(3){color:var(--rosa)}.clave-word span:nth-child(4){color:var(--menta)}.clave-word span:nth-child(5){color:var(--lime)}
 .on .clave-word span{animation:drop .9s var(--ease) both}
 .clave-word span:nth-child(2){animation-delay:.1s!important}.clave-word span:nth-child(3){animation-delay:.2s!important}.clave-word span:nth-child(4){animation-delay:.3s!important}.clave-word span:nth-child(5){animation-delay:.4s!important}
 .clave-word span.hop{transform:translateY(-.1em) rotate(-4deg) scale(1.06)}
@@ -176,8 +181,8 @@ aside.notes{display:none}
 
 /* Cruzada */
 .balls{display:flex;gap:3cqw;align-items:flex-end;height:24cqh;padding-top:8cqh}
-.ball{position:relative;width:min(8cqw,14cqh);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:400 min(4cqw,7cqh)/1 var(--display);color:var(--ink);background:var(--lime);box-shadow:0 0 3cqh rgba(184,255,60,.45)}
-.ball.x{background:var(--coral);box-shadow:0 0 3cqh rgba(255,92,116,.55)}
+.ball{position:relative;width:min(8cqw,14cqh);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:400 min(4cqw,7cqh)/1 var(--display);color:var(--ink);background:var(--lime);box-shadow:0 0 3cqh rgba(255,228,42,.45)}
+.ball.x{background:var(--coral);box-shadow:0 0 3cqh rgba(250,174,212,.55)}
 .ball.x::after{content:"a destiempo";position:absolute;top:-4.4cqh;font:700 var(--fs-xs)/1 var(--mono);color:var(--coral);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 .ball.jump{animation:hop .27s cubic-bezier(.3,.7,.4,1)}
 @keyframes hop{50%{transform:translateY(-70%) scale(1.04,.96)}}
@@ -221,7 +226,7 @@ aside.notes{display:none}
 .digits{display:flex;align-items:center;gap:1.2cqw}
 .dg{appearance:none;border:0;cursor:pointer;width:min(9cqw,15cqh);aspect-ratio:1;border-radius:28%;font:400 min(5cqw,8.6cqh)/1 var(--display);color:var(--ink);transition:transform .25s var(--ease), box-shadow .25s}
 .dg.neg{background:var(--coral)}.dg.pos{background:var(--lime)}
-.dg[aria-pressed="true"]{transform:translateY(-12%) scale(1.12);box-shadow:0 0 0 5px var(--ice),0 0 4cqh rgba(214,247,255,.5)}
+.dg[aria-pressed="true"]{transform:translateY(-12%) scale(1.12);box-shadow:0 0 0 5px var(--ice),0 0 4cqh rgba(255,248,230,.5)}
 .gap{width:min(6cqw,10cqh);display:grid;place-items:center}
 .gap span{font:400 min(3.6cqw,6.2cqh)/1 var(--display);color:var(--pink);animation:spin 6s linear infinite}
 .readout{font:800 var(--fs-m)/1.2 var(--body);min-height:1.3em}
@@ -238,19 +243,19 @@ aside.notes{display:none}
 .arrow{font:400 var(--fs-l)/1 var(--display);margin-left:3cqw}
 .on .arrow{animation:fade .5s 2s both}
 .qc.good{background:var(--ice);color:var(--ink);border:3px solid var(--ink)}
-.qc.good i{font-style:normal;margin-left:.5em;color:#109c3c}
+.qc.good i{font-style:normal;margin-left:.5em;color:var(--menta-d)}
 .on .qc.good{animation:pop .8s 2.3s var(--ease) both}
 .on .qc.good+.qc.good{animation-delay:2.6s}
 
 /* IA 7 de 45 */
 .strip{display:grid;grid-template-columns:repeat(45,1fr);gap:.35cqw;width:100%}
-.strip i{height:7cqh;border-radius:6px;background:rgba(214,247,255,.14)}
-.strip i.ia{background:var(--lime);box-shadow:0 0 2cqh rgba(184,255,60,.6)}.strip i.dig{background:var(--pink);box-shadow:0 0 2cqh rgba(255,61,203,.6)}
+.strip i{height:7cqh;border-radius:6px;background:rgba(255,248,230,.14)}
+.strip i.ia{background:var(--lime);box-shadow:0 0 2cqh rgba(255,228,42,.6)}.strip i.dig{background:var(--pink);box-shadow:0 0 2cqh rgba(165,160,246,.6)}
 .on .strip i{animation:pop .4s var(--ease) both;animation-delay:calc(var(--i) * 14ms + 400ms)}
 .on .strip i.ia,.on .strip i.dig{animation:pop .6s var(--ease) both, glow7 1.8s ease-in-out infinite;animation-delay:calc(var(--i) * 14ms + 900ms), calc(var(--i) * 14ms + 1.6s)}
 @keyframes glow7{50%{filter:brightness(1.25);transform:scaleY(1.15)}}
 .legend7{display:flex;flex-wrap:wrap;gap:.8cqw}
-.legend7 span{font:700 var(--fs-s)/1 var(--body);padding:1.3cqh 1.2cqw;border-radius:999px;background:rgba(214,247,255,.08);border:2px solid rgba(214,247,255,.2);display:inline-flex;gap:.6cqw;align-items:center}
+.legend7 span{font:700 var(--fs-s)/1 var(--body);padding:1.3cqh 1.2cqw;border-radius:999px;background:rgba(255,248,230,.08);border:2px solid rgba(255,248,230,.2);display:inline-flex;gap:.6cqw;align-items:center}
 .legend7 b{font:700 .78em/1 var(--mono);padding:.5cqh .5cqw;border-radius:6px;background:var(--lime);color:var(--ink)}
 .legend7 b.dg{background:var(--pink)}
 
@@ -264,7 +269,7 @@ aside.notes{display:none}
 .r45 .g3{display:flex;gap:.4cqw}
 .tile{appearance:none;border:0;cursor:pointer;width:min(3.4cqw,6.2cqh);aspect-ratio:1;border-radius:22%;font:700 min(.78cqw,1.5cqh)/1 var(--mono);color:var(--ink);display:grid;place-items:center;transition:transform .2s var(--ease), box-shadow .2s;padding:0}
 .tile:hover{transform:scale(1.12)}
-.tile[aria-pressed="true"]{transform:scale(1.18);box-shadow:0 0 0 3px var(--ice),0 0 3cqh rgba(214,247,255,.5)}
+.tile[aria-pressed="true"]{transform:scale(1.18);box-shadow:0 0 0 3px var(--ice),0 0 3cqh rgba(255,248,230,.5)}
 .on .tile{animation:pop .5s var(--ease) both;animation-delay:calc(var(--i) * 16ms + 300ms)}
 .panel{background:var(--ice);color:var(--ink);border-radius:28px;padding:3.4cqh 2.4cqw;display:flex;flex-direction:column;gap:1.4cqh;min-height:44cqh}
 .panel .code{font:400 min(5.4cqw,9.6cqh)/1 var(--display)}
@@ -311,7 +316,7 @@ aside.notes{display:none}
 
 /* Orquesta */
 .gapline{position:relative;height:20cqh;margin-top:2cqh}
-.gapline .line{position:absolute;left:0;right:0;top:50%;height:6px;border-radius:6px;background:rgba(18,6,31,.3)}
+.gapline .line{position:absolute;left:0;right:0;top:50%;height:6px;border-radius:6px;background:rgba(23,10,51,.3)}
 .who{position:absolute;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center}
 .who .dotb{width:min(8cqw,14cqh);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:400 min(3cqw,5.4cqh)/1 var(--display)}
 .who small{font:800 var(--fs-xs)/1 var(--body);position:absolute;top:calc(100% + 1.2cqh);white-space:nowrap}
@@ -384,7 +389,7 @@ aside.notes{display:none}
 .l{font-size:min(4.6cqw,8.4cqh);line-height:1.05}
 .act .q{font-size:min(5.6cqw,10cqh);line-height:1.08;color:var(--lime)}
 .pname{font-size:min(6cqw,11cqh)}
-.big-letter{font-size:min(30cqw,56cqh);text-shadow:0 1.2cqh 0 rgba(28,10,56,.28)}
+.big-letter{font-size:min(30cqw,56cqh);text-shadow:0 1.2cqh 0 rgba(23,10,51,.28)}
 .script{font-family:var(--script);font-weight:400;letter-spacing:0;line-height:1.05;display:inline-block;transform:rotate(-3deg);text-transform:none}
 .xl .script,.l .script,.q .script,.mega .script{font-size:1.18em}
 .m.sub{font-size:min(3.2cqw,6cqh);color:var(--lime)}
@@ -393,10 +398,10 @@ aside.notes{display:none}
 .sticker{font-family:var(--script);font-weight:400;font-size:min(2.3cqw,4.2cqh);text-transform:none;letter-spacing:0;background:var(--lime);color:var(--ink);box-shadow:var(--paper);padding:.6cqh 1.4cqw}
 .chip{box-shadow:var(--paper)}
 .bg-ink .chip,.bg-purple .chip,.bg-pink .chip{background:var(--lime);color:var(--ink)}
-.clave-word span{color:var(--lime)!important;text-shadow:0 1.2cqh 0 rgba(28,10,56,.3)}
+.clave-word span{color:var(--lime)!important;text-shadow:0 1.2cqh 0 rgba(23,10,51,.3)}
 /* sombras de papel en vez de brillos */
 .cr .beat.t,.cr .beat.r,.ball,.ball.x,.dg,.playbtn,.tile,.panel,.qc,.cam,.st .n,.tk,.verdict,.who .dotb,.bfill,.legend7 span,.track-b,.strip i.ia,.strip i.dig{box-shadow:var(--paper)}
-.cr .beat.hit{transform:scale(1.32);box-shadow:0 0 0 min(1cqw,1.8cqh) rgba(247,240,0,.3),var(--paper)}
+.cr .beat.hit{transform:scale(1.32);box-shadow:0 0 0 min(1cqw,1.8cqh) rgba(255,228,42,.3),var(--paper)}
 .cr .beat.dim{box-shadow:none}
 .cr .ph{background:var(--lime);box-shadow:none}
 .needle i{box-shadow:none}
@@ -404,8 +409,8 @@ aside.notes{display:none}
 .dg[aria-pressed="true"]{box-shadow:0 0 0 5px var(--ice),var(--paper)}
 .playbtn{background:var(--lime);color:var(--ink)}
 .panel{background:var(--ice);color:var(--ink)}
-.legend7 span{background:rgba(42,18,80,.25);border-color:transparent}
-.strip i{background:rgba(255,248,225,.18)}
+.legend7 span{background:rgba(23,10,51,.25);border-color:transparent}
+.strip i{background:rgba(255,248,230,.18)}
 /* idea clave */
 .tk{background:var(--purple);color:var(--ice)}
 .tk b{font-family:var(--script);font-weight:400;font-size:1.3em;line-height:1.05;letter-spacing:0;text-transform:none;color:var(--lime)}
@@ -470,7 +475,7 @@ aside.notes{display:none}
 .ctrl .count{color:var(--ice);padding-left:.6cqw}
 .cbtn{border-color:var(--ice);color:var(--ice)}
 .cbtn[aria-pressed="true"]{background:var(--lime);color:var(--ink);border-color:var(--lime)}
-.cbtn:hover{background:rgba(255,248,225,.14)}
+.cbtn:hover{background:rgba(255,248,230,.14)}
 .trk{background:var(--ink);color:var(--ice);padding:.9cqh 1.2cqw;border-radius:999px;box-shadow:var(--paper)}
 .trk:has(.lbl:empty){display:none}
 .trk .lbl b{opacity:1;color:var(--lime)}
@@ -495,8 +500,8 @@ aside.notes{display:none}
 /* ===================== Ronda 7 ===================== */
 .cr .ph{transition:none}
 .acts{list-style:none;margin:2cqh 0 0;padding:0;display:flex;flex-wrap:wrap;gap:1cqw;font:800 var(--fs-s)/1 var(--body)}
-.acts li{padding:1.4cqh 1.4cqw;border-radius:999px;border:2px solid rgba(255,248,225,.55);color:var(--ice)}
-.acts li.past{background:rgba(255,248,225,.14);border-color:transparent}
+.acts li{padding:1.4cqh 1.4cqw;border-radius:999px;border:2px solid rgba(255,248,230,.55);color:var(--ice)}
+.acts li.past{background:rgba(255,248,230,.14);border-color:transparent}
 .acts li.past::before{content:"✓ ";color:var(--lime)}
 .acts li.now{background:var(--lime);color:var(--ink);border-color:var(--lime);box-shadow:var(--paper)}
 .row.named .chip{display:inline-flex;align-items:center;gap:.5em;font-size:min(1.9cqw,3.6cqh);padding:.5em .9em .5em .5em}
@@ -532,7 +537,7 @@ aside.notes{display:none}
 @container (orientation: portrait){.rings.hop{transform:scale(1.07)}}
 /* 1.4.11: categorías distinguibles por color y forma */
 .k.dig{background:transparent;box-shadow:inset 0 0 0 3px var(--ice)}
-.strip i.dig{background:repeating-linear-gradient(45deg,var(--ice) 0 4px,rgba(255,248,225,.35) 4px 8px)}
+.strip i.dig{background:repeating-linear-gradient(45deg,var(--ice) 0 4px,rgba(255,248,230,.35) 4px 8px)}
 .on .strip i.dig{animation:pop .6s var(--ease) both;animation-delay:calc(var(--i) * 14ms + 900ms)}
 .gap span{color:var(--lime)}
 .qc.good i{color:var(--ink)}
@@ -568,14 +573,14 @@ aside.notes{display:none}
 .eq .n small{display:flex;align-items:center;gap:.6cqw;margin-top:1cqh}
 .lg{display:inline-block;flex:none}
 .lg.pl{width:min(1.8cqw,3.2cqh);aspect-ratio:1;border-radius:50%;background:var(--ice)}
-.lg.fr{width:min(2.6cqw,4.6cqh);height:min(1.1cqw,2cqh);border-radius:999px;background:rgba(255,248,225,.25);box-shadow:inset 0 0 0 2px var(--ice)}
+.lg.fr{width:min(2.6cqw,4.6cqh);height:min(1.1cqw,2cqh);border-radius:999px;background:rgba(255,248,230,.25);box-shadow:inset 0 0 0 2px var(--ice)}
 .lg.dt{width:min(.9cqw,1.6cqh);aspect-ratio:1;border-radius:50%;background:var(--ice)}
 .tree{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.4cqw;margin-top:.6cqh}
 .tcol{background:var(--ink);border-radius:20px;padding:1.6cqh 1.1cqw;display:flex;flex-direction:column;gap:1cqh;box-shadow:var(--paper)}
 .thead{display:flex;align-items:center;gap:.7cqw;margin-bottom:.4cqh}
 .tl{display:grid;place-items:center;width:min(3.4cqw,6cqh);aspect-ratio:1;border-radius:50%;background:var(--c);color:var(--ink);font:900 min(1.9cqw,3.4cqh)/1 var(--display)}
 .tn{font:800 min(1.25cqw,2.4cqh)/1.1 var(--body);color:var(--ice)}
-.trow{display:flex;align-items:center;gap:.5cqw;padding:.7cqh .7cqw;border-radius:999px;background:rgba(255,248,225,.1)}
+.trow{display:flex;align-items:center;gap:.5cqw;padding:.7cqh .7cqw;border-radius:999px;background:rgba(255,248,230,.1)}
 .trow b{font:800 min(1cqw,2cqh)/1 var(--body);color:var(--ice);min-width:2.2em}
 .trow i{width:min(1.2cqw,2.2cqh);aspect-ratio:1;border-radius:50%;background:var(--c)}
 .on .tl{animation:pop .6s var(--ease) both;animation-delay:calc(var(--p) * 90ms + 300ms)}
@@ -609,7 +614,29 @@ aside.notes{display:none}
 .bg-ink .dg[aria-pressed="true"]{box-shadow:0 0 0 5px var(--ice),var(--paper)}
 .bg-ink .ball.x{box-shadow:0 0 0 3px var(--ice),var(--paper)}
 .legend7 span{background:var(--ink)}
-.strip i{background:rgba(255,248,225,.3)}
+.strip i{background:rgba(255,248,230,.3)}
+
+/* ===================== V0.9 · paleta validada (solo color) ===================== */
+/* fondos claros: rosa (bg-coral), sol (bg-lime), menta (bg-ice), mango (bg-mango), lila (bg-pink); todos con texto tinta */
+.bg-ice{background:var(--menta);color:var(--ink)}
+.bg-mango{background:var(--mango);color:var(--ink)}
+.bg-pink{background:var(--lila);color:var(--ink)}
+.bg-pink .m.sub,.bg-mango .m.sub{color:var(--ink)}
+.bg-mango .cr .beat small,.bg-pink .cr .beat small{color:var(--ink)}
+.bg-lime .sticker,.bg-coral .sticker,.bg-ice .sticker,.bg-mango .sticker,.bg-pink .sticker{background:var(--ink);color:var(--ice)}
+/* acentos como texto sobre papel: tono profundo (≥ 4.5:1) */
+.bg-ink .tk b,.bg-purple .tk b,.bg-pink .tk b{color:var(--rosa-d)}
+.blk.m b{color:var(--rosa-d)}
+.tline{background:var(--rosa-d);box-shadow:0 0 0 3px var(--sol)}
+/* rellenos vivos llevan texto tinta */
+.legend7 b.dg,.track-b div:nth-child(2){color:var(--ink)}
+/* rampa de madurez: rosa → mango → sol → menta */
+.track-b div:nth-child(1){background:var(--rosa)}.track-b div:nth-child(2){background:var(--mango)}.track-b div:nth-child(3){background:var(--sol)}.track-b div:nth-child(4){background:var(--menta)}
+/* barras de pilar sobre menta: contorno tinta para que A no se funda con el fondo (1.4.11) */
+.bg-ice .bfill{box-shadow:inset 0 0 0 3px var(--ink),var(--paper)}
+.r45 .rl::before,.tl,.trow i{box-shadow:inset 0 0 0 2px var(--ink)}
+/* lila es claro: la idea clave vuelve a la tarjeta noche como en el resto de fondos claros */
+.bg-pink .tk{background:var(--noche);color:var(--ice)}.bg-pink .tk b{color:var(--sol)}
 </style>
 </head>
 <body>
@@ -621,7 +648,7 @@ aside.notes{display:none}
   <div class="sr" id="announce" aria-live="polite"></div>
 
   <!-- 01 Portada -->
-  <section class="slide bg-ink on" data-fg="#FFF8E1" data-act="0" aria-label="Portada">
+  <section class="slide bg-ink on" data-fg="#FFF8E6" data-act="0" aria-label="Portada">
     <div class="rings" aria-hidden="true" style="right:-14cqw"><i class="r1"></i><i class="r2"></i><i class="r3"></i></div>
     <p class="kicker" data-a="up">Diagnóstico de innovación · Fundación Delirio</p>
     <h1 class="mega clave-word" aria-label="CLAVE"><span>C</span><span>L</span><span>A</span><span>V</span><span>E</span></h1>
@@ -633,7 +660,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 02 Acto 1 -->
-  <section class="slide bg-ink act" data-fg="#1E0A3C" data-act="1" aria-label="Por qué medir">
+  <section class="slide bg-ink act" data-fg="#170A33" data-act="1" aria-label="Por qué medir">
     <p class="kicker hl-coral" data-a="up">Tensión · por qué medir</p>
     <h2 class="q" data-a="glitch" style="--d:3">¿Cómo <span class="script">suena</span> hoy la innovación en Delirio?</h2>
     <ol class="acts" data-a="fade" style="--d:5" aria-label="Recorrido de la presentación"><li class="now">Por qué medir</li><li>Qué medimos</li><li>Cómo lo medimos</li><li>Qué vamos a ver</li><li>Qué haremos</li></ol>
@@ -642,7 +669,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 03 La clave -->
-  <section class="slide bg-purple" data-fg="#FFF8E1" data-act="1" data-sound aria-label="La clave">
+  <section class="slide bg-purple" data-fg="#FFF8E6" data-act="1" data-sound aria-label="La clave">
     <p class="kicker" data-a="up">La metáfora</p>
     <h2 class="xl" data-a="glitch" style="--d:1">La <span class="script">clave.</span></h2>
     <p class="m" data-a="up" style="--d:2">5 golpes ordenan toda la orquesta.</p>
@@ -656,7 +683,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 04 Cruzada -->
-  <section class="slide bg-ink" data-fg="#FFF8E1" data-act="1" data-sound="cruzada" aria-label="Clave cruzada">
+  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="1" data-sound="cruzada" aria-label="Clave cruzada">
     <h2 class="xl" data-a="glitch">Si un golpe se cruza,</h2>
     <h2 class="xl" data-a="up" style="--d:2"><span class="script">todo se descuadra.</span></h2>
     <div class="balls" data-a="fade" style="--d:3" aria-hidden="true">
@@ -668,7 +695,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 05 Tensión y resolución -->
-  <section class="slide bg-ink" data-fg="#1E0A3C" data-act="1" data-sound aria-label="Tensión y resolución">
+  <section class="slide bg-ink" data-fg="#170A33" data-act="1" data-sound aria-label="Tensión y resolución">
     <div class="split">
       <div class="half a">
         <div class="pulses" id="pulsesT" data-a="drop" aria-label="Tres golpes"><i></i><i></i><i></i></div>
@@ -688,7 +715,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 06 Acto 2 -->
-  <section class="slide bg-ink act" data-fg="#1E0A3C" data-act="2" aria-label="Qué medimos">
+  <section class="slide bg-ink act" data-fg="#170A33" data-act="2" aria-label="Qué medimos">
     <p class="kicker hl-coral" data-a="up">Tensión · qué medimos</p>
     <h2 class="q" data-a="glitch" style="--d:3">¿Qué medimos? Un pilar por golpe.</h2>
     <ol class="acts" data-a="fade" style="--d:5" aria-label="Recorrido de la presentación"><li class="past">Por qué medir</li><li class="now">Qué medimos</li><li>Cómo lo medimos</li><li>Qué vamos a ver</li><li>Qué haremos</li></ol>
@@ -697,9 +724,9 @@ aside.notes{display:none}
   </section>
 
   <!-- 07 C -->
-  <section class="slide bg-purple" data-fg="#FFF8E1" data-act="2" aria-label="Conducción">
+  <section class="slide bg-lime" data-fg="#170A33" data-act="2" aria-label="Conducción">
     <div class="pilar">
-      <div class="letter-wrap"><div class="ring" style="color:var(--lime)"></div><span class="big-letter hl-lime">C</span></div>
+      <div class="letter-wrap"><div class="ring" style="color:var(--ink)"></div><span class="big-letter hl-purple">C</span></div>
       <div>
         <span class="sticker" data-a="pop">Tensión · impulsa</span>
         <h2 class="pname" data-a="glitch" style="--d:1">Conducción</h2>
@@ -716,9 +743,9 @@ aside.notes{display:none}
   </section>
 
   <!-- 08 L -->
-  <section class="slide bg-coral" data-fg="#1E0A3C" data-act="2" aria-label="Lazos">
+  <section class="slide bg-coral" data-fg="#170A33" data-act="2" aria-label="Lazos">
     <div class="pilar">
-      <div class="letter-wrap"><div class="ring" style="color:var(--ink)"></div><span class="big-letter" style="color:var(--ice)">L</span></div>
+      <div class="letter-wrap"><div class="ring" style="color:var(--ink)"></div><span class="big-letter hl-purple">L</span></div>
       <div>
         <span class="sticker" data-a="pop">Tensión · impulsa</span>
         <h2 class="pname" data-a="glitch" style="--d:1">Lazos</h2>
@@ -735,7 +762,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 09 A -->
-  <section class="slide bg-lime" data-fg="#1E0A3C" data-act="2" aria-label="Activos">
+  <section class="slide bg-ice" data-fg="#170A33" data-act="2" aria-label="Activos">
     <div class="pilar">
       <div class="letter-wrap"><div class="ring" style="color:var(--purple)"></div><span class="big-letter hl-purple">A</span></div>
       <div>
@@ -754,7 +781,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 10 V -->
-  <section class="slide bg-ice" data-fg="#1E0A3C" data-act="2" aria-label="Vía">
+  <section class="slide bg-mango" data-fg="#170A33" data-act="2" aria-label="Vía">
     <div class="pilar">
       <div class="letter-wrap"><div class="ring" style="color:var(--purple)"></div><span class="big-letter hl-purple">V</span></div>
       <div>
@@ -773,9 +800,9 @@ aside.notes{display:none}
   </section>
 
   <!-- 11 E -->
-  <section class="slide bg-pink" data-fg="#FFF8E1" data-act="2" aria-label="Efecto">
+  <section class="slide bg-pink" data-fg="#170A33" data-act="2" aria-label="Efecto">
     <div class="pilar">
-      <div class="letter-wrap"><div class="ring" style="color:var(--lime)"></div><span class="big-letter hl-lime">E</span></div>
+      <div class="letter-wrap"><div class="ring" style="color:var(--ink)"></div><span class="big-letter hl-purple">E</span></div>
       <div>
         <span class="sticker" data-a="pop">Resolución · resuelve</span>
         <h2 class="pname" data-a="glitch" style="--d:1">Efecto</h2>
@@ -792,7 +819,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 12 Acto 3 -->
-  <section class="slide bg-ink act" data-fg="#1E0A3C" data-act="3" aria-label="Cómo lo medimos">
+  <section class="slide bg-ink act" data-fg="#170A33" data-act="3" aria-label="Cómo lo medimos">
     <p class="kicker hl-coral" data-a="up">Tensión · cómo lo medimos</p>
     <h2 class="q" data-a="glitch" style="--d:3">¿Cómo lo medimos?</h2>
     <ol class="acts" data-a="fade" style="--d:5" aria-label="Recorrido de la presentación"><li class="past">Por qué medir</li><li class="past">Qué medimos</li><li class="now">Cómo lo medimos</li><li>Qué vamos a ver</li><li>Qué haremos</li></ol>
@@ -801,7 +828,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 13 Simetría -->
-  <section class="slide bg-ink" data-fg="#FFF8E1" data-act="3" aria-label="Simetría">
+  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="3" aria-label="Simetría">
     <p class="kicker" data-a="up">Simetría total</p>
     <div class="eq">
       <span class="n" data-a="pop" style="--d:1"><span>5</span><small><i class="lg pl"></i>pilares</small></span><span class="op" data-a="fade" style="--d:8">×</span>
@@ -816,7 +843,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 14 Escala -->
-  <section class="slide bg-ink" data-fg="#FFF8E1" data-act="3" aria-label="Escala">
+  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="3" aria-label="Escala">
     <p class="kicker" data-a="up">La escala</p>
     <h2 class="xl" data-a="glitch" style="--d:1">Aquí no hay<br><span class="strike script">“ni fu ni fa”.</span></h2>
     <div class="digits" role="group" aria-label="Escala de 6 puntos" data-a="up" style="--d:3">
@@ -834,7 +861,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 15 Un hecho -->
-  <section class="slide bg-lime" data-fg="#1E0A3C" data-act="3" aria-label="Cero preguntas dobles">
+  <section class="slide bg-lime" data-fg="#170A33" data-act="3" aria-label="Cero preguntas dobles">
     <p class="kicker" data-a="up">Regla de oro</p>
     <h2 class="xl" data-a="glitch" style="--d:1">1 pregunta = 1 hecho.</h2>
     <div class="qflow">
@@ -850,7 +877,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 16 IA -->
-  <section class="slide bg-ink" data-fg="#FFF8E1" data-act="3" aria-label="Preguntas de IA y digital">
+  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="3" aria-label="Preguntas de IA y digital">
     <p class="kicker" data-a="up">Lo que los modelos de 2006–2012 no preguntan</p>
     <h2 class="xl" data-a="glitch" style="--d:1"><span class="hl-lime">7</span> de las 45 preguntas<br>miran al 2026.</h2>
     <div class="strip" id="strip" aria-hidden="true"></div>
@@ -869,7 +896,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 17 Las 45 -->
-  <section class="slide bg-ink" data-fg="#FFF8E1" data-act="3" aria-label="Las 45 preguntas">
+  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="3" aria-label="Las 45 preguntas">
     <div class="b45">
       <div>
         <h2 class="l" data-a="glitch">Las 45 preguntas.</h2>
@@ -890,7 +917,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 18 Acto 4 -->
-  <section class="slide bg-ink act" data-fg="#1E0A3C" data-act="4" aria-label="Qué vamos a ver">
+  <section class="slide bg-ink act" data-fg="#170A33" data-act="4" aria-label="Qué vamos a ver">
     <p class="kicker hl-lime" data-a="up">Resolución · qué vamos a ver</p>
     <h2 class="q" data-a="glitch" style="--d:3">¿Qué vamos a ver en los resultados?</h2>
     <ol class="acts" data-a="fade" style="--d:5" aria-label="Recorrido de la presentación"><li class="past">Por qué medir</li><li class="past">Qué medimos</li><li class="past">Cómo lo medimos</li><li class="now">Qué vamos a ver</li><li>Qué haremos</li></ol>
@@ -899,7 +926,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 19 Madurez -->
-  <section class="slide bg-purple" data-fg="#FFF8E1" data-act="4" aria-label="Madurez">
+  <section class="slide bg-purple" data-fg="#FFF8E6" data-act="4" aria-label="Madurez">
     <p class="kicker" data-a="up">Madurez</p>
     <h2 class="xl" data-a="glitch" style="--d:1">¿Qué tan en <span class="script">clave?</span></h2>
     <div data-a="up" style="--d:3">
@@ -913,7 +940,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 20 Dos números -->
-  <section class="slide bg-ice" data-fg="#1E0A3C" data-act="4" aria-label="Cómo se lee el resultado">
+  <section class="slide bg-ice" data-fg="#170A33" data-act="4" aria-label="Cómo se lee el resultado">
     <div class="row" data-a="up"><span class="kicker">Cómo se lee el resultado</span><span class="tag">Ejemplo ilustrativo</span></div>
     <h2 class="l" data-a="glitch" style="--d:1">Dos números.</h2>
     <div class="idx">
@@ -924,11 +951,11 @@ aside.notes{display:none}
       </div>
       <div>
         <div class="bars2" aria-label="Ejemplo: C 72, L 68, A 41, V 38, E 55">
-          <div class="bfill" style="--i:0;--h:72%;background:var(--purple);color:var(--ice)">72</div>
+          <div class="bfill" style="--i:0;--h:72%;background:var(--sol)">72</div>
           <div class="bfill" style="--i:1;--h:68%;background:var(--coral)">68</div>
-          <div class="bfill" style="--i:2;--h:41%;background:var(--lime)">41</div>
-          <div class="bfill" style="--i:3;--h:38%;background:#7FDDF5">38</div>
-          <div class="bfill" style="--i:4;--h:55%;background:var(--pink);color:var(--ice)">55</div>
+          <div class="bfill" style="--i:2;--h:41%;background:var(--menta)">41</div>
+          <div class="bfill" style="--i:3;--h:38%;background:var(--mango)">38</div>
+          <div class="bfill" style="--i:4;--h:55%;background:var(--lila)">55</div>
           <div class="lvl" style="bottom:72%"><em>máx</em></div>
           <div class="lvl" style="bottom:38%"><em>mín</em></div>
           <div class="brk" style="bottom:38%;height:34%"><b>34</b></div>
@@ -941,7 +968,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 21 Orquesta -->
-  <section class="slide bg-coral" data-fg="#1E0A3C" data-act="4" aria-label="Análisis matricial">
+  <section class="slide bg-coral" data-fg="#170A33" data-act="4" aria-label="Análisis matricial">
     <div class="row" data-a="up"><span class="kicker">Análisis matricial</span><span class="tag">Ejemplo ilustrativo</span></div>
     <h2 class="xl" data-a="glitch" style="--d:1">Toda la <span class="script">orquesta.</span></h2>
     <div class="gapline" data-a="fade" style="--d:2" aria-label="Ejemplo: Operación 46, Dirección 78, desafine de 32 puntos">
@@ -957,7 +984,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 22 Acto 5 -->
-  <section class="slide bg-ink act" data-fg="#1E0A3C" data-act="5" aria-label="Qué hacemos con eso">
+  <section class="slide bg-ink act" data-fg="#170A33" data-act="5" aria-label="Qué hacemos con eso">
     <p class="kicker hl-lime" data-a="up">Resolución · qué haremos</p>
     <h2 class="q" data-a="glitch" style="--d:3">¿Qué hacemos con eso?</h2>
     <ol class="acts" data-a="fade" style="--d:5" aria-label="Recorrido de la presentación"><li class="past">Por qué medir</li><li class="past">Qué medimos</li><li class="past">Cómo lo medimos</li><li class="past">Qué vamos a ver</li><li class="now">Qué haremos</li></ol>
@@ -966,11 +993,11 @@ aside.notes{display:none}
   </section>
 
   <!-- 23 Foto y video -->
-  <section class="slide bg-pink" data-fg="#FFF8E1" data-act="5" aria-label="Foto y video">
+  <section class="slide bg-pink" data-fg="#170A33" data-act="5" aria-label="Foto y video">
     <div class="fv">
       <div>
         <h2 class="xl" data-a="glitch">Hoy, la foto.</h2>
-        <h2 class="xl hl-lime" data-a="up" style="--d:2;margin-top:2cqh">Luego, <span class="script">el video.</span></h2>
+        <h2 class="xl hl-purple" data-a="up" style="--d:2;margin-top:2cqh">Luego, <span class="script">el video.</span></h2>
         <p class="m" data-a="up" style="--d:4;margin-top:2cqh;max-width:30ch">El dashboard repite la medición cada trimestre: en un año habrá 4 tomas para ver la tendencia.</p>
       </div>
       <div class="cam" data-a="pop" style="--d:3" aria-hidden="true">
@@ -984,7 +1011,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 24 Mango bajito -->
-  <section class="slide bg-lime" data-fg="#1E0A3C" data-act="5" aria-label="Micro-intervención">
+  <section class="slide bg-lime" data-fg="#170A33" data-act="5" aria-label="Micro-intervención">
     <p class="kicker" data-a="up">El mango bajito</p>
     <h2 class="xl" data-a="glitch" style="--d:1">Taller de <span class="script">2 horas.</span></h2>
     <div class="golpe" data-a="up" style="--d:3"><span class="gC" aria-hidden="true">C</span><span>Afina el primer golpe de la clave: <b>Conducción · C1 Propósito</b>. Si el rumbo no está claro, ningún otro golpe entra a tiempo.</span></div>
@@ -1004,7 +1031,7 @@ aside.notes{display:none}
   </section>
 
   <!-- 25 Cierre -->
-  <section class="slide bg-purple" data-fg="#FFF8E1" data-act="5" data-sound aria-label="Cierre">
+  <section class="slide bg-purple" data-fg="#FFF8E6" data-act="5" data-sound aria-label="Cierre">
     <div class="rings" aria-hidden="true" style="right:-14cqw"><i class="r1"></i><i class="r2"></i><i class="r3"></i></div>
     <h2 class="xl" data-a="glitch">Que todo Delirio</h2>
     <h2 class="xl" data-a="up" style="--d:1"><span class="script">entre en</span></h2>
@@ -1067,7 +1094,7 @@ aside.notes{display:none}
 
   /* ---------- Puntos 45 ---------- */
   /* Árbol 5 × 3 × 3: columna = pilar, fila = factor, punto = pregunta */
-  var colors=['var(--lime)','var(--coral)','var(--neon)','var(--pink)','var(--magenta)'];
+  var colors=['var(--sol)','var(--rosa)','var(--menta)','var(--mango)','var(--lila)'];
   var TP=[['C','Conducción'],['L','Lazos'],['A','Activos'],['V','Vía'],['E','Efecto']], tree=document.getElementById('tree'), qi=0;
   TP.forEach(function(t,p){
     var col=document.createElement('div');col.className='tcol';col.style.setProperty('--c',colors[p]);col.style.setProperty('--p',p);
@@ -1077,7 +1104,7 @@ aside.notes{display:none}
   });
 
   /* ---------- Batería V0 ---------- */
-  var P={C:['Conducción',['Propósito','Patrocinio','Comunicación'],'var(--lime)'],L:['Lazos',['Seguridad','Colaboración','Reconocimiento'],'var(--coral)'],A:['Activos',['Talento','Inversión','Tecnología'],'var(--neon)'],V:['Vía',['Ideación','Experimentación','Escalamiento'],'var(--pink)'],E:['Efecto',['Público','Sostenibilidad','Medición'],'var(--magenta)']};
+  var P={C:['Conducción',['Propósito','Patrocinio','Comunicación'],'var(--lime)'],L:['Lazos',['Seguridad','Colaboración','Reconocimiento'],'var(--coral)'],A:['Activos',['Talento','Inversión','Tecnología'],'var(--neon)'],V:['Vía',['Ideación','Experimentación','Escalamiento'],'var(--mango)'],E:['Efecto',['Público','Sostenibilidad','Medición'],'var(--lila)']};
   var Q=[
 ['C1.1','En Delirio existe una definición escrita de qué significa innovar para la organización.'],
 ['C1.2','En mi equipo, las personas saben explicar qué tipo de innovación busca Delirio.'],
@@ -1136,7 +1163,7 @@ aside.notes{display:none}
     for(var f=1;f<=3;f++){var g3=document.createElement('div');g3.className='g3';g3.title=P[L][1][f-1];
       Q.forEach(function(q,i){if(q[0].slice(0,2)===L+f){
         var b=document.createElement('button');b.type='button';b.className='tile';b.id='t'+q[0].replace('.','-');
-        b.textContent=q[0];b.style.background=P[L][2];b.style.color=(L==='V'||L==='E')?'var(--ice)':'var(--ink)';b.style.setProperty('--i',i);b.setAttribute('aria-pressed',i===0?'true':'false');
+        b.textContent=q[0];b.style.background=P[L][2];b.style.color='var(--ink)';b.style.setProperty('--i',i);b.setAttribute('aria-pressed',i===0?'true':'false');
         b.setAttribute('aria-label',q[0]+': '+q[1]);
         b.addEventListener('click',function(){allTiles.forEach(function(t){t.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');
           pFac.textContent=P[L][0]+' · '+P[L][1][+q[0][1]-1]+(q[2]?' · '+q[2]:'');pCode.textContent=q[0];pQ.textContent=q[1];pQ.classList.remove('swap');void pQ.offsetWidth;pQ.classList.add('swap');});
@@ -1243,10 +1270,10 @@ aside.notes{display:none}
     e.style.left=a[0]+'%';e.style.top=a[1]+'%';e.style.setProperty('--s',a[2]+'cqw');e.style.setProperty('--dl',a[3]+'s');e.style.setProperty('--t',(1.8+a[3])+'s');sparks.appendChild(e);});
 
   /* ---------- Transición con blobs de papel ---------- */
-  var wipe=document.getElementById('wipe'), ACC=['#F7F000','#5BB68A','#DE4D74','#C8085D','#C2381C','#3F1F6E'], wk=0, first=true;
+  var wipe=document.getElementById('wipe'), ACC=['#FFE42A','#47D59B','#FAAED4','#A5A0F6','#FA9331','#2E1466'], wk=0, first=true;
   function runWipe(sl){
     var bg=getComputedStyle(sl).backgroundColor, o=ACC[wk++%ACC.length];
-    if(sl.classList.contains('act'))bg='#F7F000';
+    if(sl.classList.contains('act'))bg='#FFE42A';
     wipe.style.setProperty('--wn',bg);wipe.style.setProperty('--wo',o);
     wipe.classList.remove('run');void wipe.offsetWidth;wipe.classList.add('run');
   }
@@ -1258,8 +1285,8 @@ aside.notes{display:none}
   function show(i){
     var sl=slides[i];
     slides.forEach(function(s,j){s.classList.toggle('on',j===i);s.classList.toggle('prev',j<i);if(j===i){s.removeAttribute('inert');s.removeAttribute('aria-hidden');}else{s.setAttribute('inert','');s.setAttribute('aria-hidden','true');}});
-    deck.style.setProperty('--chrome',sl.dataset.fg||'#fff');
-    deck.style.setProperty('--spark',sl.classList.contains('bg-lime')?'#1E0A3C':'#F7F000');
+    deck.style.setProperty('--chrome',sl.dataset.fg||'#FFF8E6');
+    deck.style.setProperty('--spark',/\bbg-(lime|coral|ice|pink|mango)\b/.test(sl.className)?'#170A33':'#FFE42A');
     if(!still&&sl.querySelector('.cr,.ball,#pulsesT,#closeWord'))startClock();else stopClock();
     if(!still&&sl.getAttribute('aria-label')==='Madurez')startNeedle();else stopNeedle();
     counters(sl);

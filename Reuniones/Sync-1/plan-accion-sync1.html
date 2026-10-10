@@ -12,10 +12,10 @@
 /* Layout: documento de trabajo de una columna (~960px) sobre papel claro, con la paleta "Los Sabanales" del repo (sin la lavanda). Un solo look deliberado, igual que el one-pager y la ficha técnica. */
 :root{
   --paper:#FFFDF6; --sheet:#FFFFFF; --soft:#F7F1E1; --line:#E6DCC4;
-  --ink:#1E0A3C; --muted:#4B3F63; --night:#3F1F6E; --cream:#FFF8E1;
-  --yellow:#F7F000; --rose:#DE4D74; --magenta:#C8085D; --jade:#5BB68A; --verm:#C2381C;
+  --ink:#170A33; --muted:#4B3F63; --night:#2E1466; --cream:#FFF8E6;
+  --yellow:#FFE42A; --rose:#FAAED4; --magenta:#B02A6B; --jade:#47D59B; --verm:#FA9331;
   --royal:#1F4FA8; --lav:#6E5F8F;
-  --rose-soft:#FBE0E8; --jade-soft:#D9F0E3; --yellow-soft:#FDF6C4;
+  --rose-soft:#FFE7F2; --jade-soft:#D6F7E8; --yellow-soft:#FFF6C7;
   --sans:"Nunito","Segoe UI",system-ui,sans-serif; --script:"Kaushan Script","Brush Script MT",cursive;
   --mono:ui-monospace,Menlo,Consolas,monospace;
   color-scheme:light;
@@ -34,7 +34,7 @@ code{font:700 .84em var(--mono);background:var(--soft);padding:1px 6px;border-ra
 .k{font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
 
 /* Cabecera */
-.head{background:var(--night);color:var(--cream);margin:0 -16px;padding:44px 16px 34px}
+.head{background:var(--royal);color:var(--cream);margin:0 -16px;padding:44px 16px 34px}
 .head .k{color:var(--yellow)}
 .head h1{font-size:clamp(2.3rem,7vw,3.8rem);color:var(--yellow);margin:.5rem 0 .5rem}
 .head h1 .script{font-family:var(--script);font-weight:400;color:var(--cream);font-size:.62em;margin-left:.15em}
@@ -51,7 +51,7 @@ section+section{border-top:2px dashed var(--line);margin-top:30px}
 .read{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .read div{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;gap:6px;align-content:start;min-width:0}
 .read .tag{justify-self:start;font-weight:800;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
-.tag.ok{background:var(--jade-soft)} .tag.gap{background:var(--yellow-soft)} .tag.risk{background:var(--rose-soft);color:#7A0B3A}
+.tag.ok{background:var(--jade-soft)} .tag.gap{background:var(--yellow-soft)} .tag.risk{background:var(--rose-soft);color:#B02A6B}
 .read p{font-size:.95rem}
 
 /* Llamado a la ejecución */
@@ -72,7 +72,7 @@ label:has(input:checked) .t{text-decoration:line-through;text-decoration-thickne
 .person header .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.05rem;background:var(--sheet);color:var(--ink);flex:none}
 .person header div{min-width:0}
 .person header small{display:block;font-weight:700;font-size:.8rem}
-.p-jose header{background:var(--rose)} .p-pao header{background:var(--jade)} .p-mar header{background:var(--yellow)} .p-jorge header{background:var(--verm);color:var(--cream)}
+.p-jose header{background:var(--rose)} .p-pao header{background:var(--jade)} .p-mar header{background:var(--yellow)} .p-jorge header{background:var(--verm);color:var(--ink)}
 .tasks{display:grid;padding:4px 16px 12px}
 .tasks label{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:11px 0;border-top:1px dashed var(--line);cursor:pointer}
 .tasks label:first-child{border-top:0}
@@ -104,7 +104,7 @@ td.n{text-align:center;font-weight:900;font-variant-numeric:tabular-nums}
 .day li{font-size:.8rem;line-height:1.35;font-weight:700;padding:5px 7px;border-radius:8px;background:var(--soft)}
 .day.hot{background:var(--yellow);border-color:transparent}
 .day.hot li{background:var(--sheet)}
-.day.fest h3::after{content:"festivo";display:inline-block;margin-left:4px;font-size:.62rem;padding:1px 6px;border-radius:999px;background:var(--rose-soft);color:#7A0B3A;letter-spacing:.04em}
+.day.fest h3::after{content:"festivo";display:inline-block;margin-left:4px;font-size:.62rem;padding:1px 6px;border-radius:999px;background:var(--rose-soft);color:#B02A6B;letter-spacing:.04em}
 
 /* WhatsApp */
 .msg{background:var(--night);color:var(--cream);border-radius:18px;padding:18px;display:grid;gap:12px}

@@ -10,7 +10,7 @@
 <style>
 /* Layout: documento de una columna (~880px) sobre papel crema, con la paleta del mapping "Los Sabanales" como acentos. Un solo look deliberado (no depende del tema del visor). */
 :root{
-  --paper:#FFF8E1; --sheet:#FFFDF5; --ink:#1E0A3C; --muted:#4B3F63; --lav:#1F4FA8; --night:#3F1F6E; --yellow:#F7F000; --jade:#5BB68A; --rose:#DE4D74; --magenta:#C8085D; --verm:#C2381C; --line:#E6DCC4;
+  --paper:#FFF8E6; --sheet:#FFFDF5; --ink:#170A33; --muted:#4B3F63; --lav:#1F4FA8; --night:#2E1466; --yellow:#FFE42A; --jade:#47D59B; --rose:#FAAED4; --magenta:#B02A6B; --verm:#FA9331; --line:#E6DCC4;
   --body:"Nunito", "Segoe UI", system-ui, sans-serif; --script:"Kaushan Script", "Brush Script MT", cursive;
   color-scheme:light;
 }
@@ -22,51 +22,55 @@ h2{font-size:1.65rem;margin-bottom:.6rem}
 h3{font-size:1.1rem;margin:1.2rem 0 .3rem}
 p{margin:.5rem 0;max-width:68ch}
 .script{font-family:var(--script);font-weight:400}
-.head{background:var(--night);color:var(--paper);margin:0 -16px;padding:48px 16px 40px;position:relative;overflow:hidden}
+.head{background:var(--lav);color:var(--paper);margin:0 -16px;padding:48px 16px 40px;position:relative;overflow:hidden}
 .head .wrap{position:relative;z-index:1}
 .head .eyebrow{font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;color:var(--yellow)}
 .head h1{font-size:clamp(2.6rem,8vw,4.4rem);margin:.6rem 0 .4rem;color:var(--yellow)}
 .head h1 .script{color:var(--paper);font-size:.8em;margin-left:.2em}
 .head p{color:var(--paper);font-size:1.12rem;max-width:58ch}
-.head .meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:1rem;font-size:.86rem;color:#FFF8E1}
+.head .meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:1rem;font-size:.86rem;color:#FFF8E6}
 .head .blob{position:absolute;right:-90px;top:-60px;width:320px;aspect-ratio:1;border-radius:46% 54% 58% 42%/52% 44% 56% 48%;background:var(--rose);box-shadow:0 10px 26px rgba(0,0,0,.25)}
 .head .blob::before{content:"";position:absolute;inset:22%;border-radius:inherit;background:var(--jade)}
 .head .blob::after{content:"";position:absolute;inset:40%;border-radius:inherit;background:var(--yellow)}
-.tldr{background:var(--sheet);border-radius:20px;padding:22px 24px;margin:-24px 0 8px;position:relative;z-index:2;box-shadow:0 10px 26px rgba(30,10,60,.12)}
+.tldr{background:var(--sheet);border-radius:20px;padding:22px 24px;margin:-24px 0 8px;position:relative;z-index:2;box-shadow:0 10px 26px rgba(23,10,51,.12)}
 .tldr h2{font-size:1.15rem;color:var(--magenta);text-transform:uppercase;letter-spacing:.12em}
 .tldr ul{margin:.4rem 0 0;padding-left:1.2rem}
 .tldr li{margin:.3rem 0}
 section{padding-block:28px 6px;border-top:2px dashed var(--line);margin-top:28px}
 section:first-of-type{border-top:0}
-.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:900;font-size:.95rem;margin-right:10px;vertical-align:4px;box-shadow:0 3px 8px rgba(30,10,60,.18)}
-.tbl{overflow-x:auto;margin:12px 0;border-radius:16px;background:var(--sheet);box-shadow:0 6px 18px rgba(30,10,60,.08)}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:900;font-size:.95rem;margin-right:10px;vertical-align:4px;box-shadow:0 3px 8px rgba(23,10,51,.18)}
+.tbl{overflow-x:auto;margin:12px 0;border-radius:16px;background:var(--sheet);box-shadow:0 6px 18px rgba(23,10,51,.08)}
 table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.45}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#F7EED6}
 tr:last-child td{border-bottom:0}
 tr.pil td{background:#E4ECFA;font-weight:800}
-tr.pil.r td{background:#FDF6C4}
+tr.pil.r td{background:#FFF6C7}
 td.c{font-weight:900;white-space:nowrap}
 .formula{font:700 .92rem/1.7 ui-monospace,Menlo,Consolas,monospace;background:var(--night);color:var(--paper);border-radius:16px;padding:16px 18px;overflow-x:auto;white-space:pre;margin:12px 0}
 .formula b{color:var(--yellow)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:12px 0}
-.card{background:var(--sheet);border-radius:18px;padding:16px 18px;box-shadow:0 6px 18px rgba(30,10,60,.08);min-width:0}
+.card{background:var(--sheet);border-radius:18px;padding:16px 18px;box-shadow:0 6px 18px rgba(23,10,51,.08);min-width:0}
 .card h3{margin:0 0 .3rem}
 .card p{font-size:.95rem;margin:0}
-.card.y{background:var(--yellow)}.card.j{background:#D9F0E3}.card.r{background:#FBE0E8}
+.card.y{background:var(--yellow)}.card.j{background:#D6F7E8}.card.r{background:#FFE7F2}
 .clave{background:var(--night);border-radius:20px;padding:18px 12px;margin:14px 0;overflow-x:auto}
 .clave svg{display:block;min-width:600px;width:100%;height:auto}
 .bands{display:grid;grid-template-columns:50fr 20fr 15fr 15fr;gap:4px;margin:12px 0;font-size:.85rem;font-weight:800}
 .bands div{padding:10px 8px;border-radius:10px;min-width:0}
 .bands small{display:block;font-weight:600}
 .note{font-size:.9rem;color:var(--muted)}
-.warn{background:#FBE0E8;border-radius:16px;padding:14px 18px;margin:12px 0}
+.warn{background:#FFE7F2;border-radius:16px;padding:14px 18px;margin:12px 0}
 .warn b{color:var(--magenta)}
 ol.clean,ul.clean{padding-left:1.2rem;margin:.4rem 0}
 ol.clean li,ul.clean li{margin:.25rem 0;max-width:68ch}
 .refs li{font-size:.92rem}
 .foot{margin-top:40px;font-size:.85rem;color:var(--muted)}
 @media (max-width:620px){.bands{grid-template-columns:1fr 1fr}.head .blob{width:200px;right:-80px}}
+
+/* V0.9: el blob no tapa el texto del encabezado en pantallas angostas */
+.head > *:not(.blob){position:relative;z-index:1}
+@media (max-width:1100px){.head .blob{width:190px;right:-70px;top:-80px}.head p,.head .meta{max-width:calc(100% - 100px)}}
 </style>
 </head>
 <body>
@@ -103,19 +107,19 @@ ol.clean li,ul.clean li{margin:.25rem 0;max-width:68ch}
   <p>En la salsa y el son, la clave es el patrón de cinco golpes que ordena a toda la orquesta. Casi nadie la oye, pero si un músico se cruza, la orquesta se descuadra aunque cada uno toque bien. Delirio vive de ese ritmo; la metáfora le habla a su junta en su propio idioma y se explica en menos de dos minutos.</p>
   <div class="clave" role="img" aria-label="Son clave 3-2: compás de tensión con Conducción, Lazos y Activos; compás de resolución con Vía y Efecto">
     <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg">
-      <text x="160" y="22" text-anchor="middle" font-family="Nunito, sans-serif" font-size="13" font-weight="800" letter-spacing="1.5" fill="#FFF8E1">TENSIÓN · LO QUE IMPULSA</text>
-      <text x="480" y="22" text-anchor="middle" font-family="Nunito, sans-serif" font-size="13" font-weight="800" letter-spacing="1.5" fill="#F7F000">RESOLUCIÓN · LO QUE RESUELVE</text>
-      <rect x="20" y="76" width="600" height="6" rx="3" fill="#FFF8E1" opacity=".3"/>
-      <line x1="320" y1="44" x2="320" y2="114" stroke="#FFF8E1" stroke-width="2" stroke-dasharray="4 4" opacity=".6"/>
-      <g fill="#DE4D74"><circle cx="38.75" cy="79" r="22"/><circle cx="151.25" cy="79" r="22"/><circle cx="263.75" cy="79" r="22"/></g>
-      <g fill="#F7F000"><circle cx="413.75" cy="79" r="22"/><circle cx="488.75" cy="79" r="22"/></g>
-      <g font-family="Nunito, sans-serif" font-weight="900" font-size="20" fill="#1E0A3C" text-anchor="middle">
+      <text x="160" y="22" text-anchor="middle" font-family="Nunito, sans-serif" font-size="13" font-weight="800" letter-spacing="1.5" fill="#FFF8E6">TENSIÓN · LO QUE IMPULSA</text>
+      <text x="480" y="22" text-anchor="middle" font-family="Nunito, sans-serif" font-size="13" font-weight="800" letter-spacing="1.5" fill="#FFE42A">RESOLUCIÓN · LO QUE RESUELVE</text>
+      <rect x="20" y="76" width="600" height="6" rx="3" fill="#FFF8E6" opacity=".3"/>
+      <line x1="320" y1="44" x2="320" y2="114" stroke="#FFF8E6" stroke-width="2" stroke-dasharray="4 4" opacity=".6"/>
+      <g fill="#FAAED4"><circle cx="38.75" cy="79" r="22"/><circle cx="151.25" cy="79" r="22"/><circle cx="263.75" cy="79" r="22"/></g>
+      <g fill="#FFE42A"><circle cx="413.75" cy="79" r="22"/><circle cx="488.75" cy="79" r="22"/></g>
+      <g font-family="Nunito, sans-serif" font-weight="900" font-size="20" fill="#170A33" text-anchor="middle">
         <text x="38.75" y="86">C</text><text x="151.25" y="86">L</text><text x="263.75" y="86">A</text><text x="413.75" y="86">V</text><text x="488.75" y="86">E</text>
       </g>
-      <g font-family="Nunito, sans-serif" font-weight="800" font-size="12" fill="#FFF8E1" text-anchor="middle">
+      <g font-family="Nunito, sans-serif" font-weight="800" font-size="12" fill="#FFF8E6" text-anchor="middle">
         <text x="38.75" y="128">Conducción</text><text x="151.25" y="128">Lazos</text><text x="263.75" y="128">Activos</text><text x="413.75" y="128">Vía</text><text x="488.75" y="128">Efecto</text>
       </g>
-      <text x="320" y="160" text-anchor="middle" font-family="Nunito, sans-serif" font-size="11" font-weight="700" fill="#FFF8E1" opacity=".75">son clave 3-2 · 16 corcheas · golpes en 1, 4, 7 | 11, 13 · 107 BPM ("Chan Chan")</text>
+      <text x="320" y="160" text-anchor="middle" font-family="Nunito, sans-serif" font-size="11" font-weight="700" fill="#FFF8E6" opacity=".75">son clave 3-2 · 16 corcheas · golpes en 1, 4, 7 | 11, 13 · 107 BPM ("Chan Chan")</text>
     </svg>
   </div>
   <div class="cards">
@@ -189,10 +193,10 @@ Brecha horizontal = área más alta − área más baja, por pilar     &gt; 15 =
   <p><b>Pesos iguales, argumentados.</b> (1) Jakopec y Sušanj parten de que todos los factores son igual de necesarios. (2) Sin datos previos de Delirio, cualquier ponderación sería arbitraria. (3) El desbalance no se esconde en los pesos: se mide aparte con el Desfase. Después de la primera medición se puede recalibrar contra los indicadores de Efecto.</p>
   <h3>Bandas de madurez (adaptadas de TLA)</h3>
   <div class="bands" aria-label="Bandas de madurez">
-    <div style="background:#FBE0E8">Entrando<small>0–49 · media &lt; 3,5</small></div>
-    <div style="background:#DCE6F7">Emergiendo<small>50–69</small></div>
-    <div style="background:#D9F0E3">Adaptando<small>70–84</small></div>
-    <div style="background:var(--yellow)">Transformando<small>85–100 · media ≥ 5,25</small></div>
+    <div style="background:#FFE7F2">Entrando<small>0–49 · media &lt; 3,5</small></div>
+    <div style="background:#FFEADB">Emergiendo<small>50–69</small></div>
+    <div style="background:#FFF6C7">Adaptando<small>70–84</small></div>
+    <div style="background:var(--jade)">Transformando<small>85–100 · media ≥ 5,25</small></div>
   </div>
   <p>Las bandas son exigentes a propósito: un promedio de "ligeramente de acuerdo" (60 puntos) queda en Emergiendo, y para llegar a Transformando casi todos deben responder "totalmente de acuerdo".</p>
 </section>

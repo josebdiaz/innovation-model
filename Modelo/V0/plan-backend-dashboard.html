@@ -10,7 +10,7 @@
 <style>
 /* Layout: documento de decisión de una columna (~880px) sobre papel claro; diagrama de arquitectura en SVG; matriz de decisión y cronograma como tablas. Paleta "Los Sabanales". Un solo look deliberado. */
 :root{
-  --paper:#FFFDF6; --ink:#1E0A3C; --muted:#4B3F63; --night:#3F1F6E; --lav:#1F4FA8; --yellow:#F7F000; --rose:#DE4D74; --magenta:#C8085D; --jade:#5BB68A; --line:#E6DCC4; --soft:#F7F1E1;
+  --paper:#FFFDF6; --ink:#170A33; --muted:#4B3F63; --night:#2E1466; --lav:#1F4FA8; --yellow:#FFE42A; --rose:#FAAED4; --magenta:#B02A6B; --jade:#47D59B; --line:#E6DCC4; --soft:#F7F1E1;
   --sans:"Nunito", "Segoe UI", system-ui, sans-serif; --script:"Kaushan Script", cursive;
   color-scheme:light;
 }
@@ -21,12 +21,12 @@ h1,h2,h3{font-weight:900;line-height:1.15;margin:0;text-wrap:balance}
 h2{font-size:1.5rem;margin:2.4rem 0 .6rem;padding-top:1.4rem;border-top:2px solid var(--line)}
 h3{font-size:1.05rem;margin:1.2rem 0 .35rem}
 p{margin:.5rem 0;max-width:70ch}
-.head{background:var(--night);color:var(--paper);margin:0 -16px 1.6rem;padding:44px 16px 34px}
+.head{background:var(--lav);color:var(--paper);margin:0 -16px 1.6rem;padding:44px 16px 34px}
 .head .k{font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow)}
 .head h1{font-size:clamp(2rem,6vw,3rem);margin:.7rem 0 .4rem;color:var(--yellow)}
 .head h1 .script{font-family:var(--script);font-weight:400;color:var(--paper)}
 .head p{font-weight:600;max-width:60ch}
-.verdict{background:var(--yellow);border-radius:20px;padding:20px 22px;box-shadow:0 10px 26px rgba(30,10,60,.12)}
+.verdict{background:var(--yellow);border-radius:20px;padding:20px 22px;box-shadow:0 10px 26px rgba(23,10,51,.12)}
 .verdict h2{border:0;margin:0 0 .4rem;padding:0;font-size:1.25rem}
 .verdict p{margin:.35rem 0}
 .tbl{overflow-x:auto;margin:.8rem 0;border:1px solid var(--line);border-radius:12px;background:#fff}
@@ -35,7 +35,7 @@ th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);verti
 th{background:var(--soft);font-weight:800;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 tr:last-child td{border-bottom:0}
 td.n{font-variant-numeric:tabular-nums;text-align:center;font-weight:800}
-tr.win td{background:#FDF6C4}
+tr.win td{background:#FFF6C7}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:.8rem 0}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
 .card h3{margin:0 0 .3rem}
@@ -48,9 +48,9 @@ li{margin:.25rem 0;max-width:70ch}
 .arch svg{display:block;min-width:720px;width:100%;height:auto}
 code{font:700 .85em ui-monospace,Menlo,Consolas,monospace;background:var(--soft);padding:1px 5px;border-radius:5px}
 .tag{display:inline-block;font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted)}
-.tag.p{background:#FBE0E8;color:#7A0B3A}
+.tag.p{background:#FFE7F2;color:#B02A6B}
 .box{border-radius:14px;padding:14px 18px;margin:.8rem 0}
-.box.warn{background:#FBE0E8}
+.box.warn{background:#FFE7F2}
 .note{font-size:.88rem;color:var(--muted)}
 </style>
 </head>
@@ -116,17 +116,17 @@ code{font:700 .85em ui-monospace,Menlo,Consolas,monospace;background:var(--soft)
 <h2>2. Arquitectura</h2>
 <div class="arch" role="img" aria-label="Flujo: Google Forms alimenta la hoja Crudo; Apps Script valida y calcula puntajes; la hoja Agregados alimenta el dashboard vivo; la consola interna lee Crudo y Calidad">
   <svg viewBox="0 0 860 250" xmlns="http://www.w3.org/2000/svg" font-family="Nunito, sans-serif">
-    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1E0A3C"/></marker></defs>
-    <g stroke="#1E0A3C" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#170A33"/></marker></defs>
+    <g stroke="#170A33" stroke-width="2" fill="none" marker-end="url(#ar)">
       <path d="M150 70H200"/><path d="M350 70H400"/><path d="M550 70H600"/><path d="M475 105V150"/><path d="M675 105V150"/>
     </g>
     <g font-weight="800" font-size="13" text-anchor="middle">
-      <rect x="20" y="35" width="130" height="70" rx="14" fill="#E4ECFA"/><text x="85" y="66" fill="#1E0A3C">Google Forms</text><text x="85" y="84" font-size="11" font-weight="600" fill="#4B3F63">sin correo · anónimo</text>
-      <rect x="200" y="35" width="150" height="70" rx="14" fill="#FBE0E8"/><text x="275" y="62" fill="#1E0A3C">Hoja «Crudo»</text><text x="275" y="80" font-size="11" font-weight="600" fill="#4B3F63">acceso: solo equipo</text><text x="275" y="95" font-size="11" font-weight="600" fill="#4B3F63">respuesta por fila</text>
-      <rect x="400" y="35" width="150" height="70" rx="14" fill="#F7F1E1" stroke="#1E0A3C" stroke-width="2"/><text x="475" y="62" fill="#1E0A3C">Apps Script</text><text x="475" y="80" font-size="11" font-weight="600" fill="#4B3F63">valida · puntúa</text><text x="475" y="95" font-size="11" font-weight="600" fill="#4B3F63">agrega · suprime n &lt; 5</text>
-      <rect x="600" y="35" width="150" height="70" rx="14" fill="#D9F0E3"/><text x="675" y="62" fill="#1E0A3C">Hoja «Agregados»</text><text x="675" y="80" font-size="11" font-weight="600" fill="#4B3F63">solo cifras publicables</text><text x="675" y="95" font-size="11" font-weight="600" fill="#4B3F63">por onda</text>
-      <rect x="390" y="150" width="170" height="78" rx="14" fill="#1F4FA8"/><text x="475" y="180" fill="#FFF8E1">Consola interna</text><text x="475" y="198" font-size="11" font-weight="600" fill="#FFF8E1">pestañas en Sheets</text><text x="475" y="213" font-size="11" font-weight="600" fill="#FFF8E1">cobertura · calidad · fiabilidad</text>
-      <rect x="590" y="150" width="170" height="78" rx="14" fill="#C8085D"/><text x="675" y="180" fill="#F7F000">Dashboard vivo</text><text x="675" y="198" font-size="11" font-weight="600" fill="#FFF8E1">página publicada</text><text x="675" y="213" font-size="11" font-weight="600" fill="#FFF8E1">se republica por onda</text>
+      <rect x="20" y="35" width="130" height="70" rx="14" fill="#E4ECFA"/><text x="85" y="66" fill="#170A33">Google Forms</text><text x="85" y="84" font-size="11" font-weight="600" fill="#4B3F63">sin correo · anónimo</text>
+      <rect x="200" y="35" width="150" height="70" rx="14" fill="#FFE7F2"/><text x="275" y="62" fill="#170A33">Hoja «Crudo»</text><text x="275" y="80" font-size="11" font-weight="600" fill="#4B3F63">acceso: solo equipo</text><text x="275" y="95" font-size="11" font-weight="600" fill="#4B3F63">respuesta por fila</text>
+      <rect x="400" y="35" width="150" height="70" rx="14" fill="#F7F1E1" stroke="#170A33" stroke-width="2"/><text x="475" y="62" fill="#170A33">Apps Script</text><text x="475" y="80" font-size="11" font-weight="600" fill="#4B3F63">valida · puntúa</text><text x="475" y="95" font-size="11" font-weight="600" fill="#4B3F63">agrega · suprime n &lt; 5</text>
+      <rect x="600" y="35" width="150" height="70" rx="14" fill="#D6F7E8"/><text x="675" y="62" fill="#170A33">Hoja «Agregados»</text><text x="675" y="80" font-size="11" font-weight="600" fill="#4B3F63">solo cifras publicables</text><text x="675" y="95" font-size="11" font-weight="600" fill="#4B3F63">por onda</text>
+      <rect x="390" y="150" width="170" height="78" rx="14" fill="#1F4FA8"/><text x="475" y="180" fill="#FFF8E6">Consola interna</text><text x="475" y="198" font-size="11" font-weight="600" fill="#FFF8E6">pestañas en Sheets</text><text x="475" y="213" font-size="11" font-weight="600" fill="#FFF8E6">cobertura · calidad · fiabilidad</text>
+      <rect x="590" y="150" width="170" height="78" rx="14" fill="#B02A6B"/><text x="675" y="180" fill="#FFE42A">Dashboard vivo</text><text x="675" y="198" font-size="11" font-weight="600" fill="#FFF8E6">página publicada</text><text x="675" y="213" font-size="11" font-weight="600" fill="#FFF8E6">se republica por onda</text>
       <text x="200" y="190" font-size="11" font-weight="700" fill="#4B3F63" text-anchor="start">Psicometría fuera de línea:</text><text x="200" y="207" font-size="11" font-weight="600" fill="#4B3F63" text-anchor="start">α, ω, r<tspan baseline-shift="sub" font-size="9">wg</tspan>, bootstrap (Python)</text>
     </g>
   </svg>

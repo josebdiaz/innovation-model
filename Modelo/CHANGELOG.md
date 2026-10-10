@@ -1,5 +1,13 @@
 # Changelog — Modelo CLAVE
 
+## V0.9 — 2026-10-11 · paleta validada
+
+- Paleta recalculada con validación técnica: 4 neutros (tinta #170A33, noche #2E1466, rey #1F4FA8, papel #FFF8E6) y un vivo por pilar (C sol #FFE42A, L rosa #FAAED4, A menta #47D59B, V mango #FA9331, E lila #A5A0F6), cada uno con tono profundo para texto sobre papel y tinte para cajas.
+- Validación: todos los vivos ≥ 3,27:1 sobre rey y tinta ≥ 7,9:1 sobre cada vivo; ΔE00 mínimo entre pilares de 12,2 en visión típica, deuteranopía, protanopía y tritanopía (antes 1,3).
+- Deck: solo color. Tokens con nombre de rol (los nombres viejos quedan como alias), cero literales heredados del VHS, cada lámina de pilar con su color, texto y chispas tinta sobre fondos claros, y rampa de madurez rosa → mango → sol → menta. Sin cambios de estructura, texto ni animación.
+- Documentos e índice: encabezados en azul rey, tintes derivados de la paleta, bandas de madurez con la misma rampa y blob del one-pager que ya no tapa el texto en pantallas angostas.
+- Nuevo: `V0/paleta-clave.html` (tokens, roles, contraste, daltonismo y QA visual) y `V0/elementos/12-paleta/paleta-clave.json`.
+
 ## V0.8 — 2026-10-11
 
 - El fondo lavanda (#6E5F8F) se reemplaza por azul rey (#1F4FA8) en el deck, el índice y los documentos de V0: más contraste con el amarillo (6,35:1) y el crema (7,21:1). Decisión del Sync 1.

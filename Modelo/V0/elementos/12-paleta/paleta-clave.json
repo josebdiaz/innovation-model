@@ -1,0 +1,82 @@
+{
+  "version": "V0.9",
+  "neutros": {
+    "tinta": "#170A33",
+    "noche": "#2E1466",
+    "rey": "#1F4FA8",
+    "papel": "#FFF8E6"
+  },
+  "vivos": {
+    "sol": "#FFE42A",
+    "rosa": "#FAAED4",
+    "menta": "#47D59B",
+    "mango": "#FA9331",
+    "lila": "#A5A0F6"
+  },
+  "profundos": {
+    "sol": "#7D6400",
+    "rosa": "#B02A6B",
+    "menta": "#0A7751",
+    "mango": "#A84B00",
+    "lila": "#5A4FC4"
+  },
+  "tintes": {
+    "sol": "#FFF6C7",
+    "rosa": "#FFE7F2",
+    "menta": "#D6F7E8",
+    "mango": "#FFEADB",
+    "lila": "#ECEBFD"
+  },
+  "pilares": {
+    "C": {
+      "nombre": "Conducción",
+      "vivo": "#FFE42A",
+      "profundo": "#7D6400",
+      "tinte": "#FFF6C7"
+    },
+    "L": {
+      "nombre": "Lazos",
+      "vivo": "#FAAED4",
+      "profundo": "#B02A6B",
+      "tinte": "#FFE7F2"
+    },
+    "A": {
+      "nombre": "Activos",
+      "vivo": "#47D59B",
+      "profundo": "#0A7751",
+      "tinte": "#D6F7E8"
+    },
+    "V": {
+      "nombre": "Vía",
+      "vivo": "#FA9331",
+      "profundo": "#A84B00",
+      "tinte": "#FFEADB"
+    },
+    "E": {
+      "nombre": "Efecto",
+      "vivo": "#A5A0F6",
+      "profundo": "#5A4FC4",
+      "tinte": "#ECEBFD"
+    }
+  },
+  "roles": {
+    "tension": "rosa",
+    "resolucion": "sol",
+    "madurez": [
+      "rosa",
+      "mango",
+      "sol",
+      "menta"
+    ],
+    "fondo": "rey",
+    "tarjeta": "noche",
+    "texto": "tinta",
+    "lectura": "papel"
+  },
+  "validacion": {
+    "deltaE00_min": 12.2,
+    "par_min": "sol–mango",
+    "vision_par_min": "deuter",
+    "contraste_min_vivo_rey": 3.27
+  }
+}

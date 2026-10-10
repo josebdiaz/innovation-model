@@ -1,25 +1,28 @@
 # Auditoría WCAG 2.2 AA — Modelo CLAVE V0
 
-Fecha: 2026-10-10, actualizada el 2026-10-11 (V0.8, fondo azul rey) · Alcance: deck `modelo-clave-v0.html` (25 láminas, 16:9) y `onepager-racional.html`.
+Fecha: 2026-10-10, actualizada el 2026-10-11 (V0.8, fondo azul rey; V0.9, paleta validada) · Alcance: deck `modelo-clave-v0.html` (25 láminas, 16:9) y `onepager-racional.html`.
 Método: inventario de cada texto y gráfico con significado por lámina, cálculo de contraste WCAG (incluye mezclas por transparencia) y revisión de teclado, movimiento, audio y semántica.
 
 ## Paleta y contrastes de texto (1.4.3)
 
+Paleta V0.9 (2026-10-11). Detalle, tokens y validación bajo daltonismo en `paleta-clave.html` y `elementos/12-paleta/paleta-clave.json`.
+
 | Texto | Fondo | Ratio | Uso | Estado |
 |---|---|---|---|---|
-| Amarillo #F7F000 | Azul rey #1F4FA8 | 6.35 | Títulos, cifras | Pasa |
-| Crema #FFF8E1 | Azul rey | 7.21 | Texto corrido, etiquetas | Pasa |
-| Crema / amarillo | Índigo #3F1F6E | 12.11 / 10.67 | Actos, C, madurez, cierre | Pasa |
-| Tinta #1E0A3C | Amarillo | 14.97 | A, regla de oro, taller | Pasa |
-| Tinta | Rosa #DE4D74 | 4.66 | Lazos, orquesta, golpes de tensión | Pasa |
-| Crema | Rosa | 3.65 | Letra gigante L | Pasa (texto grande) |
-| Amarillo | Magenta #C8085D | 4.77 | Efecto, foto/video | Pasa |
-| Crema | Bermellón #C2381C | 5.10 | Fichas V, banda Emergiendo, barra 55 | Pasa |
-| Tinta / índigo | Jade #5BB68A | 7.31 / 5.21 | Vía, dos números | Pasa |
-| Magenta | Crema | 5.42 | Etiqueta "Idea clave" | Pasa |
-| Rosa | Tinta | 4.66 | "clave cruzada" en el veredicto | Pasa |
-| Crema sobre píldora tinta #1E0A3C | Azul rey | 16.98 | Leyenda de la lámina IA | Pasa |
-| Crema al 72 % | Índigo | 6.96 | Actos pendientes | Pasa |
+| Sol #FFE42A | Rey #1F4FA8 | 5.97 | Títulos, cifras | Pasa |
+| Papel #FFF8E6 | Rey | 7.23 | Texto corrido, etiquetas | Pasa |
+| Papel / sol | Noche #2E1466 | 14.08 / 11.63 | Actos, La clave, Madurez, Cierre, tarjetas "Idea clave" | Pasa |
+| Tinta #170A33 | Sol | 14.53 | Lámina C, regla de oro, taller | Pasa |
+| Tinta / noche | Rosa #FAAED4 | 10.70 / 8.57 | Lámina L, orquesta, golpes de tensión | Pasa |
+| Tinta / noche | Menta #47D59B | 9.98 / 8.00 | Lámina A, dos números | Pasa |
+| Tinta / noche | Mango #FA9331 | 8.23 / 6.59 | Lámina V, banda Emergiendo | Pasa |
+| Tinta / noche | Lila #A5A0F6 | 7.94 / 6.36 | Lámina E, foto y video | Pasa |
+| Rosa profundo #B02A6B | Papel | 5.85 | Etiqueta "Idea clave" sobre papel, bloque de medición del taller | Pasa |
+| Rosa | Tinta | 10.70 | "clave cruzada" en el veredicto | Pasa |
+| Papel sobre píldora tinta | Rey | 17.58 | Leyenda de la lámina IA, cromo | Pasa |
+| Papel al 72 % | Noche | 7.80 | Actos pendientes | Pasa |
+
+Regla V0.9: todo fondo claro (sol, rosa, menta, mango, lila, papel) lleva texto tinta o noche; los vivos solo se usan como texto sobre rey, noche o tinta; sobre papel se usa su tono profundo (-d, ≥ 5.26:1).
 
 ## Gráficos con significado (1.4.11, mínimo 3:1)
 
@@ -30,7 +33,9 @@ Método: inventario de cada texto y gráfico con significado por lámina, cálcu
 | ✓ de las preguntas correctas (verde sobre crema) | 3.38 | Tinta 15.2 |
 | Letras CLAVE del cierre sobre el anillo rosa | 3.21 (rozando) | Anillos movidos y reducidos: ya no se superponen |
 | Barra de progreso | 7.21 / 14.97 | Pasa |
-| Fichas, botones 1–3 y bola V en rosa, magenta o bermellón sobre azul rey | 1.33–1.98 · falla | Anillo crema 7.21 alrededor de cada elemento |
+| Fichas, botones 1–3 y bola V en rosa, magenta o bermellón sobre azul rey | 1.33–1.98 · falla | V0.9: los cinco vivos dan 3.27–5.97 sobre rey por sí solos; el anillo papel se mantiene como refuerzo |
+| Barra A (menta) sobre la lámina menta "Dos números" | 1.0 · falla | Contorno tinta 9.98 |
+| Cinco pilares bajo daltonismo (ΔE00 entre pares) | Mínimo 1.3 (bermellón–magenta, tritanopía) | Mínimo 12.2 (sol–mango, deuteranopía); la letra acompaña siempre al color (1.4.1) |
 | Foco: contorno tinta + halo amarillo | 3.18 / 4.71 | Pasa sobre todos los fondos |
 | Nombres bajo los golpes de la clave (lámina 3) | Tinta sobre índigo ≈ 1.3 · falla (heredaban el color del círculo) | Crema sobre índigo 12.11; tinta sobre fondos claros |
 

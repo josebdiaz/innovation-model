@@ -15,6 +15,7 @@ Cada elemento del modelo en su propio archivo, para reutilizarlo sin abrir el de
 | 09 | `09-intervencion/taller-c1.md` | Micro-intervención de 2 horas con medición antes y después |
 | 10 | `10-dashboard/especificacion.md` | Vistas del dashboard vivo y de la consola interna |
 | 11 | `11-referencias/referencias.md` | Modelos de referencia y bibliografía metodológica |
+| 12 | `12-paleta/paleta-clave.json` | Tokens de color V0.9, roles y resultado de la validación (contraste y ΔE00) |
 | — | `modelo-clave.json` | El modelo completo en un solo archivo |
 
 Documentos completos en la carpeta superior: `modelo-clave-v0.html` (deck), `onepager-racional.html`, `ficha-tecnica.html`, `plan-backend-dashboard.html`, `auditoria-wcag.md`.
