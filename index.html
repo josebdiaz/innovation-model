@@ -3,63 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Modelo CLAVE · Delirio</title>
-<meta name="description" content="Modelo CLAVE: diagnóstico del sistema y la cultura de innovación de Fundación Delirio. Grupo 4, MGinn Universidad Icesi.">
+<meta name="description" content="Índice del Modelo CLAVE: diagnóstico del sistema y la cultura de innovación de Fundación Delirio. Grupo 4, MGinn Universidad Icesi.">
+<title>Índice Proyecto CLAVE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Kaushan+Script&display=swap">
 <style>
-:root{--paper:#FFF8E1;--ink:#1E0A3C;--lav:#6E5F8F;--night:#3F1F6E;--yellow:#F7F000;--rose:#DE4D74;--jade:#5BB68A;--magenta:#C8085D;--paper-sh:0 10px 26px rgba(28,10,56,.28);color-scheme:dark}
+/* Layout: tablero índice de una columna ancha (1080px): cabecera lavanda con cifras, franja de avance T-01…T-15, buscador y grupos de documentos en tarjetas. Paleta "Los Sabanales"; un solo look deliberado (papel claro). */
+:root{
+  --paper:#FFFDF6; --cream:#FFF8E1; --ink:#1E0A3C; --muted:#4B3F63; --lav:#6E5F8F; --night:#3F1F6E; --yellow:#F7F000; --rose:#DE4D74; --jade:#5BB68A; --magenta:#C8085D; --line:#E6DCC4; --soft:#F7F1E1;
+  --sh:0 8px 22px rgba(28,10,56,.12);
+  --sans:"Nunito", "Segoe UI", system-ui, sans-serif; --script:"Kaushan Script", cursive;
+  color-scheme:light;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--lav);color:var(--paper);font:600 17px/1.55 "Nunito","Segoe UI",system-ui,sans-serif;padding:0 16px 64px}
-.wrap{max-width:960px;margin:0 auto}
-header{padding:56px 0 28px;position:relative}
-.k{font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
-h1{font-weight:900;font-size:clamp(3.4rem,13vw,7rem);line-height:.9;margin:.4rem 0 .6rem;color:var(--yellow);letter-spacing:-.01em;text-shadow:0 .08em 0 rgba(28,10,56,.3)}
-h1 span{font-family:"Kaushan Script",cursive;font-weight:400;font-size:.42em;color:var(--paper);display:inline-block;transform:rotate(-4deg);margin-left:.2em;text-shadow:none}
-header p{max-width:56ch;font-size:1.1rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
-a.card{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:24px;text-decoration:none;color:var(--ink);box-shadow:var(--paper-sh);transition:transform .2s;min-height:190px}
-a.card:hover{transform:translateY(-4px) rotate(-.5deg)}
-a.card:focus-visible{outline:3px solid var(--ink);outline-offset:2px;box-shadow:0 0 0 6px var(--yellow)}
-a.card b{font-weight:900;font-size:1.45rem;line-height:1.1}
-a.card small{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem}
-a.card span{font-weight:700}
-.y{background:var(--yellow)}.r{background:var(--rose)}.j{background:var(--jade)}.p{background:var(--paper)}
-a.card.n{background:var(--night);color:var(--paper)}a.card.n small{color:var(--yellow)}
-h2{font-weight:900;font-size:1.3rem;margin:40px 0 10px;color:var(--yellow)}
-ul{margin:0;padding-left:1.2rem}
-li{margin:.3rem 0}
-li a{color:var(--paper);font-weight:800}
-footer{margin-top:48px;font-size:.88rem}
-@media (prefers-reduced-motion:reduce){a.card{transition:none}}
+body{margin:0;background:var(--paper);color:var(--ink);font:600 16px/1.5 var(--sans);padding-inline:16px;padding-block:0 72px}
+.wrap{max-width:1080px;margin:0 auto}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;box-shadow:0 0 0 6px var(--yellow);border-radius:10px}
+header{background:var(--lav);color:var(--cream);margin:0 -16px;padding:40px 16px 30px}
+.k{font-weight:800;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase}
+h1{font-weight:900;font-size:clamp(2.4rem,7vw,4rem);line-height:1;margin:.5rem 0 .4rem;color:var(--yellow)}
+h1 span{font-family:var(--script);font-weight:400;color:var(--cream);font-size:.6em;margin-left:.15em}
+header p{max-width:62ch;margin:.2rem 0 0}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.kpi{background:var(--night);border-radius:18px;padding:14px 16px;min-width:0}
+.kpi b{display:block;font-weight:900;font-size:1.9rem;line-height:1.1;color:var(--yellow);font-variant-numeric:tabular-nums}
+.kpi span{font-size:.85rem}
+h2{font-weight:900;font-size:1.3rem;margin:34px 0 12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+h2 small{font-weight:700;font-size:.85rem;color:var(--muted)}
+.tasks{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.phase{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;min-width:0}
+.phase h3{margin:0 0 8px;font-weight:900;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.t{display:flex;gap:8px;align-items:flex-start;padding:7px 0;border-top:1px dashed var(--line);font-size:.86rem;line-height:1.3}
+.t:first-of-type{border-top:0}
+.t code{flex:none;font:800 .72rem/1 var(--sans);padding:4px 6px;border-radius:6px;background:var(--soft)}
+.st{display:inline-block;margin-top:4px;font-size:.7rem;font-weight:800;letter-spacing:.04em;padding:2px 8px;border-radius:999px}
+.st.ok{background:var(--jade);color:var(--ink)}
+.st.go{background:var(--yellow);color:var(--ink)}
+.st.no{background:var(--soft);color:var(--muted);box-shadow:inset 0 0 0 1.5px var(--line)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin-top:8px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:30px 0 4px}
+.toolbar input{flex:1;min-width:220px;font:700 1rem var(--sans);padding:12px 16px;border-radius:999px;border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{font:800 .82rem var(--sans);padding:9px 14px;border-radius:999px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;min-height:40px}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--yellow)}
+.group{margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+a.doc{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);box-shadow:var(--sh);transition:transform .15s;min-width:0}
+a.doc:hover{transform:translateY(-3px)}
+a.doc .top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+a.doc .type{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
+a.doc b{font-weight:900;font-size:1.05rem;line-height:1.2}
+a.doc span.d{font-size:.88rem;color:var(--muted);font-weight:600}
+a.doc .where{font-size:.75rem;font-weight:800;color:var(--muted)}
+a.doc.hero{background:var(--night);color:var(--cream);border-color:transparent}
+a.doc.hero span.d,a.doc.hero .where{color:#E9E0FF}
+.type.site{background:var(--yellow);color:var(--ink)}
+.type.gh{background:var(--soft);color:var(--ink)}
+.type.ext{background:#FBE0E8;color:#7A0B3A}
+.empty{display:none;padding:20px;border-radius:16px;background:var(--soft);font-weight:700}
+.note{font-size:.85rem;color:var(--muted);margin-top:8px;max-width:80ch}
+@media (max-width:820px){.tasks{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.tasks{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){a.doc{transition:none}}
+
+.more{margin-top:34px;border-top:2px solid var(--line);padding-top:18px}
+.more summary{cursor:pointer;font-weight:900;font-size:1.15rem;list-style:none;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:6px 0}
+.more summary::before{content:"+";display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--yellow);font-weight:900}
+.more[open] summary::before{content:"–"}
+.more summary small{font-weight:700;font-size:.85rem;color:var(--muted)}
+.more summary::-webkit-details-marker{display:none}
+#top h2{margin-top:30px}
+#top .cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 </style>
 </head>
 <body>
-<div class="wrap">
 <header>
-  <span class="k">Diagnóstico de innovación · Fundación Delirio</span>
-  <h1>CLAVE <span>en clave 3-2</span></h1>
-  <p>Modelo propio para medir el sistema y la cultura de innovación de Fundación Delirio: 5 pilares, 15 factores y 45 preguntas, en una escala de 6 puntos sin punto medio.</p>
+  <div class="wrap">
+    <span class="k">Haciéndolo Posible · Grupo 4 · MGinn Universidad Icesi</span>
+    <h1>Proyecto CLAVE <span>índice</span></h1>
+    <p>Entregables del diagnóstico de innovación de Fundación Delirio · Modelo CLAVE V0.7.</p>
+  </div>
 </header>
 
-<div class="grid">
-  <a class="card n" href="Modelo/V0/modelo-clave-v0.html"><small>Presentación · 25 láminas</small><b>Deck animado</b><span>La metáfora, los pilares, la escala, cómo se leen los resultados y el taller. Flechas para avanzar, N para notas, S para el sonido de la clave.</span></a>
-  <a class="card y" href="Modelo/V0/onepager-racional.html"><small>Para la junta</small><b>Racional en una página</b><span>Por qué medimos lo que medimos, cómo lo medimos y qué sigue.</span></a>
-  <a class="card r" href="Modelo/V0/ficha-tecnica.html"><small>Documento metodológico</small><b>Ficha técnica</b><span>Constructo, modelo de medición, puntuación, agregación, validación, sesgos, ética y referencias.</span></a>
-  <a class="card j" href="Modelo/V0/plan-backend-dashboard.html"><small>Plan de construcción</small><b>Backend y dashboard</b><span>Arquitectura, consola interna frente a dashboard vivo, cronograma y riesgos.</span></a>
+<div class="wrap">
+
+<!-- Avance del proyecto: oculto hasta actualizarlo con las notas de la primera reunión -->
+<section id="avance" hidden>
+<h2>Avance del proyecto</h2>
+<div class="tasks" id="tasks"></div>
+</section>
+
+<section id="top" aria-label="Entregables"></section>
+
+<details class="more" id="more">
+<summary>Más documentos <small id="moreN"></small></summary>
+<div class="toolbar">
+  <label for="q" class="k" style="color:var(--muted)">Buscar</label>
+  <input id="q" type="search" placeholder="Ej.: ficha, ítems, Rao, dashboard…" autocomplete="off">
+  <div class="chips" role="group" aria-label="Filtrar por grupo" id="chips"></div>
+</div>
+<div id="groups"></div>
+<p class="empty" id="empty">Ningún documento coincide con la búsqueda.</p>
+</details>
+<p class="note">Sitio publicado con GitHub Pages desde <a href="https://github.com/josebdiaz/innovation-model">josebdiaz/innovation-model</a>. Los enlaces <b>GitHub</b> abren el archivo fuente en el repositorio.</p>
 </div>
 
-<h2>Elementos del modelo</h2>
-<ul>
-  <li><a href="Modelo/V0/elementos/modelo-clave.json">modelo-clave.json</a> · el modelo completo, legible por máquina</li>
-  <li><a href="Modelo/V0/elementos/04-items/items.csv">items.csv</a> · las 45 afirmaciones</li>
-  <li><a href="Modelo/V0/elementos/02-taxonomia/factores.csv">factores.csv</a> · 15 factores y su homologación</li>
-  <li><a href="Modelo/V0/elementos/06-puntuacion/puntuar_clave.py">puntuar_clave.py</a> · script de puntuación</li>
-  <li><a href="https://github.com/josebdiaz/innovation-model/tree/main/Modelo/V0/elementos">Todos los elementos en GitHub</a></li>
-</ul>
+<script>
+(function(){
+  var GH='https://github.com/josebdiaz/innovation-model/blob/main/';
+  var GHT='https://github.com/josebdiaz/innovation-model/tree/main/';
+  function gh(p){return GH+p.split('/').map(encodeURIComponent).join('/');}
+  var G=[
+    {id:'ent',name:'Entregables del modelo',docs:[
+      {t:'Deck animado del Modelo CLAVE',d:'25 láminas en clave 3-2: metáfora, pilares, escala, lectura de resultados y taller. N notas · S sonido · P pausa.',u:'Modelo/V0/modelo-clave-v0.html',k:'site',hero:1},
+      {t:'Racional en una página',d:'Por qué medimos lo que medimos, cómo se lee el resultado, supuestos y límites.',u:'Modelo/V0/onepager-racional.html',k:'site'},
+      {t:'Ficha técnica',d:'Documento metodológico: constructo, modelo de medición, puntuación, agregación, validación, ética y referencias APA.',u:'Modelo/V0/ficha-tecnica.html',k:'site'},
+      {t:'Plan de backend y dashboard',d:'Arquitectura Forms → Sheets → Apps Script, consola interna vs. dashboard vivo, cronograma y riesgos.',u:'Modelo/V0/plan-backend-dashboard.html',k:'site'},
+      {t:'Auditoría WCAG 2.2 AA',d:'Contraste de textos y gráficos, controles, movimiento y semántica del deck.',u:gh('Modelo/V0/auditoria-wcag.md'),k:'gh'},
+      {t:'Elementos del modelo',d:'Cada elemento por separado: taxonomía, escala, 45 ítems, puntuación, formulario, taller y modelo-clave.json.',u:GHT+'Modelo/V0/elementos',k:'gh'}
+    ]},
+    {id:'ele',name:'Elementos del modelo',docs:[
+      {t:'Directorio de elementos',d:'Cada elemento del modelo en un archivo aparte, con índice.',u:GHT+'Modelo/V0/elementos',k:'gh'},
+      {t:'modelo-clave.json',d:'El modelo completo, legible por máquina.',u:gh('Modelo/V0/elementos/modelo-clave.json'),k:'gh'},
+      {t:'Metáfora: son clave 3-2',d:'Tensión y resolución, clave cruzada y guion de 90 s.',u:gh('Modelo/V0/elementos/01-metafora/metafora-clave.md'),k:'gh'},
+      {t:'Taxonomía y homologación',d:'5 pilares, 15 factores y de qué modelos se homologa cada uno.',u:gh('Modelo/V0/elementos/02-taxonomia/homologacion.md'),k:'gh'},
+      {t:'Escala de 6 puntos',d:'Etiquetas, puntajes 0–100 y justificación.',u:gh('Modelo/V0/elementos/03-escala/escala.md'),k:'gh'},
+      {t:'Las 45 preguntas (CSV)',d:'Código, pilar, factor, texto, tipo y referente.',u:gh('Modelo/V0/elementos/04-items/items.csv'),k:'gh'},
+      {t:'Variables de perfil D1–D4',d:'Área, nivel, antigüedad y vinculación.',u:gh('Modelo/V0/elementos/05-perfil/variables-perfil.csv'),k:'gh'},
+      {t:'Algoritmo de puntuación',d:'Fórmulas del Índice CLAVE, Desfase, Desafine y brechas.',u:gh('Modelo/V0/elementos/06-puntuacion/algoritmo.md'),k:'gh'},
+      {t:'puntuar_clave.py',d:'Script que calcula índices, bandas y brechas desde el CSV de respuestas.',u:gh('Modelo/V0/elementos/06-puntuacion/puntuar_clave.py'),k:'gh'},
+      {t:'Texto del formulario',d:'Consentimiento, perfil y secciones listos para Google Forms.',u:gh('Modelo/V0/elementos/07-formulario/formulario.md'),k:'gh'},
+      {t:'Reglas de redacción y control de datos',d:'Un hecho por pregunta y controles de calidad.',u:gh('Modelo/V0/elementos/08-calidad/control-datos.md'),k:'gh'},
+      {t:'Taller C1 de 2 horas',d:'Diseño de la sesión de 120′ con medición antes y después.',u:gh('Modelo/V0/elementos/09-intervencion/taller-c1.md'),k:'gh'},
+      {t:'Especificación del dashboard',d:'Vistas del dashboard vivo y de la consola interna.',u:gh('Modelo/V0/elementos/10-dashboard/especificacion.md'),k:'gh'},
+      {t:'Batería V0 (CSV completo)',d:'45 ítems más control de atención y abiertas.',u:gh('Modelo/V0/bateria-v0.csv'),k:'gh'}
+    ]},
+    {id:'ges',name:'Gestión del proyecto',docs:[
+      {t:'Documento Ancla',d:'Hoja de ruta, matriz de tareas T-01 a T-15 y criterios de calidad del profesor.',u:gh('Documento_Ancla_Tareas_y_Seguimiento.md'),k:'gh'},
+      {t:'Logs de la Sesión 1',d:'Principios, metáforas y entregables del módulo.',u:gh('Logs_Clase_Sesion_1_Haciendolo_Posible.md'),k:'gh'},
+      {t:'Prompt maestro del proyecto',d:'Instrucciones del proyecto de Claude.',u:gh('Claude_Project_Prompt_Instrucciones.md'),k:'gh'},
+      {t:'README del Modelo V0',d:'Documentación de la versión vigente.',u:gh('Modelo/V0/README.md'),k:'gh'},
+      {t:'CHANGELOG',d:'Historial de versiones V0 → V0.7.',u:gh('Modelo/CHANGELOG.md'),k:'gh'},
+      {t:'Contexto del consultor',d:'Experiencia previa en Delirio, riesgos y regla de uso.',u:gh('Contexto/Contexto_Consultor_Experiencia_Delirio.md'),k:'gh'},
+      {t:'Exploración V1 (descartada)',d:'Vocabulario del show; se volvió a la V0 por ser menos sesgada.',u:GHT+'Modelo/_exploraciones/V1-vocabulario-show',k:'gh'},
+      {t:'Repositorio completo',d:'josebdiaz/innovation-model en GitHub.',u:'https://github.com/josebdiaz/innovation-model',k:'gh'}
+    ]},
+    {id:'ref',name:'Modelos de referencia',docs:[
+      {t:'Rao & Weintraub · MIT Sloan',d:'How innovative is your company\'s culture? 6 bloques, 54 elementos.',u:gh('Herramientas/Markdown/How Innovative Is Your Company’s Culture_.md'),k:'gh'},
+      {t:'Jakopec & Sušanj (2012)',d:'Diagnóstico: Estrategia, Ideas, Procesos y Clima.',u:gh('Herramientas/Markdown/Jakopec, Su-anj, 2012.md'),k:'gh'},
+      {t:'Hutch Carpenter · 25 comportamientos',d:'Liderazgo, awareness, compromiso y gobernanza.',u:gh('Herramientas/Markdown/Hutch_25_Behaviors_Affecting_Culture_EN_Letter_webversion.md'),k:'gh'},
+      {t:'The Learning Accelerator',d:'Rúbrica de madurez Entrando–Transformando, 7 factores.',u:gh('Herramientas/Markdown/Assessing Culture of Innovation_2Rev-TLA__10.9_final.md'),k:'gh'},
+      {t:'McKinsey · 8 esenciales',d:'Aspire, Choose, Discover, Evolve, Accelerate, Scale, Extend, Mobilize.',u:gh('Herramientas/Markdown/The_Eight_Essentials_of_Innovation_Performance.md'),k:'gh'},
+      {t:'Creus · Pentagrowth',d:'Cinco palancas del crecimiento.',u:gh('Herramientas/Markdown/Informe Pentagrowth ESP.md'),k:'gh'},
+      {t:'IBM · Innovation diagnostic',d:'Alineación de definiciones, ejecución y métricas.',u:gh('Herramientas/Markdown/g510-6256-innovation-diagnostic.md'),k:'gh'},
+      {t:'Woods · HYPE Innovation Canvas',d:'Nueve dimensiones de gobernanza del programa.',u:gh('Herramientas/Markdown/hype-innovation-canvas.md'),k:'gh'},
+      {t:'Rainforest Scorecard',d:'Capital social, confianza y normas no escritas.',u:gh('Herramientas/Markdown/Innovation rainforest scorecard.md'),k:'gh'},
+      {t:'Satell · 4 ways (HBR)',d:'Seguridad psicológica, diversidad y misión.',u:gh('Herramientas/Markdown/4 Ways to Build an Innovative Team.md'),k:'gh'}
+    ]},
+    {id:'cla',name:'Recursos de clase',docs:[
+      {t:'Grabación de la Sesión 1',d:'YouTube Live del módulo Haciéndolo Posible.',u:'https://www.youtube.com/live/v-j7xeznE00',k:'ext'},
+      {t:'Tablero de Miro (Herramientas)',d:'Escalas y modelos adicionales de la clase.',u:'https://miro.com/app/board/uXjVEcCxJ2o=/',k:'ext'},
+      {t:'Hoja de grupos de la clase',d:'Google Sheets con los grupos del módulo.',u:'https://docs.google.com/spreadsheets/d/1m4E4jqq1xnLoIAKJzdRiC6cfx5nW8Ji-Q0w6db8oRsI',k:'ext'},
+      {t:'Transcripción de la clase',d:'Texto completo de la Sesión 1.',u:gh('transcript_haciendolo_posible.txt'),k:'gh'}
+    ]}
+  ];
+  var TYPE={site:'Página',gh:'GitHub',ext:'Externo'};
+  var T=[
+    ['Semana 1',[['T-01','Contacto con la Directora de Delirio','ok','Completado 02-oct'],['T-02','Correo de expectativa a empleados','go',''],['T-03','Estructura de áreas y jerarquías','go','D1 provisional en el modelo'],['T-04','Megamodelo homologado','ok','Modelo CLAVE V0.7'],['T-05','Escala de medición ácida','ok','Likert 6 puntos'],['T-06','Redacción quirúrgica de preguntas','ok','45 ítems, cero dobles'],['T-07','Montaje del formulario digital','no','Texto listo en elementos/07'],['T-08','Check-in con el profesor','no','']]],
+    ['Semana 2',[['T-09','Levantamiento de respuestas','no','Consola interna en el plan']]],
+    ['Semana 3',[['T-10','Procesamiento y análisis matricial','no','puntuar_clave.py listo']]],
+    ['Semana 4',[['T-11','Prototipo de dashboard','no','Plan y especificación listos'],['T-12','Micro-intervención','no','Sesión de 120′ diseñada']]],
+    ['Semana 5',[['T-13','Portafolio y cotizador','no',''],['T-14','Informe final interactivo','no','One-pager y ficha técnica como base'],['T-15','Pitch final','no','Deck como base']]]
+  ];
+  var ST={ok:'Listo',go:'En curso',no:'Pendiente'};
+  var tasks=document.getElementById('tasks'), done=0;
+  T.forEach(function(ph){
+    var d=document.createElement('div');d.className='phase';
+    var h='<h3>'+ph[0]+'</h3>';
+    ph[1].forEach(function(t){if(t[2]==='ok')done++;h+='<div class="t"><code>'+t[0]+'</code><div>'+t[1]+'<br><span class="st '+t[2]+'">'+ST[t[2]]+'</span>'+(t[3]?' <span style="color:var(--muted);font-size:.78rem">· '+t[3]+'</span>':'')+'</div></div>';});
+    d.innerHTML=h;tasks.appendChild(d);
+  });
 
-<footer>Grupo 4 · Maestría en Gestión de la Innovación, Universidad Icesi · Jose Bolaños, Katherine Castro, Maria del Mar Espinel, Paola Giraldo, Jorge Mario Murillo, Maricela Valencia · Versión V0.7, octubre de 2026.</footer>
-</div>
+  var groupsEl=document.getElementById('groups'), chips=document.getElementById('chips'), q=document.getElementById('q'), empty=document.getElementById('empty'), active='all', total=0;
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function cards(g){var h='<div class="cards">';g.docs.forEach(function(d){
+      h+='<a class="doc'+(d.hero?' hero':'')+'" href="'+d.u+'" target="_blank" rel="noopener" data-s="'+esc((d.t+' '+d.d+' '+g.name).toLowerCase())+'"><div class="top"><span class="type '+d.k+'">'+TYPE[d.k]+'</span></div><b>'+esc(d.t)+'</b><span class="d">'+esc(d.d)+'</span></a>';});return h+'</div>';}
+  document.getElementById('top').innerHTML='<h2>Entregables</h2>'+cards(G[0]);
+  G=G.slice(1);
+  G.forEach(function(g){
+    total+=g.docs.length;
+    var sec=document.createElement('section');sec.className='group';sec.dataset.g=g.id;
+    var h='<h2>'+esc(g.name)+' <small>'+g.docs.length+' documentos</small></h2><div class="cards">';
+    g.docs.forEach(function(d){
+      h+='<a class="doc'+(d.hero?' hero':'')+'" href="'+d.u+'" target="_blank" rel="noopener" data-s="'+esc((d.t+' '+d.d+' '+g.name).toLowerCase())+'"><div class="top"><span class="type '+d.k+'">'+TYPE[d.k]+'</span></div><b>'+esc(d.t)+'</b><span class="d">'+esc(d.d)+'</span></a>';
+    });
+    sec.innerHTML=h+'</div>';groupsEl.appendChild(sec);
+  });
+  document.getElementById('moreN').textContent=total+' documentos: elementos del modelo, gestión del proyecto, modelos de referencia y recursos de clase';
+  [['all','Todo']].concat(G.map(function(g){return [g.id,g.name];})).forEach(function(c,i){
+    var b=document.createElement('button');b.type='button';b.textContent=c[1];b.dataset.g=c[0];b.setAttribute('aria-pressed',i===0?'true':'false');
+    b.addEventListener('click',function(){active=c[0];[].forEach.call(chips.children,function(x){x.setAttribute('aria-pressed',String(x===b));});apply();});
+    chips.appendChild(b);
+  });
+  function apply(){
+    var term=q.value.trim().toLowerCase(), shown=0;
+    [].forEach.call(groupsEl.children,function(sec){
+      var inG=active==='all'||sec.dataset.g===active, n=0;
+      [].forEach.call(sec.querySelectorAll('a.doc'),function(a){var ok=inG&&(!term||a.dataset.s.indexOf(term)>-1);a.hidden=!ok;if(ok)n++;});
+      sec.hidden=n===0;shown+=n;
+    });
+    empty.style.display=shown?'none':'block';
+  }
+  q.addEventListener('input',apply);
+})();
+</script>
 </body>
 </html>
