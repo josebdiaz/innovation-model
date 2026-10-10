@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contexto del Consultor</title>
+<meta name="description" content="Experiencia previa de Jose Bolaños en Fundación Delirio: qué aporta al Modelo CLAVE, qué riesgos trae y cómo se usa en el equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Kaushan+Script&display=swap">
+<style>
+/* Layout: documento de una columna (~920px) sobre papel, encabezado en azul rey como el resto del proyecto. Paleta CLAVE V0.9. */
+:root{
+  --rey:#1F4FA8; --noche:#2E1466; --tinta:#170A33; --papel:#FFF8E6;
+  --sol:#FFE42A; --rosa:#FAAED4; --menta:#47D59B; --mango:#FA9331; --lila:#A5A0F6;
+  --rosa-d:#B02A6B; --menta-d:#0A7751; --mango-d:#A84B00;
+  --rosa-t:#FFE7F2; --menta-t:#D6F7E8; --sol-t:#FFF6C7; --mango-t:#FFEADB;
+  --bg:#FFFDF6; --fg:var(--tinta); --muted:#4B3F63; --sheet:#FFFFFF; --soft:#F7F1E1; --line:#E6DCC4;
+  --warn-bg:var(--mango-t); --warn-fg:var(--mango-d); --ok-bg:var(--menta-t); --ok-fg:var(--menta-d); --risk-bg:var(--rosa-t); --risk-fg:var(--rosa-d);
+  --sans:"Nunito","Segoe UI",system-ui,sans-serif; --script:"Kaushan Script","Brush Script MT",cursive; --mono:ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#120827; --fg:#FFF8E6; --muted:#CFC6E8; --sheet:#1D0F3D; --soft:#251450; --line:#3A2A66;
+  --warn-bg:#3A2410; --warn-fg:#FFB877; --ok-bg:#0E3326; --ok-fg:#7BE6B8; --risk-bg:#3B1630; --risk-fg:#FFB3D6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#120827; --fg:#FFF8E6; --muted:#CFC6E8; --sheet:#1D0F3D; --soft:#251450; --line:#3A2A66;
+  --warn-bg:#3A2410; --warn-fg:#FFB877; --ok-bg:#0E3326; --ok-fg:#7BE6B8; --risk-bg:#3B1630; --risk-fg:#FFB3D6; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:600 16.5px/1.6 var(--sans);padding-inline:16px;padding-block:0 72px}
+.wrap{max-width:920px;margin:0 auto;display:grid;gap:8px}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:1.5rem}
+h3{font-size:1.05rem}
+p{margin:0;max-width:66ch}
+a{color:inherit;text-underline-offset:3px}
+code{font:700 .84em var(--mono);background:var(--soft);padding:1px 6px;border-radius:6px}
+:focus-visible{outline:3px solid var(--fg);outline-offset:2px;box-shadow:0 0 0 6px var(--sol);border-radius:8px}
+.k{font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* Encabezado */
+.head{background:var(--rey);color:var(--papel);margin:0 -16px;padding:44px 16px 32px}
+.head .in{max-width:920px;margin:0 auto;display:grid;gap:10px}
+.head .k{color:var(--sol)}
+.head h1{font-size:clamp(2.2rem,7vw,3.6rem);color:var(--sol)}
+.head h1 .script{font-family:var(--script);font-weight:400;color:var(--papel);font-size:.6em;margin-left:.15em;display:inline-block;transform:rotate(-3deg)}
+.head p{font-size:1.08rem;max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.meta span{font-weight:800;font-size:.84rem;padding:6px 12px;border-radius:999px;background:var(--noche);color:var(--papel)}
+.meta span b{color:var(--sol);font-weight:800}
+
+section{display:grid;gap:14px;padding-block:32px 4px}
+section+section{border-top:2px dashed var(--line);margin-top:26px}
+.lede{color:var(--muted)}
+
+/* Línea de tiempo del conocimiento */
+.time{display:grid;grid-template-columns:4fr 6fr;gap:4px;border-radius:16px;overflow:hidden}
+.time div{padding:14px 16px;display:grid;gap:2px;min-width:0}
+.time .known{background:var(--sol);color:var(--tinta)}
+.time .hyp{background:repeating-linear-gradient(45deg,var(--soft) 0 10px,var(--sheet) 10px 20px);color:var(--fg);box-shadow:inset 0 0 0 2px var(--line)}
+.time b{font-weight:900;font-size:1.05rem}
+.time small{font-weight:700;font-size:.84rem}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.fact{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:2px;align-content:start;min-width:0}
+.fact .k{color:var(--muted)}
+.fact b{font-weight:900;font-size:1.02rem}
+
+/* Aportes */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:.94rem;line-height:1.45;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--soft);font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tbody th{font-weight:800;width:38%}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.p{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font:900 .78rem/1 var(--sans);color:var(--tinta);margin-right:6px;vertical-align:1px;box-shadow:inset 0 0 0 2px var(--tinta)}
+.p.L{background:var(--rosa)}.p.A{background:var(--menta)}.p.E{background:var(--lila)}.p.C{background:var(--sol)}
+.tcode{font:700 .8rem var(--mono);padding:1px 7px;border-radius:999px;background:var(--soft);white-space:nowrap}
+
+/* Riesgos */
+.risks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.risk{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;gap:6px;align-content:start;min-width:0}
+.risk .tag{justify-self:start;font-weight:800;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--risk-bg);color:var(--risk-fg)}
+.risk p{font-size:.95rem}
+.risk .do{font-size:.88rem;color:var(--muted)}
+
+/* Regla de uso */
+.rule{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.col{border-radius:18px;padding:18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
+.col.yes{background:var(--ok-bg)}
+.col.no{background:var(--warn-bg)}
+.col h3{display:flex;align-items:center;gap:8px}
+.col.yes h3{color:var(--ok-fg)}.col.no h3{color:var(--warn-fg)}
+.col ul{margin:0;padding-left:1.1rem;display:grid;gap:6px}
+.col li{max-width:60ch}
+.quote{background:var(--noche);color:var(--papel);border-radius:18px;padding:18px 22px;font-weight:800;font-size:1.08rem}
+.quote em{font-style:normal;color:var(--sol)}
+.foot{margin-top:28px;font-size:.85rem;color:var(--muted)}
+
+@media (max-width:700px){.risks,.rule,.facts,.time{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="in">
+    <span class="k">Modelo CLAVE · Contexto del equipo</span>
+    <h1>Contexto del consultor <span class="script">en Delirio</span></h1>
+    <p>Jose Bolaños trabajó en Fundación Delirio antes de este proyecto. Esta página resume qué conocimiento trae, dónde lo usamos en el modelo y qué cuidados tomamos para que no sesgue el diagnóstico.</p>
+    <div class="meta">
+      <span><b>Integrante</b> Jose Bolaños · Grupo 4</span>
+      <span><b>Registrado</b> 9 oct 2026</span>
+      <span><b>Uso</b> metáfora, taxonomía y batería</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section aria-labelledby="s-tray">
+  <h2 id="s-tray">Trayectoria</h2>
+  <div class="time" role="img" aria-label="Conocimiento de primera mano hasta 2020; de 2020 en adelante, todo es hipótesis por validar">
+    <div class="known"><span class="k">Hasta 2020</span><b>Conocido de primera mano</b><small>4 años, de las prácticas a coordinador</small></div>
+    <div class="hyp"><span class="k">2020 → hoy</span><b>Hipótesis por validar</b><small>Pandemia, reapertura y cambios de formato o de equipo no se vivieron directamente</small></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="k">Cargo final</span><b>Coordinador de Marketing Digital</b><span>Rol principal en mercadeo.</span></div>
+    <div class="fact"><span class="k">Trabajo transversal</span><b>Producción artística</b><span>Apoyo cercano en las animaciones de video mapping del show.</span></div>
+    <div class="fact"><span class="k">Cultura</span><b>Salsa y cultura caleña</b><span>Lenguaje del baile y de la ciudad, aprendido desde adentro.</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="s-aporta">
+  <h2 id="s-aporta">Qué aporta al modelo</h2>
+  <p class="lede">Cada activo tiene un lugar concreto en CLAVE.</p>
+  <div class="tbl"><table>
+    <thead><tr><th scope="col">Activo</th><th scope="col">Dónde se usa</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Lenguaje interno de Delirio y de la salsa caleña</th><td>Metáfora para la junta (la son clave 3-2), nombres de pilares y factores, y redacción de ítems con vocabulario propio.</td></tr>
+      <tr><th scope="row">Conocimiento de la interfaz mercadeo ↔ producción artística</th><td><span class="p L">L</span>Ítems de colaboración entre áreas en Lazos y lectura de brechas horizontales.</td></tr>
+      <tr><th scope="row">Experiencia con tecnología escénica (mapping)</th><td><span class="p A">A</span>Factor Tecnología: en Delirio la innovación no es solo ofimática o IA, también es tecnología de escena.</td></tr>
+      <tr><th scope="row">Visión del público y canales digitales</th><td><span class="p E">E</span>Pilar Efecto: público, audiencias nuevas y medición.</td></tr>
+      <tr><th scope="row">Relación previa con la organización</th><td>Acceso, confianza y legitimidad ante la Dirección. <span class="tcode">T-01</span> <span class="tcode">T-02</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="s-riesgos">
+  <h2 id="s-riesgos">Riesgos que gestionamos</h2>
+  <p class="lede">Conocer a la organización ayuda, pero también puede inclinar el diagnóstico. Estos cuatro riesgos se cuidan en todo el proceso.</p>
+  <div class="risks">
+    <div class="risk"><span class="tag">Foto vieja</span><h3>El conocimiento llega hasta 2020</h3><p>Toda afirmación sobre la operación actual se trata como hipótesis.</p></div>
+    <div class="risk"><span class="tag">Lente</span><h3>La mirada es de mercadeo</h3><p>Las áreas administrativa, logística y social requieren validación con otras voces.</p></div>
+    <div class="risk"><span class="tag">Neutralidad</span><h3>Hay una relación previa</h3><p>Al menos otro integrante analiza los resultados en paralelo, y ningún ítem debe inducir respuestas.</p></div>
+    <div class="risk"><span class="tag">Anonimato</span><h3>Se conoce a personas concretas</h3><p>Ese conocimiento nunca se usa para inferir quién respondió qué.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="s-regla">
+  <h2 id="s-regla">Regla de uso</h2>
+  <p class="quote">Este contexto <em>orienta</em> el diseño, pero <em>no reemplaza</em> el levantamiento con Delirio.</p>
+  <div class="rule">
+    <div class="col yes"><h3>Orienta</h3><ul><li>La metáfora y el vocabulario del modelo.</li><li>Las hipótesis de brechas entre áreas y niveles.</li></ul></div>
+    <div class="col no"><h3>No reemplaza</h3><ul><li>El organigrama actual <span class="tcode">T-03</span>.</li><li>La conversación con Anamaria Cortés, Directora General.</li><li>El piloto cognitivo con 3 a 5 personas de Delirio.</li></ul></div>
+  </div>
+</section>
+
+<p class="foot">Fuente: <code>Contexto/Contexto_Consultor_Experiencia_Delirio.md</code> en el repositorio <a href="https://github.com/josebdiaz/innovation-model" target="_blank" rel="noopener">josebdiaz/innovation-model</a>. Grupo 4 · MGinn Universidad Icesi: Jose Bolaños, Katherine Castro, María del Mar Espinel, Paola Giraldo y Jorge Mario Murillo.</p>
+</main>
+
+</body>
+</html>
