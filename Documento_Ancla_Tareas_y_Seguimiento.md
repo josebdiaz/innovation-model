@@ -14,7 +14,7 @@ integrantes:
   - "Paola Giraldo (Maestría)"
   - "Jorge Mario Murillo (Especialización)"
 documento_tipo: "Documento Ancla y Control de Tareas (Single Source of Truth)"
-ultima_actualizacion: "2026-10-09"
+ultima_actualizacion: "2026-10-11"
 ---
 
 # Documento Ancla: Tareas, Entregables y Control de Avance
@@ -55,17 +55,17 @@ Este documento actúa como el **eje rector y bitácora de control central** para
 | ID | Tarea / Compromiso | Indicación Específica del Profesor (Timestamp) | Responsable(s) | Criterio de Aceptación / Entregable | Estado |
 |:---:|---|---|:---:|---|:---:|
 | **T-01** | **Contacto con la Directora General de Delirio** | Enviar carta formal firmada por el profesor y validar disposición de la empresa `[121:37 - 123:08]`. | Jose Bolaños / Grupo 4 | Correo formal enviado a Anamaria Cortés con copia a `afnaranjo@icesi.edu.co` y carta oficial adjunta. | **Completado** (02-Oct) |
-| **T-02** | **Envío de Correo de Expectativa Previo (Líder a Empleados)** | El líder de la empresa debe enviar un correo a todo el personal/área *antes* de que llegue el formulario para evitar que sea tratado como spam o llegue en frío `[121:45 - 123:08]`. | Paola Giraldo / Jose Bolaños | Comunicado redactado y enviado por Anamaria Cortés a los colaboradores de Delirio anunciando el diagnóstico. | **En progreso** |
-| **T-03** | **Obtención de Estructura Demográfica (Áreas y Jerarquías)** | Solicitar organigrama y categorización de áreas y cargos para perfilamiento matricial `[50:33 - 51:40]`. | Maria del Mar Espinel / Kathe Castro | Lista formal de áreas (ej. Producción artística, Comercial, Logística, Administrativa) y niveles jerárquicos (Dirección, Mandos Medios, Operación). | **En progreso** |
-| **T-04** | **Construcción del Megamodelo Homologado (Maciada)** | Homologar con IA los 10–15 modelos de referencia de `Herramientas/Markdown` y Miro en una taxonomía simétrica propia `[31:39 - 37:20, 126:43 - 128:20]`. | Equipo Completo (Asistido por Claude) | Documento con matriz taxonómica: Pilares, Factores, Indicadores/Preguntas y justificación conceptual. | **En progreso** |
-| **T-05** | **Definición de Escala de Medición Ácida** | Seleccionar escala sin neutralidad complaciente (ej. Likert 6 puntos o -2 a +2 con ponderaciones argumentadas) `[41:14 - 43:00]`. | Jorge Mario Murillo | Rúbrica de calificación formalmente descrita y validada en el modelo. | **Pendiente** |
-| **T-06** | **Redacción Quirúrgica de Preguntas (Anti-Preguntas Dobles)** | Cada pregunta debe evaluar un solo hecho o comportamiento observable, integrando variables de IA y herramientas colaborativas `[93:53 - 94:53, 132:26 - 132:46]`. | Kathe Castro / Jose Bolaños | Batería final de preguntas revisada con cero preguntas compuestas y variables de fluidez digital/IA incluidas. | **Pendiente** |
+| **T-02** | **Envío de Correo de Expectativa Previo (Líder a Empleados)** | El líder de la empresa debe enviar un correo a todo el personal/área *antes* de que llegue el formulario para evitar que sea tratado como spam o llegue en frío `[121:45 - 123:08]`. | Jose Bolaños (Paola Giraldo de respaldo) | Comunicado redactado y enviado por Anamaria Cortés a los colaboradores de Delirio anunciando el diagnóstico. | **En progreso** · reunión con Ana María mar 13–mié 14 |
+| **T-03** | **Obtención de Estructura Demográfica (Áreas y Jerarquías)** | Solicitar organigrama y categorización de áreas y cargos para perfilamiento matricial `[50:33 - 51:40]`. | Maria del Mar Espinel / Jose Bolaños | Lista formal de áreas (ej. Producción artística, Comercial, Logística, Administrativa) y niveles jerárquicos (Dirección, Mandos Medios, Operación). | **En progreso** · lista de datos lun 12 |
+| **T-04** | **Construcción del Megamodelo Homologado (Maciada)** | Homologar con IA los 10–15 modelos de referencia de `Herramientas/Markdown` y Miro en una taxonomía simétrica propia `[31:39 - 37:20, 126:43 - 128:20]`. | Equipo Completo (Asistido por Claude) | Documento con matriz taxonómica: Pilares, Factores, Indicadores/Preguntas y justificación conceptual. | **En progreso** · V0.7 validada como base en el Sync 1; V1 tras el Sync 2 |
+| **T-05** | **Definición de Escala de Medición Ácida** | Seleccionar escala sin neutralidad complaciente (ej. Likert 6 puntos o -2 a +2 con ponderaciones argumentadas) `[41:14 - 43:00]`. | Jorge Mario Murillo | Rúbrica de calificación formalmente descrita y validada en el modelo. | **Completado** · Likert de 6 puntos sin punto medio |
+| **T-06** | **Redacción Quirúrgica de Preguntas (Anti-Preguntas Dobles)** | Cada pregunta debe evaluar un solo hecho o comportamiento observable, integrando variables de IA y herramientas colaborativas `[93:53 - 94:53, 132:26 - 132:46]`. | Jose Bolaños | Batería final de preguntas revisada con cero preguntas compuestas y variables de fluidez digital/IA incluidas. | **Completado** · 45 ítems, cero preguntas dobles |
 | **T-07** | **Montaje del Instrumento Digital** | Crear el formulario en Google Forms, Typeform o SurveyMonkey listo para distribución `[125:00 - 125:09]`. | Maria del Mar Espinel / Paola Giraldo | Enlace funcional del formulario digital listo para pruebas de campo. | **Pendiente** |
-| **T-08** | **Check-in de Avance con el Profesor (Lunes/Martes)** | Escribir al profesor Naranjo reportando avances de la empresa, el borrador del modelo y dudas `[125:21 - 125:35, 133:24 - 133:40]`. | Jose Bolaños (Vocero) | Correo / mensaje enviado al profesor con resumen ejecutivo del estado del Grupo 4. | **Pendiente** |
+| **T-08** | **Check-in de Avance con el Profesor (Lunes/Martes)** | Escribir al profesor Naranjo reportando avances de la empresa, el borrador del modelo y dudas `[125:21 - 125:35, 133:24 - 133:40]`. | Jose Bolaños (video) / Maria del Mar Espinel (envío) | Correo / mensaje enviado al profesor con resumen ejecutivo del estado del Grupo 4. | **En progreso** · envío máximo mar 13 |
 | **T-09** | **Levantamiento y Captura de Respuestas en Delirio** | Distribuir encuesta y hacer seguimiento para asegurar representatividad estadística (idealmente 100% o muestra balanceada) `[123:15 - 124:03]`. | Grupo 4 / Anamaria Cortés | Base de datos consolidada con respuestas completas por área y jerarquía. | **Pendiente** (Semana 2) |
 | **T-10** | **Procesamiento de Datos y Análisis Matricial** | Calcular índices globales, por pilar y cruces matriciales (Área x Jerarquía x Dimensión) `[47:26 - 51:50]`. | Equipo Analítico | Matriz de datos procesada, mapas de calor y detección de brechas críticas. | **Pendiente** (Semana 3) |
 | **T-11** | **Diseño del Prototipo de Dashboard para el Gerente** | Crear la maqueta visual del panel de control que monitoree los signos vitales de la innovación en Delirio (metáfora de la cámara de seguridad) `[52:15 - 54:06]`. | Jose Bolaños / Diseñador | Dashboard de alta fidelidad (Figma/HTML/Slides) con KPIs adaptados a la madurez de Delirio. | **Pendiente** (Semana 4) |
-| **T-12** | **Diseño y Ejecución de la Micro-Intervención (Bonus)** | Taller corto de 1–2 horas enfocado en un "mango bajito" con medición pre y post del indicador `[55:11 - 57:00]`. | Grupo 4 | Guía del taller, acta de ejecución y gráfico comparativo de mejora porcentual del indicador. | **Pendiente** (Semana 4) |
+| **T-12** | **Diseño y Ejecución de la Micro-Intervención (Bonus)** | Taller corto de 1–2 horas enfocado en un "mango bajito" con medición pre y post del indicador `[55:11 - 57:00]`. | Grupo 4 | Guía del taller, acta de ejecución y gráfico comparativo de mejora porcentual del indicador. | **Pendiente** · el equipo propone mínimo 4 h; Paola entrega propuesta vie 16 |
 | **T-13** | **Portafolio de la Consultora y Cotizador Comercial** | Diseñar marca, manifiesto, portafolio de servicios y cotizador de honorarios referenciado con precios del mercado `[43:30 - 46:25, 54:22 - 54:58]`. | Grupo 4 | Documento comercial de la firma consultora con catálogo de servicios y cotizador paramétrico. | **Pendiente** (Semana 5) |
 | **T-14** | **Informe Final Interactivo de Consultoría** | Redactar el reporte ejecutivo (formato HTML/Markdown o portal interactivo) con diagnóstico, hallazgos y plan de mejora `[46:27 - 47:40]`. | Grupo 4 | Informe gerencial completo entregado a Fundación Delirio y al profesor. | **Pendiente** (Semana 5) |
 | **T-15** | **Pitch Final de Venta de la Consultora** | Presentar el caso de intervención y vender la consultora ante el panel evaluador `[43:08 - 44:15, 56:26 - 56:45]`. | Grupo 4 | Pitch deck estructurado, ensayo y sustentación final. | **Pendiente** (Semana 5) |
@@ -86,7 +86,15 @@ Para que un entregable se considere aprobado por la dirección del curso, debe s
 
 ---
 
-## 5. Directorio de Recursos y Enlaces Clave
+## 5. Bitácora de reuniones del equipo
+
+| Fecha | Reunión | Acuerdos | Documento |
+|---|---|---|---|
+| 2026-10-10 | Sync 1 | V0.7 como base; modelo transversal con capa personalizable por industria; azul rey reemplaza la lavanda; taller de mínimo 4 h por definir; benchmarks por industria antes del Sync 2 | [Plan de acción](Reuniones/Sync-1/plan-accion-sync1.html) |
+
+---
+
+## 6. Directorio de Recursos y Enlaces Clave
 
 - **Tablero de Miro de la Clase (Herramientas):** [https://miro.com/app/board/uXjVEcCxJ2o=/](https://miro.com/app/board/uXjVEcCxJ2o=/)
 - **Grabación de la Sesión 1:** [YouTube Live (v-j7xeznE00)](https://www.youtube.com/live/v-j7xeznE00)
