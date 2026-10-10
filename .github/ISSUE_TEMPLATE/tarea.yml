@@ -1,0 +1,29 @@
+name: Tarea
+description: Una tarea del plan de trabajo con responsable y fecha.
+title: "[T-XX] "
+labels: ["tarea"]
+body:
+  - type: input
+    id: codigo
+    attributes:
+      label: Código en el Documento Ancla
+      placeholder: T-07
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué hay que hacer
+      description: Entregable concreto y cómo saber que quedó hecho.
+    validations:
+      required: true
+  - type: dropdown
+    id: responsable
+    attributes:
+      label: Responsable
+      options: [Jose Bolaños, Katherine Castro, María del Mar Espinel, Paola Giraldo, Jorge Mario Murillo]
+    validations:
+      required: true
+  - type: input
+    id: fecha
+    attributes:
+      label: Fecha límite
+      placeholder: 2026-10-16

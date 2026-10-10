@@ -118,7 +118,7 @@ a.doc.hero span.d,a.doc.hero .where{color:#FFF8E6}
   var G=[
     {id:'ent',name:'Entregables del modelo',docs:[
       {t:'Deck animado del Modelo CLAVE',d:'25 láminas en clave 3-2: metáfora, pilares, escala, lectura de resultados y taller. N notas · S sonido · P pausa.',u:'Modelo/V0/modelo-clave-v0.html',k:'site',hero:1},
-      {t:'Plan de acción · Sync 1',d:'Tareas por integrante, decisiones pendientes y la semana del 10 al 16 de octubre, tras la primera reunión del equipo.',u:'Reuniones/Sync-1/plan-accion-sync1.html',k:'site'},
+      {t:'Plan de acción · Sync 1',d:'Tareas por integrante, decisiones pendientes y la semana del 10 al 16 de octubre, tras la primera reunión del equipo.',u:'Gestion/Reuniones/Sync-1/plan-accion-sync1.html',k:'site'},
       {t:'Guía de conexión al repo',d:'Cómo conectar Claude, ChatGPT, Gemini o Spark al repositorio y cómo publicar hallazgos. Sin conocimientos técnicos.',u:'Contexto/guia-conexion-equipo.html',k:'site'},
       {t:'Racional en una página',d:'Por qué medimos lo que medimos, cómo se lee el resultado, supuestos y límites.',u:'Modelo/V0/onepager-racional.html',k:'site'},
       {t:'Ficha técnica',d:'Documento metodológico: constructo, modelo de medición, puntuación, agregación, validación, ética y referencias APA.',u:'Modelo/V0/ficha-tecnica.html',k:'site'},
@@ -144,32 +144,35 @@ a.doc.hero span.d,a.doc.hero .where{color:#FFF8E6}
       {t:'Batería V0 (CSV completo)',d:'45 ítems más control de atención y abiertas.',u:gh('Modelo/V0/bateria-v0.csv'),k:'gh'}
     ]},
     {id:'ges',name:'Gestión del proyecto',docs:[
-      {t:'Documento Ancla',d:'Hoja de ruta, matriz de tareas T-01 a T-15 y criterios de calidad del profesor.',u:gh('Documento_Ancla_Tareas_y_Seguimiento.md'),k:'gh'},
-      {t:'Logs de la Sesión 1',d:'Principios, metáforas y entregables del módulo.',u:gh('Logs_Clase_Sesion_1_Haciendolo_Posible.md'),k:'gh'},
-      {t:'Prompt maestro del proyecto',d:'Instrucciones del proyecto de Claude.',u:gh('Claude_Project_Prompt_Instrucciones.md'),k:'gh'},
+      {t:'Registro de decisiones',d:'Qué se decidió, qué alternativas había y por qué.',u:gh('Gestion/decisiones.md'),k:'gh'},
+      {t:'Hallazgos del equipo',d:'Carpeta por integrante, plantilla y registro de integración H-001 en adelante.',u:gh('Hallazgos/registro.md'),k:'gh'},
+      {t:'Cómo colaborar (CONTRIBUTING)',d:'Ramas, pull requests, mensajes de commit y versiones del modelo.',u:gh('CONTRIBUTING.md'),k:'gh'},
+      {t:'Documento Ancla',d:'Hoja de ruta, matriz de tareas T-01 a T-15 y criterios de calidad del profesor.',u:gh('Gestion/documento-ancla.md'),k:'gh'},
+      {t:'Logs de la Sesión 1',d:'Principios, metáforas y entregables del módulo.',u:gh('Curso/sesion-1-logs.md'),k:'gh'},
+      {t:'Prompt maestro del proyecto',d:'Instrucciones del proyecto de Claude.',u:gh('Contexto/prompt-proyecto-claude.md'),k:'gh'},
       {t:'README del Modelo V0',d:'Documentación de la versión vigente.',u:gh('Modelo/V0/README.md'),k:'gh'},
-      {t:'CHANGELOG',d:'Historial de versiones V0 → V0.9.',u:gh('Modelo/CHANGELOG.md'),k:'gh'},
+      {t:'CHANGELOG',d:'Historial de versiones V0 → V0.9.',u:gh('CHANGELOG.md'),k:'gh'},
       {t:'Contexto del consultor',d:'Experiencia previa de Jose en Delirio: qué aporta al modelo, riesgos que gestionamos y regla de uso.',u:'Contexto/contexto-consultor.html',k:'site'},
       {t:'Exploración V1 (descartada)',d:'Vocabulario del show; se volvió a la V0 por ser menos sesgada.',u:GHT+'Modelo/_exploraciones/V1-vocabulario-show',k:'gh'},
       {t:'Repositorio completo',d:'josebdiaz/innovation-model en GitHub.',u:'https://github.com/josebdiaz/innovation-model',k:'gh'}
     ]},
     {id:'ref',name:'Modelos de referencia',docs:[
-      {t:'Rao & Weintraub · MIT Sloan',d:'How innovative is your company\'s culture? 6 bloques, 54 elementos.',u:gh('Herramientas/Markdown/How Innovative Is Your Company’s Culture_.md'),k:'gh'},
-      {t:'Jakopec & Sušanj (2012)',d:'Diagnóstico: Estrategia, Ideas, Procesos y Clima.',u:gh('Herramientas/Markdown/Jakopec, Su-anj, 2012.md'),k:'gh'},
-      {t:'Hutch Carpenter · 25 comportamientos',d:'Liderazgo, awareness, compromiso y gobernanza.',u:gh('Herramientas/Markdown/Hutch_25_Behaviors_Affecting_Culture_EN_Letter_webversion.md'),k:'gh'},
-      {t:'The Learning Accelerator',d:'Rúbrica de madurez Entrando–Transformando, 7 factores.',u:gh('Herramientas/Markdown/Assessing Culture of Innovation_2Rev-TLA__10.9_final.md'),k:'gh'},
-      {t:'McKinsey · 8 esenciales',d:'Aspire, Choose, Discover, Evolve, Accelerate, Scale, Extend, Mobilize.',u:gh('Herramientas/Markdown/The_Eight_Essentials_of_Innovation_Performance.md'),k:'gh'},
-      {t:'Creus · Pentagrowth',d:'Cinco palancas del crecimiento.',u:gh('Herramientas/Markdown/Informe Pentagrowth ESP.md'),k:'gh'},
-      {t:'IBM · Innovation diagnostic',d:'Alineación de definiciones, ejecución y métricas.',u:gh('Herramientas/Markdown/g510-6256-innovation-diagnostic.md'),k:'gh'},
-      {t:'Woods · HYPE Innovation Canvas',d:'Nueve dimensiones de gobernanza del programa.',u:gh('Herramientas/Markdown/hype-innovation-canvas.md'),k:'gh'},
-      {t:'Rainforest Scorecard',d:'Capital social, confianza y normas no escritas.',u:gh('Herramientas/Markdown/Innovation rainforest scorecard.md'),k:'gh'},
-      {t:'Satell · 4 ways (HBR)',d:'Seguridad psicológica, diversidad y misión.',u:gh('Herramientas/Markdown/4 Ways to Build an Innovative Team.md'),k:'gh'}
+      {t:'Rao & Weintraub · MIT Sloan',d:'How innovative is your company\'s culture? 6 bloques, 54 elementos.',u:gh('Herramientas/rao-weintraub-cultura-innovadora.md'),k:'gh'},
+      {t:'Jakopec & Sušanj (2012)',d:'Diagnóstico: Estrategia, Ideas, Procesos y Clima.',u:gh('Herramientas/jakopec-susanj-2012-diagnostico.md'),k:'gh'},
+      {t:'Hutch Carpenter · 25 comportamientos',d:'Liderazgo, awareness, compromiso y gobernanza.',u:gh('Herramientas/carpenter-25-comportamientos.md'),k:'gh'},
+      {t:'The Learning Accelerator',d:'Rúbrica de madurez Entrando–Transformando, 7 factores.',u:gh('Herramientas/tla-rubrica-cultura-innovacion.md'),k:'gh'},
+      {t:'McKinsey · 8 esenciales',d:'Aspire, Choose, Discover, Evolve, Accelerate, Scale, Extend, Mobilize.',u:gh('Herramientas/mckinsey-8-esenciales.md'),k:'gh'},
+      {t:'Creus · Pentagrowth',d:'Cinco palancas del crecimiento.',u:gh('Herramientas/creus-pentagrowth.md'),k:'gh'},
+      {t:'IBM · Innovation diagnostic',d:'Alineación de definiciones, ejecución y métricas.',u:gh('Herramientas/ibm-innovation-diagnostic.md'),k:'gh'},
+      {t:'Woods · HYPE Innovation Canvas',d:'Nueve dimensiones de gobernanza del programa.',u:gh('Herramientas/woods-hype-innovation-canvas.md'),k:'gh'},
+      {t:'Rainforest Scorecard',d:'Capital social, confianza y normas no escritas.',u:gh('Herramientas/hwang-horowitt-rainforest-scorecard.md'),k:'gh'},
+      {t:'Satell · 4 ways (HBR)',d:'Seguridad psicológica, diversidad y misión.',u:gh('Herramientas/satell-equipos-innovadores.md'),k:'gh'}
     ]},
     {id:'cla',name:'Recursos de clase',docs:[
       {t:'Grabación de la Sesión 1',d:'YouTube Live del módulo Haciéndolo Posible.',u:'https://www.youtube.com/live/v-j7xeznE00',k:'ext'},
       {t:'Tablero de Miro (Herramientas)',d:'Escalas y modelos adicionales de la clase.',u:'https://miro.com/app/board/uXjVEcCxJ2o=/',k:'ext'},
       {t:'Hoja de grupos de la clase',d:'Google Sheets con los grupos del módulo.',u:'https://docs.google.com/spreadsheets/d/1m4E4jqq1xnLoIAKJzdRiC6cfx5nW8Ji-Q0w6db8oRsI',k:'ext'},
-      {t:'Transcripción de la clase',d:'Texto completo de la Sesión 1.',u:gh('transcript_haciendolo_posible.txt'),k:'gh'}
+      {t:'Transcripción de la clase',d:'Texto completo de la Sesión 1.',u:gh('Curso/sesion-1-transcripcion.txt'),k:'gh'}
     ]}
   ];
   var TYPE={site:'Página',gh:'GitHub',ext:'Externo'};

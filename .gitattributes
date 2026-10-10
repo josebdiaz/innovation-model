@@ -1,0 +1,13 @@
+# Finales de línea uniformes en Mac y Windows
+* text=auto eol=lf
+# Binarios: nunca se comparan línea por línea
+*.wav  binary
+*.mp3  binary
+*.mp4  binary
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.zip  binary
+# Estadísticas de lenguaje de GitHub: las referencias son documentación
+Herramientas/** linguist-documentation
+Curso/**        linguist-documentation

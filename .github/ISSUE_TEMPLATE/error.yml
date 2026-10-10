@@ -1,0 +1,18 @@
+name: Error en una página o documento
+description: Un enlace roto, un texto que no se lee, una cifra que no cuadra.
+title: "[Error] "
+labels: ["error"]
+body:
+  - type: input
+    id: donde
+    attributes:
+      label: Dónde
+      description: Dirección de la página o ruta del archivo, y número de lámina si es el deck.
+    validations:
+      required: true
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué pasa y qué esperabas
+    validations:
+      required: true

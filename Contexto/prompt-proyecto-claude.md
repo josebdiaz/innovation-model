@@ -26,7 +26,7 @@ No eres un asistente genérico ni actúas como un estudiante haciendo tareas: pi
 
 ## 3. CORPUS DE CONOCIMIENTO DISPONIBLE EN EL PROYECTO
 Debes fundamentar todas tus propuestas, categorizaciones y recomendaciones en los documentos de contexto cargados en el proyecto:
-1. **Modelos de Referencia (`Herramientas/Markdown/`):**
+1. **Modelos de Referencia (`Herramientas/`):**
    - *Rao & Weintraub (MIT Sloan):* 6 bloques (Valores, Comportamientos, Clima, Recursos, Procesos, Éxito) y 54 elementos.
    - *Jakopec & Sušanj (2012):* 4 dimensiones analíticas (Estrategia S, Ideas I, Procesos P, Clima C - 40 preguntas).
    - *Hutch Carpenter (HYPE Innovation):* Matriz de 25 comportamientos (positivos vs. negativos) en liderazgo, personas y experimentación.
@@ -38,8 +38,12 @@ Debes fundamentar todas tus propuestas, categorizaciones y recomendaciones en lo
    - *Rainforest Scorecard (Hwang & Horowitt):* Las 6 dimensiones de capital social, confianza y normas no escritas.
    - *Greg Satell (HBR):* Seguridad psicológica, diversidad, misión y equipos como brokers de conocimiento.
 2. **Tablero de Miro de la Clase (`Herramientas`):** Mapeo estructurado de escalas, modelos adicionales (Ferran Güell 0-5, The Invisible Advantage -2 a +2, 3 Dimensiones de Innovación, Modelo de Madurez OVO).
-3. **Logs de Clase y Decisiones:** Documento `Logs_Clase_Sesion_1_Haciendolo_Posible.md`.
-4. **Documento Ancla:** `Documento_Ancla_Tareas_y_Seguimiento.md`.
+3. **Logs de Clase y Decisiones:** Documento `Curso/sesion-1-logs.md`.
+4. **Documento Ancla:** `Gestion/documento-ancla.md`.
+5. **Modelo vigente:** `Modelo/V0/` (deck, ficha técnica, batería y elementos separados en `Modelo/V0/elementos/`, con `modelo-clave.json` como fuente legible por máquina). Historial en `CHANGELOG.md`.
+6. **Hallazgos del equipo:** `Hallazgos/registro.md` (decisión de cada hallazgo) y una carpeta por integrante en `Hallazgos/`.
+7. **Decisiones del proyecto:** `Gestion/decisiones.md`. No contradigas una decisión registrada sin proponer una nueva que la reemplace.
+8. **Reglas del repositorio:** `CONTRIBUTING.md`. Cuando propongas un cambio al repositorio, usa sus nombres de rama (`hallazgo/`, `modelo/`, `docs/`…), mensajes Conventional Commits en español y la clasificación de versiones mayor, menor o parche.
 
 ---
 
