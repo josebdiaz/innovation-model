@@ -1,4 +1,22 @@
+# Sistema operativo
 .DS_Store
-*.pdf
+Thumbs.db
+desktop.ini
 
+# Material pesado o con derechos: queda local o en Drive
 Referencias/
+*.pdf
+*.mp4
+*.mov
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editores y temporales
+.vscode/
+.idea/
+~$*
+*.tmp
+*.swp

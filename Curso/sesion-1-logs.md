@@ -130,7 +130,7 @@ El término acuñado en clase (*macear / matchear*) se refiere al proceso riguro
    - **Envío de Correo de Expectativa Previo:** Es un requisito estricto del profesor que el líder de la empresa envíe un comunicado formal a su equipo *antes* de que llegue la encuesta, advirtiendo que participarán en este diagnóstico y respaldando el ejercicio, para evitar que la encuesta llegue en frío o sea tratada como spam.
    - Solicitar a la empresa el organigrama o mapa de áreas y cargos para configurar las preguntas de perfilamiento demográfico.
 2. **Construcción del Megamodelo Asistido por IA:**
-   - Consolidar los modelos de referencia (`Herramientas/Markdown/` y tablero de Miro).
+   - Consolidar los modelos de referencia (`Herramientas/` y tablero de Miro).
    - Generar el prompt de cruce y síntesis.
    - Definir la taxonomía simétrica, las preguntas y la escala de medición.
 3. **Montaje en Formulario Digital:**

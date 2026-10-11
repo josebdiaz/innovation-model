@@ -1,11 +1,11 @@
 # Auditoría WCAG 2.2 AA — Modelo CLAVE V0
 
-Fecha: 2026-10-10, actualizada el 2026-10-11 (V0.8, fondo azul rey; V0.9, paleta validada) · Alcance: deck `modelo-clave-v0.html` (25 láminas, 16:9) y `onepager-racional.html`.
+Fecha: 2026-10-10, actualizada el 2026-10-10 (V0.8, fondo azul rey; V0.9, paleta validada) · Alcance: deck `modelo-clave-v0.html` (25 láminas, 16:9) y `onepager-racional.html`.
 Método: inventario de cada texto y gráfico con significado por lámina, cálculo de contraste WCAG (incluye mezclas por transparencia) y revisión de teclado, movimiento, audio y semántica.
 
 ## Paleta y contrastes de texto (1.4.3)
 
-Paleta V0.9 (2026-10-11). Detalle, tokens y validación bajo daltonismo en `paleta-clave.html` y `elementos/12-paleta/paleta-clave.json`.
+Paleta V0.9 (2026-10-10). Detalle, tokens y validación bajo daltonismo en `paleta-clave.html` y `elementos/12-paleta/paleta-clave.json`.
 
 | Texto | Fondo | Ratio | Uso | Estado |
 |---|---|---|---|---|

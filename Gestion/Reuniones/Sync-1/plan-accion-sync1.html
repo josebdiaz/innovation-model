@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Plan de acción del Grupo 4 tras el Sync 1 del Modelo CLAVE: tareas por integrante, decisiones pendientes y semana del 10 al 16 de octubre de 2026.">
+<title>Plan de Acción CLAVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Kaushan+Script&display=swap">
+<style>
+/* Layout: documento de trabajo de una columna (~960px) sobre papel claro, con la paleta "Los Sabanales" del repo (sin la lavanda). Un solo look deliberado, igual que el one-pager y la ficha técnica. */
+:root{
+  --paper:#FFFDF6; --sheet:#FFFFFF; --soft:#F7F1E1; --line:#E6DCC4;
+  --ink:#170A33; --muted:#4B3F63; --night:#2E1466; --cream:#FFF8E6;
+  --yellow:#FFE42A; --rose:#FAAED4; --magenta:#B02A6B; --jade:#47D59B; --verm:#FA9331;
+  --royal:#1F4FA8; --lav:#6E5F8F;
+  --rose-soft:#FFE7F2; --jade-soft:#D6F7E8; --yellow-soft:#FFF6C7;
+  --sans:"Nunito","Segoe UI",system-ui,sans-serif; --script:"Kaushan Script","Brush Script MT",cursive;
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:500 16.5px/1.6 var(--sans);padding-inline:16px;padding-block:0 80px}
+.wrap{max-width:960px;margin:0 auto}
+h1,h2,h3{margin:0;font-weight:900;line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:1.55rem}
+h3{font-size:1.05rem}
+p{margin:0;max-width:68ch}
+a{color:var(--night);text-underline-offset:3px}
+code{font:700 .84em var(--mono);background:var(--soft);padding:1px 6px;border-radius:6px;white-space:nowrap}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;box-shadow:0 0 0 6px var(--yellow);border-radius:8px}
+.k{font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* Cabecera */
+.head{background:var(--royal);color:var(--cream);margin:0 -16px;padding:44px 16px 34px}
+.head .k{color:var(--yellow)}
+.head h1{font-size:clamp(2.3rem,7vw,3.8rem);color:var(--yellow);margin:.5rem 0 .5rem}
+.head h1 .script{font-family:var(--script);font-weight:400;color:var(--cream);font-size:.62em;margin-left:.15em}
+.head p{font-size:1.08rem;max-width:60ch}
+.dates{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.dates span{font-weight:800;font-size:.84rem;padding:6px 12px;border-radius:999px;background:rgba(255,248,225,.12);box-shadow:inset 0 0 0 1.5px rgba(255,248,225,.35)}
+.dates span.hot{background:var(--yellow);color:var(--ink);box-shadow:none}
+
+section{display:grid;gap:14px;padding-block:34px 4px}
+section+section{border-top:2px dashed var(--line);margin-top:30px}
+.lede{color:var(--muted)}
+
+/* Lectura */
+.read{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.read div{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;gap:6px;align-content:start;min-width:0}
+.read .tag{justify-self:start;font-weight:800;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.tag.ok{background:var(--jade-soft)} .tag.gap{background:var(--yellow-soft)} .tag.risk{background:var(--rose-soft);color:#B02A6B}
+.read p{font-size:.95rem}
+
+/* Llamado a la ejecución */
+.call{background:var(--yellow);border-radius:18px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}
+.call b{font-weight:900;font-size:1.1rem}
+.call span{max-width:62ch}
+
+input[type=checkbox]{appearance:none;width:22px;height:22px;margin:2px 0 0;border:2.5px solid var(--ink);border-radius:7px;background:var(--sheet);display:grid;place-content:center;cursor:pointer;flex:none}
+input[type=checkbox]::after{content:"";width:11px;height:6px;border:solid var(--ink);border-width:0 0 3px 3px;transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+input[type=checkbox]:checked{background:var(--jade)}
+input[type=checkbox]:checked::after{opacity:1}
+label:has(input:checked) .t{text-decoration:line-through;text-decoration-thickness:2px;color:var(--muted)}
+
+/* Integrantes */
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.person{background:var(--sheet);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.person header{display:flex;align-items:center;gap:12px;padding:14px 16px;color:var(--ink)}
+.person header .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.05rem;background:var(--sheet);color:var(--ink);flex:none}
+.person header div{min-width:0}
+.person header small{display:block;font-weight:700;font-size:.8rem}
+.p-jose header{background:var(--rose)} .p-pao header{background:var(--jade)} .p-mar header{background:var(--yellow)} .p-jorge header{background:var(--verm);color:var(--ink)}
+.tasks{display:grid;padding:4px 16px 12px}
+.tasks label{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:11px 0;border-top:1px dashed var(--line);cursor:pointer}
+.tasks label:first-child{border-top:0}
+.tasks .t b{font-weight:900}
+.tasks .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.pill{font-weight:800;font-size:.72rem;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.pill.qwp{background:var(--yellow);color:var(--ink)}
+.pill.date{background:var(--ink);color:var(--cream)}
+.tasks .d{display:block;font-size:.9rem;color:var(--muted);margin-top:2px}
+.bench{font-size:.85rem;color:var(--muted);padding:0 16px 14px}
+.aside{background:var(--soft);border-radius:16px;padding:14px 18px;font-size:.95rem}
+
+/* Tablas */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;line-height:1.45}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.n{text-align:center;font-weight:900;font-variant-numeric:tabular-nums}
+.dec td:first-child{font-weight:800;white-space:nowrap}
+.dec .r{font-weight:700}
+
+/* Semana */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.day{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:10px;display:grid;gap:6px;align-content:start;min-width:0}
+.day h3{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.day h3 b{display:block;font-size:1.5rem;color:var(--ink);letter-spacing:0;font-variant-numeric:tabular-nums}
+.day ul{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.day li{font-size:.8rem;line-height:1.35;font-weight:700;padding:5px 7px;border-radius:8px;background:var(--soft)}
+.day.hot{background:var(--yellow);border-color:transparent}
+.day.hot li{background:var(--sheet)}
+.day.fest h3::after{content:"festivo";display:inline-block;margin-left:4px;font-size:.62rem;padding:1px 6px;border-radius:999px;background:var(--rose-soft);color:#B02A6B;letter-spacing:.04em}
+
+/* WhatsApp */
+.msg{background:var(--night);color:var(--cream);border-radius:18px;padding:18px;display:grid;gap:12px}
+.msg pre{margin:0;white-space:pre-wrap;font:600 .95rem/1.55 var(--sans);background:rgba(255,248,225,.08);border-radius:12px;padding:14px}
+.msg button{justify-self:start;font:900 .95rem var(--sans);padding:10px 18px;border-radius:999px;border:0;background:var(--yellow);color:var(--ink);cursor:pointer;min-height:44px}
+.msg .st{font-size:.85rem;font-weight:700;min-height:1.2em}
+
+/* Detalle del color (desplegable al pie) */
+details.color{margin-top:36px;border:1px solid var(--line);border-radius:16px;background:var(--sheet)}
+details.color summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 16px;font-weight:900}
+details.color summary::-webkit-details-marker{display:none}
+details.color summary::before{content:"+";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--yellow);font-weight:900;flex:none}
+details.color[open] summary::before{content:"–"}
+details.color summary small{font-weight:700;color:var(--muted)}
+.cbody{display:grid;gap:14px;padding:0 16px 18px}
+.sw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opt{border-radius:14px;padding:14px;color:var(--cream);display:grid;gap:4px;min-width:0}
+.opt b{font-size:1.05rem;font-weight:900;color:var(--yellow)}
+.opt small{font-weight:700;font-size:.82rem}
+.opt.out{background:var(--lav)} .opt.out b{text-decoration:line-through;text-decoration-thickness:3px}
+.opt.in{background:var(--royal)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:-1px;margin-right:6px;box-shadow:inset 0 0 0 1px rgba(30,10,60,.25)}
+ol.steps{margin:0;padding-left:1.3rem;display:grid;gap:4px}
+ol.steps li{max-width:70ch}
+.foot{margin-top:24px;font-size:.85rem;color:var(--muted)}
+
+@media (max-width:860px){.week{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.people{grid-template-columns:1fr}}
+@media (max-width:480px){.sw{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="head">
+  <div class="wrap">
+    <span class="k">Grupo 4 · Haciéndolo Posible · Sync 1 · 10 oct 2026</span>
+    <h1>Plan de acción <span class="script">en clave</span></h1>
+    <p>El Modelo CLAVE V0.7 quedó como base de trabajo. Esta semana cerramos ajustes visibles, enviamos el video a Orange y enriquecemos el modelo con referentes antes de congelar la V1.</p>
+    <div class="dates" aria-label="Fechas clave">
+      <span class="hot">Hoy · quick wins</span>
+      <span>Lun 12 · grabación (festivo)</span>
+      <span class="hot">Mar 13 · límite video a Orange</span>
+      <span>Jue 15 · benchmarks</span>
+      <span>Vie 16 · Sync 2 propuesto</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section aria-labelledby="s-lectura">
+  <h2 id="s-lectura">Lo que dejó la reunión</h2>
+  <p class="lede">Lectura de las notas y la transcripción, contrastada con el Documento Ancla.</p>
+  <div class="read">
+    <div><span class="tag ok">Validado</span><h3>La estructura aguanta</h3><p>5 pilares × 3 factores × 3 ítems, escala forzada de 6 puntos, 7 ítems de IA y trabajo digital, bandas TLA, Índice CLAVE y Desfase. Jorge Mario: "la mayoría de preguntas están bien".</p></div>
+    <div><span class="tag ok">Decidido</span><h3>Adiós al morado clarito</h3><p>El fondo lavanda del deck no le hacía contraste a la paleta. Se reemplaza por azul rey en todas sus instancias del repo. El detalle está al pie de esta página.</p></div>
+    <div><span class="tag gap">Brecha</span><h3>Diagnostica, pero no prescribe</h3><p>Falta bajar los puntajes a accionables: qué pasos da Delirio según la banda en que quede cada pilar. Jose lo marcó como la mejora más grande para la siguiente iteración.</p></div>
+    <div><span class="tag gap">Brecha</span><h3>El taller de 2 horas se queda corto</h3><p>Consenso en mínimo 4 horas o un mini-bootcamp con retos por área. El deck y el one-pager todavía dicen "2 horas": hay que actualizarlos cuando se decida.</p></div>
+    <div><span class="tag gap">Abierto</span><h3>Transversal vs. experiencias</h3><p>Las notas acuerdan un modelo transversal, pero Jorge Mario dejó abierta la pregunta de enfocarlo en la industria de experiencias. Se resuelve con insumos, no por opinión.</p></div>
+    <div><span class="tag risk">Riesgo</span><h3>Supuestos sin datos de Delirio</h3><p>D1 (áreas) sigue provisional, la población a encuestar no está definida y el correo de expectativa (T-02) sigue en curso. Todo depende del contacto con Ana María.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="s-people">
+  <h2 id="s-people">Tareas por integrante</h2>
+  <div class="call"><b>Llamado a la ejecución</b><span>Las tareas marcadas como quick win toman menos de 30 minutos. Hazlas antes del domingo en la noche y avísalo en el WhatsApp.</span></div>
+  <p class="lede">Los benchmarks reparten por industria la tarea grupal "investigar cómo miden otras industrias del entretenimiento". Las marcas se guardan solo en tu navegador.</p>
+  <div class="people">
+
+    <article class="person p-jose">
+      <header><span class="av" aria-hidden="true">JB</span><div><h3>Jose Bolaños</h3><small>Vocero, repositorio y contacto con Delirio</small></div></header>
+      <div class="tasks">
+        <label><input type="checkbox" id="j-1"><span class="t"><b>Cambiar el morado clarito por azul rey</b> en todas sus instancias<span class="d">Inventario y pasos en el desplegable al pie.</span><span class="meta"><span class="pill qwp">Quick win</span><span class="pill date">Dom 11</span></span></span></label>
+        <label><input type="checkbox" id="j-2"><span class="t"><b>Actualizar el equipo en los documentos del repo</b><span class="d">Documento Ancla (integrantes y T-05), notas del deck, pie del one-pager, cronograma del plan de backend y prompt maestro.</span><span class="meta"><span class="pill qwp">Quick win</span><span class="pill date">Dom 11</span></span></span></label>
+        <label><input type="checkbox" id="j-4"><span class="t"><b>Activar la sección "Avance" del índice del repo</b> y pasar este reparto al Documento Ancla<span class="meta"><span class="pill qwp">Quick win</span><span class="pill date">Dom 11</span></span></span></label>
+        <label><input type="checkbox" id="j-5"><span class="t"><b>Guía paso a paso de GitHub</b> y conexión de cada integrante al repo<span class="d">Entregable: guía en el repo y 3 personas conectadas con el mismo contexto.</span><span class="meta"><span class="pill date">Dom 11</span></span></span></label>
+        <label><input type="checkbox" id="j-6"><span class="t"><b>Video para Orange</b>: resumen corto con voz en off sobre el deck<span class="d">Simula la presentación del modelo y le pide notas. Paola coordina la grabación y Mar lo envía.</span><span class="meta"><span class="pill">T-08</span><span class="pill date">Lun 12</span></span></span></label>
+        <label><input type="checkbox" id="j-7"><span class="t"><b>Reunión con Ana María Cortés</b><span class="d">Presentar el modelo, definir la población (todo el personal o el área de realización), pedir el organigrama y acordar el correo de expectativa.</span><span class="meta"><span class="pill">T-02</span><span class="pill">T-03</span><span class="pill date">Mar 13–Mié 14</span></span></span></label>
+      </div>
+      <p class="bench">Hecho: procesar la transcripción y repartir tareas (este documento).</p>
+    </article>
+
+    <article class="person p-pao">
+      <header><span class="av" aria-hidden="true">PG</span><div><h3>Paola Giraldo</h3><small>Ritmo del equipo, referentes y taller</small></div></header>
+      <div class="tasks">
+        <label><input type="checkbox" id="p-1"><span class="t"><b>Abrir el hilo de avances diarios en WhatsApp</b> y pegar el mensaje del final<span class="meta"><span class="pill qwp">Quick win</span><span class="pill date">Hoy</span></span></span></label>
+        <label><input type="checkbox" id="p-2"><span class="t"><b>Coordinar la grabación de 10 minutos</b> para el video<span class="meta"><span class="pill date">Lun 12</span></span></span></label>
+        <label><input type="checkbox" id="p-3"><span class="t"><b>Revisar el índice de innovación de la ANDI</b><span class="d">Qué mide, si es público y si se puede comparar con CLAVE. Cierra con una recomendación: incluir, citar o descartar.</span><span class="meta"><span class="pill date">Mié 14</span></span></span></label>
+        <label><input type="checkbox" id="p-4"><span class="t"><b>Benchmark: cruceros y turismo de entretenimiento</b><span class="d">Royal Caribbean y similares: qué indicadores de innovación publican.</span><span class="meta"><span class="pill date">Jue 15</span></span></span></label>
+        <label><input type="checkbox" id="p-5"><span class="t"><b>Propuesta del taller extendido</b><span class="d">Mini-bootcamp de 4 horas: medición y cocreación, más un bloque de retos autónomos por área. Insumo para diseñar el taller cuando se congele la V1.</span><span class="meta"><span class="pill">T-12</span><span class="pill date">Vie 16</span></span></span></label>
+      </div>
+    </article>
+
+    <article class="person p-mar">
+      <header><span class="av" aria-hidden="true">ME</span><div><h3>María del Mar Espinel</h3><small>Benchmark de espectáculos y datos de Delirio</small></div></header>
+      <div class="tasks">
+        <label><input type="checkbox" id="m-1"><span class="t"><b>Lista de datos que necesitamos de Delirio</b><span class="d">Áreas, cargos, personas por área y tipo de vinculación, para que Jose la lleve a Ana María. Retoma T-03, que compartía con Kate.</span><span class="meta"><span class="pill">T-03</span><span class="pill date">Lun 12</span></span></span></label>
+        <label><input type="checkbox" id="m-3"><span class="t"><b>Enviar el video a Orange</b><span class="d">Con un mensaje corto sobre el avance del modelo y las dudas del equipo. Jose entrega el video el lunes.</span><span class="meta"><span class="pill">T-08</span><span class="pill date">Mar 13 · máximo</span></span></span></label>
+        <label><input type="checkbox" id="m-2"><span class="t"><b>Benchmark: Disney, parques temáticos y Cirque du Soleil</b><span class="d">Qué miden, si hay un índice público y con qué criterios sería comparable con CLAVE (fuente abierta, misma unidad, escala homologable).</span><span class="meta"><span class="pill date">Jue 15</span></span></span></label>
+      </div>
+      <p class="bench">Semana 2: montaje del formulario digital (T-07) con Paola, una vez congelada la V1.</p>
+    </article>
+
+    <article class="person p-jorge">
+      <header><span class="av" aria-hidden="true">JM</span><div><h3>Jorge Mario Murillo</h3><small>Lente de experiencias y planes por banda</small></div></header>
+      <div class="tasks">
+        <label><input type="checkbox" id="g-1"><span class="t"><b>Recorrer el deck V0.7</b> y dejar 3 comentarios concretos en el WhatsApp<span class="meta"><span class="pill qwp">Quick win</span><span class="pill date">Dom 11</span></span></span></label>
+        <label><input type="checkbox" id="g-2"><span class="t"><b>Lente de experiencias sobre las 45 preguntas</b><span class="d">Marcar qué ítems cambiarían si el modelo se enfoca en la industria de experiencias. Es el insumo para la decisión que él mismo planteó.</span><span class="meta"><span class="pill date">Mié 14</span></span></span></label>
+        <label><input type="checkbox" id="g-3"><span class="t"><b>Benchmark: festivales y eventos en vivo</b><span class="d">Cómo miden la innovación los festivales y promotores de conciertos.</span><span class="meta"><span class="pill date">Jue 15</span></span></span></label>
+        <label><input type="checkbox" id="g-4"><span class="t"><b>Planes de acción por banda de madurez</b><span class="d">Plantilla y primer borrador con el pilar Conducción: 3 pasos concretos para subir de Entrando a Emergiendo, de Emergiendo a Adaptando y de Adaptando a Transformando.</span><span class="meta"><span class="pill date">Vie 16</span></span></span></label>
+      </div>
+      <p class="bench">Queda como único responsable de T-05 (escala), que ya está cumplida con la escala de 6 puntos.</p>
+    </article>
+  </div>
+  <p class="aside"><b>Kate:</b> sin tareas esta semana, como se acordó. Nos reagrupamos la próxima semana.</p>
+</section>
+
+<section aria-labelledby="s-dec">
+  <h2 id="s-dec">Decisiones pendientes</h2>
+  <p class="lede">Ninguna se decide por opinión: cada una tiene un insumo asignado arriba y una fecha.</p>
+  <div class="tbl"><table class="dec">
+    <thead><tr><th>Decisión</th><th>Opciones</th><th>Propuesta</th><th>Insumo</th><th>Cuándo</th></tr></thead>
+    <tbody>
+      <tr><td>Alcance del modelo</td><td>Abierto y transversal · enfocado en experiencias</td><td class="r">Núcleo transversal (ya acordado) con una capa personalizable: metáfora por industria y, si el benchmark lo justifica, un módulo opcional de ítems de experiencias.</td><td>Jorge Mario (lente), benchmarks</td><td>Sync 2</td></tr>
+      <tr><td>Benchmark externo</td><td>Incorporarlo al índice · usarlo como referencia narrativa · descartarlo</td><td class="r">Solo entra al índice si existe un dato público y comparable. Si no, se usa en el informe como referente, sin tocar la estructura.</td><td>Paola (ANDI, cruceros), Mar, Jorge Mario</td><td>Sync 2</td></tr>
+      <tr><td>Duración del taller</td><td>2 h · 4 h · mini-bootcamp</td><td class="r">Mínimo 4 h. Validar disponibilidad con Ana María y actualizar deck y one-pager.</td><td>Paola (propuesta), Jose (Ana María)</td><td>Tras congelar V1</td></tr>
+      <tr><td>Población encuestada</td><td>Todo el personal · área de realización</td><td class="r">Todo el personal. Si no es viable, el área de realización, acotando a innovación de cara al espectáculo.</td><td>Jose con Ana María</td><td>Mié 14</td></tr>
+      <tr><td>Fecha del video a Orange</td><td>Antes del domingo · martes</td><td class="r">Grabar el lunes festivo y enviar a más tardar el martes 13 en la mañana.</td><td>Jose, Paola, Mar</td><td>Hoy</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="s-week">
+  <h2 id="s-week">La semana, día por día</h2>
+  <div class="week">
+    <div class="day hot"><h3>Sáb<b>10</b></h3><ul><li>Hilo de WhatsApp</li></ul></div>
+    <div class="day"><h3>Dom<b>11</b></h3><ul><li>Azul rey en el repo</li><li>Equipo actualizado en documentos</li><li>Guía de GitHub</li><li>Comentarios al deck</li><li>Índice del repo al día</li></ul></div>
+    <div class="day fest"><h3>Lun<b>12</b></h3><ul><li>Grabación de 10 min</li><li>Video base</li><li>Lista de datos para Delirio</li></ul></div>
+    <div class="day hot"><h3>Mar<b>13</b></h3><ul><li>Mar envía el video a Orange</li><li>Contacto con Ana María</li></ul></div>
+    <div class="day"><h3>Mié<b>14</b></h3><ul><li>Índice ANDI</li><li>Lente de experiencias</li><li>Población definida</li></ul></div>
+    <div class="day"><h3>Jue<b>15</b></h3><ul><li>Benchmarks por industria</li></ul></div>
+    <div class="day"><h3>Vie<b>16</b></h3><ul><li>Planes por banda (borrador)</li><li>Propuesta de taller</li><li>Sync 2: decidir y congelar V1</li></ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="s-msg">
+  <h2 id="s-msg">Mensaje para el WhatsApp</h2>
+  <div class="msg">
+<pre id="wa">Equipo, salió el plan de acción del Sync 1. Quick wins para este fin de semana (menos de 30 min cada uno):
+
+• Pao: este hilo queda para avances diarios. Hoy.
+• Jorge: recorrer el deck V0.7 y dejar 3 comentarios aquí. Domingo.
+• Jose: cambiar el morado clarito por azul rey en todos los archivos, actualizar el equipo en los documentos del repo y guía de GitHub. Domingo.
+
+Lunes festivo: grabación de 10 min para el video de Orange (coordina Pao, Jose arma el video).
+Martes 13: Mar envía el video a Orange, a más tardar.
+Lunes también: Mar arma la lista de datos que necesitamos de Delirio para la reunión con Ana María.
+Jueves 15: benchmarks por industria (Pao cruceros + ANDI, Mar Disney/Cirque, Jorge festivales).
+Viernes 16: Sync 2 para decidir alcance, benchmark y taller, y congelar la V1.
+
+Las tareas completas por persona están en el plan.</pre>
+    <button type="button" id="copy">Copiar mensaje</button>
+    <span class="st" id="copySt" role="status"></span>
+  </div>
+</section>
+
+<details class="color" id="detalle-color">
+  <summary>Detalle del cambio de color <small>lavanda #6E5F8F → azul rey #1F4FA8 · 10 instancias en código</small></summary>
+  <div class="cbody">
+    <div class="sw">
+      <div class="opt out"><b>Lavanda</b><small>#6E5F8F · amarillo 4,71:1 · crema 5,35:1</small><small>Sale: fondo de 12 de las 25 láminas</small></div>
+      <div class="opt in"><b>Azul rey</b><small>#1F4FA8 · amarillo 6,35:1 · crema 7,21:1</small><small>Entra: vivo, contrasta con el amarillo y no se confunde con las láminas índigo</small></div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>Archivo (rama main)</th><th>Dónde aparece</th><th>Instancias</th></tr></thead>
+      <tbody>
+        <tr><td><code>Modelo/V0/modelo-clave-v0.html</code></td><td>Token <code>--lav</code>; fondo de <code>.deck</code> y <code>.bg-ink</code> (12 láminas)</td><td class="n">3</td></tr>
+        <tr><td><code>index.html</code></td><td>Token <code>--lav</code>; fondo de la cabecera</td><td class="n">2</td></tr>
+        <tr><td><code>Modelo/V0/plan-backend-dashboard.html</code></td><td>Token <code>--lav</code>; borde de la tarjeta "Consola interna"; <code>fill="#6E5F8F"</code> escrito a mano en el SVG</td><td class="n">3</td></tr>
+        <tr><td><code>Modelo/V0/onepager-racional.html</code></td><td>Token <code>--lav</code> definido sin uso</td><td class="n">1</td></tr>
+        <tr><td><code>Modelo/V0/ficha-tecnica.html</code></td><td>Token <code>--lav</code> definido sin uso</td><td class="n">1</td></tr>
+        <tr><td><code>Modelo/V0/auditoria-wcag.md</code></td><td>Filas de contraste calculadas sobre lavanda</td><td class="n">4</td></tr>
+        <tr><td colspan="2"><b>Lilas pálidos de apoyo</b>, que también salen: <span class="dot" style="background:#EFE8FF"></span><code>#EFE8FF</code> filas de pilar del one-pager, caja de decisión de la ficha y nodo "Google Forms" del plan de backend → azul pálido <span class="dot" style="background:#E4ECFA"></span><code>#E4ECFA</code> · <span class="dot" style="background:#E9E0FF"></span><code>#E9E0FF</code> texto de metadatos en one-pager, ficha e índice → crema <code>#FFF8E1</code> · <span class="dot" style="background:#F3D9F8"></span><code>#F3D9F8</code> banda Emergiendo del one-pager → <span class="dot" style="background:#DCE6F7"></span><code>#DCE6F7</code></td><td class="n">7</td></tr>
+      </tbody>
+    </table></div>
+    <ol class="steps">
+      <li>Cambiar el valor de <code>--lav</code> a <code>#1F4FA8</code> en los 5 HTML y el <code>fill</code> del SVG del plan de backend. En el deck es una sola línea, porque es un token.</li>
+      <li>Reemplazar los 7 lilas pálidos por los tonos indicados.</li>
+      <li>Actualizar <code>auditoria-wcag.md</code>: amarillo sobre azul rey 6,35:1 y crema sobre azul rey 7,21:1. Recalcular la píldora oscura de la lámina de IA.</li>
+      <li>Registrar la V0.8 en el CHANGELOG: "fondo lavanda reemplazado por azul rey #1F4FA8".</li>
+      <li>Pasar el deck completo antes de grabar, para revisar el ritmo de color entre láminas.</li>
+    </ol>
+  </div>
+</details>
+
+<p class="foot">Fuentes: notas y transcripción del Sync 1 (10 oct 2026), Documento Ancla (T-01 a T-15) y archivos del repositorio <a href="https://github.com/josebdiaz/innovation-model" target="_blank" rel="noopener">josebdiaz/innovation-model</a>. Contrastes calculados con la fórmula WCAG 2.2. Equipo: Jose Bolaños, Katherine Castro, María del Mar Espinel, Paola Giraldo y Jorge Mario Murillo. <a href="../../../index.html">Volver al índice del proyecto</a>.</p>
+</div>
+
+<script>
+(function(){
+  var KEY='clave-sync1-checks-v2';
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+  [].forEach.call(document.querySelectorAll('input[type=checkbox]'),function(b){
+    if(state[b.id])b.checked=true;
+    b.addEventListener('change',function(){
+      state[b.id]=b.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+    });
+  });
+  var btn=document.getElementById('copy'), st=document.getElementById('copySt'), pre=document.getElementById('wa');
+  function selectText(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+  btn.addEventListener('click',function(){
+    var txt=pre.textContent;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){st.textContent='Copiado. Pégalo en el grupo.';},function(){selectText();st.textContent='Texto seleccionado: cópialo con Ctrl/Cmd + C.';});
+    }else{selectText();st.textContent='Texto seleccionado: cópialo con Ctrl/Cmd + C.';}
+  });
+})();
+</script>
+</body>
+</html>

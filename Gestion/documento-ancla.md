@@ -14,7 +14,7 @@ integrantes:
   - "Paola Giraldo (Maestría)"
   - "Jorge Mario Murillo (Especialización)"
 documento_tipo: "Documento Ancla y Control de Tareas (Single Source of Truth)"
-ultima_actualizacion: "2026-10-11"
+ultima_actualizacion: "2026-10-10"
 ---
 
 # Documento Ancla: Tareas, Entregables y Control de Avance
@@ -57,7 +57,7 @@ Este documento actúa como el **eje rector y bitácora de control central** para
 | **T-01** | **Contacto con la Directora General de Delirio** | Enviar carta formal firmada por el profesor y validar disposición de la empresa `[121:37 - 123:08]`. | Jose Bolaños / Grupo 4 | Correo formal enviado a Anamaria Cortés con copia a `afnaranjo@icesi.edu.co` y carta oficial adjunta. | **Completado** (02-Oct) |
 | **T-02** | **Envío de Correo de Expectativa Previo (Líder a Empleados)** | El líder de la empresa debe enviar un correo a todo el personal/área *antes* de que llegue el formulario para evitar que sea tratado como spam o llegue en frío `[121:45 - 123:08]`. | Jose Bolaños (Paola Giraldo de respaldo) | Comunicado redactado y enviado por Anamaria Cortés a los colaboradores de Delirio anunciando el diagnóstico. | **En progreso** · reunión con Ana María mar 13–mié 14 |
 | **T-03** | **Obtención de Estructura Demográfica (Áreas y Jerarquías)** | Solicitar organigrama y categorización de áreas y cargos para perfilamiento matricial `[50:33 - 51:40]`. | Maria del Mar Espinel / Jose Bolaños | Lista formal de áreas (ej. Producción artística, Comercial, Logística, Administrativa) y niveles jerárquicos (Dirección, Mandos Medios, Operación). | **En progreso** · lista de datos lun 12 |
-| **T-04** | **Construcción del Megamodelo Homologado (Maciada)** | Homologar con IA los 10–15 modelos de referencia de `Herramientas/Markdown` y Miro en una taxonomía simétrica propia `[31:39 - 37:20, 126:43 - 128:20]`. | Equipo Completo (Asistido por Claude) | Documento con matriz taxonómica: Pilares, Factores, Indicadores/Preguntas y justificación conceptual. | **En progreso** · V0.7 validada como base en el Sync 1; V1 tras el Sync 2 |
+| **T-04** | **Construcción del Megamodelo Homologado (Maciada)** | Homologar con IA los 10–15 modelos de referencia de `Herramientas/` y Miro en una taxonomía simétrica propia `[31:39 - 37:20, 126:43 - 128:20]`. | Equipo Completo (Asistido por Claude) | Documento con matriz taxonómica: Pilares, Factores, Indicadores/Preguntas y justificación conceptual. | **En progreso** · V0.7 validada como base en el Sync 1; V1 tras el Sync 2 |
 | **T-05** | **Definición de Escala de Medición Ácida** | Seleccionar escala sin neutralidad complaciente (ej. Likert 6 puntos o -2 a +2 con ponderaciones argumentadas) `[41:14 - 43:00]`. | Jorge Mario Murillo | Rúbrica de calificación formalmente descrita y validada en el modelo. | **Completado** · Likert de 6 puntos sin punto medio |
 | **T-06** | **Redacción Quirúrgica de Preguntas (Anti-Preguntas Dobles)** | Cada pregunta debe evaluar un solo hecho o comportamiento observable, integrando variables de IA y herramientas colaborativas `[93:53 - 94:53, 132:26 - 132:46]`. | Jose Bolaños | Batería final de preguntas revisada con cero preguntas compuestas y variables de fluidez digital/IA incluidas. | **Completado** · 45 ítems, cero preguntas dobles |
 | **T-07** | **Montaje del Instrumento Digital** | Crear el formulario en Google Forms, Typeform o SurveyMonkey listo para distribución `[125:00 - 125:09]`. | Maria del Mar Espinel / Paola Giraldo | Enlace funcional del formulario digital listo para pruebas de campo. | **Pendiente** |
@@ -99,8 +99,12 @@ Para que un entregable se considere aprobado por la dirección del curso, debe s
 - **Tablero de Miro de la Clase (Herramientas):** [https://miro.com/app/board/uXjVEcCxJ2o=/](https://miro.com/app/board/uXjVEcCxJ2o=/)
 - **Grabación de la Sesión 1:** [YouTube Live (v-j7xeznE00)](https://www.youtube.com/live/v-j7xeznE00)
 - **Repositorio GitHub del Proyecto:** [josebdiaz/innovation-model](https://github.com/josebdiaz/innovation-model)
-- **Carpeta Local de Modelos Refinados:** [`Innovation model/Herramientas/Markdown/`](file:///Users/josebolanosd/Documents/Innovation%20model/Herramientas/Markdown)
-- **Transcripción Completa de la Clase:** [`Innovation model/transcript_haciendolo_posible.txt`](file:///Users/josebolanosd/Documents/Innovation%20model/transcript_haciendolo_posible.txt)
-- **Prompt Maestro de Claude:** [`Innovation model/Claude_Project_Prompt_Instrucciones.md`](file:///Users/josebolanosd/Documents/Innovation%20model/Claude_Project_Prompt_Instrucciones.md)
-- **Logs Analizados de la Sesión 1:** [`Innovation model/Logs_Clase_Sesion_1_Haciendolo_Posible.md`](file:///Users/josebolanosd/Documents/Innovation%20model/Logs_Clase_Sesion_1_Haciendolo_Posible.md)
+- **Modelos de referencia en Markdown:** [`Herramientas/`](../Herramientas/)
+- **Transcripción completa de la Sesión 1:** [`Curso/sesion-1-transcripcion.txt`](../Curso/sesion-1-transcripcion.txt)
+- **Prompt maestro de Claude:** [`Contexto/prompt-proyecto-claude.md`](../Contexto/prompt-proyecto-claude.md)
+- **Logs analizados de la Sesión 1:** [`Curso/sesion-1-logs.md`](../Curso/sesion-1-logs.md)
+- **Registro de decisiones:** [`Gestion/decisiones.md`](decisiones.md)
+- **Hallazgos del equipo:** [`Hallazgos/registro.md`](../Hallazgos/registro.md)
+- **Cómo colaborar en el repositorio:** [`CONTRIBUTING.md`](../CONTRIBUTING.md) · historial en [`CHANGELOG.md`](../CHANGELOG.md)
+- **Guía de conexión del equipo:** [página publicada](https://josebdiaz.github.io/innovation-model/Contexto/guia-conexion-equipo.html)
 - **Hoja de Grupos de la Clase (Google Sheets):** [Grupos Haciéndolo Posible](https://docs.google.com/spreadsheets/d/1m4E4jqq1xnLoIAKJzdRiC6cfx5nW8Ji-Q0w6db8oRsI)

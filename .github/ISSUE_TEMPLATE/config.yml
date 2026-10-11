@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Guía de conexión del equipo
+    url: https://josebdiaz.github.io/innovation-model/Contexto/guia-conexion-equipo.html
+    about: Cómo conectar tu IA al repositorio y publicar hallazgos.
+  - name: Índice del proyecto
+    url: https://josebdiaz.github.io/innovation-model/
+    about: Todos los entregables publicados.

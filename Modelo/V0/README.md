@@ -125,7 +125,7 @@ Ver `bateria-v0.csv`: 45 ítems + control de atención Q0 + abiertas Q1 y Q2. In
 
 ## 6. Pendientes para V1
 
-- Refinar metáfora y vocabulario con el contexto de experiencia previa en Delirio (`Contexto/Contexto_Consultor_Experiencia_Delirio.md`).
+- Refinar metáfora y vocabulario con el contexto de experiencia previa en Delirio (`Contexto/contexto-consultor.md`).
 - Incorporar el diseño que entregará el equipo.
 - Ajustar D1 con el organigrama actual (T-03).
 - Piloto cognitivo con 3 a 5 personas de Delirio.
