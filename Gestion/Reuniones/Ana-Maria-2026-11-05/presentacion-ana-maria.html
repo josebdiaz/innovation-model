@@ -655,6 +655,16 @@ aside.notes{display:none}
 .req .rr:not(.h) span:last-child{color:var(--sol);font-weight:800}
 .bg-pink .factor{color:var(--tinta)}
 #closeWord{margin-top:2cqh}
+.team{gap:1cqw;margin-top:1cqh}
+.act .team .chip{background:var(--papel);color:var(--tinta);font-size:min(1.9cqw,3.5cqh)}
+.refs{gap:.8cqw 2.4cqw;font:700 var(--fs-s)/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:2cqh}
+.acro-l{display:grid;grid-template-columns:3fr 2fr;gap:2cqw;font:700 var(--fs-xs)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.acro-l span:first-child{color:var(--rosa)}.acro-l span:last-child{color:var(--sol)}
+.acro{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2cqw}
+.acro .col{border-top:6px solid var(--c);padding-top:3cqh;display:flex;flex-direction:column;gap:1.4cqh;min-width:0}
+.acro .lt{font:400 min(11cqw,20cqh)/.85 var(--display);color:var(--c)}
+.acro h3{font:900 min(2.1cqw,3.9cqh)/1.1 var(--body);margin:0;color:var(--papel)}
+.acro p{font:600 var(--fs-s)/1.35 var(--body);color:var(--papel);opacity:.8;margin:0}
 </style>
 </head>
 <body>
@@ -682,41 +692,26 @@ aside.notes{display:none}
     <aside class="notes"><p>Pathos. Arrancar desde su lenguaje, no desde la academia. Pausa después de la segunda línea. Ana María ha dirigido el espectáculo toda su trayectoria: esta imagen es suya. Puente: "La innovación de una organización funciona igual."</p></aside>
   </section>
 
-  <!-- 03 Acto 1 -->
-  <section class="slide bg-ink act" data-fg="#170A33" data-act="1" aria-label="Contexto">
+  <!-- 03 Quiénes somos -->
+  <section class="slide bg-ink act" data-fg="#170A33" data-act="1" aria-label="Quiénes somos">
     <p class="kicker hl-coral" data-a="up">Contexto</p>
-    <h2 class="q" data-a="glitch" style="--d:3">¿Quiénes somos?</h2>
-    <ol class="acts" data-a="fade" style="--d:5" aria-label="Agenda"><li class="now">Contexto</li><li>Conversación</li><li>Propuesta</li><li>Entregables</li><li>Próximos pasos</li></ol>
-    <aside class="notes"><p>La agenda en una mirada. Pasar rápido.</p></aside>
+    <h2 class="q" data-a="glitch" style="--d:2">¿Quiénes somos?</h2>
+    <div class="row team" data-a="fade" style="--d:4">
+      <span class="chip">Jose Bolaños</span><span class="chip">Katherine Castro</span><span class="chip">Maria del Mar Espinel</span><span class="chip">Paola Giraldo</span><span class="chip">Jorge Mario Murillo</span>
+    </div>
+    <p class="kicker" data-a="fade" style="--d:6;color:var(--papel)">Maestría en Gestión de la Innovación · Universidad Icesi</p>
+    <aside class="notes"><p>Jose presenta al equipo: somos cinco personas y la vamos a acompañar en todo el proceso. Módulo Haciéndolo posible, profesor Andrés Felipe Naranjo (iNNLab). Mencionar que el proyecto de grado de pregrado de Jose se hizo con Delirio y que trabajó allí.</p><p>Mensaje de fondo, sin decirlo: no es un favor académico; Delirio sale con un insumo útil.</p></aside>
   </section>
 
-  <!-- 04 Equipo (ethos) -->
-  <section class="slide bg-purple" data-fg="#FFF8E6" data-act="1" aria-label="Equipo">
-    <p class="kicker" data-a="up">Equipo consultor</p>
-    <h2 class="l" data-a="glitch" style="--d:1">Rigor académico, <span class="script hl-lime">conocimiento de la casa.</span></h2>
-    <div class="factors">
-      <div class="factor" data-a="right" style="--d:3"><b>1</b>10 modelos de referencia homologados</div>
-      <div class="factor" data-a="right" style="--d:4"><b>2</b>Experiencia previa dentro de Delirio</div>
-      <div class="factor" data-a="right" style="--d:5"><b>3</b>Respaldo de iNNLab · Universidad Icesi</div>
-    </div>
-    <div class="row">
-      <span class="chip" data-a="pop" style="--d:7">Jose Bolaños</span>
-      <span class="chip" data-a="pop" style="--d:8">Katherine Castro</span>
-      <span class="chip" data-a="pop" style="--d:9">Maria del Mar Espinel</span>
-      <span class="chip" data-a="pop" style="--d:10">Paola Giraldo</span>
-      <span class="chip" data-a="pop" style="--d:11">Jorge Mario Murillo</span>
-    </div>
-    <aside class="notes"><p>Ethos. Jose: maestría en Gestión de la Innovación, módulo Haciéndolo posible, profesor Andrés Felipe Naranjo (iNNLab). El modelo homologa referentes como Rao &amp; Weintraub (MIT Sloan), McKinsey, Jakopec y Sušanj, HYPE y TLA.</p><p>Punto 2: el proyecto de grado de pregrado de Jose se hizo con Delirio y trabajó allí; conocemos cómo opera detrás del escenario. Mensaje de fondo, sin decirlo: no es un favor académico; Delirio sale con un insumo útil.</p></aside>
+  <!-- 04 Respaldo -->
+  <section class="slide bg-purple" data-fg="#FFF8E6" data-act="1" aria-label="Enfoque">
+    <p class="kicker" data-a="up">Enfoque</p>
+    <h2 class="l" data-a="glitch" style="--d:1">Diez modelos de referencia, <span class="script hl-lime">un instrumento.</span></h2>
+    <p class="m" data-a="up" style="--d:3;max-width:40ch;opacity:.85">Integrados y adaptados a la realidad de una organización cultural.</p>
+    <div class="row refs" data-a="fade" style="--d:5"><span>MIT Sloan</span><span>McKinsey</span><span>HYPE Innovation</span><span>The Learning Accelerator</span><span>IBM</span><span>Rainforest</span></div>
+    <aside class="notes"><p>Ethos, en voz baja: no vender, solo mostrar de dónde viene el modelo. Referentes: Rao &amp; Weintraub (MIT Sloan), McKinsey (8 esenciales), Carpenter y Woods (HYPE), TLA, IBM, Hwang y Horowitt (Rainforest), Jakopec y Sušanj, Satell, Creus (Pentagrowth).</p></aside>
   </section>
 
-  <!-- 05 El público cambió -->
-  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="1" aria-label="El público cambió">
-    <p class="kicker" data-a="up">Por qué ahora</p>
-    <h2 class="xl" data-a="glitch" style="--d:1">El público <span class="script hl-lime">cambió.</span></h2>
-    <p class="m" data-a="up" style="--d:3;max-width:34ch">Más festivales, más conciertos, públicos dispuestos a viajar por una noche.</p>
-    <p class="m" data-a="up" style="--d:5;max-width:34ch"><span class="hl-coral">Renovar la obra cada año ya no basta.</span></p>
-    <aside class="notes"><p>Pathos con fundamento. Desde la pandemia, las dinámicas del espectáculo en vivo cambiaron. Delirio siempre ha apostado por hacer algo distinto en escena; la pregunta es cómo innovar también en formatos, operación y modelo de negocio.</p><p>No nombrar competidores ni hablar de debilidades: que ella llegue sola a la conclusión.</p></aside>
-  </section>
 
   <!-- 06 Objetivo (logos) -->
   <section class="slide bg-lime" data-fg="#170A33" data-act="1" aria-label="Objetivo">
@@ -770,21 +765,17 @@ aside.notes{display:none}
     <aside class="notes"><p>Jose. Volver a la imagen del inicio: la son clave 3-2 ordena a toda la orquesta. Tocar la clave. Tres golpes de tensión, dos de resolución.</p></aside>
   </section>
 
-  <!-- 11 Pilares -->
-  <section class="slide bg-ink" data-fg="#170A33" data-act="3" data-sound aria-label="Pilares">
-    <div class="split">
-      <div class="half a">
-        <div class="pulses" id="pulsesT" data-a="drop" aria-label="Tres golpes"><i></i><i></i><i></i></div>
-        <h2 class="l" data-a="up" style="--d:2"><span class="script">Tensión</span></h2>
-        <div class="row named" data-a="up" style="--d:4"><span class="chip"><b>C</b>Conducción</span><span class="chip"><b>L</b>Lazos</span><span class="chip"><b>A</b>Activos</span></div>
-      </div>
-      <div class="half b">
-        <div class="pulses" id="pulsesR" data-a="drop" style="--d:2" aria-label="Dos golpes"><i></i><i></i></div>
-        <h2 class="l" data-a="up" style="--d:4"><span class="script">Resolución</span></h2>
-        <div class="row named" data-a="up" style="--d:6"><span class="chip"><b>V</b>Vía</span><span class="chip"><b>E</b>Efecto</span></div>
-      </div>
+  <!-- 11 Qué significa cada letra -->
+  <section class="slide bg-ink" data-fg="#FFF8E6" data-act="3" aria-label="Los cinco pilares">
+    <div class="acro-l" data-a="fade"><span>Tensión · impulsa</span><span>Resolución · resuelve</span></div>
+    <div class="acro">
+      <div class="col" style="--c:var(--sol);--d:2" data-a="drop"><span class="lt">C</span><h3>Conducción</h3><p>El rumbo y el liderazgo</p></div>
+      <div class="col" style="--c:var(--rosa);--d:4" data-a="drop"><span class="lt">L</span><h3>Lazos</h3><p>La confianza y el trabajo entre áreas</p></div>
+      <div class="col" style="--c:var(--menta);--d:6" data-a="drop"><span class="lt">A</span><h3>Activos</h3><p>Talento, tiempo y tecnología</p></div>
+      <div class="col" style="--c:var(--mango);--d:8" data-a="drop"><span class="lt">V</span><h3>Vía</h3><p>El camino de una idea hasta la escena</p></div>
+      <div class="col" style="--c:var(--lila);--d:10" data-a="drop"><span class="lt">E</span><h3>Efecto</h3><p>Lo que el público y las finanzas sienten</p></div>
     </div>
-    <aside class="notes"><p>Logos. Conducción: el rumbo. Lazos: la confianza. Activos: talento, tiempo y tecnología. Estos tres impulsan. Vía: el camino de una idea hasta la escena. Efecto: lo que el público y las finanzas sienten. Estos dos resuelven. Cada pilar pesa lo mismo: 20 %.</p></aside>
+    <aside class="notes"><p>Logos. Leer letra por letra, sin prisa. Los tres primeros pilares crean las condiciones; los dos últimos las convierten en resultados. Cada pilar pesa lo mismo: 20 %.</p></aside>
   </section>
 
   <!-- 12 Cruzada -->
@@ -865,13 +856,14 @@ aside.notes{display:none}
   <section class="slide bg-ink" data-fg="#FFF8E6" data-act="5" aria-label="Requerimientos">
     <h2 class="l" data-a="glitch">Requerimientos.</h2>
     <div class="req" role="table" aria-label="Requerimientos">
-      <div class="rr h" role="row" data-a="fade" style="--d:2"><span role="columnheader">Qué</span><span role="columnheader">Responsable</span><span role="columnheader">Fecha</span></div>
-      <div class="rr" role="row" data-a="left" style="--d:3"><span role="cell">Enlace para la aplicación</span><span role="cell">Dirección</span><span role="cell">5 nov</span></div>
-      <div class="rr" role="row" data-a="left" style="--d:4"><span role="cell">Correo de expectativa</span><span role="cell">Dirección</span><span role="cell">9 nov</span></div>
-      <div class="rr" role="row" data-a="left" style="--d:5"><span role="cell">Organigrama actual</span><span role="cell">Dirección</span><span role="cell">11 nov</span></div>
-      <div class="rr" role="row" data-a="left" style="--d:6"><span role="cell">Envío de la encuesta y recordatorio</span><span role="cell">Enlace</span><span role="cell">Desde 11 nov</span></div>
+      <div class="rr h" role="row" data-a="fade" style="--d:2"><span role="columnheader">Qué</span><span role="columnheader">Quién</span><span role="columnheader">Dedicación</span></div>
+      <div class="rr" role="row" data-a="left" style="--d:3"><span role="cell">Organigrama actual</span><span role="cell">Dirección</span><span role="cell">15 min</span></div>
+      <div class="rr" role="row" data-a="left" style="--d:4"><span role="cell">Designar un enlace</span><span role="cell">Dirección</span><span role="cell">5 min</span></div>
+      <div class="rr" role="row" data-a="left" style="--d:5"><span role="cell">Enviar el correo de expectativa</span><span role="cell">Dirección</span><span role="cell">10 min</span></div>
+      <div class="rr" role="row" data-a="left" style="--d:6"><span role="cell">Responder la encuesta</span><span role="cell">Todo el equipo</span><span role="cell">5–10 min c/u</span></div>
+      <div class="rr" role="row" data-a="left" style="--d:7"><span role="cell">Ventana de respuesta y un recordatorio</span><span role="cell">Enlace</span><span role="cell">2 semanas</span></div>
     </div>
-    <aside class="notes"><p>Paola. Fechas tentativas: se confirman en la reunión del equipo del sábado 7 de noviembre a las 10:00 y le enviamos el cronograma ese fin de semana.</p><p>Correo de expectativa: se lo damos en HTML, listo para adaptar a la estética de Delirio y enviarlo con su firma. Enlace: no exigirlo; preguntar si alguien de mercadeo o su asistente puede apoyar.</p></aside>
+    <aside class="notes"><p>Paola. Mostrar el esfuerzo, no fechas: así no disponemos de su agenda. Las fechas se acuerdan con ella al final de la reunión y se confirman en el cronograma que le enviamos después del sábado 7 de noviembre.</p><p>Correo de expectativa: se lo damos en HTML, listo para adaptar a la estética de Delirio y enviarlo con su firma. Enlace: no exigirlo; preguntar si alguien de mercadeo o su asistente puede apoyar.</p></aside>
   </section>
 
   <!-- 19 Cierre -->
@@ -884,7 +876,7 @@ aside.notes{display:none}
   </section>
 
   <div class="ctrl">
-    <span class="count" id="count">01 / 19</span>
+    <span class="count" id="count">01 / 18</span>
     <button class="cbtn" id="soundBtn" type="button" aria-pressed="false">Sonido</button>
     <button class="cbtn" id="motionBtn" type="button" aria-pressed="false">Pausa</button>
     <button class="cbtn" id="notesBtn" type="button" aria-pressed="false">Notas</button>
