@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clave · Consultora de cultura e innovación</title>
+<meta name="description" content="Clave diagnostica, afina y acompaña la cultura de innovación de las organizaciones. Que tu organización entre en clave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Kaushan+Script&display=swap">
+<style>
+:root{
+  --tinta:#170A33; --noche:#2E1466; --rey:#1F4FA8; --papel:#FFF8E6; --hoja:#FFFDF5; --linea:#E6DCC4; --suave:#4B3F63;
+  --sol:#FFE42A; --rosa:#FAAED4; --menta:#47D59B; --mango:#FA9331; --lila:#A5A0F6;
+  --sol-d:#7D6400; --rosa-d:#B02A6B; --menta-d:#0A7751; --mango-d:#A84B00; --lila-d:#5A4FC4;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif; --script:"Kaushan Script","Brush Script MT",cursive;
+  --ease:cubic-bezier(.2,.9,.2,1.05); --sombra:0 14px 34px rgba(23,10,51,.16);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font:500 18px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.script{font-family:var(--script);font-weight:400;letter-spacing:0;display:inline-block;transform:rotate(-3deg)}
+.kicker{font:800 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--sol);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;gap:10px;font:800 17px/1 var(--body);text-decoration:none;padding:17px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-sol{background:var(--sol);color:var(--tinta);box-shadow:0 8px 0 rgba(23,10,51,.25)}
+.btn-line{background:transparent;color:var(--papel);box-shadow:inset 0 0 0 2px rgba(255,248,230,.6)}
+
+/* Clave: 5 golpes */
+.golpes{display:flex;align-items:center;gap:14px}
+.golpes i{width:16px;height:16px;border-radius:50%;display:block;animation:golpe 2.24s infinite}
+.golpes i:nth-child(1){background:var(--sol);animation-delay:0s}
+.golpes i:nth-child(2){background:var(--rosa);animation-delay:.42s}
+.golpes i:nth-child(3){background:var(--menta);animation-delay:.84s;margin-right:14px}
+.golpes i:nth-child(4){background:var(--mango);animation-delay:1.4s}
+.golpes i:nth-child(5){background:var(--lila);animation-delay:1.68s}
+@keyframes golpe{0%,12%,100%{transform:scale(1)}4%{transform:scale(1.55)}}
+
+/* Navegación */
+.nav{position:absolute;inset:0 0 auto 0;z-index:10;padding:22px 0}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--papel)}
+.logo b{font:900 28px/1 var(--body);letter-spacing:-.02em}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;font-weight:800;font-size:16px}
+.nav ul a{text-decoration:none;color:var(--papel);opacity:.9}
+.nav ul a:hover{opacity:1;color:var(--sol)}
+
+/* Portada */
+.hero{position:relative;background:var(--rey);color:var(--papel);overflow:hidden;padding:150px 0 120px}
+.hero .wrap{position:relative;z-index:2}
+.hero .kicker{color:var(--sol)}
+.hero h1{font:900 clamp(48px,8.4vw,112px)/.95 var(--body);color:var(--sol);letter-spacing:-.025em;margin:22px 0 0;max-width:11ch}
+.hero h1 .script{color:var(--papel);font-size:.8em;margin-top:.08em}
+.hero p.lead{font-size:clamp(19px,2vw,23px);max-width:34ch;margin:28px 0 36px;color:var(--papel)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero .golpes{margin-top:56px}
+.blobs{position:absolute;right:-8vw;top:50%;transform:translateY(-50%);width:min(52vw,640px);aspect-ratio:1;z-index:1;pointer-events:none}
+.blobs i{position:absolute;border-radius:46% 54% 58% 42%/52% 44% 56% 48%;box-shadow:var(--sombra);animation:morph 7s ease-in-out infinite alternate}
+.blobs .b1{inset:0;background:var(--rosa)}
+.blobs .b2{inset:21%;background:var(--menta);animation-duration:5.5s;animation-delay:-2s}
+.blobs .b3{inset:39%;background:var(--sol);animation-duration:4.5s;animation-delay:-3s}
+@keyframes morph{50%{border-radius:58% 42% 46% 54%/44% 58% 42% 56%;transform:rotate(8deg) scale(1.02)}}
+.spark{position:absolute;z-index:1;width:var(--s,22px);color:var(--sol);animation:twinkle 3s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes twinkle{50%{opacity:.35;transform:scale(.7) rotate(20deg)}}
+
+/* Secciones */
+section{padding:110px 0}
+.head{max-width:760px;margin-bottom:56px}
+.head .kicker{color:var(--rosa-d)}
+.head h2{font:900 clamp(36px,5vw,60px)/1.02 var(--body);letter-spacing:-.02em;margin-top:16px}
+.head h2 .script{color:var(--rey);font-size:.92em}
+.head p{font-size:20px;color:var(--suave);margin-top:18px;max-width:56ch}
+
+/* Creencias */
+.creo{background:var(--noche);color:var(--papel);padding:90px 0}
+.creo .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.creo .n{font:900 15px/1 var(--body);letter-spacing:.2em;color:var(--sol)}
+.creo h3{font:800 clamp(24px,2.4vw,30px)/1.2 var(--body);margin-top:16px}
+.creo p{color:#D9D2EE;margin-top:12px}
+
+/* Oferta */
+.servicios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.srv{position:relative;background:var(--hoja);border-radius:28px;padding:38px 36px 34px;box-shadow:var(--sombra);overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.srv::before{content:"";position:absolute;inset:0 0 auto 0;height:8px;background:var(--c)}
+.srv .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.srv .tag{font:800 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--cd)}
+.srv .dur{font:800 14px/1 var(--body);background:var(--ct);color:var(--tinta);padding:8px 12px;border-radius:999px;white-space:nowrap}
+.srv h3{font:900 clamp(28px,3vw,36px)/1.05 var(--body);letter-spacing:-.015em}
+.srv .prob{font-size:18px;color:var(--suave)}
+.srv dl{margin:4px 0 0;display:grid;gap:14px}
+.srv dt{font:800 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+.srv dd{margin:6px 0 0;font-weight:700}
+.srv .res{margin-top:auto;padding-top:18px;border-top:2px dashed var(--linea);font-weight:800}
+.srv .res span{color:var(--cd)}
+.ruta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;font-weight:800;color:var(--suave)}
+.ruta b{background:var(--tinta);color:var(--papel);padding:10px 16px;border-radius:999px;font-size:15px}
+.ruta i{font-style:normal;color:var(--rey);font-size:22px}
+
+/* Modelo */
+.modelo{background:var(--rey);color:var(--papel);position:relative;overflow:hidden}
+.modelo .head .kicker{color:var(--sol)}
+.modelo .head h2 .script{color:var(--sol)}
+.modelo .head p{color:#E4ECFA}
+.clave{position:relative;background:var(--noche);border-radius:32px;padding:44px 40px 40px;box-shadow:var(--sombra)}
+.clave .lados{display:grid;grid-template-columns:3fr 2fr;gap:28px;margin-bottom:26px}
+.clave .lados span{font:800 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid rgba(255,248,230,.18)}
+.clave .lados span:first-child{color:var(--rosa)}.clave .lados span:last-child{color:var(--sol)}
+.pilares{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px}
+.pil{border-top:6px solid var(--c);padding-top:22px;min-width:0}
+.pil .lt{font:900 clamp(64px,8vw,116px)/.82 var(--body);color:var(--c);display:block;transition:transform .14s ease}
+.pil.hit .lt{transform:translateY(-8px) scale(1.06)}
+.pil h3{font:900 22px/1.15 var(--body);margin-top:16px}
+.pil p{font-size:16px;color:#D9D2EE;margin-top:8px}
+.clave .play{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
+.clave .play small{color:#D9D2EE;font-size:15px}
+.ideas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:26px}
+.idea{background:rgba(255,248,230,.08);border-radius:24px;padding:30px 28px}
+.idea .kicker{color:var(--sol)}
+.idea h3{font:900 24px/1.15 var(--body);margin-top:14px}
+.idea p{color:#E4ECFA;margin-top:10px;font-size:17px}
+.bandas{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:18px;font:800 13px/1.2 var(--body)}
+.bandas span{padding:9px 12px;border-radius:10px;color:var(--tinta);min-width:0}
+.bandas small{display:block;font-weight:700;font-size:12px;opacity:.8}
+
+/* Equipo */
+.equipo .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.persona{background:var(--hoja);border-radius:26px;padding:26px 22px 28px;box-shadow:var(--sombra);display:flex;flex-direction:column;gap:12px;min-width:0}
+.avatar{position:relative;width:92px;height:92px}
+.avatar i{position:absolute;inset:0;border-radius:46% 54% 58% 42%/52% 44% 56% 48%;background:var(--c)}
+.avatar b{position:absolute;inset:0;display:grid;place-items:center;font:900 30px/1 var(--body);color:var(--tinta)}
+.persona h3{font:900 21px/1.15 var(--body);margin-top:6px}
+.persona .rol{font:800 13px/1.3 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--cd)}
+.persona .tray{font-size:15px;color:var(--suave)}
+.persona blockquote{margin:auto 0 0;padding-top:14px;border-top:2px dashed var(--linea);font:700 17px/1.4 var(--body)}
+.persona blockquote::before{content:"“";font:900 40px/0 var(--body);color:var(--c);vertical-align:-14px;margin-right:2px}
+.respaldo{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px 26px;font:800 14px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+
+/* Contacto */
+.contacto{background:var(--noche);color:var(--papel);position:relative;overflow:hidden;text-align:left}
+.contacto h2{font:900 clamp(40px,6.4vw,84px)/.98 var(--body);letter-spacing:-.025em;color:var(--sol);max-width:13ch}
+.contacto h2 .script{color:var(--papel);font-size:.82em}
+.contacto p{font-size:20px;max-width:46ch;margin:24px 0 34px;color:#E4ECFA}
+.contacto .blobs{right:-14vw;width:min(46vw,560px)}
+footer{background:var(--tinta);color:#B9AFD6;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* Aparición */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+@media (max-width:1040px){
+  .equipo .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pilares{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .clave .lados{display:none}
+}
+@media (max-width:820px){
+  .nav ul{display:none}
+  .creo .grid,.servicios,.ideas{grid-template-columns:1fr}
+  .equipo .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .blobs{right:-28vw;width:72vw;top:auto;bottom:-24vw;transform:none}
+  .hero{padding-bottom:150px}
+  section{padding:80px 0}
+}
+@media (max-width:520px){
+  .equipo .grid,.pilares{grid-template-columns:1fr}
+  .srv,.clave{padding:30px 22px}
+  .hero{padding:120px 0 90px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Clave, inicio"><b>Clave</b><span class="golpes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></a>
+    <nav><ul>
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#modelo">Modelo</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<!-- Portada -->
+<section class="hero" id="inicio">
+  <div class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+  <svg class="spark" style="left:8%;top:22%;--s:26px" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>
+  <svg class="spark" style="left:46%;top:16%;--s:16px;--d:.8s" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>
+  <svg class="spark" style="left:52%;bottom:14%;--s:20px;--d:1.6s" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>
+  <div class="wrap">
+    <p class="kicker">Consultora de cultura e innovación</p>
+    <h1>Que tu organización entre <span class="script">en clave.</span></h1>
+    <p class="lead">Diagnosticamos, afinamos y acompañamos la cultura de innovación de tu equipo, desde la dirección hasta la operación.</p>
+    <div class="cta">
+      <a class="btn btn-sol" href="#contacto">Agenda una conversación</a>
+      <a class="btn btn-line" href="#modelo">Conoce el modelo</a>
+    </div>
+    <span class="golpes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+  </div>
+</section>
+
+<!-- Creencias -->
+<section class="creo" aria-label="Lo que creemos">
+  <div class="wrap grid">
+    <div class="rv"><span class="n">01</span><h3>Ningún solista salva a una orquesta descuadrada.</h3><p>Un líder brillante o un área creativa no bastan: la innovación aparece cuando toda la organización toca en el mismo tiempo.</p></div>
+    <div class="rv d1"><span class="n">02</span><h3>La cultura se mide, no se adivina.</h3><p>Preguntamos por conductas que se observan, no por opiniones. Así la conversación deja de ser de percepciones.</p></div>
+    <div class="rv d2"><span class="n">03</span><h3>Un promedio esconde las brechas.</h3><p>Comparamos la mirada de la dirección con la de la base y la de cada área. Ahí está lo que nadie dice en voz alta.</p></div>
+  </div>
+</section>
+
+<!-- Oferta -->
+<section id="oferta">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">La oferta</p>
+      <h2>Del diagnóstico a la <span class="script">acción.</span></h2>
+      <p>Cuatro servicios que se pueden contratar por separado o como un recorrido completo.</p>
+    </div>
+    <div class="servicios">
+      <article class="srv rv" style="--c:var(--sol);--cd:var(--sol-d);--ct:#FFF6C7">
+        <div class="top"><span class="tag">Escuchar</span><span class="dur">4 a 6 semanas</span></div>
+        <h3>Diagnóstico Clave</h3>
+        <p class="prob">Para organizaciones que quieren innovar pero no saben qué las está frenando.</p>
+        <dl><div><dt>Qué hacemos</dt><dd>Una encuesta breve y anónima, ajustada a tu organización, y un análisis por área y nivel jerárquico.</dd></div></dl>
+        <p class="res">Recibes <span>un mapa de fortalezas y brechas priorizadas</span>, en lenguaje de junta directiva.</p>
+      </article>
+      <article class="srv rv d1" style="--c:var(--rosa);--cd:var(--rosa-d);--ct:#FFE7F2">
+        <div class="top"><span class="tag">Afinar</span><span class="dur">Sesión de 2 a 4 horas</span></div>
+        <h3>Taller de afinación</h3>
+        <p class="prob">Para equipos que necesitan mover un indicador concreto, rápido.</p>
+        <dl><div><dt>Qué hacemos</dt><dd>Una sesión de cocreación sobre la brecha más crítica, con medición antes y después.</dd></div></dl>
+        <p class="res">Recibes <span>un cambio medible</span> y un acuerdo de equipo para sostenerlo.</p>
+      </article>
+      <article class="srv rv" style="--c:var(--menta);--cd:var(--menta-d);--ct:#D6F7E8">
+        <div class="top"><span class="tag">Seguir</span><span class="dur">Medición trimestral</span></div>
+        <h3>Tablero de seguimiento</h3>
+        <p class="prob">Para direcciones que quieren ver la cultura evolucionar, no solo una foto.</p>
+        <dl><div><dt>Qué hacemos</dt><dd>Repetimos la medición y la llevamos a un tablero con los signos vitales de la innovación.</dd></div></dl>
+        <p class="res">Recibes <span>la película, no la foto</span>: tendencias por pilar, área y nivel.</p>
+      </article>
+      <article class="srv rv d1" style="--c:var(--lila);--cd:var(--lila-d);--ct:#ECEBFD">
+        <div class="top"><span class="tag">Acompañar</span><span class="dur">3 a 6 meses</span></div>
+        <h3>Acompañamiento en clave</h3>
+        <p class="prob">Para organizaciones listas para cambiar su forma de innovar, incluido su modelo de negocio.</p>
+        <dl><div><dt>Qué hacemos</dt><dd>Diseñamos contigo una ruta de intervención con logros tempranos y la acompañamos hasta instalarla.</dd></div></dl>
+        <p class="res">Recibes <span>un sistema de innovación funcionando</span>, con responsables y métricas.</p>
+      </article>
+    </div>
+    <div class="ruta rv" aria-label="Recorrido completo"><b>Escuchar</b><i aria-hidden="true">→</i><b>Afinar</b><i aria-hidden="true">→</i><b>Seguir</b><i aria-hidden="true">→</i><b>Acompañar</b></div>
+  </div>
+</section>
+
+<!-- Modelo -->
+<section class="modelo" id="modelo">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">El modelo</p>
+      <h2>La innovación tiene <span class="script">ritmo.</span></h2>
+      <p>En el son, la clave es el patrón de cinco golpes que ordena a toda la orquesta. Casi nadie la oye, pero si un músico se cruza, todo se descuadra aunque cada uno toque bien. Así entendemos la cultura de innovación.</p>
+    </div>
+
+    <div class="clave rv">
+      <div class="lados" aria-hidden="true"><span>Tensión · lo que impulsa</span><span>Resolución · lo que resuelve</span></div>
+      <div class="pilares">
+        <div class="pil" style="--c:var(--sol)"><span class="lt">C</span><h3>Conducción</h3><p>El rumbo y el liderazgo</p></div>
+        <div class="pil" style="--c:var(--rosa)"><span class="lt">L</span><h3>Lazos</h3><p>La confianza y el trabajo entre áreas</p></div>
+        <div class="pil" style="--c:var(--menta)"><span class="lt">A</span><h3>Activos</h3><p>Talento, tiempo y tecnología</p></div>
+        <div class="pil" style="--c:var(--mango)"><span class="lt">V</span><h3>Vía</h3><p>El camino de una idea hasta la escena</p></div>
+        <div class="pil" style="--c:var(--lila)"><span class="lt">E</span><h3>Efecto</h3><p>Lo que el público y las finanzas sienten</p></div>
+      </div>
+      <div class="play">
+        <button class="btn btn-sol" id="playBtn" type="button" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M7 4l13 8-13 8z" fill="currentColor"/></svg><span id="playLbl">Escuchar la clave</span></button>
+        <small>Son clave 3-2: tres golpes crean las condiciones, dos las convierten en resultados.</small>
+      </div>
+    </div>
+
+    <div class="ideas">
+      <div class="idea rv"><p class="kicker">Clave cruzada</p><h3>Un buen promedio no basta.</h3><p>Medimos también el desfase entre el pilar más alto y el más bajo. Si supera 20 puntos, la orquesta está descuadrada.</p></div>
+      <div class="idea rv d1"><p class="kicker">Madurez</p><h3>Bandas exigentes a propósito.</h3><p>Escala de 6 puntos, sin punto medio: nadie se refugia en el “ni fu ni fa”.</p>
+        <div class="bandas" aria-label="Bandas de madurez"><span style="background:var(--rosa)">Entrando<small>0–49</small></span><span style="background:var(--mango)">Emergiendo<small>50–69</small></span><span style="background:var(--sol)">Adaptando<small>70–84</small></span><span style="background:var(--menta)">Transformando<small>85–100</small></span></div></div>
+      <div class="idea rv d2"><p class="kicker">Foto y video</p><h3>Hoy la foto, luego la película.</h3><p>Un diagnóstico es una toma. Medir cada trimestre muestra hacia dónde va la cultura.</p></div>
+    </div>
+    <p class="rv" style="margin-top:26px;color:#E4ECFA;font-size:15px">Construido a partir de diez modelos de referencia: Rao y Weintraub (MIT Sloan), McKinsey, Jakopec y Sušanj, HYPE Innovation, The Learning Accelerator, IBM, Rainforest Scorecard, Satell, Creus y Woods.</p>
+  </div>
+</section>
+
+<!-- Equipo -->
+<section class="equipo" id="equipo">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">El equipo</p>
+      <h2>Cinco miradas, <span class="script">un mismo compás.</span></h2>
+      <p>Venimos de la industria cultural, el consumo masivo, la banca y la economía de experiencias. Nos une la Maestría en Gestión de la Innovación de la Universidad Icesi.</p>
+    </div>
+    <div class="grid">
+      <article class="persona rv" style="--c:var(--sol);--cd:var(--sol-d)">
+        <div class="avatar" aria-hidden="true"><i></i><b>JB</b></div>
+        <h3>Jose Bolaños</h3><p class="rol">Estrategia y experiencia</p>
+        <p class="tray">Del backstage de la industria cultural a la estrategia en consumo masivo.</p>
+        <blockquote>La innovación no es un departamento: es la forma en que una organización se escucha.</blockquote>
+      </article>
+      <article class="persona rv d1" style="--c:var(--rosa);--cd:var(--rosa-d)">
+        <div class="avatar" aria-hidden="true"><i></i><b>KC</b></div>
+        <h3>Katherine Castro</h3><p class="rol">Cultura y personas</p>
+        <p class="tray">Innovación y engagement en compañías de consumo y emprendimiento propio.</p>
+        <blockquote>Si la gente no se siente segura para equivocarse, ninguna metodología la salva.</blockquote>
+      </article>
+      <article class="persona rv d2" style="--c:var(--menta);--cd:var(--menta-d)">
+        <div class="avatar" aria-hidden="true"><i></i><b>ME</b></div>
+        <h3>Maria del Mar Espinel</h3><p class="rol">Análisis y negocio</p>
+        <p class="tray">Banca y finanzas abiertas, con foco en datos y producto.</p>
+        <blockquote>Un buen dato no confirma lo que ya creías: te incomoda.</blockquote>
+      </article>
+      <article class="persona rv d3" style="--c:var(--mango);--cd:var(--mango-d)">
+        <div class="avatar" aria-hidden="true"><i></i><b>PG</b></div>
+        <h3>Paola Giraldo</h3><p class="rol">Modelo de negocio</p>
+        <p class="tray">Industria cultural y servicios financieros.</p>
+        <blockquote>Innovar también es cambiar el modelo de negocio, no solo el escenario.</blockquote>
+      </article>
+      <article class="persona rv d4" style="--c:var(--lila);--cd:var(--lila-d)">
+        <div class="avatar" aria-hidden="true"><i></i><b>JM</b></div>
+        <h3>Jorge Mario Murillo</h3><p class="rol">Metodología y medición</p>
+        <p class="tray">Economía de experiencias y diseño de instrumentos.</p>
+        <blockquote>Las experiencias se diseñan. La cultura que las hace posibles, también.</blockquote>
+      </article>
+    </div>
+    <div class="respaldo rv"><span>Maestría en Gestión de la Innovación</span><span>Universidad Icesi</span><span>iNNLab</span></div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section class="contacto" id="contacto">
+  <div class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <h2 class="rv">¿Tu organización suena <span class="script">en clave?</span></h2>
+    <p class="rv d1">Cuéntanos qué te gustaría que cambiara. En una conversación de 30 minutos te decimos por dónde empezaríamos.</p>
+    <a class="btn btn-sol rv d2" href="mailto:[CORREO]?subject=Quiero%20que%20mi%20organizaci%C3%B3n%20entre%20en%20clave">Escríbenos</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Clave · Consultora de cultura e innovación · Cali, Colombia</span><span>© 2026 Grupo 4 · MGinn Universidad Icesi</span></div></footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Aparición al hacer scroll */
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+    els.forEach(function(el){io.observe(el);});
+  } else els.forEach(function(el){el.classList.add('in');});
+
+  /* Son clave 3-2 a 107 BPM: golpes en las corcheas 0,3,6,10,12 */
+  var HITS=[0,3,6,10,12], STEP=60000/107/2, pils=[].slice.call(document.querySelectorAll('.pil'));
+  var ctx=null, sample=null, on=false, timer=null, step=0;
+  var btn=document.getElementById('playBtn'), lbl=document.getElementById('playLbl'), ic=document.getElementById('playIcon');
+  function load(){
+    if(ctx)return;
+    try{ctx=new (window.AudioContext||window.webkitAudioContext)();
+      fetch('../Modelo/V0/clave.wav').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer();}).then(function(b){return ctx.decodeAudioData(b);}).then(function(b){sample=b;}).catch(function(){});
+    }catch(e){ctx=null;}
+  }
+  function hit(){
+    if(!ctx)return;
+    var t=ctx.currentTime+.005;
+    if(sample){var s=ctx.createBufferSource();s.buffer=sample;s.connect(ctx.destination);s.start(t);return;}
+    var o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=2480;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.5,t+.002);g.gain.exponentialRampToValueAtTime(.0001,t+.1);o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+.12);
+  }
+  function tick(){
+    var k=HITS.indexOf(step);
+    if(k>-1){hit();var p=pils[k];p.classList.add('hit');setTimeout(function(){p.classList.remove('hit');},150);}
+    step=(step+1)%16;
+  }
+  btn.addEventListener('click',function(){
+    load(); if(ctx&&ctx.state==='suspended')ctx.resume();
+    on=!on; btn.setAttribute('aria-pressed',String(on));
+    lbl.textContent=on?'Pausar la clave':'Escuchar la clave';
+    ic.setAttribute('d',on?'M6 4h4v16H6zM14 4h4v16h-4z':'M7 4l13 8-13 8z');
+    if(on){step=0;tick();timer=setInterval(tick,STEP);}else{clearInterval(timer);}
+  });
+})();
+</script>
+</body>
+</html>
