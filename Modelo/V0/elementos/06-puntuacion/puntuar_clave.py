@@ -18,6 +18,9 @@ ITEMS = [f + "." + str(k) for f in FACTORES for k in (1, 2, 3)]
 N_MIN = 5
 UMBRAL_DESFASE, UMBRAL_DESAFINE, UMBRAL_SILO = 20, 15, 15
 BANDAS = [(85, "Transformando"), (70, "Adaptando"), (50, "Emergiendo"), (0, "Entrando")]
+NIVEL_CABEZA = "Dirección"
+# Base de la organización: etiqueta del formulario (sync 7 nov) y la anterior, por compatibilidad.
+NIVEL_BASE = ("Asistencia, operación o staff", "Operación")
 
 
 def banda(v):
@@ -80,9 +83,10 @@ def main(entrada, salida=None):
         for g in sorted({x["perfil"][var] for x in personas}):
             res[clave].append(resumen([x for x in personas if x["perfil"][var] == g], g))
     niveles = {r["grupo"]: r for r in res["por_nivel"] if not r["suprimido"]}
-    if "Dirección" in niveles and "Operación" in niveles:
+    base = next((b for b in NIVEL_BASE if b in niveles), None)
+    if NIVEL_CABEZA in niveles and base:
         for pi in PILARES:
-            d, o = niveles["Dirección"]["pilares"][pi], niveles["Operación"]["pilares"][pi]
+            d, o = niveles[NIVEL_CABEZA]["pilares"][pi], niveles[base]["pilares"][pi]
             if d is not None and o is not None:
                 res["desafine"][pi] = {"valor": round(d - o, 1), "alerta": abs(d - o) > UMBRAL_DESAFINE}
     areas = [r for r in res["por_area"] if not r["suprimido"]]

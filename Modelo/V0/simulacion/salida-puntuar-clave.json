@@ -715,7 +715,28 @@
       "clave_cruzada": false
     }
   ],
-  "desafine": {},
+  "desafine": {
+    "C": {
+      "valor": 9.8,
+      "alerta": false
+    },
+    "L": {
+      "valor": -5.5,
+      "alerta": false
+    },
+    "A": {
+      "valor": -0.4,
+      "alerta": false
+    },
+    "V": {
+      "valor": 4.3,
+      "alerta": false
+    },
+    "E": {
+      "valor": -12.8,
+      "alerta": false
+    }
+  },
   "brecha_horizontal": {
     "C": {
       "valor": 4.0,
