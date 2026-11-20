@@ -22,6 +22,10 @@ Cada versión publicada tiene una etiqueta `vX.Y.Z` en Git. Cuando un cambio nac
 - `Hallazgos/`: carpeta por integrante, plantilla y registro de integración con los tres hallazgos del Sync 1.
 - `Gestion/decisiones.md`: registro de decisiones del proyecto.
 - `.gitattributes` y `.editorconfig` para finales de línea y codificación uniformes.
+- `Modelo/V0/simulacion/`: simulación del Pulso con 50 respuestas sintéticas (semilla 2026), generador y análisis reproducibles, matrices de correlación (pilares, factores e ítems), fiabilidad por pilar e informe visual.
+
+### Corregido
+- `puntuar_clave.py` calcula el desafine con la etiqueta de nivel del formulario ("Asistencia, operación o staff"); antes buscaba "Operación" y el desafine salía vacío sin aviso.
 
 ## [0.9.0] — 2026-10-10 · paleta validada
 
