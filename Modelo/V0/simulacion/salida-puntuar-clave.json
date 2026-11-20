@@ -1,0 +1,742 @@
+{
+  "organizacion": {
+    "grupo": "Delirio",
+    "n": 48,
+    "suprimido": false,
+    "pilares": {
+      "C": 41.1,
+      "L": 52.7,
+      "A": 40.9,
+      "V": 37.2,
+      "E": 57.8
+    },
+    "factores": {
+      "C1": {
+        "puntaje": 35.7,
+        "evidencia_pct": 9.7
+      },
+      "C2": {
+        "puntaje": 51.2,
+        "evidencia_pct": 21.5
+      },
+      "C3": {
+        "puntaje": 36.4,
+        "evidencia_pct": 9.7
+      },
+      "L1": {
+        "puntaje": 53.5,
+        "evidencia_pct": 25.7
+      },
+      "L2": {
+        "puntaje": 64.4,
+        "evidencia_pct": 42.4
+      },
+      "L3": {
+        "puntaje": 40.1,
+        "evidencia_pct": 14.6
+      },
+      "A1": {
+        "puntaje": 40.1,
+        "evidencia_pct": 13.9
+      },
+      "A2": {
+        "puntaje": 42.6,
+        "evidencia_pct": 19.4
+      },
+      "A3": {
+        "puntaje": 39.9,
+        "evidencia_pct": 17.4
+      },
+      "V1": {
+        "puntaje": 40.3,
+        "evidencia_pct": 13.3
+      },
+      "V2": {
+        "puntaje": 38.9,
+        "evidencia_pct": 7.6
+      },
+      "V3": {
+        "puntaje": 32.4,
+        "evidencia_pct": 6.2
+      },
+      "E1": {
+        "puntaje": 75.0,
+        "evidencia_pct": 63.2
+      },
+      "E2": {
+        "puntaje": 57.4,
+        "evidencia_pct": 31.2
+      },
+      "E3": {
+        "puntaje": 41.1,
+        "evidencia_pct": 10.4
+      }
+    },
+    "indice_clave": 45.9,
+    "banda": "Entrando",
+    "desfase": 20.6,
+    "clave_cruzada": true
+  },
+  "por_area": [
+    {
+      "grupo": "Administrativa y financiera",
+      "n": 6,
+      "suprimido": false,
+      "pilares": {
+        "C": 39.3,
+        "L": 50.0,
+        "A": 39.3,
+        "V": 30.4,
+        "E": 54.1
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 35.6,
+          "evidencia_pct": 11.1
+        },
+        "C2": {
+          "puntaje": 46.7,
+          "evidencia_pct": 16.7
+        },
+        "C3": {
+          "puntaje": 35.6,
+          "evidencia_pct": 5.6
+        },
+        "L1": {
+          "puntaje": 57.8,
+          "evidencia_pct": 27.8
+        },
+        "L2": {
+          "puntaje": 48.9,
+          "evidencia_pct": 5.6
+        },
+        "L3": {
+          "puntaje": 43.3,
+          "evidencia_pct": 11.1
+        },
+        "A1": {
+          "puntaje": 48.9,
+          "evidencia_pct": 22.2
+        },
+        "A2": {
+          "puntaje": 32.2,
+          "evidencia_pct": 16.7
+        },
+        "A3": {
+          "puntaje": 36.7,
+          "evidencia_pct": 11.1
+        },
+        "V1": {
+          "puntaje": 31.1,
+          "evidencia_pct": 11.1
+        },
+        "V2": {
+          "puntaje": 26.7,
+          "evidencia_pct": 0.0
+        },
+        "V3": {
+          "puntaje": 33.3,
+          "evidencia_pct": 5.6
+        },
+        "E1": {
+          "puntaje": 63.3,
+          "evidencia_pct": 38.9
+        },
+        "E2": {
+          "puntaje": 50.0,
+          "evidencia_pct": 27.8
+        },
+        "E3": {
+          "puntaje": 48.9,
+          "evidencia_pct": 11.1
+        }
+      },
+      "indice_clave": 42.6,
+      "banda": "Entrando",
+      "desfase": 23.7,
+      "clave_cruzada": true
+    },
+    {
+      "grupo": "Comercial y mercadeo",
+      "n": 7,
+      "suprimido": false,
+      "pilares": {
+        "C": 41.9,
+        "L": 53.3,
+        "A": 44.1,
+        "V": 36.5,
+        "E": 63.8
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 40.0,
+          "evidencia_pct": 9.5
+        },
+        "C2": {
+          "puntaje": 51.4,
+          "evidencia_pct": 23.8
+        },
+        "C3": {
+          "puntaje": 34.3,
+          "evidencia_pct": 4.8
+        },
+        "L1": {
+          "puntaje": 58.1,
+          "evidencia_pct": 33.3
+        },
+        "L2": {
+          "puntaje": 63.8,
+          "evidencia_pct": 47.6
+        },
+        "L3": {
+          "puntaje": 38.1,
+          "evidencia_pct": 9.5
+        },
+        "A1": {
+          "puntaje": 40.0,
+          "evidencia_pct": 9.5
+        },
+        "A2": {
+          "puntaje": 43.8,
+          "evidencia_pct": 14.3
+        },
+        "A3": {
+          "puntaje": 48.6,
+          "evidencia_pct": 28.6
+        },
+        "V1": {
+          "puntaje": 49.5,
+          "evidencia_pct": 23.8
+        },
+        "V2": {
+          "puntaje": 36.2,
+          "evidencia_pct": 4.8
+        },
+        "V3": {
+          "puntaje": 23.8,
+          "evidencia_pct": 0.0
+        },
+        "E1": {
+          "puntaje": 81.9,
+          "evidencia_pct": 81.0
+        },
+        "E2": {
+          "puntaje": 61.0,
+          "evidencia_pct": 33.3
+        },
+        "E3": {
+          "puntaje": 48.6,
+          "evidencia_pct": 14.3
+        }
+      },
+      "indice_clave": 47.9,
+      "banda": "Entrando",
+      "desfase": 27.3,
+      "clave_cruzada": true
+    },
+    {
+      "grupo": "Dirección General",
+      "n": 4,
+      "suprimido": true
+    },
+    {
+      "grupo": "Otra",
+      "n": 2,
+      "suprimido": true
+    },
+    {
+      "grupo": "Producción artística",
+      "n": 14,
+      "suprimido": false,
+      "pilares": {
+        "C": 40.0,
+        "L": 52.1,
+        "A": 42.7,
+        "V": 34.1,
+        "E": 57.3
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 30.5,
+          "evidencia_pct": 9.5
+        },
+        "C2": {
+          "puntaje": 50.0,
+          "evidencia_pct": 23.8
+        },
+        "C3": {
+          "puntaje": 39.5,
+          "evidencia_pct": 19.0
+        },
+        "L1": {
+          "puntaje": 55.2,
+          "evidencia_pct": 33.3
+        },
+        "L2": {
+          "puntaje": 66.7,
+          "evidencia_pct": 50.0
+        },
+        "L3": {
+          "puntaje": 34.3,
+          "evidencia_pct": 9.5
+        },
+        "A1": {
+          "puntaje": 40.0,
+          "evidencia_pct": 16.7
+        },
+        "A2": {
+          "puntaje": 49.5,
+          "evidencia_pct": 26.2
+        },
+        "A3": {
+          "puntaje": 38.6,
+          "evidencia_pct": 16.7
+        },
+        "V1": {
+          "puntaje": 35.2,
+          "evidencia_pct": 7.3
+        },
+        "V2": {
+          "puntaje": 40.0,
+          "evidencia_pct": 7.1
+        },
+        "V3": {
+          "puntaje": 27.1,
+          "evidencia_pct": 4.8
+        },
+        "E1": {
+          "puntaje": 78.6,
+          "evidencia_pct": 71.4
+        },
+        "E2": {
+          "puntaje": 56.2,
+          "evidencia_pct": 23.8
+        },
+        "E3": {
+          "puntaje": 37.1,
+          "evidencia_pct": 4.8
+        }
+      },
+      "indice_clave": 45.2,
+      "banda": "Entrando",
+      "desfase": 23.2,
+      "clave_cruzada": true
+    },
+    {
+      "grupo": "Producción técnica y logística",
+      "n": 9,
+      "suprimido": false,
+      "pilares": {
+        "C": 39.8,
+        "L": 56.0,
+        "A": 37.8,
+        "V": 41.0,
+        "E": 65.2
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 40.7,
+          "evidencia_pct": 11.1
+        },
+        "C2": {
+          "puntaje": 51.9,
+          "evidencia_pct": 18.5
+        },
+        "C3": {
+          "puntaje": 26.7,
+          "evidencia_pct": 0.0
+        },
+        "L1": {
+          "puntaje": 51.9,
+          "evidencia_pct": 14.8
+        },
+        "L2": {
+          "puntaje": 67.4,
+          "evidencia_pct": 44.4
+        },
+        "L3": {
+          "puntaje": 48.9,
+          "evidencia_pct": 29.6
+        },
+        "A1": {
+          "puntaje": 42.2,
+          "evidencia_pct": 14.8
+        },
+        "A2": {
+          "puntaje": 31.1,
+          "evidencia_pct": 11.1
+        },
+        "A3": {
+          "puntaje": 40.0,
+          "evidencia_pct": 14.8
+        },
+        "V1": {
+          "puntaje": 40.0,
+          "evidencia_pct": 3.7
+        },
+        "V2": {
+          "puntaje": 44.4,
+          "evidencia_pct": 11.1
+        },
+        "V3": {
+          "puntaje": 38.5,
+          "evidencia_pct": 11.1
+        },
+        "E1": {
+          "puntaje": 82.2,
+          "evidencia_pct": 70.4
+        },
+        "E2": {
+          "puntaje": 66.7,
+          "evidencia_pct": 48.1
+        },
+        "E3": {
+          "puntaje": 46.7,
+          "evidencia_pct": 22.2
+        }
+      },
+      "indice_clave": 48.0,
+      "banda": "Entrando",
+      "desfase": 27.4,
+      "clave_cruzada": true
+    },
+    {
+      "grupo": "Proyectos sociales y formación",
+      "n": 6,
+      "suprimido": false,
+      "pilares": {
+        "C": 43.3,
+        "L": 54.8,
+        "A": 43.0,
+        "V": 47.4,
+        "E": 53.7
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 35.6,
+          "evidencia_pct": 11.1
+        },
+        "C2": {
+          "puntaje": 55.6,
+          "evidencia_pct": 27.8
+        },
+        "C3": {
+          "puntaje": 38.9,
+          "evidencia_pct": 16.7
+        },
+        "L1": {
+          "puntaje": 53.3,
+          "evidencia_pct": 27.8
+        },
+        "L2": {
+          "puntaje": 74.4,
+          "evidencia_pct": 61.1
+        },
+        "L3": {
+          "puntaje": 36.7,
+          "evidencia_pct": 11.1
+        },
+        "A1": {
+          "puntaje": 38.9,
+          "evidencia_pct": 11.1
+        },
+        "A2": {
+          "puntaje": 53.3,
+          "evidencia_pct": 22.2
+        },
+        "A3": {
+          "puntaje": 36.7,
+          "evidencia_pct": 11.1
+        },
+        "V1": {
+          "puntaje": 44.4,
+          "evidencia_pct": 16.7
+        },
+        "V2": {
+          "puntaje": 51.1,
+          "evidencia_pct": 16.7
+        },
+        "V3": {
+          "puntaje": 46.7,
+          "evidencia_pct": 16.7
+        },
+        "E1": {
+          "puntaje": 68.9,
+          "evidencia_pct": 50.0
+        },
+        "E2": {
+          "puntaje": 58.9,
+          "evidencia_pct": 33.3
+        },
+        "E3": {
+          "puntaje": 33.3,
+          "evidencia_pct": 11.1
+        }
+      },
+      "indice_clave": 48.4,
+      "banda": "Entrando",
+      "desfase": 11.8,
+      "clave_cruzada": false
+    }
+  ],
+  "por_nivel": [
+    {
+      "grupo": "Asistencia, operación o staff",
+      "n": 31,
+      "suprimido": false,
+      "pilares": {
+        "C": 39.1,
+        "L": 52.2,
+        "A": 40.4,
+        "V": 34.4,
+        "E": 58.6
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 35.3,
+          "evidencia_pct": 9.7
+        },
+        "C2": {
+          "puntaje": 47.3,
+          "evidencia_pct": 19.4
+        },
+        "C3": {
+          "puntaje": 34.6,
+          "evidencia_pct": 10.8
+        },
+        "L1": {
+          "puntaje": 54.4,
+          "evidencia_pct": 25.8
+        },
+        "L2": {
+          "puntaje": 63.0,
+          "evidencia_pct": 40.9
+        },
+        "L3": {
+          "puntaje": 39.1,
+          "evidencia_pct": 12.9
+        },
+        "A1": {
+          "puntaje": 39.4,
+          "evidencia_pct": 14.0
+        },
+        "A2": {
+          "puntaje": 41.9,
+          "evidencia_pct": 18.3
+        },
+        "A3": {
+          "puntaje": 40.0,
+          "evidencia_pct": 17.2
+        },
+        "V1": {
+          "puntaje": 37.4,
+          "evidencia_pct": 10.8
+        },
+        "V2": {
+          "puntaje": 36.6,
+          "evidencia_pct": 5.4
+        },
+        "V3": {
+          "puntaje": 29.2,
+          "evidencia_pct": 5.4
+        },
+        "E1": {
+          "puntaje": 72.9,
+          "evidencia_pct": 58.1
+        },
+        "E2": {
+          "puntaje": 60.0,
+          "evidencia_pct": 32.3
+        },
+        "E3": {
+          "puntaje": 42.8,
+          "evidencia_pct": 9.7
+        }
+      },
+      "indice_clave": 44.9,
+      "banda": "Entrando",
+      "desfase": 24.2,
+      "clave_cruzada": true
+    },
+    {
+      "grupo": "Coordinación o jefatura",
+      "n": 12,
+      "suprimido": false,
+      "pilares": {
+        "C": 43.1,
+        "L": 56.5,
+        "A": 42.4,
+        "V": 43.7,
+        "E": 60.9
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 35.6,
+          "evidencia_pct": 8.3
+        },
+        "C2": {
+          "puntaje": 56.7,
+          "evidencia_pct": 22.2
+        },
+        "C3": {
+          "puntaje": 37.2,
+          "evidencia_pct": 8.3
+        },
+        "L1": {
+          "puntaje": 53.9,
+          "evidencia_pct": 30.6
+        },
+        "L2": {
+          "puntaje": 71.1,
+          "evidencia_pct": 52.8
+        },
+        "L3": {
+          "puntaje": 44.4,
+          "evidencia_pct": 19.4
+        },
+        "A1": {
+          "puntaje": 43.9,
+          "evidencia_pct": 13.9
+        },
+        "A2": {
+          "puntaje": 43.3,
+          "evidencia_pct": 22.2
+        },
+        "A3": {
+          "puntaje": 40.0,
+          "evidencia_pct": 16.7
+        },
+        "V1": {
+          "puntaje": 43.3,
+          "evidencia_pct": 11.4
+        },
+        "V2": {
+          "puntaje": 46.7,
+          "evidencia_pct": 16.7
+        },
+        "V3": {
+          "puntaje": 41.1,
+          "evidencia_pct": 11.1
+        },
+        "E1": {
+          "puntaje": 83.9,
+          "evidencia_pct": 83.3
+        },
+        "E2": {
+          "puntaje": 56.1,
+          "evidencia_pct": 33.3
+        },
+        "E3": {
+          "puntaje": 42.8,
+          "evidencia_pct": 16.7
+        }
+      },
+      "indice_clave": 49.3,
+      "banda": "Entrando",
+      "desfase": 18.5,
+      "clave_cruzada": false
+    },
+    {
+      "grupo": "Dirección",
+      "n": 5,
+      "suprimido": false,
+      "pilares": {
+        "C": 48.9,
+        "L": 46.7,
+        "A": 40.0,
+        "V": 38.7,
+        "E": 45.8
+      },
+      "factores": {
+        "C1": {
+          "puntaje": 38.7,
+          "evidencia_pct": 13.3
+        },
+        "C2": {
+          "puntaje": 62.7,
+          "evidencia_pct": 33.3
+        },
+        "C3": {
+          "puntaje": 45.3,
+          "evidencia_pct": 6.7
+        },
+        "L1": {
+          "puntaje": 46.7,
+          "evidencia_pct": 13.3
+        },
+        "L2": {
+          "puntaje": 57.3,
+          "evidencia_pct": 26.7
+        },
+        "L3": {
+          "puntaje": 36.0,
+          "evidencia_pct": 13.3
+        },
+        "A1": {
+          "puntaje": 36.0,
+          "evidencia_pct": 13.3
+        },
+        "A2": {
+          "puntaje": 45.3,
+          "evidencia_pct": 20.0
+        },
+        "A3": {
+          "puntaje": 38.7,
+          "evidencia_pct": 20.0
+        },
+        "V1": {
+          "puntaje": 50.7,
+          "evidencia_pct": 33.3
+        },
+        "V2": {
+          "puntaje": 34.7,
+          "evidencia_pct": 0.0
+        },
+        "V3": {
+          "puntaje": 30.7,
+          "evidencia_pct": 0.0
+        },
+        "E1": {
+          "puntaje": 66.7,
+          "evidencia_pct": 46.7
+        },
+        "E2": {
+          "puntaje": 44.0,
+          "evidencia_pct": 20.0
+        },
+        "E3": {
+          "puntaje": 26.7,
+          "evidencia_pct": 0.0
+        }
+      },
+      "indice_clave": 44.0,
+      "banda": "Entrando",
+      "desfase": 10.2,
+      "clave_cruzada": false
+    }
+  ],
+  "desafine": {},
+  "brecha_horizontal": {
+    "C": {
+      "valor": 4.0,
+      "silo": false
+    },
+    "L": {
+      "valor": 6.0,
+      "silo": false
+    },
+    "A": {
+      "valor": 6.3,
+      "silo": false
+    },
+    "V": {
+      "valor": 17.0,
+      "silo": true
+    },
+    "E": {
+      "valor": 11.5,
+      "silo": false
+    }
+  },
+  "excluidos_por_control": 2
+}
